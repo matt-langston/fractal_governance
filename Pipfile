@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+altair = "*"
+attrs = "*"
+matplotlib = "*"
+numpy = "*"
+pandas = "*"
+scipy = "*"
+seaborn = "*"
+streamlit = "*"
+
+[dev-packages]
+fractally = {editable = true, path = "."}
+build = "*"
+flake8 = "*"
+ipywidgets = "*"
+jupyterlab = "*"
+nbconvert = "*"
+nodeenv = "*"
+plotly-express = "*"
+pylint = "*"
+watchdog = "*"
+yapf = "*"
+
+[requires]
+python_version = "3.9"

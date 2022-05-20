@@ -1,0 +1,9 @@
+# Copyright (C) 2022 Matt Langston. All Rights Reserved.
+"""Project-specific bazel flags"""
+
+# User-specific settings.
+#
+# The user.bazelrc file is listed in .gitignore and so will not be
+# committed. This allows the user to specify their own bazel
+# preferences.
+try-import %workspace%/user.bazelrc
