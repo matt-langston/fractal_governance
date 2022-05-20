@@ -127,21 +127,19 @@ with column2:
 st.header('Description')
 
 st.markdown('''
-
-
 The goal of Fractal Governance is lofty: incentivize people to collaborate in the production of public goods and services that eliminates corruption and graft in the process.
 
 The principles of Fractal Governance are described in the book [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer, and the technical specifications for how to implement Fractal Governance at scale is defined in the [fractally White Paper](https://fractally.com).
 
 This is a live dashboard that follows the first group of people to govern themselves according to these principles and technical specifications.
 
-The word "fractal" is used throughput this dashboard and is capitalized as "Fractal" depending on the context to distinguish between the usual mathematical meaning and its specific use in governance.
+The word *fractal* is used throughput this dashboard and is capitalized as *Fractal* depending on the context to distinguish between the usual mathematical meaning and its specific use in governance.
 
-The first governing body based on the specifications and principles of Fractal Governance is called [Genesis](https://gofractally.com/groups/7064857/feed), and its members meet weekly to mine the inherent value of their collaboration to produce public goods and services and return that mined value, tokenized in units called "Respect", directly back to its members through an incorruptible process; the system naturally prevents corruption from entering into any process.
+The first governing body based on the specifications and principles of Fractal Governance is called [Genesis](https://gofractally.com/groups/7064857/feed), and its members meet weekly to mine the inherent value of their collaboration to produce public goods and services and return that mined value, tokenized in units called *Respect*, directly back to its members through an incorruptible process; the system naturally prevents corruption from entering into any process.
 
 Fractal governance directly and consistently rewards individuals for their recent past contributions towards the creation of public goods and services that avoids the formation of Pareto distributions due to corruption and graft found in all other known forms of governance. Gone are the days of rewarding collusion with the acquisition of gain (such as money) in dishonest or questionable ways.
 
-Analogous to Bitcoin's "Proof of Work" consensus algorithm that rewards people for transforming stored energy, in the form of electricity, into an incorruptible public ledger of account, a collaboration of people governed in a fractal nature also uses a "Proof of Work" consensus algorithm to reward people for transforming stored energy, in the form of human collaboration, into public goods and services.
+Analogous to Bitcoin's *Proof of Work* consensus algorithm that rewards people for transforming stored energy, in the form of electricity, into an incorruptible public ledger of account, a collaboration of people governed in a fractal nature also uses a *Proof of Work* consensus algorithm to reward people for transforming stored energy, in the form of human collaboration, into public goods and services.
 
 The fundamental difference between the two consensus algorithms is in how rewards are allocated. The Bitcoin model allocates rewards called BTC tokens to those who consume the most electricity most consistently. The Fractal model, on the other hand, allocates rewards called Respect tokens to those who contribute the most value most consistently, as judged by their peers.
 
@@ -159,6 +157,7 @@ Resources to learn more about fractal governance:
 
 - [fractally White Paper](https://fractally.com)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
+- [First Results from the Fractal Governance Experiments](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments)
 - [GitHub Repository for this Streamlit Dashboard](https://github.com/matt-langston/fractal_governance)
 - [Modeling and Simulation](https://gofractally.com/groups/7064857/topics/7623063) topic on [gofractally.com](https://gofractally.com)
 ''')
