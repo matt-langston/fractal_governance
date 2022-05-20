@@ -5,6 +5,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Introduction](#introduction)
+- [What is Fractal Governance?](#what-is-fractal-governance)
 - [Getting Started for Data Scientists](#getting-started-for-data-scientists)
   - [Step 1 (one time setup):](#step-1-one-time-setup)
   - [Step 2 (one time setup):](#step-2-one-time-setup)
@@ -53,17 +54,29 @@
 
 ## Introduction
 
-[Datasets](data), [Jupyter notebooks](notebook/README.ipynb) and [Streamlit dashboards](https://share.streamlit.io/matt-langston/genesis-fractal) for the fractal governance social experiments using the experimental apparatus defined in the [fractally White Paper](https://fractally.com) and based on the principles described in the book [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer.
+[Datasets](data), [Jupyter notebooks](notebook/README.ipynb) and [Streamlit dashboards](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py) for Fractal Governance
 
-The motivation for this repository is to advance the understanding of fractal governance. The [datasets](data) from our [experimental apparatus](https://gofractally.com) will be of particular interest to data scientists, researchers and educators.
+The motivation for this repository is to advance the understanding of Fractal Governance. The [datasets](data) from our [experimental apparatus](https://gofractally.com) will be of particular interest to data scientists, researchers and educators.
 
-The first governing body based on the specifications and principles of fractal governance is called [Genesis](https://gofractally.com/groups/7064857/feed), and its members meet weekly to mine the inherent value of their collaboration to produce public goods and services and return that mined value, tokenized in units called "Respect", directly back to its members through an incorruptible process.
+## What is Fractal Governance?
 
-Fractal governance directly and consistently rewards the recent past contributions (aka "Proof of Work") of the people who create public goods and services while avoiding the perils of Pareto distributions found in all other known forms of governance susceptible to corruption.
+The goal of Fractal Governance is lofty: incentivize people to collaborate in the production of public goods and services that also eliminates corruption and graft in the process.
 
-Analogous to Bitcoin's "Proof of Work" consensus algorithm that allocates rewards denominated in BTC tokens for transforming electricity into an incorruptible public ledger, a collaboration of people governed fractally also uses a "Proof of Work" consensus algorithm to allocate rewards denominated in Respect tokens for incorruptibly transforming human collaboration into public goods and services.
+The principles of Fractal Governance are described in the book [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer, and the technical specifications for how to implement Fractal Governance at scale is defined in the [fractally White Paper](https://fractally.com). The first group of people to govern themselves according to these principles and technical specifications began on Februar 26, 2022.
 
-You can [immediately explore the Genesis Fractal dataset](https://share.streamlit.io/matt-langston/genesis-fractal) before returning here to continue your exploration. The dataset for this dashboard is curated by [Gregory Wexler](https://gofractally.com/members/10362727), [Joshua Seymour](https://gofractally.com/members/10361546) and [Matt Langston](https://gofractally.com/members/10426315).
+These pioneers call their group [Genesis](https://gofractally.com/groups/7064857/feed) and refer to it as a Fractal. The Genesis members meet weekly to mine the inherent value of their collaboration to produce public goods and services and return that mined value, tokenized in units called *Respect*, directly back to its members through a governance process that naturally prevents corruption and graft. This incorruptibility is the defining feature of Fractal Governance.
+
+Fractal Governance directly and consistently rewards individuals for their recent past contributions towards the creation of public goods and services that also avoids the formation of Pareto distributions due to corruption and graft found in all other known forms of governance. Gone are the days of rewarding collusion with illicit gains (such as currency) from dishonest behavior or other questionable means.
+
+Analogous to Bitcoin's *Proof of Work* consensus algorithm which rewards people for transforming stored energy, in the form of electricity, into an incorruptible public ledger of account, a collaboration of people governed in a Fractal nature also uses a *Proof of Work* consensus algorithm to reward people for transforming stored energy, in the form of human collaboration, into public goods and services.
+
+The fundamental difference between the two consensus algorithms is in how rewards are allocated. The Bitcoin model allocates rewards called BTC tokens to those who consume the most electricity most consistently. The Fractal model, on the other hand, allocates rewards called Respect tokens to those who contribute the most value most consistently, as judged by their peers.
+
+The Bitcoin consensus algorithm is prone to corruption and graft because it rewards those that obtain the most consistent source of electricity by any means whatsoever, illicit or otherwise. The Fractal Governance consensus algorithm, on the other hand, prevents corruption and graft by eliminating opportunities for collusion.
+
+The nature of how the rewards from the Bitcoin and Fractal Governance systems are recorded is similar in  that both systems use a blockchain for their public ledger of account.
+
+You can [immediately explore the Genesis Fractal dataset](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py) before returning here to continue your exploration. The dataset for this dashboard is curated by [Gregory Wexler](https://gofractally.com/members/10362727), [Joshua Seymour](https://gofractally.com/members/10361546) and [Matt Langston](https://gofractally.com/members/10426315).
 
 ## Getting Started for Data Scientists
 
@@ -90,7 +103,7 @@ pipenv install --dev
 
 ### Step 3 (optional):
 
-Run the Streamlit app. This will run the same dashboard as [Genesis Fractal dataset](https://share.streamlit.io/matt-langston/genesis-fractal).
+Run the Streamlit app. This will run the same dashboard as [Genesis Fractal dataset](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py).
 
 ```bash
 pipenv run streamlit run fractal_governance/streamlit/genesis_fractal.py
@@ -1316,12 +1329,12 @@ pipenv run doctoc README.md
 
 ## Resources
 
-Resources to learn more about fractal governance:
+Resources to learn more about Fractal Governance:
 
 
 - [fractally White Paper](https://fractally.com)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
-- [Genesis Fractal Dashboard](https://share.streamlit.io/matt-langston/genesis-fractal)
+- [Genesis Fractal Dashboard](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py)
 - [Modeling and Simulation](https://gofractally.com/groups/7064857/topics/7623063) topic on [gofractally.com](https://gofractally.com)
 
 If you contribute new Jupyter notebooks then please place them in the [notebook](notebook) directory.
