@@ -1,14 +1,10 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
 """Streamlit app for the Genesis Fractal Dashboard"""
 
-# builtins
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[2]))
-
 # 3rd party dependencies
+
 # pylint: disable=C0413
+
 import pandas as pd
 import seaborn as sns
 import streamlit as st
@@ -59,6 +55,7 @@ with column1:
     |Total Respect tokens earned from all sources|{DATASET.total_respect:,}|
     |Total Respect tokens earned by members|{DATASET.total_member_respect:,}|
     |Respect tokens earned by teams|{DATASET.total_team_respect:,}|
+    |Total number of unique members|{DATASET.total_unique_members:,}|
     |Average number of attendees per meeting|{ATTENDANCE_STATS.mean:.0f} $\pm$ {ATTENDANCE_STATS.standard_deviation:.0f}|
     |Average number of meetings attended by a unique member|{ATTENDANCE_CONSISTENCY_STATS.mean:.0f} $\pm$ {ATTENDANCE_CONSISTENCY_STATS.standard_deviation:.0f}|
     |Average team representation per meeting*|{DATASET.team_representation_stats.mean:.2f} $\pm$ {DATASET.team_representation_stats.standard_deviation:.2f}|
@@ -135,15 +132,15 @@ This is a live dashboard that follows the first group of people to govern themse
 
 The word *fractal* is used throughput this dashboard and is capitalized as *Fractal* depending on the context to distinguish between the usual mathematical meaning and its specific use in governance.
 
-The first governing body based on the specifications and principles of Fractal Governance is called [Genesis](https://gofractally.com/groups/7064857/feed), and its members meet weekly to mine the inherent value of their collaboration to produce public goods and services and return that mined value, tokenized in units called *Respect*, directly back to its members through an incorruptible process; the system naturally prevents corruption from entering into any process.
+The first governing body based on the specifications and principles of Fractal Governance is called [Genesis](https://gofractally.com/groups/7064857/feed). The Genesis members meet weekly to mine the inherent value of their collaboration to produce public goods and services and return that mined value, tokenized in units called *Respect*, directly back to its members through a governance process that naturally prevents corruption and graft. This incorruptibility is the defining feature of Fractal Governance.
 
-Fractal governance directly and consistently rewards individuals for their recent past contributions towards the creation of public goods and services that avoids the formation of Pareto distributions due to corruption and graft found in all other known forms of governance. Gone are the days of rewarding collusion with the acquisition of gain (such as money) in dishonest or questionable ways.
+Fractal Governance directly and consistently rewards individuals for their recent past contributions towards the creation of public goods and services that also avoids the formation of Pareto distributions due to corruption and graft found in all other known forms of governance. Gone are the days of rewarding collusion with illicit gains (such as currency) from dishonest behavior or other questionable means.
 
-Analogous to Bitcoin's *Proof of Work* consensus algorithm that rewards people for transforming stored energy, in the form of electricity, into an incorruptible public ledger of account, a collaboration of people governed in a fractal nature also uses a *Proof of Work* consensus algorithm to reward people for transforming stored energy, in the form of human collaboration, into public goods and services.
+Analogous to Bitcoin's *Proof of Work* consensus algorithm which rewards people for transforming stored energy, in the form of electricity, into an incorruptible public ledger of account, a collaboration of people governed in a Fractal nature also uses a *Proof of Work* consensus algorithm to reward people for transforming stored energy, in the form of human collaboration, into public goods and services.
 
 The fundamental difference between the two consensus algorithms is in how rewards are allocated. The Bitcoin model allocates rewards called BTC tokens to those who consume the most electricity most consistently. The Fractal model, on the other hand, allocates rewards called Respect tokens to those who contribute the most value most consistently, as judged by their peers.
 
-The Bitcoin consensus algorithm is prone to corruption and graft because it rewards those can obtain the most consistent source of electricity by any means whatsoever. The Fractal Governance consensus algorithm, on the other hand, prevents corruption and graft by eliminating opportunities for collusion.
+The Bitcoin consensus algorithm is prone to corruption and graft because it rewards those that obtain the most consistent source of electricity by any means whatsoever, illicit or otherwise. The Fractal Governance consensus algorithm, on the other hand, prevents corruption and graft by eliminating opportunities for collusion.
 
 The nature of how the rewards from the Bitcoin and Fractal Governance systems are recorded is similar in  that both systems use a blockchain for their public ledger of account.
 

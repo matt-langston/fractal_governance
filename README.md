@@ -62,7 +62,7 @@ The motivation for this repository is to advance the understanding of Fractal Go
 
 The goal of Fractal Governance is lofty: incentivize people to collaborate in the production of public goods and services that also eliminates corruption and graft in the process.
 
-The principles of Fractal Governance are described in the book [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer, and the technical specifications for how to implement Fractal Governance at scale is defined in the [fractally White Paper](https://fractally.com). The first group of people to govern themselves according to these principles and technical specifications began on Februar 26, 2022.
+The principles of Fractal Governance are described in the book [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer, and the technical specifications for how to implement Fractal Governance at scale is defined in the [fractally White Paper](https://fractally.com). This article presents an analysis of the initial results of the first group of people to govern themselves according to these principles and technical specifications.
 
 These pioneers call their group [Genesis](https://gofractally.com/groups/7064857/feed) and refer to it as a Fractal. The Genesis members meet weekly to mine the inherent value of their collaboration to produce public goods and services and return that mined value, tokenized in units called *Respect*, directly back to its members through a governance process that naturally prevents corruption and graft. This incorruptibility is the defining feature of Fractal Governance.
 
@@ -172,7 +172,8 @@ List the attributes of this `Dataset` object to see what properties and methods 
      'team_representation_stats',
      'total_member_respect',
      'total_respect',
-     'total_team_respect']
+     'total_team_respect',
+     'total_unique_members']
 
 
 
@@ -360,6 +361,18 @@ GitHubMarkdownDataFrame(dataset.df)
 
 
 
+
+```python
+dataset.total_unique_members
+```
+
+
+
+
+    97
+
+
+
 ### DataFrame of Member Leaderboard
 
 Inspect the first few rows of the member leaderboard DataFrame based on accumulated consensus Rank.
@@ -514,7 +527,7 @@ plt.show()
 
 
     
-![png](README_files/README_24_0.png)
+![png](README_files/README_25_0.png)
     
 
 
@@ -546,7 +559,7 @@ plt.show()
 
 
     
-![png](README_files/README_30_0.png)
+![png](README_files/README_31_0.png)
     
 
 
@@ -692,7 +705,7 @@ plt.show()
 
 
     
-![png](README_files/README_39_0.png)
+![png](README_files/README_40_0.png)
     
 
 
@@ -825,7 +838,7 @@ plt.show()
 
 
     
-![png](README_files/README_48_0.png)
+![png](README_files/README_49_0.png)
     
 
 
@@ -900,7 +913,7 @@ plt.show()
 
 
     
-![png](README_files/README_57_0.png)
+![png](README_files/README_58_0.png)
     
 
 
@@ -1191,7 +1204,7 @@ plt.show()
 
 
     
-![png](README_files/README_71_0.png)
+![png](README_files/README_72_0.png)
     
 
 
@@ -1334,6 +1347,7 @@ Resources to learn more about Fractal Governance:
 
 - [fractally White Paper](https://fractally.com)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
+- [First Results from the Fractal Governance Experiments](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments)
 - [Genesis Fractal Dashboard](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py)
 - [Modeling and Simulation](https://gofractally.com/groups/7064857/topics/7623063) topic on [gofractally.com](https://gofractally.com)
 

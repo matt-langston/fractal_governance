@@ -61,6 +61,11 @@ class Dataset:
             ACCUMULATED_RESPECT_COLUMN_NAME].sum()
 
     @property
+    def total_unique_members(self) -> int:
+        """Return the total number of unique members"""
+        return self.df_member_leader_board[MEMBER_NAME_COLUMN_NAME].size
+
+    @property
     def last_meeting_date(self) -> pd.Timestamp:
         """Return the last meeting date for this dataset"""
         return self.df.sort_values(

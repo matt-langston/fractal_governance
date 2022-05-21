@@ -14,7 +14,7 @@ seaborn = "*"
 streamlit = "*"
 
 [dev-packages]
-fractally = {editable = true, path = "."}
+fractal_governance = {editable = true, path = "."}
 build = "*"
 flake8 = "*"
 ipywidgets = "*"
