@@ -1,6 +1,12 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
 """Streamlit app for the Genesis Fractal Dashboard"""
 
+# builtins
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parents[2]))
+
 # 3rd party dependencies
 
 # pylint: disable=C0413
