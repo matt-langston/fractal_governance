@@ -18,6 +18,8 @@ from fractal_governance.dataset import ACCUMULATED_RESPECT_COLUMN_NAME
 from fractal_governance.dataset import ATTENDANCE_COUNT_COLUMN_NAME
 from fractal_governance.dataset import MEAN_COLUMN_NAME
 from fractal_governance.dataset import MEETING_DATE_COLUMN_NAME
+from fractal_governance.dataset import NEW_MEMBER_COUNT_COLUMN_NAME
+from fractal_governance.dataset import RETURNING_MEMBER_COUNT_COLUMN_NAME
 from fractal_governance.dataset import STANDARD_DEVIATION_COLUMN_NAME
 from fractal_governance.dataset import TEAM_NAME_COLUMN_NAME
 
@@ -43,6 +45,31 @@ class Plots:
         ax.xaxis.set_major_formatter(
             matplotlib.ticker.FixedFormatter(xaxis_labels))
         ax.set_title('Attendance vs Time')
+        plt.gcf().autofmt_xdate()
+        return fig
+
+    @property
+    def attendance_vs_time_stacked(self) -> matplotlib.figure.Figure:
+        """Return a stacked plot of attendance vs time"""
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_member_new_and_returning
+        df = df.set_index(MEETING_DATE_COLUMN_NAME)
+        df = df[[
+            NEW_MEMBER_COUNT_COLUMN_NAME, RETURNING_MEMBER_COUNT_COLUMN_NAME
+        ]]
+        df = df[df.columns[::-1]]
+        # pylint: enable=C0103
+        df.plot.bar(ax=ax, stacked=True)
+        ax.set_xlabel('Meeting Date')
+        ax.set_ylabel('Attendees')
+        ax.set_title('Attendance vs Time')
+        xaxis_labels = [
+            meeting_date.strftime('%b %d %Y') for meeting_date in df.index
+        ]
+        ax.xaxis.set_major_formatter(
+            matplotlib.ticker.FixedFormatter(xaxis_labels))
+        ax.legend(['Returning Members', 'New Members'])
         plt.gcf().autofmt_xdate()
         return fig
 
@@ -98,6 +125,34 @@ class Plots:
         ax.set_title('Accumulated Team Respect vs Time')
         ax.set_xlabel('Meeting Date')
         ax.set_ylabel('Accumulated Team Respect')
+        plt.gcf().autofmt_xdate()
+        return fig
+
+    @property
+    def accumulated_team_respect_vs_time_stacked(
+            self) -> matplotlib.figure.Figure:
+        """Return a plot of the accumulated team vs time"""
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_team_respect_by_meeting_date.set_index(
+            MEETING_DATE_COLUMN_NAME)
+        df = df.pivot(columns=TEAM_NAME_COLUMN_NAME)
+        df = df[pd.MultiIndex.from_product(
+            [['AccumulatedRespect'], self.dataset.df_team_leader_board.index])]
+        # pylint: enable=C0103
+        df.plot.bar(ax=ax, stacked=True)
+        ax.set_xlabel('Meeting Date')
+        ax.set_ylabel('Accumulated Team Respect')
+        ax.set_title('Accumulated Team Respect vs Time')
+        xaxis_labels = [
+            meeting_date.strftime('%b %d %Y') for meeting_date in df.index
+        ]
+        ax.xaxis.set_major_formatter(
+            matplotlib.ticker.FixedFormatter(xaxis_labels))
+        ax.legend(self.dataset.df_team_leader_board.index)
+        ylim = ax.get_ylim()
+        ylim = tuple(l * r for l, r in zip((1, 1.3), ylim))
+        ax.set_ylim(ylim)
         plt.gcf().autofmt_xdate()
         return fig
 

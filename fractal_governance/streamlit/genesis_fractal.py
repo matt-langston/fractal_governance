@@ -22,6 +22,7 @@ import fractal_governance.plots
 from fractal_governance.dataset import ACCUMULATED_RANK_COLUMN_NAME
 from fractal_governance.dataset import ACCUMULATED_RESPECT_COLUMN_NAME
 from fractal_governance.dataset import ATTENDANCE_COUNT_COLUMN_NAME
+from fractal_governance.dataset import MEETING_DATE_COLUMN_NAME
 
 # pylint: enable=C0413
 
@@ -61,6 +62,7 @@ with column1:
     |Total Respect tokens earned from all sources|{DATASET.total_respect:,}|
     |Total Respect tokens earned by members|{DATASET.total_member_respect:,}|
     |Respect tokens earned by teams|{DATASET.total_team_respect:,}|
+    |Total number of weekly consensus meetings|{DATASET.total_meetings:,}|
     |Total number of unique members|{DATASET.total_unique_members:,}|
     |Average number of attendees per meeting|{ATTENDANCE_STATS.mean:.0f} $\pm$ {ATTENDANCE_STATS.standard_deviation:.0f}|
     |Average number of meetings attended by a unique member|{ATTENDANCE_CONSISTENCY_STATS.mean:.0f} $\pm$ {ATTENDANCE_CONSISTENCY_STATS.standard_deviation:.0f}|
@@ -92,10 +94,17 @@ st.subheader('Attendance')
 column1, column2 = st.columns(2)
 
 with column1:
-    st.pyplot(PLOTS.attendance_vs_time)
+    df_member_new_and_returning = DATASET.df_member_new_and_returning
+    df_member_new_and_returning.index += 1
+    df_member_new_and_returning[
+        MEETING_DATE_COLUMN_NAME] = df_member_new_and_returning[
+            MEETING_DATE_COLUMN_NAME].dt.strftime('%b %d, %Y')
+    st.dataframe(df_member_new_and_returning)
 
 with column2:
-    st.pyplot(PLOTS.attendance_consistency_histogram)
+    with st.container():
+        st.pyplot(PLOTS.attendance_vs_time_stacked)
+        st.pyplot(PLOTS.attendance_consistency_histogram)
 
 st.header('Team Statistics')
 
@@ -110,7 +119,7 @@ with column1:
     st.dataframe(df_team_leader_board)
 
 with column2:
-    st.pyplot(PLOTS.accumulated_team_respect_vs_time)
+    st.pyplot(PLOTS.accumulated_team_respect_vs_time_stacked)
 
 column1, column2 = st.columns(2)
 

@@ -18,6 +18,7 @@
   - [DataFrame of Member Leaderboard](#dataframe-of-member-leaderboard)
   - [A Plots Object of Multiple Visualizations](#a-plots-object-of-multiple-visualizations)
   - [Plot of Attendance vs Time](#plot-of-attendance-vs-time)
+  - [DataFrame of New and Returning Members vs Time](#dataframe-of-new-and-returning-members-vs-time)
   - [Average Attendees per Meeting](#average-attendees-per-meeting)
   - [Plot of Consistency of Attendance](#plot-of-consistency-of-attendance)
   - [Average Consistency of Attendance](#average-consistency-of-attendance)
@@ -157,10 +158,12 @@ List the attributes of this `Dataset` object to see what properties and methods 
 
 
 
-    ['attendance_consistency_stats',
+    ['_get_new_member_filter_for_meeting_id',
+     'attendance_consistency_stats',
      'attendance_stats',
      'df',
      'df_member_leader_board',
+     'df_member_new_and_returning',
      'df_member_rank_by_attendance_count',
      'df_member_respect_by_meeting_date',
      'df_member_summary_stats_by_member_id',
@@ -168,8 +171,11 @@ List the attributes of this `Dataset` object to see what properties and methods 
      'df_team_representation_by_date',
      'df_team_respect_by_meeting_date',
      'from_csv',
+     'get_new_member_dataframe_for_meeting_id',
+     'get_returning_member_dataframe_for_meeting_id',
      'last_meeting_date',
      'team_representation_stats',
+     'total_meetings',
      'total_member_respect',
      'total_respect',
      'total_team_respect',
@@ -363,6 +369,18 @@ GitHubMarkdownDataFrame(dataset.df)
 
 
 ```python
+dataset.total_meetings
+```
+
+
+
+
+    11
+
+
+
+
+```python
 dataset.total_unique_members
 ```
 
@@ -505,9 +523,11 @@ List the attributes of this `Plots` object to see what properties and methods we
 
     ['accumulated_member_respect_vs_time',
      'accumulated_team_respect_vs_time',
+     'accumulated_team_respect_vs_time_stacked',
      'attendance_consistency_histogram',
      'attendance_count_vs_rank',
      'attendance_vs_time',
+     'attendance_vs_time_stacked',
      'dataset',
      'from_csv',
      'from_dataset',
@@ -519,16 +539,125 @@ List the attributes of this `Plots` object to see what properties and methods we
 
 Plot the attendance vs time for each weekly consensus meeting.
 
+The plot demonstrates that a relatively steady state has been reached where a core group of dedicated members is mixed with a steady stream of new participants as interest in Fractal Governance grows.
+
 
 ```python
-plots.attendance_vs_time
+plots.attendance_vs_time_stacked
 plt.show()
 ```
 
 
     
-![png](README_files/README_25_0.png)
+![png](README_files/README_26_0.png)
     
+
+
+### DataFrame of New and Returning Members vs Time
+
+Inspect the DataFrame of the attendance counts of new members vs returning members for each weekly consensus meeting.
+
+
+```python
+GitHubMarkdownDataFrame(dataset.df_member_new_and_returning)
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MeetingDate</th>
+      <th>MeetingID</th>
+      <th>NewMemberCount</th>
+      <th>ReturningMemberCount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-02-26</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-03-05</td>
+      <td>2</td>
+      <td>37</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2022-03-12</td>
+      <td>3</td>
+      <td>12</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2022-03-19</td>
+      <td>4</td>
+      <td>6</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2022-03-26</td>
+      <td>5</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2022-04-02</td>
+      <td>6</td>
+      <td>9</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2022-04-09</td>
+      <td>7</td>
+      <td>4</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2022-04-23</td>
+      <td>8</td>
+      <td>0</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2022-04-30</td>
+      <td>9</td>
+      <td>1</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2022-05-07</td>
+      <td>10</td>
+      <td>6</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2022-05-14</td>
+      <td>11</td>
+      <td>4</td>
+      <td>28</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 ### Average Attendees per Meeting
@@ -543,7 +672,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=32.63636363636363, standard_deviation=9.080448527167887)
+    Statistics(mean=32.64, standard_deviation=9.08)
 
 
 
@@ -559,7 +688,7 @@ plt.show()
 
 
     
-![png](README_files/README_31_0.png)
+![png](README_files/README_35_0.png)
     
 
 
@@ -575,7 +704,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=3.7010309278350517, standard_deviation=3.2247898783409394)
+    Statistics(mean=3.70, standard_deviation=3.22)
 
 
 
@@ -598,13 +727,9 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_by_meeting_date)
       <th></th>
       <th>AttendanceCount</th>
       <th>AccumulatedRespect</th>
-      <th>Mean</th>
-      <th>StandardDeviation</th>
     </tr>
     <tr>
       <th>MeetingDate</th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -614,78 +739,56 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_by_meeting_date)
       <th>2022-02-26</th>
       <td>10</td>
       <td>99</td>
-      <td>3.900000</td>
-      <td>1.663330</td>
     </tr>
     <tr>
       <th>2022-03-05</th>
       <td>46</td>
       <td>412</td>
-      <td>3.608696</td>
-      <td>1.679660</td>
     </tr>
     <tr>
       <th>2022-03-12</th>
       <td>38</td>
       <td>356</td>
-      <td>3.763158</td>
-      <td>1.601253</td>
     </tr>
     <tr>
       <th>2022-03-19</th>
       <td>33</td>
       <td>306</td>
-      <td>3.727273</td>
-      <td>1.625437</td>
     </tr>
     <tr>
       <th>2022-03-26</th>
       <td>33</td>
       <td>306</td>
-      <td>3.727273</td>
-      <td>1.625437</td>
     </tr>
     <tr>
       <th>2022-04-02</th>
       <td>39</td>
       <td>358</td>
-      <td>3.692308</td>
-      <td>1.640825</td>
     </tr>
     <tr>
       <th>2022-04-09</th>
       <td>33</td>
       <td>306</td>
-      <td>3.727273</td>
-      <td>1.625437</td>
     </tr>
     <tr>
       <th>2022-04-23</th>
       <td>28</td>
       <td>256</td>
-      <td>3.678571</td>
-      <td>1.656716</td>
     </tr>
     <tr>
       <th>2022-04-30</th>
       <td>29</td>
       <td>258</td>
-      <td>3.586207</td>
-      <td>1.701202</td>
     </tr>
     <tr>
       <th>2022-05-07</th>
       <td>38</td>
       <td>356</td>
-      <td>3.763158</td>
-      <td>1.601253</td>
     </tr>
     <tr>
       <th>2022-05-14</th>
       <td>32</td>
       <td>304</td>
-      <td>3.812500</td>
-      <td>1.574750</td>
     </tr>
   </tbody>
 </table>
@@ -705,7 +808,7 @@ plt.show()
 
 
     
-![png](README_files/README_40_0.png)
+![png](README_files/README_44_0.png)
     
 
 
@@ -832,13 +935,13 @@ Plot the accumulated team Respect of the Genesis fractal teams vs time.
 
 
 ```python
-plots.accumulated_team_respect_vs_time
+plots.accumulated_team_respect_vs_time_stacked
 plt.show()
 ```
 
 
     
-![png](README_files/README_49_0.png)
+![png](README_files/README_53_0.png)
     
 
 
@@ -913,7 +1016,7 @@ plt.show()
 
 
     
-![png](README_files/README_58_0.png)
+![png](README_files/README_62_0.png)
     
 
 
@@ -929,7 +1032,7 @@ dataset.team_representation_stats
 
 
 
-    Statistics(mean=0.2237558834087872, standard_deviation=0.06970405515216217)
+    Statistics(mean=0.22, standard_deviation=0.07)
 
 
 
@@ -1204,7 +1307,7 @@ plt.show()
 
 
     
-![png](README_files/README_72_0.png)
+![png](README_files/README_76_0.png)
     
 
 
