@@ -14,7 +14,11 @@ import fractal_governance.util
 
 ACCUMULATED_RANK_COLUMN_NAME = 'AccumulatedRank'
 ACCUMULATED_RESPECT_COLUMN_NAME = 'AccumulatedRespect'
+ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME = 'AccumulatedRespectNewMember'
+ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME = 'AccumulatedRespectReturningMember'
 ATTENDANCE_COUNT_COLUMN_NAME = 'AttendanceCount'
+ATTENDANCE_COUNT_NEW_MEMBER_COLUMN_NAME = 'AttendanceCountNewMember'
+ATTENDANCE_COUNT_RETURNING_MEMBER_COLUMN_NAME = 'AttendanceCountReturningMember'
 MEAN_COLUMN_NAME = 'Mean'
 MEETING_DATE_COLUMN_NAME = 'MeetingDate'
 MEETING_ID_COLUMN_NAME = 'MeetingID'
@@ -41,9 +45,9 @@ class Dataset:
     df: pd.DataFrame
     df_member_summary_stats_by_member_id: pd.DataFrame
     df_member_rank_by_attendance_count: pd.DataFrame
-    df_member_respect_by_meeting_date: pd.DataFrame
+    df_member_respect_new_and_returning_by_meeting: pd.DataFrame
+    df_member_attendance_new_and_returning_by_meeting: pd.DataFrame
     df_member_leader_board: pd.DataFrame
-    df_member_new_and_returning: pd.DataFrame
     df_team_respect_by_meeting_date: pd.DataFrame
     df_team_representation_by_date: pd.DataFrame
     df_team_leader_board: pd.DataFrame
@@ -72,7 +76,7 @@ class Dataset:
     @property
     def total_meetings(self) -> int:
         """Return the total number weekly consensus meetings"""
-        return len(self.df.groupby('MeetingID'))
+        return len(self.df.groupby(MEETING_ID_COLUMN_NAME))
 
     @property
     def last_meeting_date(self) -> pd.Timestamp:
@@ -152,14 +156,6 @@ class Dataset:
             ATTENDANCE_COUNT_COLUMN_NAME).apply(
                 combined_statistics).reset_index()
 
-        df_member_respect_by_meeting_date = df.groupby(
-            MEETING_DATE_COLUMN_NAME).agg(
-                AttendanceCount=pd.NamedAgg(column=RESPECT_COLUMN_NAME,
-                                            aggfunc='count'),
-                AccumulatedRespect=pd.NamedAgg(column=RESPECT_COLUMN_NAME,
-                                               aggfunc='sum'),
-            )
-
         df_member_leader_board = df_member_summary_stats_by_member_id.join(
             df.groupby(MEMBER_ID_COLUMN_NAME).first()[[
                 MEMBER_NAME_COLUMN_NAME
@@ -198,17 +194,73 @@ class Dataset:
             df_member_summary_stats_by_member_id,
             df_member_rank_by_attendance_count=
             df_member_rank_by_attendance_count,
-            df_member_respect_by_meeting_date=df_member_respect_by_meeting_date,
+            df_member_respect_new_and_returning_by_meeting=
+            _create_df_member_respect_new_and_returning_by_meeting(df),
+            df_member_attendance_new_and_returning_by_meeting=
+            _create_df_member_attendance_new_and_returning_by_meeting(df),
             df_member_leader_board=df_member_leader_board,
-            df_member_new_and_returning=_create_df_member_new_and_returning(
-                df),
             df_team_respect_by_meeting_date=df_team_respect_by_meeting_date,
             df_team_representation_by_date=df_team_representation_by_date,
             df_team_leader_board=df_team_leader_board,
         )
 
 
-def _create_df_member_new_and_returning(df: pd.DataFrame) -> pd.DataFrame:  # pylint: disable=C0103
+def _create_df_member_respect_new_and_returning_by_meeting(
+        df: pd.DataFrame) -> pd.DataFrame:  # pylint: disable=C0103
+    """Return a DataFrame containing aggregate member attendance and respect for each meeting"""
+    # pylint: disable=R0914
+    meeting_dates = []
+    # pylint: enable=R0914
+    meeting_ids = []
+    # attendance_count = []
+    # attendance_count_new_member = []
+    # attendance_count_returning_member = []
+    accumulated_respect_total = []
+    accumulated_respect_new_member = []
+    accumulated_respect_returning_member = []
+    for ((meeting_date, meeting_id),
+         dfx) in df.groupby([MEETING_DATE_COLUMN_NAME,
+                             MEETING_ID_COLUMN_NAME]):
+        # attendance_count.append(len(dfx))
+        total_respect = dfx[RESPECT_COLUMN_NAME].sum()
+        accumulated_respect_total.append(total_respect)
+        df_previous = df[df[MEETING_DATE_COLUMN_NAME] < meeting_date]
+        df_filter = dfx[MEMBER_ID_COLUMN_NAME].isin(
+            df_previous[MEMBER_ID_COLUMN_NAME])
+        df_new_member = dfx[~df_filter]
+        df_returning_member = dfx[df_filter]
+        # attendance_count_new_member.append(len(df_new_member))
+        # attendance_count_returning_member.append(len(df_returning_member))
+        new_member_respect = df_new_member[RESPECT_COLUMN_NAME].sum()
+        returning_member_respect = df_returning_member[
+            RESPECT_COLUMN_NAME].sum()
+        meeting_dates.append(meeting_date)
+        meeting_ids.append(meeting_id)
+        accumulated_respect_new_member.append(new_member_respect)
+        accumulated_respect_returning_member.append(returning_member_respect)
+    return pd.DataFrame({
+        MEETING_DATE_COLUMN_NAME:
+        meeting_dates,
+        MEETING_ID_COLUMN_NAME:
+        meeting_ids,
+        # ATTENDANCE_COUNT_COLUMN_NAME:
+        # attendance_count,
+        # ATTENDANCE_COUNT_NEW_MEMBER_COLUMN_NAME:
+        # attendance_count_new_member,
+        # ATTENDANCE_COUNT_RETURNING_MEMBER_COLUMN_NAME:
+        # attendance_count_returning_member,
+        ACCUMULATED_RESPECT_COLUMN_NAME:
+        accumulated_respect_total,
+        ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME:
+        accumulated_respect_new_member,
+        ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME:
+        accumulated_respect_returning_member,
+    })
+
+
+def _create_df_member_attendance_new_and_returning_by_meeting(
+        df: pd.DataFrame) -> pd.DataFrame:  # pylint: disable=C0103
+    """Return a DataFrame containing aggregate member attendance for each meeting"""
     meeting_dates = []
     meeting_ids = []
     new_member_counts = []

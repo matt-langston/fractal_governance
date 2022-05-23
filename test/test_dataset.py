@@ -18,7 +18,10 @@ class TestDataset(unittest.TestCase):
         self.assertIsNotNone(dataset.df)
         self.assertIsNotNone(dataset.df_member_summary_stats_by_member_id)
         self.assertIsNotNone(dataset.df_member_rank_by_attendance_count)
-        self.assertIsNotNone(dataset.df_member_respect_by_meeting_date)
+        self.assertIsNotNone(
+            dataset.df_member_respect_new_and_returning_by_meeting)
+        self.assertIsNotNone(
+            dataset.df_member_attendance_new_and_returning_by_meeting)
         self.assertIsNotNone(dataset.df_member_leader_board)
         self.assertIsNotNone(dataset.df_team_respect_by_meeting_date)
         self.assertIsNotNone(dataset.df_team_representation_by_date)

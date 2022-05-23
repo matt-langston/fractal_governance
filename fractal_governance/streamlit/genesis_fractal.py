@@ -75,7 +75,7 @@ with column1:
     # pylint: enable=C0301,W1401
 
 with column2:
-    st.pyplot(PLOTS.accumulated_member_respect_vs_time)
+    st.pyplot(PLOTS.accumulated_member_respect_vs_time_stacked)
 
 CMAP = sns.light_palette("#34A853", as_cmap=True)
 
@@ -94,12 +94,12 @@ st.subheader('Attendance')
 column1, column2 = st.columns(2)
 
 with column1:
-    df_member_new_and_returning = DATASET.df_member_new_and_returning
-    df_member_new_and_returning.index += 1
-    df_member_new_and_returning[
-        MEETING_DATE_COLUMN_NAME] = df_member_new_and_returning[
+    df_member_attendance_new_and_returning_by_meeting = DATASET.df_member_attendance_new_and_returning_by_meeting  #pylint: disable=C0301
+    df_member_attendance_new_and_returning_by_meeting.index += 1
+    df_member_attendance_new_and_returning_by_meeting[
+        MEETING_DATE_COLUMN_NAME] = df_member_attendance_new_and_returning_by_meeting[
             MEETING_DATE_COLUMN_NAME].dt.strftime('%b %d, %Y')
-    st.dataframe(df_member_new_and_returning)
+    st.dataframe(df_member_attendance_new_and_returning_by_meeting)
 
 with column2:
     with st.container():

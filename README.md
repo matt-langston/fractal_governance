@@ -18,12 +18,12 @@
   - [DataFrame of Member Leaderboard](#dataframe-of-member-leaderboard)
   - [A Plots Object of Multiple Visualizations](#a-plots-object-of-multiple-visualizations)
   - [Plot of Attendance vs Time](#plot-of-attendance-vs-time)
-  - [DataFrame of New and Returning Members vs Time](#dataframe-of-new-and-returning-members-vs-time)
+  - [DataFrame of New and Returning Member Attendance vs Time](#dataframe-of-new-and-returning-member-attendance-vs-time)
   - [Average Attendees per Meeting](#average-attendees-per-meeting)
   - [Plot of Consistency of Attendance](#plot-of-consistency-of-attendance)
   - [Average Consistency of Attendance](#average-consistency-of-attendance)
-  - [DataFrame of Member Respect Mined (or Earned) vs Time](#dataframe-of-member-respect-mined-or-earned-vs-time)
-  - [Plot of Accumulated Member Respect vs Time](#plot-of-accumulated-member-respect-vs-time)
+  - [DataFrame of New and Returning Member Respect Mined (or Earned) vs Time](#dataframe-of-new-and-returning-member-respect-mined-or-earned-vs-time)
+  - [Plot of Accumulated New and Returning Member Respect vs Time](#plot-of-accumulated-new-and-returning-member-respect-vs-time)
   - [Total Accumulated Member Respect](#total-accumulated-member-respect)
   - [DataFrame of Team Respect Mined (or Earned) vs Time](#dataframe-of-team-respect-mined-or-earned-vs-time)
   - [Plot of Accumulated Team Respect vs Time](#plot-of-accumulated-team-respect-vs-time)
@@ -162,10 +162,10 @@ List the attributes of this `Dataset` object to see what properties and methods 
      'attendance_consistency_stats',
      'attendance_stats',
      'df',
+     'df_member_attendance_new_and_returning_by_meeting',
      'df_member_leader_board',
-     'df_member_new_and_returning',
      'df_member_rank_by_attendance_count',
-     'df_member_respect_by_meeting_date',
+     'df_member_respect_new_and_returning_by_meeting',
      'df_member_summary_stats_by_member_id',
      'df_team_leader_board',
      'df_team_representation_by_date',
@@ -522,6 +522,7 @@ List the attributes of this `Plots` object to see what properties and methods we
 
 
     ['accumulated_member_respect_vs_time',
+     'accumulated_member_respect_vs_time_stacked',
      'accumulated_team_respect_vs_time',
      'accumulated_team_respect_vs_time_stacked',
      'attendance_consistency_histogram',
@@ -553,13 +554,13 @@ plt.show()
     
 
 
-### DataFrame of New and Returning Members vs Time
+### DataFrame of New and Returning Member Attendance vs Time
 
 Inspect the DataFrame of the attendance counts of new members vs returning members for each weekly consensus meeting.
 
 
 ```python
-GitHubMarkdownDataFrame(dataset.df_member_new_and_returning)
+GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meeting)
 ```
 
 
@@ -708,13 +709,13 @@ dataset.attendance_consistency_stats
 
 
 
-### DataFrame of Member Respect Mined (or Earned) vs Time
+### DataFrame of New and Returning Member Respect Mined (or Earned) vs Time
 
 Inspect the DataFrame for the total amount of member Respect mined (or earned) for each weekly consensus meeting.
 
 
 ```python
-GitHubMarkdownDataFrame(dataset.df_member_respect_by_meeting_date)
+GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting)
 ```
 
 
@@ -725,70 +726,101 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_by_meeting_date)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>AttendanceCount</th>
-      <th>AccumulatedRespect</th>
-    </tr>
-    <tr>
       <th>MeetingDate</th>
-      <th></th>
-      <th></th>
+      <th>MeetingID</th>
+      <th>AccumulatedRespect</th>
+      <th>AccumulatedRespectNewMember</th>
+      <th>AccumulatedRespectReturningMember</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2022-02-26</th>
-      <td>10</td>
+      <th>0</th>
+      <td>2022-02-26</td>
+      <td>1</td>
       <td>99</td>
+      <td>99</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>2022-03-05</th>
-      <td>46</td>
+      <th>1</th>
+      <td>2022-03-05</td>
+      <td>2</td>
       <td>412</td>
+      <td>296</td>
+      <td>116</td>
     </tr>
     <tr>
-      <th>2022-03-12</th>
-      <td>38</td>
+      <th>2</th>
+      <td>2022-03-12</td>
+      <td>3</td>
       <td>356</td>
+      <td>76</td>
+      <td>280</td>
     </tr>
     <tr>
-      <th>2022-03-19</th>
-      <td>33</td>
+      <th>3</th>
+      <td>2022-03-19</td>
+      <td>4</td>
       <td>306</td>
+      <td>49</td>
+      <td>257</td>
     </tr>
     <tr>
-      <th>2022-03-26</th>
-      <td>33</td>
+      <th>4</th>
+      <td>2022-03-26</td>
+      <td>5</td>
       <td>306</td>
+      <td>66</td>
+      <td>240</td>
     </tr>
     <tr>
-      <th>2022-04-02</th>
-      <td>39</td>
+      <th>5</th>
+      <td>2022-04-02</td>
+      <td>6</td>
       <td>358</td>
+      <td>44</td>
+      <td>314</td>
     </tr>
     <tr>
-      <th>2022-04-09</th>
-      <td>33</td>
+      <th>6</th>
+      <td>2022-04-09</td>
+      <td>7</td>
       <td>306</td>
+      <td>14</td>
+      <td>292</td>
     </tr>
     <tr>
-      <th>2022-04-23</th>
-      <td>28</td>
+      <th>7</th>
+      <td>2022-04-23</td>
+      <td>8</td>
+      <td>256</td>
+      <td>0</td>
       <td>256</td>
     </tr>
     <tr>
-      <th>2022-04-30</th>
-      <td>29</td>
+      <th>8</th>
+      <td>2022-04-30</td>
+      <td>9</td>
       <td>258</td>
+      <td>2</td>
+      <td>256</td>
     </tr>
     <tr>
-      <th>2022-05-07</th>
-      <td>38</td>
+      <th>9</th>
+      <td>2022-05-07</td>
+      <td>10</td>
       <td>356</td>
+      <td>53</td>
+      <td>303</td>
     </tr>
     <tr>
-      <th>2022-05-14</th>
-      <td>32</td>
+      <th>10</th>
+      <td>2022-05-14</td>
+      <td>11</td>
       <td>304</td>
+      <td>12</td>
+      <td>292</td>
     </tr>
   </tbody>
 </table>
@@ -796,13 +828,13 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_by_meeting_date)
 
 
 
-### Plot of Accumulated Member Respect vs Time
+### Plot of Accumulated New and Returning Member Respect vs Time
 
 Plot the accumulated member Respect of the Genesis fractal vs time.
 
 
 ```python
-plots.accumulated_member_respect_vs_time
+plots.accumulated_member_respect_vs_time_stacked
 plt.show()
 ```
 

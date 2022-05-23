@@ -15,6 +15,8 @@ import scipy.stats
 # 2nd party
 import fractal_governance.dataset
 from fractal_governance.dataset import ACCUMULATED_RESPECT_COLUMN_NAME
+from fractal_governance.dataset import ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME
+from fractal_governance.dataset import ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME
 from fractal_governance.dataset import ATTENDANCE_COUNT_COLUMN_NAME
 from fractal_governance.dataset import MEAN_COLUMN_NAME
 from fractal_governance.dataset import MEETING_DATE_COLUMN_NAME
@@ -34,8 +36,10 @@ class Plots:
     @property
     def attendance_vs_time(self) -> matplotlib.figure.Figure:
         """Return a plot of attendance vs time"""
-        df = self.dataset.df  # pylint: disable=C0103
-        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)  # pylint: disable=C0103
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df
+        # pylint: enable=C0103
         group_by = df.groupby(MEETING_DATE_COLUMN_NAME).size()
         group_by.plot.bar(xlabel='Meeting Date', ylabel='Attendees')
         xaxis_labels = [
@@ -53,7 +57,7 @@ class Plots:
         """Return a stacked plot of attendance vs time"""
         # pylint: disable=C0103
         fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
-        df = self.dataset.df_member_new_and_returning
+        df = self.dataset.df_member_attendance_new_and_returning_by_meeting
         df = df.set_index(MEETING_DATE_COLUMN_NAME)
         df = df[[
             NEW_MEMBER_COUNT_COLUMN_NAME, RETURNING_MEMBER_COUNT_COLUMN_NAME
@@ -76,9 +80,11 @@ class Plots:
     @property
     def attendance_consistency_histogram(self) -> matplotlib.figure.Figure:
         """Return a plot of attendance histogram"""
-        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)  # pylint: disable=C0103
-        self.dataset.df_member_leader_board[ATTENDANCE_COUNT_COLUMN_NAME].hist(
-        )
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_member_leader_board
+        # pylint: enable=C0103
+        df[ATTENDANCE_COUNT_COLUMN_NAME].hist()
         ax.set_title('Consistency of Attendance')
         ax.set_xlabel('Total Meetings Attended by a Unique Member')
         ax.set_ylabel('Counts')
@@ -86,11 +92,13 @@ class Plots:
 
     @property
     def accumulated_member_respect_vs_time(self) -> matplotlib.figure.Figure:
-        """Return a plot of the accumulated respect vs time"""
-        df_member_respect_by_meeting_date = self.dataset.df_member_respect_by_meeting_date
-        accumulated_respect = df_member_respect_by_meeting_date[
-            ACCUMULATED_RESPECT_COLUMN_NAME].cumsum()
-        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)  # pylint: disable=C0103
+        """Return a plot of the accumulated member Respect vs time"""
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_member_respect_new_and_returning_by_meeting.set_index(
+            MEETING_DATE_COLUMN_NAME)
+        # pylint: enable=C0103
+        accumulated_respect = df[ACCUMULATED_RESPECT_COLUMN_NAME].cumsum()
         accumulated_respect.plot.bar(xlabel='Meeting Date',
                                      ylabel='Accumulated Respect')
         xaxis_labels = [
@@ -104,14 +112,45 @@ class Plots:
         return fig
 
     @property
+    def accumulated_member_respect_vs_time_stacked(
+            self) -> matplotlib.figure.Figure:
+        """Return a stacked plot of accumulated member Respect vs time"""
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_member_respect_new_and_returning_by_meeting
+        df = df.set_index(MEETING_DATE_COLUMN_NAME)
+        df = df[[
+            ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME,
+            ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME
+        ]]
+        # pylint: enable=C0103
+        df[ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME] = df[
+            ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME].cumsum()
+        df[ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME] = df[
+            ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME].cumsum()
+        df.plot.bar(ax=ax, stacked=True)
+        ax.set_xlabel('Meeting Date')
+        ax.set_ylabel('Accumulated Member Respect')
+        xaxis_labels = [
+            meeting_date.strftime('%b %d %Y') for meeting_date in df.index
+        ]
+        ax.xaxis.set_major_formatter(
+            matplotlib.ticker.FixedFormatter(xaxis_labels))
+        ax.set_title('Accumulated Member Respect vs Time')
+        ax.legend(['Returning Members', 'New Members'])
+        plt.gcf().autofmt_xdate()
+        return fig
+
+    @property
     def accumulated_team_respect_vs_time(self) -> matplotlib.figure.Figure:
-        """Return a plot of the accumulated team vs time"""
-        df_team_respect_by_meeting_date = self.dataset.df_team_respect_by_meeting_date
-        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)  # pylint: disable=C0103
+        """Return a plot of the accumulated team Respect vs time"""
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_team_respect_by_meeting_date
+        # pylint: enable=C0103
         x_axis_offset = pd.Timedelta(-0.3, unit='d')
         x_axis_width = pd.Timedelta(1, unit='d')
-        for team_name, dfx in df_team_respect_by_meeting_date.groupby(
-                TEAM_NAME_COLUMN_NAME):
+        for team_name, dfx in df.groupby(TEAM_NAME_COLUMN_NAME):
             color = next(ax._get_lines.prop_cycler)['color']  # pylint: disable=W0212
             ax.bar(
                 dfx[MEETING_DATE_COLUMN_NAME] + x_axis_offset,
@@ -131,14 +170,15 @@ class Plots:
     @property
     def accumulated_team_respect_vs_time_stacked(
             self) -> matplotlib.figure.Figure:
-        """Return a plot of the accumulated team vs time"""
+        """Return a stacked plot of the accumulated team Respect vs time"""
         # pylint: disable=C0103
         fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
         df = self.dataset.df_team_respect_by_meeting_date.set_index(
             MEETING_DATE_COLUMN_NAME)
         df = df.pivot(columns=TEAM_NAME_COLUMN_NAME)
         df = df[pd.MultiIndex.from_product(
-            [['AccumulatedRespect'], self.dataset.df_team_leader_board.index])]
+            [[ACCUMULATED_RESPECT_COLUMN_NAME],
+             self.dataset.df_team_leader_board.index])]
         # pylint: enable=C0103
         df.plot.bar(ax=ax, stacked=True)
         ax.set_xlabel('Meeting Date')
@@ -159,13 +199,13 @@ class Plots:
     @property
     def team_representation_vs_time(self) -> matplotlib.figure.Figure:
         """Return a plot of the team representation vs time"""
-        df_team_representation_by_date = self.dataset.df_team_representation_by_date
-        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)  # pylint: disable=C0103
-        df_team_representation_by_date.plot.bar(xlabel='Meeting Date',
-                                                ylabel='Team Representation')
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_team_representation_by_date
+        # pylint: enable=C0103
+        df.plot.bar(xlabel='Meeting Date', ylabel='Team Representation')
         xaxis_labels = [
-            meeting_date.strftime('%b %d %Y')
-            for meeting_date in df_team_representation_by_date.index
+            meeting_date.strftime('%b %d %Y') for meeting_date in df.index
         ]
         ax.xaxis.set_major_formatter(
             matplotlib.ticker.FixedFormatter(xaxis_labels))
@@ -176,14 +216,13 @@ class Plots:
     @property
     def attendance_count_vs_rank(self) -> matplotlib.figure.Figure:
         """Plot the attendance count vs rank"""
-        df_member_rank_by_attendance_count = self.dataset.df_member_rank_by_attendance_count
-
-        x = df_member_rank_by_attendance_count[ATTENDANCE_COUNT_COLUMN_NAME]  # pylint: disable=C0103
-        y = df_member_rank_by_attendance_count[MEAN_COLUMN_NAME]  # pylint: disable=C0103
-        yerr = df_member_rank_by_attendance_count[
-            STANDARD_DEVIATION_COLUMN_NAME]
-
-        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)  # pylint: disable=C0103
+        # pylint: disable=C0103
+        fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
+        df = self.dataset.df_member_rank_by_attendance_count
+        x = df[ATTENDANCE_COUNT_COLUMN_NAME]
+        y = df[MEAN_COLUMN_NAME]
+        yerr = df[STANDARD_DEVIATION_COLUMN_NAME]
+        # pylint: enable=C0103
         ax.errorbar(
             x=x,
             y=y,
