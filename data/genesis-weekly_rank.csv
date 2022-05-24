@@ -250,7 +250,7 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 249,nudimar,Nuno Marcelino,7,6,4,,
 250,nudimar,Nuno Marcelino,9,4,1,,
 251,nudimar,Nuno Marcelino,10,7,3,,
-252,pic,Pascal Ngu Cho,10,3,4,,
+252,pnc,Pascal Ngu Cho,10,3,4,,
 253,pnc,Pascal Ngu Cho,2,4,5,,
 254,pnc,Pascal Ngu Cho,3,1,2,,
 255,pnc,Pascal Ngu Cho,4,2,4,,
@@ -327,7 +327,7 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 326,wildwex,Gregory Wexler,10,5,6,1,Team fractally
 327,zhenek,Евгений Чирочкин,4,4,3,,
 328,wildwex,Gregory Wexler,11,1,6,1,Team fractally
-329,pic,Pascal Ngu Cho,11,1,5,,
+329,pnc,Pascal Ngu Cho,11,1,5,,
 330,aguerrido,Jorge Ramos,11,1,4,,
 331,dphillippi,Duane Phillippi,11,1,3,,
 332,nudimar,Nuno Marcelino,11,1,2,,
@@ -358,3 +358,38 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 357,jaytaylor-node,Jay Taylor,11,6,3,3,Fractally in Orbit
 358,douglasjames,Douglas Butner,11,6,2,,
 359,willspatrick,,11,6,1,,
+360,dan,Daniel Larimer,12,1,6,1,Team fractally
+361,mattlangston,Matt Langston,12,1,5,,
+362,dansingjoy,Dan Singjoy,12,1,4,,
+363,gonflosca,Oscar Gonzalez,12,1,3,2,EOS Translation Foundation
+364,nathanielherman,Nathaniel Herman,12,1,2,,
+365,douglasjames,Douglas Butner,12,1,1,,
+366,johnjwilliamson,,12,2,6,,
+367,wildwex,Gregory Wexler,12,2,5,1,Team fractally
+368,pnc,Pascal Ngu Cho,12,2,4,4,fractally francophonie
+369,lionflash,Felix Ruiz,12,2,3,,
+370,fokenfa,Fabrice,12,2,2,,
+371,hachtu,Mark Scheer,12,3,6,2,EOS Translation Foundation
+372,atma.love,Atma Das,12,3,5,,
+373,berliangor,,12,3,4,,
+374,amih,Ami Heines,12,3,3,,
+375,mikelennie,Lennie Niit,12,3,2,,
+376,sim31,Tadas Vaitiekunas,12,3,1,,
+377,novacryptollc,Patrick Bernard Schmid,12,4,6,,
+378,daodejing,Jason Jenkins,12,4,5,,
+379,jaytaylor-node,Jay Taylor,12,4,4,3,Fractally in Orbit
+380,jrichardliston,,12,4,3,,
+381,highsteam1900,,12,4,2,,
+382,grahapaaaaa,,12,4,1,,
+383,val,Valentine Zavgorodnev,12,5,6,1,Team fractally
+384,jseymour,Joshua Seymour,12,5,5,,
+385,machnbirdsparo,Marco Gonzalez,12,5,4,,
+386,cryptotokens,,12,5,3,,
+387,nudimar,Nuno Marcelino,12,5,2,,
+388,cacxyz,,12,5,1,,
+389,doingitright,Brandon Fancher,12,6,6,1,Team fractally
+390,dphillippi,Duane Phillippi,12,6,5,,
+391,tmess,Toby Messier,12,6,4,3,Fractally in Orbit
+392,shakhruz,Shakhruz Ashirov,12,6,3,2,EOS Translation Foundation
+393,drwu,Doug Wu,12,6,2,2,EOS Translation Foundation
+394,drew-bop,Andrew Ware,12,6,1,,

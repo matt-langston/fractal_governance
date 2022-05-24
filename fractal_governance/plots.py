@@ -84,7 +84,7 @@ class Plots:
         fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
         df = self.dataset.df_member_leader_board
         # pylint: enable=C0103
-        df[ATTENDANCE_COUNT_COLUMN_NAME].hist()
+        df[ATTENDANCE_COUNT_COLUMN_NAME].hist(bins=self.dataset.total_meetings)
         ax.set_title('Consistency of Attendance')
         ax.set_xlabel('Total Meetings Attended by a Unique Member')
         ax.set_ylabel('Counts')
