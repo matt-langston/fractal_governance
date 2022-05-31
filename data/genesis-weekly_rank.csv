@@ -43,7 +43,7 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 42,chrisbarnes,Chris Barnes,4,4,6,,
 43,chrisbarnes,Chris Barnes,5,4,4,,
 44,chriswaxa,,7,2,2,,
-45,crypt.gm,Gavriel Shaw,4,5,5,,
+45,gavrielshaw,Gavriel Shaw,4,5,5,,
 46,cryptokens,Jordan Ackerman,5,5,4,,
 47,cryptokens,Jordan Ackerman,6,3,1,,
 48,cryptokens,Jordan Ackerman,10,1,4,,
@@ -170,7 +170,7 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 169,jessethan,Jesse Jaffe,4,1,4,,
 170,jessethan,Jesse Jaffe,6,5,6,,
 171,jessethan,Jesse Jaffe,9,3,5,,
-172,johnjwilliamson,,10,4,5,,
+172,johnjwilliamson,John Williamson,10,4,5,,
 173,jseymour,Joshua Seymour,1,1,3,,
 174,jseymour,Joshua Seymour,2,2,5,,
 175,jseymour,Joshua Seymour,3,1,4,,
@@ -291,7 +291,7 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 290,spencerhanson,Spencer Hanson,4,6,4,,
 291,spencerhanson,Spencer Hanson,6,7,3,,
 292,spencerhanson,Spencer Hanson,7,6,2,,
-293,stan,,10,1,6,,
+293,stan,Stan Larimer,10,1,6,,
 294,thomashallgren,Thomas Hallgren,5,6,6,1,Team fractally
 295,thomashallgren,Thomas Hallgren,7,3,5,1,Team fractally
 296,thomashallgren,Thomas Hallgren,8,1,6,1,Team fractally
@@ -331,11 +331,11 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 330,aguerrido,Jorge Ramos,11,1,4,,
 331,dphillippi,Duane Phillippi,11,1,3,,
 332,nudimar,Nuno Marcelino,11,1,2,,
-333,stan,,11,2,6,3,Fractally in Orbit
+333,stan,Stan Larimer,11,2,6,3,Fractally in Orbit
 334,thomashallgren,Thomas Hallgren,11,2,5,1,Team fractally
 335,gokulnk,Gokul NK,11,2,4,,
 336,jrichardliston,,11,2,3,,
-337,cacxyz,,11,2,2,,
+337,cacxyz,Chris Christian,11,2,2,,
 338,dan,Daniel Larimer,11,3,6,1,Team fractally
 339,dansingjoy,Dan Singjoy,11,3,5,,
 340,lionflash,Felix Ruiz,11,3,4,,
@@ -364,7 +364,7 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 363,gonflosca,Oscar Gonzalez,12,1,3,2,EOS Translation Foundation
 364,nathanielherman,Nathaniel Herman,12,1,2,,
 365,douglasjames,Douglas Butner,12,1,1,,
-366,johnjwilliamson,,12,2,6,,
+366,johnjwilliamson,John Williamson,12,2,6,,
 367,wildwex,Gregory Wexler,12,2,5,1,Team fractally
 368,pnc,Pascal Ngu Cho,12,2,4,4,fractally francophonie
 369,lionflash,Felix Ruiz,12,2,3,,
@@ -379,17 +379,52 @@ Index,MemberID,Name,MeetingID,Group,Rank,TeamID,TeamName
 378,daodejing,Jason Jenkins,12,4,5,,
 379,jaytaylor-node,Jay Taylor,12,4,4,3,Fractally in Orbit
 380,jrichardliston,,12,4,3,,
-381,highsteam1900,,12,4,2,,
-382,grahapaaaaa,,12,4,1,,
+381,highsteam1900,Tommy Ryan,12,4,2,,
+382,grahappa,,12,4,1,,
 383,val,Valentine Zavgorodnev,12,5,6,1,Team fractally
 384,jseymour,Joshua Seymour,12,5,5,,
 385,machnbirdsparo,Marco Gonzalez,12,5,4,,
 386,cryptotokens,,12,5,3,,
 387,nudimar,Nuno Marcelino,12,5,2,,
-388,cacxyz,,12,5,1,,
+388,cacxyz,Chris Christian,12,5,1,,
 389,doingitright,Brandon Fancher,12,6,6,1,Team fractally
 390,dphillippi,Duane Phillippi,12,6,5,,
 391,tmess,Toby Messier,12,6,4,3,Fractally in Orbit
 392,shakhruz,Shakhruz Ashirov,12,6,3,2,EOS Translation Foundation
 393,drwu,Doug Wu,12,6,2,2,EOS Translation Foundation
 394,drew-bop,Andrew Ware,12,6,1,,
+395,sim31,Tadas Vaitiekunas,13,1,6,,
+396,pnc,Pascal Ngu Cho,13,1,5,4,fractally francophonie
+397,lionflash,Felix Ruiz,13,1,4,,
+398,novacryptollc,Patrick Bernard Schmid,13,1,3,,
+399,machnbirdsparo,Marco Gonzalez,13,1,2,2,EOS Translation Foundation
+400,recentchats,Eric Binder,13,1,1,,
+401,mattlangston,Matt Langston,13,2,6,,
+402,thomashallgren,Thomas Hallgren,13,2,5,1,Team fractally
+403,stan,Stan Larimer,13,2,4,3,Fractally in Orbit
+404,daodejing,Jason Jenkins,13,2,3,,
+405,douglasjames,Douglas Butner,13,2,2,,
+406,luckyhahnryu,Hahn Ryu,13,2,1,,
+407,fractallymike,Mike Manfredi,13,3,6,1,Team fractally
+408,jseymour,Joshua Seymour,13,3,5,,
+409,tmess,Toby Messier,13,3,4,3,Fractally in Orbit
+410,jaytaylor-node,Jay Taylor,13,3,3,3,Fractally in Orbit
+411,mikelennie,Lennie Niit,13,3,2,,
+412,highsteam1900,Tommy Ryan,13,3,1,,
+413,dphillippi,Duane Phillippi,13,4,6,,
+414,drew-bop,Andrew Ware,13,4,5,,
+415,bishop3dcrea,Charles Bishop,13,4,4,4,fractally francophonie
+416,berliangor,,13,4,3,,
+417,sethatboid,,13,4,2,,
+418,aguerrido,Jorge Ramos,13,4,1,,
+419,dan,Daniel Larimer,13,5,6,1,Team fractally
+420,jamesmart,James Mart,13,5,5,1,Team fractally
+421,dansingjoy,Dan Singjoy,13,5,4,,
+422,gonflosca,Oscar Gonzalez,13,5,3,2,EOS Translation Foundation
+423,gavrielshaw,Gavriel Shaw,13,5,2,,
+424,doingitright,Brandon Fancher,13,6,6,1,Team fractally
+425,drwu,Doug Wu,13,6,5,2,EOS Translation Foundation
+426,wildwex,Gregory Wexler,13,6,4,1,Team fractally
+427,hachtu,Mark Scheer,13,6,3,2,EOS Translation Foundation
+428,val,Valentine Zavgorodnev,13,6,2,1,Team fractally
+429,shakhruz,Shakhruz Ashirov,13,6,1,2,EOS Translation Foundation
