@@ -333,81 +333,63 @@ GitHubMarkdownDataFrame(dataset.df)
     <tr>
       <th>495</th>
       <td>496</td>
-      <td>stan</td>
-      <td>Stan Larimer</td>
-      <td>15</td>
-      <td>6</td>
-      <td>5</td>
-      <td>3.0</td>
-      <td>Fractally in Orbit</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>11.0</td>
-      <td>2022-06-11</td>
+      <td>wildwex</td>
+      <td>Gregory Wexler</td>
       <td>13</td>
+      <td>6</td>
+      <td>4</td>
+      <td>1.0</td>
+      <td>Team fractally</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-05-28</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>496</th>
       <td>497</td>
-      <td>bishop3dcrea</td>
-      <td>Charles Bishop</td>
-      <td>15</td>
-      <td>6</td>
-      <td>4</td>
-      <td>4.0</td>
-      <td>fractally francophonie</td>
+      <td>wildwex</td>
+      <td>Gregory Wexler</td>
+      <td>14</td>
+      <td>3</td>
+      <td>5</td>
+      <td>1.0</td>
+      <td>Team fractally</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>12.0</td>
-      <td>2022-06-11</td>
-      <td>8</td>
+      <td>NaN</td>
+      <td>2022-06-04</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>497</th>
       <td>498</td>
-      <td>sim31</td>
-      <td>Tadas Vaitiekunas</td>
+      <td>wildwex</td>
+      <td>Gregory Wexler</td>
       <td>15</td>
-      <td>6</td>
       <td>3</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>Team fractally</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>5.0</td>
       <td>2022-06-11</td>
       <td>5</td>
     </tr>
     <tr>
       <th>498</th>
       <td>499</td>
-      <td>highsteam1900</td>
-      <td>Tommy Ryan</td>
-      <td>15</td>
-      <td>6</td>
-      <td>2</td>
+      <td>willspatrick</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-06-11</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>499</th>
-      <td>500</td>
-      <td>cryptokens</td>
-      <td>Jordan Ackerman</td>
-      <td>15</td>
+      <td>11</td>
       <td>6</td>
       <td>1</td>
       <td>NaN</td>
@@ -417,8 +399,26 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2022-06-11</td>
+      <td>2022-05-14</td>
       <td>2</td>
+    </tr>
+    <tr>
+      <th>499</th>
+      <td>500</td>
+      <td>zhenek</td>
+      <td>Евгений Чирочкин</td>
+      <td>4</td>
+      <td>4</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-03-19</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
