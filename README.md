@@ -212,6 +212,11 @@ GitHubMarkdownDataFrame(dataset.df)
       <th>Rank</th>
       <th>TeamID</th>
       <th>TeamName</th>
+      <th>Unnamed: 8</th>
+      <th>Unnamed: 9</th>
+      <th>Unnamed: 10</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
       <th>MeetingDate</th>
       <th>Respect</th>
     </tr>
@@ -227,6 +232,11 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>4</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>2022-03-05</td>
       <td>8</td>
     </tr>
@@ -238,6 +248,11 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>2</td>
       <td>2</td>
       <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>2022-03-05</td>
@@ -253,6 +268,11 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>2</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>2022-03-05</td>
       <td>3</td>
     </tr>
@@ -266,6 +286,11 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>2</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>2022-03-05</td>
       <td>3</td>
     </tr>
@@ -277,6 +302,11 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>2</td>
       <td>6</td>
       <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>2022-03-05</td>
@@ -294,75 +324,105 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>460</th>
-      <td>461</td>
-      <td>jamesmart</td>
-      <td>James Mart</td>
-      <td>14</td>
+      <th>495</th>
+      <td>496</td>
+      <td>stan</td>
+      <td>Stan Larimer</td>
+      <td>15</td>
       <td>6</td>
       <td>5</td>
-      <td>1.0</td>
-      <td>Team fractally</td>
-      <td>2022-06-04</td>
+      <td>3.0</td>
+      <td>Fractally in Orbit</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11.0</td>
+      <td>2022-06-11</td>
       <td>13</td>
     </tr>
     <tr>
-      <th>461</th>
-      <td>462</td>
-      <td>gonflosca</td>
-      <td>Oscar Gonzalez</td>
-      <td>14</td>
+      <th>496</th>
+      <td>497</td>
+      <td>bishop3dcrea</td>
+      <td>Charles Bishop</td>
+      <td>15</td>
       <td>6</td>
       <td>4</td>
-      <td>2.0</td>
-      <td>EOS Translation Foundation</td>
-      <td>2022-06-04</td>
+      <td>4.0</td>
+      <td>fractally francophonie</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>2022-06-11</td>
       <td>8</td>
     </tr>
     <tr>
-      <th>462</th>
-      <td>463</td>
-      <td>daodejing</td>
-      <td>Jason Jenkins</td>
-      <td>14</td>
+      <th>497</th>
+      <td>498</td>
+      <td>sim31</td>
+      <td>Tadas Vaitiekunas</td>
+      <td>15</td>
       <td>6</td>
       <td>3</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2022-06-04</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-06-11</td>
       <td>5</td>
     </tr>
     <tr>
-      <th>463</th>
-      <td>464</td>
-      <td>stan</td>
-      <td>Stan Larimer</td>
-      <td>14</td>
+      <th>498</th>
+      <td>499</td>
+      <td>highsteam1900</td>
+      <td>Tommy Ryan</td>
+      <td>15</td>
       <td>6</td>
       <td>2</td>
-      <td>3.0</td>
-      <td>Fractally in Orbit</td>
-      <td>2022-06-04</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-06-11</td>
       <td>3</td>
     </tr>
     <tr>
-      <th>464</th>
-      <td>465</td>
-      <td>aireck1</td>
-      <td>NaN</td>
-      <td>14</td>
+      <th>499</th>
+      <td>500</td>
+      <td>cryptokens</td>
+      <td>Jordan Ackerman</td>
+      <td>15</td>
       <td>6</td>
       <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2022-06-04</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022-06-11</td>
       <td>2</td>
     </tr>
   </tbody>
 </table>
-<p>465 rows × 10 columns</p>
+<p>500 rows × 15 columns</p>
 </div>
 
 
@@ -375,7 +435,7 @@ dataset.total_meetings
 
 
 
-    14
+    15
 
 
 
@@ -387,7 +447,7 @@ dataset.total_unique_members
 
 
 
-    105
+    106
 
 
 
@@ -420,81 +480,81 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <th>1</th>
       <td>dan</td>
       <td>Daniel Larimer</td>
-      <td>76</td>
-      <td>257</td>
-      <td>13</td>
+      <td>82</td>
+      <td>278</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>2</th>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
-      <td>70</td>
-      <td>202</td>
-      <td>14</td>
+      <td>74</td>
+      <td>210</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>3</th>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
-      <td>69</td>
-      <td>212</td>
-      <td>13</td>
+      <td>72</td>
+      <td>217</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>4</th>
       <td>jseymour</td>
       <td>Joshua Seymour</td>
-      <td>64</td>
-      <td>169</td>
-      <td>14</td>
+      <td>69</td>
+      <td>182</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>5</th>
       <td>hachtu</td>
       <td>Mark Scheer</td>
-      <td>54</td>
-      <td>152</td>
-      <td>11</td>
+      <td>60</td>
+      <td>173</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>6</th>
       <td>novacryptollc</td>
       <td>Patrick Bernard Schmid</td>
-      <td>53</td>
-      <td>135</td>
-      <td>12</td>
+      <td>56</td>
+      <td>140</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>7</th>
       <td>pnc</td>
       <td>Pascal Ngu Cho</td>
-      <td>50</td>
-      <td>107</td>
-      <td>13</td>
+      <td>54</td>
+      <td>115</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>dphillippi</td>
-      <td>Duane Phillippi</td>
-      <td>49</td>
-      <td>114</td>
+      <td>mattlangston</td>
+      <td>Matt Langston</td>
+      <td>54</td>
+      <td>136</td>
       <td>13</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>mattlangston</td>
-      <td>Matt Langston</td>
-      <td>48</td>
-      <td>115</td>
-      <td>12</td>
+      <td>dphillippi</td>
+      <td>Duane Phillippi</td>
+      <td>52</td>
+      <td>119</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>10</th>
       <td>doingitright</td>
       <td>Brandon Fancher</td>
-      <td>46</td>
-      <td>155</td>
-      <td>8</td>
+      <td>51</td>
+      <td>168</td>
+      <td>9</td>
     </tr>
   </tbody>
 </table>
@@ -676,6 +736,13 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
       <td>4</td>
       <td>32</td>
     </tr>
+    <tr>
+      <th>14</th>
+      <td>2022-06-11</td>
+      <td>15</td>
+      <td>1</td>
+      <td>34</td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -694,7 +761,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=33.21, standard_deviation=8.05)
+    Statistics(mean=33.33, standard_deviation=7.77)
 
 
 
@@ -726,7 +793,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=4.43, standard_deviation=4.25)
+    Statistics(mean=4.72, standard_deviation=4.60)
 
 
 
@@ -867,6 +934,14 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting)
       <td>12</td>
       <td>300</td>
     </tr>
+    <tr>
+      <th>14</th>
+      <td>2022-06-11</td>
+      <td>15</td>
+      <td>310</td>
+      <td>3</td>
+      <td>307</td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -901,7 +976,7 @@ dataset.total_member_respect
 
 
 
-    4249
+    4559
 
 
 
@@ -972,105 +1047,129 @@ GitHubMarkdownDataFrame(dataset.df_team_respect_by_meeting_date)
     </tr>
     <tr>
       <th>7</th>
+      <td>EOS Translation Foundation</td>
+      <td>2022-06-11</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>8</th>
       <td>Fractally in Orbit</td>
       <td>2022-05-14</td>
       <td>29</td>
     </tr>
     <tr>
-      <th>8</th>
+      <th>9</th>
       <td>Fractally in Orbit</td>
       <td>2022-05-21</td>
       <td>16</td>
     </tr>
     <tr>
-      <th>9</th>
+      <th>10</th>
       <td>Fractally in Orbit</td>
       <td>2022-05-28</td>
       <td>21</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>11</th>
       <td>Fractally in Orbit</td>
       <td>2022-06-04</td>
       <td>21</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>12</th>
+      <td>Fractally in Orbit</td>
+      <td>2022-06-11</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>13</th>
       <td>Team fractally</td>
       <td>2022-03-26</td>
       <td>118</td>
     </tr>
     <tr>
-      <th>12</th>
+      <th>14</th>
       <td>Team fractally</td>
       <td>2022-04-02</td>
       <td>89</td>
     </tr>
     <tr>
-      <th>13</th>
+      <th>15</th>
       <td>Team fractally</td>
       <td>2022-04-09</td>
       <td>89</td>
     </tr>
     <tr>
-      <th>14</th>
+      <th>16</th>
       <td>Team fractally</td>
       <td>2022-04-23</td>
       <td>68</td>
     </tr>
     <tr>
-      <th>15</th>
+      <th>17</th>
       <td>Team fractally</td>
       <td>2022-04-30</td>
       <td>84</td>
     </tr>
     <tr>
-      <th>16</th>
+      <th>18</th>
       <td>Team fractally</td>
       <td>2022-05-07</td>
       <td>102</td>
     </tr>
     <tr>
-      <th>17</th>
+      <th>19</th>
       <td>Team fractally</td>
       <td>2022-05-14</td>
       <td>63</td>
     </tr>
     <tr>
-      <th>18</th>
+      <th>20</th>
       <td>Team fractally</td>
       <td>2022-05-21</td>
       <td>76</td>
     </tr>
     <tr>
-      <th>19</th>
+      <th>21</th>
       <td>Team fractally</td>
       <td>2022-05-28</td>
       <td>100</td>
     </tr>
     <tr>
-      <th>20</th>
+      <th>22</th>
       <td>Team fractally</td>
       <td>2022-06-04</td>
       <td>110</td>
     </tr>
     <tr>
-      <th>21</th>
+      <th>23</th>
+      <td>Team fractally</td>
+      <td>2022-06-11</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>24</th>
       <td>fractally francophonie</td>
       <td>2022-05-21</td>
       <td>8</td>
     </tr>
     <tr>
-      <th>22</th>
+      <th>25</th>
       <td>fractally francophonie</td>
       <td>2022-05-28</td>
       <td>21</td>
     </tr>
     <tr>
-      <th>23</th>
+      <th>26</th>
       <td>fractally francophonie</td>
       <td>2022-06-04</td>
       <td>5</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>fractally francophonie</td>
+      <td>2022-06-11</td>
+      <td>16</td>
     </tr>
   </tbody>
 </table>
@@ -1106,7 +1205,7 @@ dataset.total_team_respect
 
 
 
-    1207
+    1368
 
 
 
@@ -1137,19 +1236,19 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
   <tbody>
     <tr>
       <th>Team fractally</th>
-      <td>899</td>
+      <td>964</td>
     </tr>
     <tr>
       <th>EOS Translation Foundation</th>
-      <td>187</td>
+      <td>252</td>
     </tr>
     <tr>
       <th>Fractally in Orbit</th>
-      <td>87</td>
+      <td>102</td>
     </tr>
     <tr>
       <th>fractally francophonie</th>
-      <td>34</td>
+      <td>50</td>
     </tr>
   </tbody>
 </table>
@@ -1185,7 +1284,7 @@ dataset.team_representation_stats
 
 
 
-    Statistics(mean=0.28, standard_deviation=0.12)
+    Statistics(mean=0.30, standard_deviation=0.12)
 
 
 
@@ -1272,11 +1371,11 @@ GitHubMarkdownDataFrame(dataset.df_member_summary_stats_by_member_id)
     </tr>
     <tr>
       <th>westreich</th>
-      <td>1</td>
-      <td>3</td>
-      <td>5</td>
-      <td>3.000000</td>
-      <td>NaN</td>
+      <td>2</td>
+      <td>9</td>
+      <td>26</td>
+      <td>4.500000</td>
+      <td>2.121320</td>
     </tr>
     <tr>
       <th>wigglesthe3r</th>
@@ -1288,11 +1387,11 @@ GitHubMarkdownDataFrame(dataset.df_member_summary_stats_by_member_id)
     </tr>
     <tr>
       <th>wildwex</th>
-      <td>13</td>
-      <td>69</td>
-      <td>212</td>
-      <td>5.307692</td>
-      <td>0.947331</td>
+      <td>14</td>
+      <td>72</td>
+      <td>217</td>
+      <td>5.142857</td>
+      <td>1.099450</td>
     </tr>
     <tr>
       <th>willspatrick</th>
@@ -1312,7 +1411,7 @@ GitHubMarkdownDataFrame(dataset.df_member_summary_stats_by_member_id)
     </tr>
   </tbody>
 </table>
-<p>105 rows × 5 columns</p>
+<p>106 rows × 5 columns</p>
 </div>
 
 
@@ -1343,86 +1442,92 @@ GitHubMarkdownDataFrame(dataset.df_member_rank_by_attendance_count)
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>2.456522</td>
-      <td>1.277263</td>
+      <td>2.434783</td>
+      <td>1.276317</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>3.333333</td>
-      <td>1.847096</td>
+      <td>3.450000</td>
+      <td>1.848897</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>2.250000</td>
-      <td>1.422226</td>
+      <td>2.833333</td>
+      <td>1.834848</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>3.392857</td>
-      <td>1.547741</td>
+      <td>2.833333</td>
+      <td>1.464557</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5</td>
-      <td>3.050000</td>
-      <td>1.571958</td>
+      <td>3.200000</td>
+      <td>1.605139</td>
     </tr>
     <tr>
       <th>5</th>
       <td>6</td>
-      <td>3.642857</td>
-      <td>1.736571</td>
+      <td>4.333333</td>
+      <td>1.680336</td>
     </tr>
     <tr>
       <th>6</th>
       <td>7</td>
-      <td>3.821429</td>
-      <td>1.467009</td>
+      <td>3.119048</td>
+      <td>1.417700</td>
     </tr>
     <tr>
       <th>7</th>
       <td>8</td>
-      <td>4.708333</td>
-      <td>1.654484</td>
+      <td>4.500000</td>
+      <td>1.316561</td>
     </tr>
     <tr>
       <th>8</th>
       <td>9</td>
-      <td>3.555556</td>
-      <td>1.611467</td>
+      <td>4.629630</td>
+      <td>1.644294</td>
     </tr>
     <tr>
       <th>9</th>
       <td>10</td>
       <td>3.400000</td>
-      <td>1.505545</td>
+      <td>1.691608</td>
     </tr>
     <tr>
       <th>10</th>
       <td>11</td>
-      <td>3.818182</td>
-      <td>1.544273</td>
+      <td>3.681818</td>
+      <td>1.286796</td>
     </tr>
     <tr>
       <th>11</th>
       <td>12</td>
-      <td>4.208333</td>
-      <td>1.215092</td>
+      <td>3.888889</td>
+      <td>1.686548</td>
     </tr>
     <tr>
       <th>12</th>
       <td>13</td>
-      <td>4.076923</td>
-      <td>1.593255</td>
+      <td>3.974359</td>
+      <td>1.512878</td>
     </tr>
     <tr>
       <th>13</th>
       <td>14</td>
-      <td>4.238095</td>
-      <td>1.410925</td>
+      <td>4.166667</td>
+      <td>1.527525</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>4.177778</td>
+      <td>1.450531</td>
     </tr>
   </tbody>
 </table>
@@ -1453,11 +1558,11 @@ GitHubMarkdownDataFrame(dataset.df_member_rank_by_attendance_count[['AttendanceC
     <tr>
       <th>AttendanceCount</th>
       <td>1.000000</td>
-      <td>0.740931</td>
+      <td>0.657568</td>
     </tr>
     <tr>
       <th>Mean</th>
-      <td>0.740931</td>
+      <td>0.657568</td>
       <td>1.000000</td>
     </tr>
   </tbody>
