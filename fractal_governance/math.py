@@ -13,8 +13,8 @@ def fibonacci(n: int) -> int:  # pylint: disable=C0103
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
-def respect(rank: int) -> int:
-    """Return the units of Respect for the given rank"""
-    if rank < 1:
-        raise ValueError(f"rank={rank} must be >= 1")
-    return fibonacci(rank + 2)
+def respect(level: int) -> int:
+    """Return the units of Respect for the given level"""
+    if level < 1:
+        raise ValueError(f"level={level} must be >= 1")
+    return fibonacci(level + 2)

@@ -1,0 +1,543 @@
+Index,MemberID,Name,MeetingID,Group,Level,TeamID,TeamName
+1,00,Chace Eskimo,2,1,4,,
+2,01,Debraj Ghosh,2,2,3,,
+3,02,Nick Shock,2,2,2,,
+4,03,Jimmy Lee,2,3,2,,
+5,04,Abdulsalam Ridwa,2,6,1,,
+6,05,Jake Taylor,2,7,2,,
+7,06,Yucel Erdogan,2,7,1,,
+8,2luminaries1,Sebastian Beyer,3,3,3,,
+9,aguerrido,Jorge Ramos,7,5,3,,
+10,aguerrido,Jorge Ramos,11,1,4,,
+11,aguerrido,Jorge Ramos,13,4,1,,
+12,aguerrido,Jorge Ramos,14,4,4,,
+13,aguerrido,Jorge Ramos,15,5,4,,
+14,aguerrido,Jorge Ramos,16,7,3,,
+15,air-crypto,Hernan Arber,2,4,3,,
+16,air-crypto,Hernan Arber,3,7,4,,
+17,air-crypto,Hernan Arber,4,3,2,,
+18,air-crypto,Hernan Arber,10,2,2,,
+19,aireck1,,14,6,1,,
+20,amethystwizo,Amethyst Wizard,3,3,2,,
+21,amih,Ami Heines,1,2,4,,
+22,amih,Ami Heines,2,6,6,,
+23,amih,Ami Heines,3,2,4,,
+24,amih,Ami Heines,4,6,5,,
+25,amih,Ami Heines,5,5,4,,
+26,amih,Ami Heines,8,5,3,,
+27,amih,Ami Heines,9,3,2,,
+28,amih,Ami Heines,10,2,4,,
+29,amih,Ami Heines,11,4,4,,
+30,amih,Ami Heines,12,3,3,,
+31,amih,Ami Heines,14,4,5,,
+32,amih,Ami Heines,16,3,4,,
+33,anthonyrivers,,14,4,1,,
+34,atma.love,Atma Das,2,1,2,,
+35,atma.love,Atma Das,3,3,5,,
+36,atma.love,Atma Das,5,1,4,,
+37,atma.love,Atma Das,6,1,5,,
+38,atma.love,Atma Das,7,4,3,,
+39,atma.love,Atma Das,12,3,5,,
+40,beanz,Triona Cearbhaill,3,5,5,,
+41,berliangor,,10,6,2,,
+42,berliangor,,11,6,6,,
+43,berliangor,,12,3,4,,
+44,berliangor,,13,4,3,,
+45,berliangor,,14,2,6,,
+46,berliangor,,16,4,3,,
+47,bishop3dcrea,Charles Bishop,3,7,5,,
+48,bishop3dcrea,Charles Bishop,5,3,4,,
+49,bishop3dcrea,Charles Bishop,7,2,4,,
+50,bishop3dcrea,Charles Bishop,8,5,4,,
+51,bishop3dcrea,Charles Bishop,9,1,6,,
+52,bishop3dcrea,Charles Bishop,10,2,5,,
+53,bishop3dcrea,Charles Bishop,13,4,4,4,fractally francophonie
+54,bishop3dcrea,Charles Bishop,15,6,4,4,fractally francophonie
+55,bishop3dcrea,Charles Bishop,16,2,4,4,fractally francophonie
+56,brspma,Mauro Cesar,6,5,2,,
+57,bywire.com,Michael O'Sullivan,2,5,6,,
+58,cacxyz,Chris Christian,11,2,2,,
+59,cacxyz,Chris Christian,12,5,1,,
+60,cacxyz,Chris Christian,14,4,2,,
+61,cacxyz,Chris Christian,15,5,2,,
+62,cacxyz,Chris Christian,16,5,2,,
+63,chkmacdonald,Chuck MacDonald,2,2,6,,
+64,chkmacdonald,Chuck MacDonald,3,7,6,,
+65,chrisbarnes,Chris Barnes,2,1,5,,
+66,chrisbarnes,Chris Barnes,3,3,4,,
+67,chrisbarnes,Chris Barnes,4,4,6,,
+68,chrisbarnes,Chris Barnes,5,4,4,,
+69,chriswaxa,,7,2,2,,
+70,cryptokens,Jordan Ackerman,5,5,4,,
+71,cryptokens,Jordan Ackerman,6,3,1,,
+72,cryptokens,Jordan Ackerman,10,1,4,,
+73,cryptokens,Jordan Ackerman,11,5,2,,
+74,cryptokens,Jordan Ackerman,15,6,1,,
+75,cryptokens,Jordan Ackerman,16,7,2,,
+76,cryptosasuke,,7,1,2,,
+77,cryptotokens,,12,5,3,,
+78,dan,Daniel Larimer,1,1,6,,
+79,dan,Daniel Larimer,2,8,6,,
+80,dan,Daniel Larimer,3,2,6,,
+81,dan,Daniel Larimer,4,1,5,,
+82,dan,Daniel Larimer,5,6,5,1,Team fractally
+83,dan,Daniel Larimer,6,4,6,1,Team fractally
+84,dan,Daniel Larimer,7,3,6,1,Team fractally
+85,dan,Daniel Larimer,8,4,6,1,Team fractally
+86,dan,Daniel Larimer,10,2,6,1,Team fractally
+87,dan,Daniel Larimer,11,3,6,1,Team fractally
+88,dan,Daniel Larimer,12,1,6,1,Team fractally
+89,dan,Daniel Larimer,13,5,6,1,Team fractally
+90,dan,Daniel Larimer,14,3,6,1,Team fractally
+91,dan,Daniel Larimer,15,2,6,1,Team fractally
+92,dan,Daniel Larimer,16,1,2,1,Team fractally
+93,dan1am,,16,7,1,,
+94,dansingjoy,Dan Singjoy,1,1,4,,
+95,dansingjoy,Dan Singjoy,2,7,6,,
+96,dansingjoy,Dan Singjoy,3,5,6,,
+97,dansingjoy,Dan Singjoy,4,3,5,,
+98,dansingjoy,Dan Singjoy,5,4,5,,
+99,dansingjoy,Dan Singjoy,6,6,6,,
+100,dansingjoy,Dan Singjoy,7,4,6,,
+101,dansingjoy,Dan Singjoy,8,5,6,,
+102,dansingjoy,Dan Singjoy,9,2,6,,
+103,dansingjoy,Dan Singjoy,10,7,4,,
+104,dansingjoy,Dan Singjoy,11,3,5,,
+105,dansingjoy,Dan Singjoy,12,1,4,,
+106,dansingjoy,Dan Singjoy,13,5,4,,
+107,dansingjoy,Dan Singjoy,14,2,3,,
+108,dansingjoy,Dan Singjoy,15,2,4,,
+109,dansingjoy,Dan Singjoy,16,5,6,,
+110,daodejing,Jason Jenkins,4,6,2,,
+111,daodejing,Jason Jenkins,5,3,5,,
+112,daodejing,Jason Jenkins,6,4,5,,
+113,daodejing,Jason Jenkins,9,1,5,,
+114,daodejing,Jason Jenkins,10,7,6,,
+115,daodejing,Jason Jenkins,11,4,2,,
+116,daodejing,Jason Jenkins,12,4,5,,
+117,daodejing,Jason Jenkins,13,2,3,,
+118,daodejing,Jason Jenkins,14,6,3,,
+119,daodejing,Jason Jenkins,15,5,5,,
+120,daodejing,Jason Jenkins,16,3,5,,
+121,darioconeden,Dario Cesaro,1,2,6,,
+122,davidelvion3,David Elvion,6,7,1,,
+123,davidelvion3,David Elvion,10,6,1,,
+124,davidelvion3,David Elvion,16,1,1,,
+125,dbee,,6,6,1,,
+126,deniscarrier,Denis Carriere,3,4,5,,
+127,densteem,,6,4,2,,
+128,doingitright,Brandon Fancher,4,1,6,,
+129,doingitright,Brandon Fancher,5,2,6,1,Team fractally
+130,doingitright,Brandon Fancher,7,5,6,1,Team fractally
+131,doingitright,Brandon Fancher,9,5,4,1,Team fractally
+132,doingitright,Brandon Fancher,10,6,6,1,Team fractally
+133,doingitright,Brandon Fancher,12,6,6,1,Team fractally
+134,doingitright,Brandon Fancher,13,6,6,1,Team fractally
+135,doingitright,Brandon Fancher,14,4,6,1,Team fractally
+136,doingitright,Brandon Fancher,15,3,5,1,Team fractally
+137,doublewabbit,Filip Poverud,2,4,1,,
+138,douglasjames,Douglas Butner,2,1,3,,
+139,douglasjames,Douglas Butner,3,1,6,,
+140,douglasjames,Douglas Butner,4,3,3,,
+141,douglasjames,Douglas Butner,5,3,2,,
+142,douglasjames,Douglas Butner,6,1,6,,
+143,douglasjames,Douglas Butner,7,1,4,,
+144,douglasjames,Douglas Butner,8,2,6,,
+145,douglasjames,Douglas Butner,9,2,2,,
+146,douglasjames,Douglas Butner,10,4,6,,
+147,douglasjames,Douglas Butner,11,6,2,,
+148,douglasjames,Douglas Butner,12,1,1,,
+149,douglasjames,Douglas Butner,13,2,2,,
+150,douglasjames,Douglas Butner,14,1,2,,
+151,dphillippi,Duane Phillippi,2,5,5,,
+152,dphillippi,Duane Phillippi,3,6,3,,
+153,dphillippi,Duane Phillippi,4,1,2,,
+154,dphillippi,Duane Phillippi,5,2,4,,
+155,dphillippi,Duane Phillippi,6,5,4,,
+156,dphillippi,Duane Phillippi,7,1,3,,
+157,dphillippi,Duane Phillippi,8,4,1,,
+158,dphillippi,Duane Phillippi,9,4,5,,
+159,dphillippi,Duane Phillippi,10,5,5,,
+160,dphillippi,Duane Phillippi,11,1,3,,
+161,dphillippi,Duane Phillippi,12,6,5,,
+162,dphillippi,Duane Phillippi,13,4,6,,
+163,dphillippi,Duane Phillippi,14,5,3,,
+164,dphillippi,Duane Phillippi,15,4,3,,
+165,dphillippi,Duane Phillippi,16,6,4,2,EOS Translation Foundation
+166,drew-bop,Andrew Ware,2,5,3,,
+167,drew-bop,Andrew Ware,3,6,1,,
+168,drew-bop,Andrew Ware,4,6,3,,
+169,drew-bop,Andrew Ware,5,5,2,,
+170,drew-bop,Andrew Ware,6,5,5,,
+171,drew-bop,Andrew Ware,7,6,6,,
+172,drew-bop,Andrew Ware,12,6,1,,
+173,drew-bop,Andrew Ware,13,4,5,,
+174,drew-bop,Andrew Ware,15,1,2,,
+175,drew-bop,Andrew Ware,16,5,1,,
+176,drwu,Doug Wu,3,4,1,,
+177,drwu,Doug Wu,6,6,3,,
+178,drwu,Doug Wu,7,6,3,,
+179,drwu,Doug Wu,8,3,3,2,EOS Translation Foundation
+180,drwu,Doug Wu,9,4,4,2,EOS Translation Foundation
+181,drwu,Doug Wu,10,7,2,2,EOS Translation Foundation
+182,drwu,Doug Wu,11,3,3,2,EOS Translation Foundation
+183,drwu,Doug Wu,12,6,2,2,EOS Translation Foundation
+184,drwu,Doug Wu,13,6,5,2,EOS Translation Foundation
+185,drwu,Doug Wu,15,1,1,2,EOS Translation Foundation
+186,drwu,Doug Wu,16,7,6,2,EOS Translation Foundation
+187,eoschadrickm,Chadrick Mahaffey,3,5,2,,
+188,eoscrafati22,,4,5,3,,
+189,EOSMel,Melvin Pearce,1,2,5,,
+190,EOSMel,Melvin Pearce,2,3,5,,
+191,EOSMel,Melvin Pearce,7,1,1,,
+192,EOSMel,Melvin Pearce,8,4,2,,
+193,exodius,,6,1,4,,
+194,fokenfa,Fabrice,4,1,1,,
+195,fokenfa,Fabrice,5,4,1,,
+196,fokenfa,Fabrice,8,2,3,,
+197,fokenfa,Fabrice,10,3,2,,
+198,fokenfa,Fabrice,12,2,2,,
+199,fokenfa,Fabrice,16,6,3,,
+200,fractallymike,Mike Manfredi,3,2,2,,
+201,fractallymike,Mike Manfredi,4,2,6,,
+202,fractallymike,Mike Manfredi,5,1,6,1,Team fractally
+203,fractallymike,Mike Manfredi,6,7,6,1,Team fractally
+204,fractallymike,Mike Manfredi,9,2,4,1,Team fractally
+205,fractallymike,Mike Manfredi,13,3,6,1,Team fractally
+206,fractallymike,Mike Manfredi,14,1,4,1,Team fractally
+207,fractallymike,Mike Manfredi,15,3,2,1,Team fractally
+208,fractallymike,Mike Manfredi,16,7,5,1,Team fractally
+209,gavrielshaw,Gavriel Shaw,4,5,5,,
+210,gavrielshaw,Gavriel Shaw,13,5,2,,
+211,gokulnk,Gokul NK,3,7,1,,
+212,gokulnk,Gokul NK,4,5,2,,
+213,gokulnk,Gokul NK,5,4,3,,
+214,gokulnk,Gokul NK,6,2,2,,
+215,gokulnk,Gokul NK,7,5,2,,
+216,gokulnk,Gokul NK,8,4,3,,
+217,gokulnk,Gokul NK,11,2,4,,
+218,gokulnk,Gokul NK,16,2,2,,
+219,gonflosca,Oscar Gonzalez,9,1,1,2,EOS Translation Foundation
+220,gonflosca,Oscar Gonzalez,10,4,4,2,EOS Translation Foundation
+221,gonflosca,Oscar Gonzalez,11,5,6,2,EOS Translation Foundation
+222,gonflosca,Oscar Gonzalez,12,1,3,2,EOS Translation Foundation
+223,gonflosca,Oscar Gonzalez,13,5,3,2,EOS Translation Foundation
+224,gonflosca,Oscar Gonzalez,14,6,4,2,EOS Translation Foundation
+225,gonflosca,Oscar Gonzalez,15,4,5,2,EOS Translation Foundation
+226,gonflosca,Oscar Gonzalez,16,1,4,2,EOS Translation Foundation
+227,grahappa,Perry Shenas,12,4,1,,
+228,grahappa,Perry Shenas,14,5,4,,
+229,hachtu,Mark Scheer,2,8,4,,
+230,hachtu,Mark Scheer,3,2,5,,
+231,hachtu,Mark Scheer,4,6,6,,
+232,hachtu,Mark Scheer,6,2,6,,
+233,hachtu,Mark Scheer,7,5,5,,
+234,hachtu,Mark Scheer,8,4,4,2,EOS Translation Foundation
+235,hachtu,Mark Scheer,9,5,5,2,EOS Translation Foundation
+236,hachtu,Mark Scheer,10,6,4,2,EOS Translation Foundation
+237,hachtu,Mark Scheer,12,3,6,2,EOS Translation Foundation
+238,hachtu,Mark Scheer,13,6,3,2,EOS Translation Foundation
+239,hachtu,Mark Scheer,14,5,6,2,EOS Translation Foundation
+240,hachtu,Mark Scheer,15,4,6,2,EOS Translation Foundation
+241,hachtu,Mark Scheer,16,1,6,2,EOS Translation Foundation
+242,harketypes,,10,4,2,,
+243,headwatersfc,Kassy Sullivan,3,4,4,,
+244,headwatersfc,Kassy Sullivan,4,5,4,,
+245,highsteam1900,Tommy Ryan,12,4,2,,
+246,highsteam1900,Tommy Ryan,13,3,1,,
+247,highsteam1900,Tommy Ryan,14,3,2,,
+248,highsteam1900,Tommy Ryan,15,6,2,,
+249,highsteam1900,Tommy Ryan,16,2,3,,
+250,iamsubbu,Subbu,5,4,2,,
+251,igorberlenko,Igor Berlenko,2,8,1,,
+252,igorberlenko,Igor Berlenko,8,1,1,,
+253,jamesmart,James Mart,6,3,5,1,Team fractally
+254,jamesmart,James Mart,9,4,6,1,Team fractally
+255,jamesmart,James Mart,10,3,5,1,Team fractally
+256,jamesmart,James Mart,11,6,4,1,Team fractally
+257,jamesmart,James Mart,13,5,5,1,Team fractally
+258,jamesmart,James Mart,14,6,5,1,Team fractally
+259,jamesmart,James Mart,15,3,4,1,Team fractally
+260,jamesmart,James Mart,16,7,4,1,Team fractally
+261,jaytaylor-node,Jay Taylor,1,1,2,,
+262,jaytaylor-node,Jay Taylor,2,3,4,,
+263,jaytaylor-node,Jay Taylor,3,6,5,,
+264,jaytaylor-node,Jay Taylor,4,1,3,,
+265,jaytaylor-node,Jay Taylor,5,2,5,,
+266,jaytaylor-node,Jay Taylor,6,7,4,,
+267,jaytaylor-node,Jay Taylor,7,5,4,,
+268,jaytaylor-node,Jay Taylor,8,3,2,,
+269,jaytaylor-node,Jay Taylor,9,4,2,,
+270,jaytaylor-node,Jay Taylor,10,1,2,,
+271,jaytaylor-node,Jay Taylor,11,6,3,3,Fractally in Orbit
+272,jaytaylor-node,Jay Taylor,12,4,4,3,Fractally in Orbit
+273,jaytaylor-node,Jay Taylor,13,3,3,3,Fractally in Orbit
+274,jaytaylor-node,Jay Taylor,14,2,1,3,Fractally in Orbit
+275,jaytaylor-node,Jay Taylor,15,2,1,3,Fractally in Orbit
+276,jaytaylor-node,Jay Taylor,16,4,4,3,Fractally in Orbit
+277,jessethan,Jesse Jaffe,2,3,6,,
+278,jessethan,Jesse Jaffe,3,4,6,,
+279,jessethan,Jesse Jaffe,4,1,4,,
+280,jessethan,Jesse Jaffe,6,5,6,,
+281,jessethan,Jesse Jaffe,9,3,5,,
+282,jessethan,Jesse Jaffe,11,4,6,,
+283,johnjwilliamson,John Williamson,10,4,5,,
+284,johnjwilliamson,John Williamson,12,2,6,,
+285,jrichardliston,,11,2,3,,
+286,jrichardliston,,12,4,3,,
+287,jseymour,Joshua Seymour,1,1,3,,
+288,jseymour,Joshua Seymour,2,2,5,,
+289,jseymour,Joshua Seymour,3,1,4,,
+290,jseymour,Joshua Seymour,4,2,5,,
+291,jseymour,Joshua Seymour,5,5,5,,
+292,jseymour,Joshua Seymour,6,6,4,,
+293,jseymour,Joshua Seymour,7,1,6,,
+294,jseymour,Joshua Seymour,8,3,6,,
+295,jseymour,Joshua Seymour,9,2,5,,
+296,jseymour,Joshua Seymour,10,7,1,,
+297,jseymour,Joshua Seymour,11,6,5,,
+298,jseymour,Joshua Seymour,12,5,5,,
+299,jseymour,Joshua Seymour,13,3,5,,
+300,jseymour,Joshua Seymour,14,5,5,,
+301,jseymour,Joshua Seymour,15,1,5,,
+302,jseymour,Joshua Seymour,16,4,6,,
+303,kentbull,,6,1,2,,
+304,khoja,,15,4,2,,
+305,khoja,,16,4,1,,
+306,larosenonaka,Yves La Rose,2,8,3,,
+307,linusdao1,,16,6,1,,
+308,lionflash,Felix Ruiz,2,3,3,,
+309,lionflash,Felix Ruiz,3,2,3,,
+310,lionflash,Felix Ruiz,4,1,1,,
+311,lionflash,Felix Ruiz,5,1,3,,
+312,lionflash,Felix Ruiz,6,5,3,,
+313,lionflash,Felix Ruiz,7,4,5,,
+314,lionflash,Felix Ruiz,8,2,2,,
+315,lionflash,Felix Ruiz,9,1,4,,
+316,lionflash,Felix Ruiz,10,5,2,,
+317,lionflash,Felix Ruiz,11,3,4,,
+318,lionflash,Felix Ruiz,12,2,3,,
+319,lionflash,Felix Ruiz,13,1,4,,
+320,lionflash,Felix Ruiz,14,2,4,,
+321,lionflash,Felix Ruiz,15,1,6,,
+322,lionflash,Felix Ruiz,16,5,5,,
+323,lovejoy,Brandon Lovejoy,2,5,2,,
+324,loyalnine313,Adam Zientarski,2,7,3,,
+325,luckyhahnryu,Hahn Ryu,13,2,1,,
+326,machnbirdsparo,Marco Gonzalez,3,5,4,,
+327,machnbirdsparo,Marco Gonzalez,4,2,2,,
+328,machnbirdsparo,Marco Gonzalez,6,2,4,,
+329,machnbirdsparo,Marco Gonzalez,7,1,5,,
+330,machnbirdsparo,Marco Gonzalez,8,2,5,,
+331,machnbirdsparo,Marco Gonzalez,9,2,1,,
+332,machnbirdsparo,Marco Gonzalez,10,5,3,,
+333,machnbirdsparo,Marco Gonzalez,11,4,3,,
+334,machnbirdsparo,Marco Gonzalez,12,5,4,,
+335,machnbirdsparo,Marco Gonzalez,13,1,2,2,EOS Translation Foundation
+336,machnbirdsparo,Marco Gonzalez,14,2,2,2,EOS Translation Foundation
+337,machnbirdsparo,Marco Gonzalez,15,4,4,2,EOS Translation Foundation
+338,machnbirdsparo,Marco Gonzalez,16,5,3,2,EOS Translation Foundation
+339,markstair,Mark Stair,2,8,5,,
+340,markstair,Mark Stair,4,1,1,,
+341,markstair,Mark Stair,5,4,6,,
+342,markstair,Mark Stair,6,2,3,,
+343,markstair,Mark Stair,7,3,1,,
+344,markstair,Mark Stair,10,7,5,,
+345,marty-be,Martin Breurer,2,6,3,,
+346,marty-be,Martin Breurer,4,4,4,,
+347,marty-be,Martin Breuer,5,2,3,,
+348,marty-be,Martin Breuer,7,5,1,,
+349,mattlangston,Matt Langston,2,7,5,,
+350,mattlangston,Matt Langston,3,1,3,,
+351,mattlangston,Matt Langston,4,3,4,,
+352,mattlangston,Matt Langston,5,5,3,,
+353,mattlangston,Matt Langston,6,3,2,,
+354,mattlangston,Matt Langston,7,3,4,,
+355,mattlangston,Matt Langston,8,1,3,,
+356,mattlangston,Matt Langston,9,3,3,,
+357,mattlangston,Matt Langston,10,5,4,,
+358,mattlangston,Matt Langston,12,1,5,,
+359,mattlangston,Matt Langston,13,2,6,,
+360,mattlangston,Matt Langston,14,6,6,,
+361,mattlangston,Matt Langston,15,6,6,,
+362,mattlangston,Matt Langston,16,2,5,,
+363,menoski,Uvokeke Dennis,5,2,2,,
+364,michaelx,Michael X,14,5,2,3,Fractally in Orbit
+365,mikelennie,Lennie Niit,1,1,5,,
+366,mikelennie,Lennie Niit,2,4,4,,
+367,mikelennie,Lennie Niit,3,3,6,,
+368,mikelennie,Lennie Niit,4,4,5,,
+369,mikelennie,Lennie Niit,5,3,1,,
+370,mikelennie,Lennie Niit,6,6,2,,
+371,mikelennie,Lennie Niit,8,5,2,,
+372,mikelennie,Lennie Niit,9,4,3,,
+373,mikelennie,Lennie Niit,10,6,3,,
+374,mikelennie,Lennie Niit,11,5,5,,
+375,mikelennie,Lennie Niit,12,3,2,,
+376,mikelennie,Lennie Niit,13,3,2,,
+377,mikelennie,Lennie Niit,14,5,1,,
+378,mikelennie,Lennie Niit,15,2,2,,
+379,mikelennie,Lennie Niit,16,3,2,,
+380,nathanielherman,Nathaniel Herman,7,3,2,,
+381,nathanielherman,Nathaniel Herman,9,3,1,,
+382,nathanielherman,Nathaniel Herman,10,1,5,,
+383,nathanielherman,Nathaniel Herman,11,5,3,,
+384,nathanielherman,Nathaniel Herman,12,1,2,,
+385,neuron.gm,Jordan Ackerman,3,4,2,,
+386,norsegaud,,6,1,3,,
+387,nouser,,11,5,1,,
+388,novacryptollc,Patrick Bernard Schmid,2,4,6,,
+389,novacryptollc,Patrick Bernard Schmid,3,1,5,,
+390,novacryptollc,Patrick Bernard Schmid,4,2,3,,
+391,novacryptollc,Patrick Bernard Schmid,6,2,5,,
+392,novacryptollc,Patrick Bernard Schmid,7,2,3,,
+393,novacryptollc,Patrick Bernard Schmid,8,5,5,,
+394,novacryptollc,Patrick Bernard Schmid,9,5,3,,
+395,novacryptollc,Patrick Bernard Schmid,10,6,5,,
+396,novacryptollc,Patrick Bernard Schmid,11,4,5,,
+397,novacryptollc,Patrick Bernard Schmid,12,4,6,,
+398,novacryptollc,Patrick Bernard Schmid,13,1,3,,
+399,novacryptollc,Patrick Bernard Schmid,14,3,4,,
+400,novacryptollc,Patrick Bernard Schmid,15,2,3,,
+401,novacryptollc,Patrick Bernard Schmid,16,6,5,,
+402,nudimar,Nuno Marcelino,1,2,3,,
+403,nudimar,Nuno Marcelino,2,6,2,,
+404,nudimar,Nuno Marcelino,3,6,2,,
+405,nudimar,Nuno Marcelino,6,7,2,,
+406,nudimar,Nuno Marcelino,7,6,4,,
+407,nudimar,Nuno Marcelino,9,4,1,,
+408,nudimar,Nuno Marcelino,10,7,3,,
+409,nudimar,Nuno Marcelino,11,1,2,,
+410,nudimar,Nuno Marcelino,12,5,2,,
+411,nudimar,Nuno Marcelino,15,5,1,,
+412,nudimar,Nuno Marcelino,16,4,2,,
+413,oldtimersoffer,Milan Bjegovic,16,6,2,,
+414,pnc,Pascal Ngu Cho,2,4,5,,
+415,pnc,Pascal Ngu Cho,3,1,2,,
+416,pnc,Pascal Ngu Cho,4,2,4,,
+417,pnc,Pascal Ngu Cho,5,6,3,,
+418,pnc,Pascal Ngu Cho,6,3,3,,
+419,pnc,Pascal Ngu Cho,7,6,5,,
+420,pnc,Pascal Ngu Cho,8,2,4,,
+421,pnc,Pascal Ngu Cho,9,1,3,,
+422,pnc,Pascal Ngu Cho,10,3,4,,
+423,pnc,Pascal Ngu Cho,11,1,5,,
+424,pnc,Pascal Ngu Cho,12,2,4,4,fractally francophonie
+425,pnc,Pascal Ngu Cho,13,1,5,4,fractally francophonie
+426,pnc,Pascal Ngu Cho,14,1,3,4,fractally francophonie
+427,pnc,Pascal Ngu Cho,15,1,4,4,fractally francophonie
+428,pnc,Pascal Ngu Cho,16,1,5,4,fractally francophonie
+429,recentchats,Eric Binder,2,4,2,,
+430,recentchats,Eric Binder,3,7,3,,
+431,recentchats,Eric Binder,4,4,2,,
+432,recentchats,Eric Binder,9,5,2,,
+433,recentchats,Eric Binder,13,1,1,,
+434,recentchats,Eric Binder,14,3,1,,
+435,recentchats,Eric Binder,15,1,3,,
+436,recentchats,Eric Binder,16,5,4,,
+437,rimantas,Rimantas Martinonis,5,6,2,,
+438,rimantas,Rimantas Martinonis,6,2,1,,
+439,rimantas,Rimantas Martinonis,8,3,1,,
+440,robrigo,Rob Konsdorf,2,7,4,,
+441,rocogg,,10,2,3,,
+442,sagarmathanp,Lukas Ma,5,3,3,,
+443,sagarmathanp,Lukas Ma,6,6,5,,
+444,sagarmathanp,Lukas Ma,8,1,5,,
+445,SamaraShaw,Samara Shaw,6,4,3,,
+446,sethatboid,,13,4,2,,
+447,shakhruz,Shakhruz Ashirov,2,1,1,,
+448,shakhruz,Shakhruz Ashirov,3,6,6,,
+449,shakhruz,Shakhruz Ashirov,4,3,6,,
+450,shakhruz,Shakhruz Ashirov,5,1,5,,
+451,shakhruz,Shakhruz Ashirov,6,3,4,,
+452,shakhruz,Shakhruz Ashirov,7,3,3,,
+453,shakhruz,Shakhruz Ashirov,8,1,4,2,EOS Translation Foundation
+454,shakhruz,Shakhruz Ashirov,10,1,1,2,EOS Translation Foundation
+455,shakhruz,Shakhruz Ashirov,12,6,3,2,EOS Translation Foundation
+456,shakhruz,Shakhruz Ashirov,13,6,1,2,EOS Translation Foundation
+457,shakhruz,Shakhruz Ashirov,14,1,1,2,EOS Translation Foundation
+458,shakhruz,Shakhruz Ashirov,15,5,6,2,EOS Translation Foundation
+459,shakhruz,Shakhruz Ashirov,16,3,6,2,EOS Translation Foundation
+460,sim31,Tadas Vaitiekunas,5,5,1,,
+461,sim31,Tadas Vaitiekunas,6,4,4,,
+462,sim31,Tadas Vaitiekunas,7,4,4,,
+463,sim31,Tadas Vaitiekunas,8,3,4,,
+464,sim31,Tadas Vaitiekunas,9,3,4,,
+465,sim31,Tadas Vaitiekunas,10,4,3,,
+466,sim31,Tadas Vaitiekunas,11,5,4,,
+467,sim31,Tadas Vaitiekunas,12,3,1,,
+468,sim31,Tadas Vaitiekunas,13,1,6,,
+469,sim31,Tadas Vaitiekunas,14,3,3,,
+470,sim31,Tadas Vaitiekunas,15,6,3,,
+471,sim31,Tadas Vaitiekunas,16,3,3,,
+472,spencerhanson,Spencer Hanson,2,6,5,,
+473,spencerhanson,Spencer Hanson,3,6,4,,
+474,spencerhanson,Spencer Hanson,4,6,4,,
+475,spencerhanson,Spencer Hanson,6,7,3,,
+476,spencerhanson,Spencer Hanson,7,6,2,,
+477,stan,Stan Larimer,10,1,6,,
+478,stan,Stan Larimer,11,2,6,3,Fractally in Orbit
+479,stan,Stan Larimer,13,2,4,3,Fractally in Orbit
+480,stan,Stan Larimer,14,6,2,3,Fractally in Orbit
+481,stan,Stan Larimer,15,6,5,3,Fractally in Orbit
+482,stan,Stan Larimer,16,1,3,3,Fractally in Orbit
+483,thomashallgren,Thomas Hallgren,5,6,6,1,Team fractally
+484,thomashallgren,Thomas Hallgren,7,3,5,1,Team fractally
+485,thomashallgren,Thomas Hallgren,8,1,6,1,Team fractally
+486,thomashallgren,Thomas Hallgren,9,2,3,1,Team fractally
+487,thomashallgren,Thomas Hallgren,10,3,6,1,Team fractally
+488,thomashallgren,Thomas Hallgren,11,2,5,1,Team fractally
+489,thomashallgren,Thomas Hallgren,13,2,5,1,Team fractally
+490,thomashallgren,Thomas Hallgren,14,1,5,1,Team fractally
+491,thomashallgren,Thomas Hallgren,15,2,5,1,Team fractally
+492,thomashallgren,Thomas Hallgren,16,6,6,1,Team fractally
+493,timless,Tim Taylor,1,1,1,,
+494,timless,Tim Taylor,2,2,4,,
+495,timless,Tim Taylor,3,7,2,,
+496,timless,Tim Taylor,5,1,2,,
+497,timless,Tim Taylor,7,4,2,,
+498,timless,Tim Taylor,9,1,2,,
+499,timless,Tim Taylor,15,5,3,,
+500,tmess,Toby Messier,2,5,4,,
+501,tmess,Toby Messier,8,1,2,,
+502,tmess,Toby Messier,10,1,3,,
+503,tmess,Toby Messier,11,3,2,3,Fractally in Orbit
+504,tmess,Toby Messier,12,6,4,3,Fractally in Orbit
+505,tmess,Toby Messier,13,3,4,3,Fractally in Orbit
+506,tmess,Toby Messier,14,2,5,3,Fractally in Orbit
+507,topobadger,Jose Basanta,16,2,1,,
+508,val,Valentine Zavgorodnev,5,5,6,1,Team fractally
+509,val,Valentine Zavgorodnev,6,7,5,1,Team fractally
+510,val,Valentine Zavgorodnev,7,2,6,1,Team fractally
+511,val,Valentine Zavgorodnev,8,3,5,1,Team fractally
+512,val,Valentine Zavgorodnev,9,5,6,1,Team fractally
+513,val,Valentine Zavgorodnev,10,3,3,1,Team fractally
+514,val,Valentine Zavgorodnev,12,5,6,1,Team fractally
+515,val,Valentine Zavgorodnev,13,6,2,1,Team fractally
+516,val,Valentine Zavgorodnev,14,1,6,1,Team fractally
+517,val,Valentine Zavgorodnev,15,3,1,1,Team fractally
+518,vladislav.x,Vladislav Hramtsov,2,8,2,,
+519,wakeupjohnny,JP Camunag,2,3,1,,
+520,westreich,Eric,14,4,3,,
+521,westreich,Eric,15,3,6,,
+522,westreich,Eric,16,4,5,,
+523,wigglesthe3r,Daniel Felix,2,6,4,,
+524,wigglesthe3r,Daniel Felix,3,5,3,,
+525,wildwex,Gregory Wexler,2,1,6,,
+526,wildwex,Gregory Wexler,3,4,3,,
+527,wildwex,Gregory Wexler,4,5,6,,
+528,wildwex,Gregory Wexler,5,3,6,1,Team fractally
+529,wildwex,Gregory Wexler,6,3,6,1,Team fractally
+530,wildwex,Gregory Wexler,7,2,5,1,Team fractally
+531,wildwex,Gregory Wexler,8,4,5,1,Team fractally
+532,wildwex,Gregory Wexler,9,3,6,1,Team fractally
+533,wildwex,Gregory Wexler,10,5,6,1,Team fractally
+534,wildwex,Gregory Wexler,11,1,6,1,Team fractally
+535,wildwex,Gregory Wexler,12,2,5,1,Team fractally
+536,wildwex,Gregory Wexler,13,6,4,1,Team fractally
+537,wildwex,Gregory Wexler,14,3,5,1,Team fractally
+538,wildwex,Gregory Wexler,15,3,3,1,Team fractally
+539,wildwex,Gregory Wexler,16,2,6,1,Team fractally
+540,willspatrick,,11,6,1,,
+541,zeos,,16,3,1,,
+542,zhenek,Евгений Чирочкин,4,4,3,,

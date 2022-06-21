@@ -12,7 +12,7 @@ import pandas as pd
 import fractal_governance.statistics
 import fractal_governance.util
 
-ACCUMULATED_RANK_COLUMN_NAME = 'AccumulatedRank'
+ACCUMULATED_LEVEL_COLUMN_NAME = 'AccumulatedLevel'
 ACCUMULATED_RESPECT_COLUMN_NAME = 'AccumulatedRespect'
 ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME = 'AccumulatedRespectNewMember'
 ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME = 'AccumulatedRespectReturningMember'
@@ -25,7 +25,7 @@ MEETING_ID_COLUMN_NAME = 'MeetingID'
 MEMBER_ID_COLUMN_NAME = 'MemberID'
 MEMBER_NAME_COLUMN_NAME = 'Name'
 NEW_MEMBER_COUNT_COLUMN_NAME = 'NewMemberCount'
-RANK_COLUMN_NAME = 'Rank'
+LEVEL_COLUMN_NAME = 'Level'
 RESPECT_COLUMN_NAME = 'Respect'
 RETURNING_MEMBER_COUNT_COLUMN_NAME = 'ReturningMemberCount'
 STANDARD_DEVIATION_COLUMN_NAME = 'StandardDeviation'
@@ -44,7 +44,7 @@ class Dataset:
     """A wrapper around e fractal governance dataset"""
     df: pd.DataFrame
     df_member_summary_stats_by_member_id: pd.DataFrame
-    df_member_rank_by_attendance_count: pd.DataFrame
+    df_member_level_by_attendance_count: pd.DataFrame
     df_member_respect_new_and_returning_by_meeting: pd.DataFrame
     df_member_attendance_new_and_returning_by_meeting: pd.DataFrame
     df_member_leader_board: pd.DataFrame
@@ -142,17 +142,17 @@ class Dataset:
 
         df_member_summary_stats_by_member_id = df.groupby(
             MEMBER_ID_COLUMN_NAME).agg(
-                AttendanceCount=pd.NamedAgg(column=RANK_COLUMN_NAME,
+                AttendanceCount=pd.NamedAgg(column=LEVEL_COLUMN_NAME,
                                             aggfunc='count'),
-                AccumulatedRank=pd.NamedAgg(column=RANK_COLUMN_NAME,
-                                            aggfunc='sum'),
+                AccumulatedLevel=pd.NamedAgg(column=LEVEL_COLUMN_NAME,
+                                             aggfunc='sum'),
                 AccumulatedRespect=pd.NamedAgg(column=RESPECT_COLUMN_NAME,
                                                aggfunc='sum'),
-                Mean=pd.NamedAgg(column=RANK_COLUMN_NAME, aggfunc='mean'),
-                StandardDeviation=pd.NamedAgg(column=RANK_COLUMN_NAME,
+                Mean=pd.NamedAgg(column=LEVEL_COLUMN_NAME, aggfunc='mean'),
+                StandardDeviation=pd.NamedAgg(column=LEVEL_COLUMN_NAME,
                                               aggfunc='std'))
 
-        df_member_rank_by_attendance_count = df_member_summary_stats_by_member_id.groupby(
+        df_member_level_by_attendance_count = df_member_summary_stats_by_member_id.groupby(
             ATTENDANCE_COUNT_COLUMN_NAME).apply(
                 combined_statistics).reset_index()
 
@@ -160,12 +160,12 @@ class Dataset:
             df.groupby(MEMBER_ID_COLUMN_NAME).first()[[
                 MEMBER_NAME_COLUMN_NAME
             ]]).sort_values(by=[
-                ACCUMULATED_RANK_COLUMN_NAME, ATTENDANCE_COUNT_COLUMN_NAME,
+                ACCUMULATED_LEVEL_COLUMN_NAME, ATTENDANCE_COUNT_COLUMN_NAME,
                 MEMBER_ID_COLUMN_NAME
             ],
                             ascending=[False, False, True])
         column_names = [
-            MEMBER_NAME_COLUMN_NAME, ACCUMULATED_RANK_COLUMN_NAME,
+            MEMBER_NAME_COLUMN_NAME, ACCUMULATED_LEVEL_COLUMN_NAME,
             ACCUMULATED_RESPECT_COLUMN_NAME, ATTENDANCE_COUNT_COLUMN_NAME
         ]
         df_member_leader_board = df_member_leader_board[
@@ -192,8 +192,8 @@ class Dataset:
             df=df,
             df_member_summary_stats_by_member_id=
             df_member_summary_stats_by_member_id,
-            df_member_rank_by_attendance_count=
-            df_member_rank_by_attendance_count,
+            df_member_level_by_attendance_count=
+            df_member_level_by_attendance_count,
             df_member_respect_new_and_returning_by_meeting=
             _create_df_member_respect_new_and_returning_by_meeting(df),
             df_member_attendance_new_and_returning_by_meeting=

@@ -19,7 +19,7 @@ import streamlit as st
 import fractal_governance.dataset
 import fractal_governance.plots
 
-from fractal_governance.dataset import ACCUMULATED_RANK_COLUMN_NAME
+from fractal_governance.dataset import ACCUMULATED_LEVEL_COLUMN_NAME
 from fractal_governance.dataset import ACCUMULATED_RESPECT_COLUMN_NAME
 from fractal_governance.dataset import ATTENDANCE_COUNT_COLUMN_NAME
 from fractal_governance.dataset import MEETING_DATE_COLUMN_NAME
@@ -31,7 +31,7 @@ from fractal_governance.dataset import MEETING_DATE_COLUMN_NAME
 def get_dataset() -> fractal_governance.dataset.Dataset:
     """Return the Genesis Fractal Dataset"""
     return fractal_governance.dataset.Dataset.from_csv(
-        'data/genesis-weekly_rank.csv')
+        'data/genesis-weekly_measurements.csv')
 
 
 # @st.experimental_memo
@@ -80,11 +80,11 @@ with column2:
 CMAP = sns.light_palette("#34A853", as_cmap=True)
 
 st.subheader('Member Leaderboard')
-'The table is sorted first by rank (descending), then by attendance (descending) and then by member ID (ascending).'  #pylint: disable=C0301,W0105
+'The table is sorted first by level (descending), then by attendance (descending) and then by member ID (ascending).'  #pylint: disable=C0301,W0105
 df_member_leader_board = DATASET.df_member_leader_board.style.background_gradient(
     cmap=CMAP,
     subset=pd.IndexSlice[:, [
-        ACCUMULATED_RANK_COLUMN_NAME, ACCUMULATED_RESPECT_COLUMN_NAME,
+        ACCUMULATED_LEVEL_COLUMN_NAME, ACCUMULATED_RESPECT_COLUMN_NAME,
         ATTENDANCE_COUNT_COLUMN_NAME
     ]])
 st.dataframe(df_member_leader_board)

@@ -31,9 +31,9 @@
   - [DataFrame of Team Leaderboard](#dataframe-of-team-leaderboard)
   - [Plot of Team Representation](#plot-of-team-representation)
   - [Average Team Representation per Meeting](#average-team-representation-per-meeting)
-  - [DataFrame of Consensus Rank vs Attendance](#dataframe-of-consensus-rank-vs-attendance)
-  - [DataFrame of Accumulated Consensus Rank vs Attendance](#dataframe-of-accumulated-consensus-rank-vs-attendance)
-  - [Plot of Attendance Consistency vs Rank](#plot-of-attendance-consistency-vs-rank)
+  - [DataFrame of Level vs Attendance](#dataframe-of-level-vs-attendance)
+  - [DataFrame of Accumulated Level vs Attendance](#dataframe-of-accumulated-level-vs-attendance)
+  - [Plot of Attendance Consistency vs Level](#plot-of-attendance-consistency-vs-level)
 - [Getting Started for Software Engineers](#getting-started-for-software-engineers)
   - [Step 1 (one time setup):](#step-1-one-time-setup-1)
   - [Step 2 (one time setup):](#step-2-one-time-setup-1)
@@ -145,7 +145,7 @@ Read the Genesis fractal's dataset into a `Dataset` object consisting of multipl
 
 
 ```python
-dataset = fractal_governance.dataset.Dataset.from_csv('../data/genesis-weekly_rank.csv')
+dataset = fractal_governance.dataset.Dataset.from_csv('../data/genesis-weekly_measurements.csv')
 ```
 
 List the attributes of this `Dataset` object to see what properties and methods we have to work with.
@@ -164,7 +164,7 @@ List the attributes of this `Dataset` object to see what properties and methods 
      'df',
      'df_member_attendance_new_and_returning_by_meeting',
      'df_member_leader_board',
-     'df_member_rank_by_attendance_count',
+     'df_member_level_by_attendance_count',
      'df_member_respect_new_and_returning_by_meeting',
      'df_member_summary_stats_by_member_id',
      'df_team_leader_board',
@@ -209,14 +209,9 @@ GitHubMarkdownDataFrame(dataset.df)
       <th>Name</th>
       <th>MeetingID</th>
       <th>Group</th>
-      <th>Rank</th>
+      <th>Level</th>
       <th>TeamID</th>
       <th>TeamName</th>
-      <th>Unnamed: 8</th>
-      <th>Unnamed: 9</th>
-      <th>Unnamed: 10</th>
-      <th>Unnamed: 11</th>
-      <th>Unnamed: 12</th>
       <th>MeetingDate</th>
       <th>Respect</th>
     </tr>
@@ -232,11 +227,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>4</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2022-03-05</td>
       <td>8</td>
     </tr>
@@ -248,11 +238,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>2</td>
       <td>2</td>
       <td>3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>2022-03-05</td>
@@ -268,11 +253,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>2</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2022-03-05</td>
       <td>3</td>
     </tr>
@@ -284,11 +264,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>2</td>
       <td>3</td>
       <td>2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>2022-03-05</td>
@@ -304,21 +279,11 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2022-03-05</td>
       <td>2</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -340,11 +305,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>3</td>
       <td>1.0</td>
       <td>Team fractally</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>5.0</td>
       <td>2022-06-11</td>
       <td>5</td>
     </tr>
@@ -358,11 +318,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>6</td>
       <td>1.0</td>
       <td>Team fractally</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2022-06-18</td>
       <td>21</td>
     </tr>
@@ -374,11 +329,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>11</td>
       <td>6</td>
       <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>2022-05-14</td>
@@ -394,11 +344,6 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2022-06-18</td>
       <td>2</td>
     </tr>
@@ -412,17 +357,12 @@ GitHubMarkdownDataFrame(dataset.df)
       <td>3</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2022-03-19</td>
       <td>5</td>
     </tr>
   </tbody>
 </table>
-<p>542 rows × 15 columns</p>
+<p>542 rows × 10 columns</p>
 </div>
 
 
@@ -453,7 +393,7 @@ dataset.total_unique_members
 
 ### DataFrame of Member Leaderboard
 
-Inspect the first few rows of the member leaderboard DataFrame based on accumulated consensus Rank.
+Inspect the first few rows of the member leaderboard DataFrame based on accumulated level.
 
 
 ```python
@@ -470,7 +410,7 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <th></th>
       <th>MemberID</th>
       <th>Name</th>
-      <th>AccumulatedRank</th>
+      <th>AccumulatedLevel</th>
       <th>AccumulatedRespect</th>
       <th>AttendanceCount</th>
     </tr>
@@ -586,7 +526,7 @@ List the attributes of this `Plots` object to see what properties and methods we
      'accumulated_team_respect_vs_time',
      'accumulated_team_respect_vs_time_stacked',
      'attendance_consistency_histogram',
-     'attendance_count_vs_rank',
+     'attendance_count_vs_level',
      'attendance_vs_time',
      'attendance_vs_time_stacked',
      'dataset',
@@ -1327,9 +1267,9 @@ dataset.team_representation_stats
 
 
 
-### DataFrame of Consensus Rank vs Attendance
+### DataFrame of Level vs Attendance
 
-Inspect the DataFrame for the accumulated consensus Rank of contributions as discerned by the Genesis fractal for each member.
+Inspect the DataFrame for the accumulated level as discerned by the Genesis fractal for each member.
 
 
 ```python
@@ -1345,7 +1285,7 @@ GitHubMarkdownDataFrame(dataset.df_member_summary_stats_by_member_id)
     <tr style="text-align: right;">
       <th></th>
       <th>AttendanceCount</th>
-      <th>AccumulatedRank</th>
+      <th>AccumulatedLevel</th>
       <th>AccumulatedRespect</th>
       <th>Mean</th>
       <th>StandardDeviation</th>
@@ -1455,13 +1395,13 @@ GitHubMarkdownDataFrame(dataset.df_member_summary_stats_by_member_id)
 
 
 
-### DataFrame of Accumulated Consensus Rank vs Attendance
+### DataFrame of Accumulated Level vs Attendance
 
-Inspect the DataFrame for the mean accumulated consensus Rank based on meeting attendance.
+Inspect the DataFrame for the mean accumulated level based on meeting attendance.
 
 
 ```python
-GitHubMarkdownDataFrame(dataset.df_member_rank_by_attendance_count)
+GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
 ```
 
 
@@ -1580,11 +1520,11 @@ GitHubMarkdownDataFrame(dataset.df_member_rank_by_attendance_count)
 
 
 
-The mean accumulated consensus Rank is strongly correlated with meeting attendance.
+The mean accumulated level is strongly correlated with meeting attendance.
 
 
 ```python
-GitHubMarkdownDataFrame(dataset.df_member_rank_by_attendance_count[['AttendanceCount', 'Mean']].corr())
+GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['AttendanceCount', 'Mean']].corr())
 ```
 
 
@@ -1616,13 +1556,13 @@ GitHubMarkdownDataFrame(dataset.df_member_rank_by_attendance_count[['AttendanceC
 
 
 
-### Plot of Attendance Consistency vs Rank
+### Plot of Attendance Consistency vs Level
 
-Based on this strong correlation, plot the change in Rank vs the number of meetings attended.
+Based on this strong correlation, plot the change in level vs the number of meetings attended.
 
 
 ```python
-plots.attendance_count_vs_rank
+plots.attendance_count_vs_level
 plt.show()
 ```
 
@@ -1632,10 +1572,10 @@ plt.show()
     
 
 
-As the plot shows, on average members rank higher in subsequent weeks based on the number of past weekly consensus meetings they have participated in. Possible reasons for this phenomena include:
+As the plot shows, on average a member's level trends higher in subsequent weeks based on the number of past weekly consensus meetings they have participated in. Possible reasons for this phenomena include:
 
 * Over time members learn what their fellow members value and come into alignment with those values.
-* Over time members begin to imitate their higher ranked colleagues from watching how they conduct themselves.
+* Over time members begin to imitate their higher level colleagues from watching how they conduct themselves.
 * There is a self-selection process going on. This is an interesting idea for further analysis.
 
 ## Getting Started for Software Engineers

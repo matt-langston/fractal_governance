@@ -15,7 +15,8 @@ class TestUtil(unittest.TestCase):
     """Test fixture for the fractal_governance.util module"""
 
     def test_read_csv(self):  # pylint: disable=C0116
-        df = fractal_governance.util.read_csv('data/genesis-weekly_rank.csv')  # pylint: disable=C0103
+        df = fractal_governance.util.read_csv(  # pylint: disable=C0103
+            'data/genesis-weekly_measurements.csv')
         self.assertIsNotNone(df)
         self.assertFalse(df.empty)
 

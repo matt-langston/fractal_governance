@@ -13,11 +13,11 @@ class TestDataset(unittest.TestCase):
 
     def test_for_smoke(self):  # pylint: disable=C0116
         dataset = fractal_governance.dataset.Dataset.from_csv(
-            'data/genesis-weekly_rank.csv')
+            'data/genesis-weekly_measurements.csv')
         self.assertIsNotNone(dataset)
         self.assertIsNotNone(dataset.df)
         self.assertIsNotNone(dataset.df_member_summary_stats_by_member_id)
-        self.assertIsNotNone(dataset.df_member_rank_by_attendance_count)
+        self.assertIsNotNone(dataset.df_member_level_by_attendance_count)
         self.assertIsNotNone(
             dataset.df_member_respect_new_and_returning_by_meeting)
         self.assertIsNotNone(

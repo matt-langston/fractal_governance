@@ -49,6 +49,9 @@ class Plots:
         ax.xaxis.set_major_formatter(
             matplotlib.ticker.FixedFormatter(xaxis_labels))
         ax.set_title('Attendance vs Time')
+        ylim = ax.get_ylim()
+        ylim = tuple(l * r for l, r in zip((1, 1.3), ylim))
+        ax.set_ylim(ylim)
         plt.gcf().autofmt_xdate()
         return fig
 
@@ -74,6 +77,9 @@ class Plots:
         ax.xaxis.set_major_formatter(
             matplotlib.ticker.FixedFormatter(xaxis_labels))
         ax.legend(['Returning Members', 'New Members'])
+        ylim = ax.get_ylim()
+        ylim = tuple(l * r for l, r in zip((1, 1.3), ylim))
+        ax.set_ylim(ylim)
         plt.gcf().autofmt_xdate()
         return fig
 
@@ -214,11 +220,11 @@ class Plots:
         return fig
 
     @property
-    def attendance_count_vs_rank(self) -> matplotlib.figure.Figure:
-        """Plot the attendance count vs rank"""
+    def attendance_count_vs_level(self) -> matplotlib.figure.Figure:
+        """Plot the attendance count vs level"""
         # pylint: disable=C0103
         fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
-        df = self.dataset.df_member_rank_by_attendance_count
+        df = self.dataset.df_member_level_by_attendance_count
         x = df[ATTENDANCE_COUNT_COLUMN_NAME]
         y = df[MEAN_COLUMN_NAME]
         yerr = df[STANDARD_DEVIATION_COLUMN_NAME]
@@ -229,9 +235,9 @@ class Plots:
             yerr=yerr,
             fmt='o',
         )
-        ax.set_title('Attendance Count vs Rank')
+        ax.set_title('Attendance Count vs Level')
         ax.set_xlabel('Attendance Count')
-        ax.set_ylabel('Mean Rank')
+        ax.set_ylabel('Mean Level')
 
         ax.set(ylim=(0, 8))
 

@@ -16,11 +16,11 @@ class TestStatistics(unittest.TestCase):
 
     def test_combined_mean(self):  # pylint: disable=C0116
         dataset = fractal_governance.dataset.Dataset.from_csv(
-            'data/genesis-weekly_rank.csv')  # pylint: disable=C0103
-        df_member_rank_by_attendance_count = dataset.df_member_summary_stats_by_member_id.groupby(
+            'data/genesis-weekly_measurements.csv')  # pylint: disable=C0103
+        df_member_level_by_attendance_count = dataset.df_member_summary_stats_by_member_id.groupby(
             ATTENDANCE_COUNT_COLUMN_NAME).apply(
                 fractal_governance.dataset.combined_statistics).reset_index()
-        self.assertIsNotNone(df_member_rank_by_attendance_count)
+        self.assertIsNotNone(df_member_level_by_attendance_count)
 
 
 if __name__ == '__main__':

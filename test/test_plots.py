@@ -14,14 +14,14 @@ class TestPlots(unittest.TestCase):
 
     def test_for_smoke(self):  # pylint: disable=C0116
         dataset = fractal_governance.dataset.Dataset.from_csv(
-            'data/genesis-weekly_rank.csv')
+            'data/genesis-weekly_measurements.csv')
         self.assertIsNotNone(dataset)
         plots = fractal_governance.plots.Plots.from_dataset(dataset)
         self.assertIsNotNone(plots.dataset)
         self.assertIsNotNone(plots.attendance_vs_time)
         self.assertIsNotNone(plots.accumulated_member_respect_vs_time)
         self.assertIsNotNone(plots.accumulated_team_respect_vs_time)
-        self.assertIsNotNone(plots.attendance_count_vs_rank)
+        self.assertIsNotNone(plots.attendance_count_vs_level)
 
 
 if __name__ == '__main__':

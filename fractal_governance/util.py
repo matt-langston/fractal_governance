@@ -35,8 +35,8 @@ def read_csv(file_path: Path) -> pd.DataFrame:
     # Add a column for each meeting's date.
     df['MeetingDate'] = df['MeetingID'].apply(meeting_id_to_timestamp)
 
-    # Add a column for the amount of Respect that corresponds to the Rank in each row.
-    df['Respect'] = df['Rank'].apply(fractal_governance.math.respect)
+    # Add a column for the amount of Respect that corresponds to the Level in each row.
+    df['Respect'] = df['Level'].apply(fractal_governance.math.respect)
 
     return df
 
