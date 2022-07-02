@@ -15,16 +15,17 @@ streamlit = "*"
 
 [dev-packages]
 fractal_governance = {editable = true, path = "."}
+black = "*"
 build = "*"
 flake8 = "*"
 ipywidgets = "*"
 jupyterlab = "*"
+mypy = "*"
 nbconvert = "*"
 nodeenv = "*"
 plotly-express = "*"
 pylint = "*"
 watchdog = "*"
-yapf = "*"
 
 [requires]
 python_version = "3.9"

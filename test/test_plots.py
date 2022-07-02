@@ -1,10 +1,9 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
 """Unit test for the fractal_governance.plots module"""
 
-# builtins
 import unittest
+from pathlib import Path
 
-# 2nd party dependencies
 import fractal_governance.dataset
 import fractal_governance.plots
 
@@ -12,9 +11,10 @@ import fractal_governance.plots
 class TestPlots(unittest.TestCase):
     """Test fixture for the fractal_governance.plots module"""
 
-    def test_for_smoke(self):  # pylint: disable=C0116
+    def test_for_smoke(self) -> None:
         dataset = fractal_governance.dataset.Dataset.from_csv(
-            'data/genesis-weekly_measurements.csv')
+            Path("data/genesis-weekly_measurements.csv")
+        )
         self.assertIsNotNone(dataset)
         plots = fractal_governance.plots.Plots.from_dataset(dataset)
         self.assertIsNotNone(plots.dataset)
@@ -24,5 +24,5 @@ class TestPlots(unittest.TestCase):
         self.assertIsNotNone(plots.attendance_count_vs_level)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

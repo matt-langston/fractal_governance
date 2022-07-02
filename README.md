@@ -25,13 +25,11 @@
   - [DataFrame of New and Returning Member Respect Mined (or Earned) vs Time](#dataframe-of-new-and-returning-member-respect-mined-or-earned-vs-time)
   - [Plot of Accumulated New and Returning Member Respect vs Time](#plot-of-accumulated-new-and-returning-member-respect-vs-time)
   - [Total Accumulated Member Respect](#total-accumulated-member-respect)
-  - [DataFrame of Team Respect Mined (or Earned) vs Time](#dataframe-of-team-respect-mined-or-earned-vs-time)
   - [Plot of Accumulated Team Respect vs Time](#plot-of-accumulated-team-respect-vs-time)
   - [Total Accumulated Team Respect](#total-accumulated-team-respect)
   - [DataFrame of Team Leaderboard](#dataframe-of-team-leaderboard)
   - [Plot of Team Representation](#plot-of-team-representation)
   - [Average Team Representation per Meeting](#average-team-representation-per-meeting)
-  - [DataFrame of Level vs Attendance](#dataframe-of-level-vs-attendance)
   - [DataFrame of Accumulated Level vs Attendance](#dataframe-of-accumulated-level-vs-attendance)
   - [Plot of Attendance Consistency vs Level](#plot-of-attendance-consistency-vs-level)
 - [Getting Started for Software Engineers](#getting-started-for-software-engineers)
@@ -189,184 +187,6 @@ The other properties beginning with the prefix `df_` are derived DataFrames from
 
 All other properties, `total_respect` for example, are interesting values calculated from the various DataFrames.
 
-Let's have a look at the raw data `df` DataFrame from which everything else is derived.
-
-
-```python
-GitHubMarkdownDataFrame(dataset.df)
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Index</th>
-      <th>MemberID</th>
-      <th>Name</th>
-      <th>MeetingID</th>
-      <th>Group</th>
-      <th>Level</th>
-      <th>TeamID</th>
-      <th>TeamName</th>
-      <th>MeetingDate</th>
-      <th>Respect</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>00</td>
-      <td>Chace Eskimo</td>
-      <td>2</td>
-      <td>1</td>
-      <td>4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-03-05</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>01</td>
-      <td>Debraj Ghosh</td>
-      <td>2</td>
-      <td>2</td>
-      <td>3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-03-05</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>02</td>
-      <td>Nick Shock</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-03-05</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>03</td>
-      <td>Jimmy Lee</td>
-      <td>2</td>
-      <td>3</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-03-05</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>04</td>
-      <td>Abdulsalam Ridwa</td>
-      <td>2</td>
-      <td>6</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-03-05</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>573</th>
-      <td>574</td>
-      <td>wildwex</td>
-      <td>Gregory Wexler</td>
-      <td>17</td>
-      <td>6</td>
-      <td>5</td>
-      <td>1.0</td>
-      <td>Team fractally</td>
-      <td>2022-06-25</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>574</th>
-      <td>540</td>
-      <td>willspatrick</td>
-      <td>NaN</td>
-      <td>11</td>
-      <td>6</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-05-14</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>575</th>
-      <td>541</td>
-      <td>zeos</td>
-      <td>Matthias</td>
-      <td>16</td>
-      <td>3</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-06-18</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>576</th>
-      <td>552</td>
-      <td>zeos</td>
-      <td>Matthias</td>
-      <td>17</td>
-      <td>2</td>
-      <td>3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-06-25</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>577</th>
-      <td>542</td>
-      <td>zhenek</td>
-      <td>Евгений Чирочкин</td>
-      <td>4</td>
-      <td>4</td>
-      <td>3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2022-03-19</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-<p>578 rows × 10 columns</p>
-</div>
-
-
-
 
 ```python
 dataset.total_meetings
@@ -403,11 +223,9 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
 
 
 
-<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>MemberID</th>
       <th>Name</th>
       <th>AccumulatedLevel</th>
@@ -417,7 +235,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
       <td>dan</td>
       <td>Daniel Larimer</td>
       <td>90</td>
@@ -425,7 +242,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>16</td>
     </tr>
     <tr>
-      <th>2</th>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
       <td>86</td>
@@ -433,7 +249,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>17</td>
     </tr>
     <tr>
-      <th>3</th>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
       <td>83</td>
@@ -441,7 +256,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>16</td>
     </tr>
     <tr>
-      <th>4</th>
       <td>jseymour</td>
       <td>Joshua Seymour</td>
       <td>76</td>
@@ -449,7 +263,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>17</td>
     </tr>
     <tr>
-      <th>5</th>
       <td>hachtu</td>
       <td>Mark Scheer</td>
       <td>70</td>
@@ -457,7 +270,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>14</td>
     </tr>
     <tr>
-      <th>6</th>
       <td>novacryptollc</td>
       <td>Patrick Bernard Schmid</td>
       <td>64</td>
@@ -465,7 +277,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>15</td>
     </tr>
     <tr>
-      <th>7</th>
       <td>pnc</td>
       <td>Pascal Ngu Cho</td>
       <td>63</td>
@@ -473,7 +284,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>16</td>
     </tr>
     <tr>
-      <th>8</th>
       <td>dphillippi</td>
       <td>Duane Phillippi</td>
       <td>62</td>
@@ -481,7 +291,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>16</td>
     </tr>
     <tr>
-      <th>9</th>
       <td>mattlangston</td>
       <td>Matt Langston</td>
       <td>62</td>
@@ -489,7 +298,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>15</td>
     </tr>
     <tr>
-      <th>10</th>
       <td>lionflash</td>
       <td>Felix Ruiz</td>
       <td>57</td>
@@ -498,7 +306,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -550,27 +357,25 @@ plt.show()
 
 
     
-![png](README_files/README_26_0.png)
+![png](README_files/README_25_0.png)
     
 
 
 ### DataFrame of New and Returning Member Attendance vs Time
 
-Inspect the DataFrame of the attendance counts of new members vs returning members for each weekly consensus meeting.
+Inspect the DataFrame of the attendance counts of new members vs returning members for each of the last 12 weekly consensus meeting.
 
 
 ```python
-GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meeting)
+GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meeting.iloc[::-1].head(12))
 ```
 
 
 
 
-<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>MeetingDate</th>
       <th>MeetingID</th>
       <th>NewMemberCount</th>
@@ -579,127 +384,79 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>2022-02-26</td>
+      <td>2022-06-25</td>
+      <td>17</td>
       <td>1</td>
-      <td>10</td>
-      <td>0</td>
+      <td>35</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>2022-03-05</td>
-      <td>2</td>
-      <td>37</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2022-03-12</td>
-      <td>3</td>
-      <td>12</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2022-03-19</td>
-      <td>4</td>
-      <td>6</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2022-03-26</td>
-      <td>5</td>
-      <td>8</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2022-04-02</td>
-      <td>6</td>
-      <td>9</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2022-04-09</td>
-      <td>7</td>
-      <td>4</td>
-      <td>29</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2022-04-23</td>
-      <td>8</td>
-      <td>0</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2022-04-30</td>
-      <td>9</td>
-      <td>1</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2022-05-07</td>
-      <td>10</td>
-      <td>5</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2022-05-14</td>
-      <td>11</td>
-      <td>4</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2022-05-21</td>
-      <td>12</td>
-      <td>3</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2022-05-28</td>
-      <td>13</td>
-      <td>2</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2022-06-04</td>
-      <td>14</td>
-      <td>4</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2022-06-11</td>
-      <td>15</td>
-      <td>1</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>15</th>
       <td>2022-06-18</td>
       <td>16</td>
       <td>5</td>
       <td>37</td>
     </tr>
     <tr>
-      <th>16</th>
-      <td>2022-06-25</td>
-      <td>17</td>
+      <td>2022-06-11</td>
+      <td>15</td>
       <td>1</td>
-      <td>35</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>2022-06-04</td>
+      <td>14</td>
+      <td>4</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>2022-05-28</td>
+      <td>13</td>
+      <td>2</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>2022-05-21</td>
+      <td>12</td>
+      <td>3</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>2022-05-14</td>
+      <td>11</td>
+      <td>4</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>2022-05-07</td>
+      <td>10</td>
+      <td>5</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>2022-04-30</td>
+      <td>9</td>
+      <td>1</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>2022-04-23</td>
+      <td>8</td>
+      <td>0</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>2022-04-09</td>
+      <td>7</td>
+      <td>4</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>2022-04-02</td>
+      <td>6</td>
+      <td>9</td>
+      <td>30</td>
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -731,7 +488,7 @@ plt.show()
 
 
     
-![png](README_files/README_35_0.png)
+![png](README_files/README_34_0.png)
     
 
 
@@ -753,21 +510,19 @@ dataset.attendance_consistency_stats
 
 ### DataFrame of New and Returning Member Respect Mined (or Earned) vs Time
 
-Inspect the DataFrame for the total amount of member Respect mined (or earned) for each weekly consensus meeting.
+Inspect the DataFrame for the total amount of member Respect mined (or earned) for each of the last 12 weekly consensus meeting.
 
 
 ```python
-GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting)
+GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.iloc[::-1].head(12))
 ```
 
 
 
 
-<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>MeetingDate</th>
       <th>MeetingID</th>
       <th>AccumulatedRespect</th>
@@ -777,127 +532,13 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting)
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>2022-02-26</td>
-      <td>1</td>
-      <td>99</td>
-      <td>99</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2022-03-05</td>
-      <td>2</td>
-      <td>412</td>
-      <td>296</td>
-      <td>116</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2022-03-12</td>
-      <td>3</td>
-      <td>356</td>
-      <td>76</td>
-      <td>280</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2022-03-19</td>
-      <td>4</td>
-      <td>306</td>
-      <td>49</td>
-      <td>257</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2022-03-26</td>
-      <td>5</td>
-      <td>306</td>
-      <td>66</td>
-      <td>240</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2022-04-02</td>
-      <td>6</td>
-      <td>358</td>
-      <td>44</td>
-      <td>314</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2022-04-09</td>
-      <td>7</td>
-      <td>306</td>
-      <td>14</td>
-      <td>292</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2022-04-23</td>
-      <td>8</td>
-      <td>256</td>
-      <td>0</td>
-      <td>256</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2022-04-30</td>
-      <td>9</td>
-      <td>258</td>
-      <td>2</td>
-      <td>256</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2022-05-07</td>
-      <td>10</td>
-      <td>356</td>
-      <td>45</td>
-      <td>311</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2022-05-14</td>
-      <td>11</td>
-      <td>304</td>
-      <td>12</td>
-      <td>292</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2022-05-21</td>
-      <td>12</td>
-      <td>310</td>
-      <td>10</td>
-      <td>300</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2022-05-28</td>
-      <td>13</td>
-      <td>310</td>
-      <td>5</td>
-      <td>305</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2022-06-04</td>
-      <td>14</td>
+      <td>2022-06-25</td>
+      <td>17</td>
       <td>312</td>
-      <td>12</td>
-      <td>300</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2022-06-11</td>
-      <td>15</td>
+      <td>2</td>
       <td>310</td>
-      <td>3</td>
-      <td>307</td>
     </tr>
     <tr>
-      <th>15</th>
       <td>2022-06-18</td>
       <td>16</td>
       <td>364</td>
@@ -905,16 +546,77 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting)
       <td>353</td>
     </tr>
     <tr>
-      <th>16</th>
-      <td>2022-06-25</td>
-      <td>17</td>
-      <td>312</td>
-      <td>2</td>
+      <td>2022-06-11</td>
+      <td>15</td>
       <td>310</td>
+      <td>3</td>
+      <td>307</td>
+    </tr>
+    <tr>
+      <td>2022-06-04</td>
+      <td>14</td>
+      <td>312</td>
+      <td>12</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>2022-05-28</td>
+      <td>13</td>
+      <td>310</td>
+      <td>5</td>
+      <td>305</td>
+    </tr>
+    <tr>
+      <td>2022-05-21</td>
+      <td>12</td>
+      <td>310</td>
+      <td>10</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>2022-05-14</td>
+      <td>11</td>
+      <td>304</td>
+      <td>12</td>
+      <td>292</td>
+    </tr>
+    <tr>
+      <td>2022-05-07</td>
+      <td>10</td>
+      <td>356</td>
+      <td>45</td>
+      <td>311</td>
+    </tr>
+    <tr>
+      <td>2022-04-30</td>
+      <td>9</td>
+      <td>258</td>
+      <td>2</td>
+      <td>256</td>
+    </tr>
+    <tr>
+      <td>2022-04-23</td>
+      <td>8</td>
+      <td>256</td>
+      <td>0</td>
+      <td>256</td>
+    </tr>
+    <tr>
+      <td>2022-04-09</td>
+      <td>7</td>
+      <td>306</td>
+      <td>14</td>
+      <td>292</td>
+    </tr>
+    <tr>
+      <td>2022-04-02</td>
+      <td>6</td>
+      <td>358</td>
+      <td>44</td>
+      <td>314</td>
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -930,7 +632,7 @@ plt.show()
 
 
     
-![png](README_files/README_44_0.png)
+![png](README_files/README_43_0.png)
     
 
 
@@ -950,251 +652,6 @@ dataset.total_member_respect
 
 
 
-### DataFrame of Team Respect Mined (or Earned) vs Time
-
-Inspect the DataFrame for the total amount of team Respect mined (or earned) for each weekly consensus meeting.
-
-
-```python
-GitHubMarkdownDataFrame(dataset.df_team_respect_by_meeting_date)
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>TeamName</th>
-      <th>MeetingDate</th>
-      <th>AccumulatedRespect</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-04-23</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-04-30</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-05-07</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-05-14</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-05-21</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-05-28</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-06-04</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-06-11</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-06-18</td>
-      <td>84</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>EOS Translation Foundation</td>
-      <td>2022-06-25</td>
-      <td>63</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Fractally in Orbit</td>
-      <td>2022-05-14</td>
-      <td>29</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Fractally in Orbit</td>
-      <td>2022-05-21</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Fractally in Orbit</td>
-      <td>2022-05-28</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Fractally in Orbit</td>
-      <td>2022-06-04</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Fractally in Orbit</td>
-      <td>2022-06-11</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Fractally in Orbit</td>
-      <td>2022-06-18</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Fractally in Orbit</td>
-      <td>2022-06-25</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Team fractally</td>
-      <td>2022-03-26</td>
-      <td>118</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Team fractally</td>
-      <td>2022-04-02</td>
-      <td>89</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Team fractally</td>
-      <td>2022-04-09</td>
-      <td>89</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>Team fractally</td>
-      <td>2022-04-23</td>
-      <td>68</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Team fractally</td>
-      <td>2022-04-30</td>
-      <td>84</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Team fractally</td>
-      <td>2022-05-07</td>
-      <td>102</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>Team fractally</td>
-      <td>2022-05-14</td>
-      <td>63</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Team fractally</td>
-      <td>2022-05-21</td>
-      <td>76</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>Team fractally</td>
-      <td>2022-05-28</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Team fractally</td>
-      <td>2022-06-04</td>
-      <td>110</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>Team fractally</td>
-      <td>2022-06-11</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>Team fractally</td>
-      <td>2022-06-18</td>
-      <td>66</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>Team fractally</td>
-      <td>2022-06-25</td>
-      <td>110</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>fractally francophonie</td>
-      <td>2022-05-21</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>fractally francophonie</td>
-      <td>2022-05-28</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>fractally francophonie</td>
-      <td>2022-06-04</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>fractally francophonie</td>
-      <td>2022-06-11</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>fractally francophonie</td>
-      <td>2022-06-18</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>fractally francophonie</td>
-      <td>2022-06-25</td>
-      <td>8</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 ### Plot of Accumulated Team Respect vs Time
 
 Plot the accumulated team Respect of the Genesis fractal teams vs time.
@@ -1207,7 +664,7 @@ plt.show()
 
 
     
-![png](README_files/README_53_0.png)
+![png](README_files/README_49_0.png)
     
 
 
@@ -1239,38 +696,27 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
 
 
 
-<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>AccumulatedRespect</th>
-    </tr>
-    <tr>
-      <th>TeamName</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Team fractally</th>
       <td>1140</td>
     </tr>
     <tr>
-      <th>EOS Translation Foundation</th>
       <td>432</td>
     </tr>
     <tr>
-      <th>Fractally in Orbit</th>
       <td>146</td>
     </tr>
     <tr>
-      <th>fractally francophonie</th>
       <td>79</td>
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -1286,7 +732,7 @@ plt.show()
 
 
     
-![png](README_files/README_62_0.png)
+![png](README_files/README_58_0.png)
     
 
 
@@ -1306,134 +752,6 @@ dataset.team_representation_stats
 
 
 
-### DataFrame of Level vs Attendance
-
-Inspect the DataFrame for the accumulated level as discerned by the Genesis fractal for each member.
-
-
-```python
-GitHubMarkdownDataFrame(dataset.df_member_summary_stats_by_member_id)
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>AttendanceCount</th>
-      <th>AccumulatedLevel</th>
-      <th>AccumulatedRespect</th>
-      <th>Mean</th>
-      <th>StandardDeviation</th>
-    </tr>
-    <tr>
-      <th>MemberID</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>00</th>
-      <td>1</td>
-      <td>4</td>
-      <td>8</td>
-      <td>4.0000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>01</th>
-      <td>1</td>
-      <td>3</td>
-      <td>5</td>
-      <td>3.0000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>02</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>2.0000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>03</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>2.0000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>04</th>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>wigglesthe3r</th>
-      <td>2</td>
-      <td>7</td>
-      <td>13</td>
-      <td>3.5000</td>
-      <td>0.707107</td>
-    </tr>
-    <tr>
-      <th>wildwex</th>
-      <td>16</td>
-      <td>83</td>
-      <td>251</td>
-      <td>5.1875</td>
-      <td>1.046821</td>
-    </tr>
-    <tr>
-      <th>willspatrick</th>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1.0000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>zeos</th>
-      <td>2</td>
-      <td>4</td>
-      <td>7</td>
-      <td>2.0000</td>
-      <td>1.414214</td>
-    </tr>
-    <tr>
-      <th>zhenek</th>
-      <td>1</td>
-      <td>3</td>
-      <td>5</td>
-      <td>3.0000</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>112 rows × 5 columns</p>
-</div>
-
-
-
 ### DataFrame of Accumulated Level vs Attendance
 
 Inspect the DataFrame for the mean accumulated level based on meeting attendance.
@@ -1446,11 +764,9 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
 
 
 
-<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>AttendanceCount</th>
       <th>Mean</th>
       <th>StandardDeviation</th>
@@ -1458,110 +774,92 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
       <td>1</td>
       <td>2.346939</td>
       <td>1.283729</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>2</td>
       <td>3.200000</td>
       <td>1.823819</td>
     </tr>
     <tr>
-      <th>2</th>
       <td>3</td>
       <td>1.333333</td>
       <td>0.500000</td>
     </tr>
     <tr>
-      <th>3</th>
       <td>4</td>
       <td>3.625000</td>
       <td>1.468880</td>
     </tr>
     <tr>
-      <th>4</th>
       <td>5</td>
       <td>3.100000</td>
       <td>1.370320</td>
     </tr>
     <tr>
-      <th>5</th>
       <td>6</td>
       <td>3.333333</td>
       <td>1.734396</td>
     </tr>
     <tr>
-      <th>6</th>
       <td>7</td>
       <td>3.095238</td>
       <td>1.513432</td>
     </tr>
     <tr>
-      <th>7</th>
       <td>8</td>
       <td>2.708333</td>
       <td>1.197068</td>
     </tr>
     <tr>
-      <th>8</th>
       <td>9</td>
       <td>3.805556</td>
       <td>1.369451</td>
     </tr>
     <tr>
-      <th>9</th>
       <td>10</td>
       <td>5.200000</td>
       <td>1.186127</td>
     </tr>
     <tr>
-      <th>10</th>
       <td>11</td>
       <td>3.242424</td>
       <td>1.871335</td>
     </tr>
     <tr>
-      <th>11</th>
       <td>12</td>
       <td>3.750000</td>
       <td>1.380993</td>
     </tr>
     <tr>
-      <th>12</th>
       <td>13</td>
       <td>3.307692</td>
       <td>1.489504</td>
     </tr>
     <tr>
-      <th>13</th>
       <td>14</td>
       <td>4.357143</td>
       <td>1.725930</td>
     </tr>
     <tr>
-      <th>14</th>
       <td>15</td>
       <td>4.200000</td>
       <td>1.214851</td>
     </tr>
     <tr>
-      <th>15</th>
       <td>16</td>
       <td>4.177083</td>
       <td>1.542348</td>
     </tr>
     <tr>
-      <th>16</th>
       <td>17</td>
       <td>4.215686</td>
       <td>1.500849</td>
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -1575,29 +873,24 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['Attendance
 
 
 
-<div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>AttendanceCount</th>
       <th>Mean</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>AttendanceCount</th>
       <td>1.000000</td>
       <td>0.667038</td>
     </tr>
     <tr>
-      <th>Mean</th>
       <td>0.667038</td>
       <td>1.000000</td>
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -1613,7 +906,7 @@ plt.show()
 
 
     
-![png](README_files/README_76_0.png)
+![png](README_files/README_69_0.png)
     
 
 
@@ -1720,8 +1013,8 @@ Check that the [README.ipynb](notebook/README.ipynb) notebook and [Streamlit app
 Please use the following procedure to format and lint the python source code after making any changes.
 
 ```bash
-find fractal_governance test -name '*.py' -print0 | xargs -0 pipenv run yapf -i
-find fractal_governance test -name '*.py' -print0 | xargs -0 pipenv run pylint
+find fractal_governance test -name '*.py' -print0 | xargs -0 pipenv run black
+find fractal_governance test -name '*.py' -print0 | xargs -0 pipenv run flake8
 ```
 
 ### Format and Lint Bazel Source Files

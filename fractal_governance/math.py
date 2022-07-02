@@ -2,7 +2,7 @@
 """Math functions for fractal governance data analysis"""
 
 
-def fibonacci(n: int) -> int:  # pylint: disable=C0103
+def fibonacci(n: int) -> int:
     """Return the nth Fibonacci number"""
     if n in (1, 2):
         return 1
