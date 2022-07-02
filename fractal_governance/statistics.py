@@ -12,7 +12,7 @@ def combined_mean(
     mean_column_name: str = "mean"
 ) -> float:
     """Return the combined 'mean of means'"""
-    return (df[count_column_name] * df[mean_column_name]).sum() / df[
+    return (df[count_column_name] * df[mean_column_name]).sum() / df[  # type: ignore
         count_column_name
     ].sum()
 
@@ -32,4 +32,4 @@ def combined_standard_deviation(
         * np.power(df[mean_column_name] - df[mean_column_name].mean(), 2)
     ).sum()
     degrees_of_freedom = df[count_column_name].sum() - 1
-    return np.sqrt((ess + tgss) / degrees_of_freedom)
+    return np.sqrt((ess + tgss) / degrees_of_freedom)  # type: ignore

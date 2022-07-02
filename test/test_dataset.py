@@ -27,13 +27,19 @@ class TestDataset(unittest.TestCase):
         self.assertGreater(dataset.total_respect, 0)
         self.assertGreater(dataset.total_member_respect, 0)
         self.assertGreater(dataset.total_team_respect, 0)
+        self.assertGreater(dataset.total_unique_members, 0)
+        self.assertGreater(dataset.total_meetings, 0)
         self.assertIsNotNone(dataset.last_meeting_date)
         self.assertIsNotNone(dataset.attendance_stats)
         self.assertGreater(dataset.attendance_stats.mean, 0)
         self.assertGreater(dataset.attendance_stats.standard_deviation, 0)
+        self.assertIsNotNone(dataset.attendance_consistency_stats)
+        self.assertGreater(dataset.attendance_consistency_stats.mean, 0)
+        self.assertGreater(dataset.attendance_consistency_stats.standard_deviation, 0)
         self.assertIsNotNone(dataset.team_representation_stats)
         self.assertGreater(dataset.team_representation_stats.mean, 0)
         self.assertGreater(dataset.team_representation_stats.standard_deviation, 0)
+        self.assertIsNotNone(dataset.get_returning_member_dataframe_for_meeting_id(1))
 
 
 if __name__ == "__main__":

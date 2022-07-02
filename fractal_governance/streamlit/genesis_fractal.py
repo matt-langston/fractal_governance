@@ -39,11 +39,6 @@ LAST_MEETING_DATE = DATASET.last_meeting_date.strftime("%b %d, %Y")
 ATTENDANCE_STATS = DATASET.attendance_stats
 ATTENDANCE_CONSISTENCY_STATS = DATASET.attendance_consistency_stats
 
-
-# pd.set_option("display.max_columns", None)
-# https://github.com/streamlit/streamlit/issues/371
-
-
 st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")
 st.title(PAGE_TITLE)
 f"Data is current up through the meeting held on {LAST_MEETING_DATE}."

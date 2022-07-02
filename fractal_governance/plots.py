@@ -27,9 +27,9 @@ from fractal_governance.dataset import (
 DEFAULT_FIGSIZE = (10, 6)
 
 
-@attr.define
+@attr.frozen
 class Plots:
-    """A wrapper around e fractal governance plots"""
+    """A wrapper around fractal governance plots"""
 
     dataset: fractal_governance.dataset.Dataset
 

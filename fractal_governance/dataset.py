@@ -2,6 +2,7 @@
 """Math functions for fractal governance data analysis"""
 
 from pathlib import Path
+from typing import List
 
 import attr
 import pandas as pd
@@ -136,7 +137,9 @@ class Dataset:
             self.df[MEETING_ID_COLUMN_NAME].max(),
         )
         if not meeting_id_min <= meeting_id <= meeting_id_max:
-            raise ValueError(f"meeting_id={meeting_id} must be in range [{min}, {max}]")
+            raise ValueError(
+                f"meeting_id={meeting_id} must be in range [{meeting_id_min}, {meeting_id_max}]"  # noqa: E501
+            )
         df_current = self.df[self.df[MEETING_ID_COLUMN_NAME] == meeting_id]
         df_previous = self.df[self.df[MEETING_ID_COLUMN_NAME] < meeting_id]
         boolean_filter = df_current[MEMBER_ID_COLUMN_NAME].isin(
@@ -232,11 +235,11 @@ def _create_df_member_respect_new_and_returning_by_meeting(
 ) -> pd.DataFrame:
     """Return a DataFrame containing aggregate member attendance and respect for each
     meeting"""
-    meeting_dates = []
-    meeting_ids = []
-    accumulated_respect_total = []
-    accumulated_respect_new_member = []
-    accumulated_respect_returning_member = []
+    meeting_dates: List[pd.Timestamp] = []
+    meeting_ids: List[int] = []
+    accumulated_respect_total: List[int] = []
+    accumulated_respect_new_member: List[int] = []
+    accumulated_respect_returning_member: List[int] = []
     for ((meeting_date, meeting_id), dfx) in df.groupby(
         [MEETING_DATE_COLUMN_NAME, MEETING_ID_COLUMN_NAME]
     ):
