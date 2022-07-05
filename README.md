@@ -195,7 +195,7 @@ dataset.total_meetings
 
 
 
-    17
+    18
 
 
 
@@ -207,7 +207,7 @@ dataset.total_unique_members
 
 
 
-    112
+    113
 
 
 
@@ -237,72 +237,72 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     <tr>
       <td>dan</td>
       <td>Daniel Larimer</td>
-      <td>90</td>
-      <td>302</td>
-      <td>16</td>
+      <td>96</td>
+      <td>323</td>
+      <td>17</td>
     </tr>
     <tr>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
-      <td>86</td>
-      <td>252</td>
-      <td>17</td>
+      <td>90</td>
+      <td>260</td>
+      <td>18</td>
     </tr>
     <tr>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
-      <td>83</td>
-      <td>251</td>
-      <td>16</td>
+      <td>89</td>
+      <td>272</td>
+      <td>17</td>
     </tr>
     <tr>
       <td>jseymour</td>
       <td>Joshua Seymour</td>
-      <td>76</td>
-      <td>205</td>
-      <td>17</td>
+      <td>82</td>
+      <td>226</td>
+      <td>18</td>
     </tr>
     <tr>
       <td>hachtu</td>
       <td>Mark Scheer</td>
-      <td>70</td>
-      <td>202</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>novacryptollc</td>
-      <td>Patrick Bernard Schmid</td>
-      <td>64</td>
-      <td>158</td>
+      <td>74</td>
+      <td>210</td>
       <td>15</td>
     </tr>
     <tr>
       <td>pnc</td>
       <td>Pascal Ngu Cho</td>
-      <td>63</td>
-      <td>136</td>
-      <td>16</td>
+      <td>69</td>
+      <td>157</td>
+      <td>17</td>
     </tr>
     <tr>
       <td>dphillippi</td>
       <td>Duane Phillippi</td>
-      <td>62</td>
-      <td>148</td>
-      <td>16</td>
+      <td>68</td>
+      <td>169</td>
+      <td>17</td>
     </tr>
     <tr>
       <td>mattlangston</td>
       <td>Matt Langston</td>
-      <td>62</td>
-      <td>154</td>
-      <td>15</td>
+      <td>67</td>
+      <td>167</td>
+      <td>16</td>
     </tr>
     <tr>
-      <td>lionflash</td>
-      <td>Felix Ruiz</td>
-      <td>57</td>
-      <td>125</td>
+      <td>novacryptollc</td>
+      <td>Patrick Bernard Schmid</td>
+      <td>67</td>
+      <td>163</td>
       <td>16</td>
+    </tr>
+    <tr>
+      <td>doingitright</td>
+      <td>Brandon Fancher</td>
+      <td>61</td>
+      <td>197</td>
+      <td>11</td>
     </tr>
   </tbody>
 </table>
@@ -384,6 +384,12 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
   </thead>
   <tbody>
     <tr>
+      <td>2022-07-02</td>
+      <td>18</td>
+      <td>1</td>
+      <td>39</td>
+    </tr>
+    <tr>
       <td>2022-06-25</td>
       <td>17</td>
       <td>1</td>
@@ -449,12 +455,6 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
       <td>4</td>
       <td>29</td>
     </tr>
-    <tr>
-      <td>2022-04-02</td>
-      <td>6</td>
-      <td>9</td>
-      <td>30</td>
-    </tr>
   </tbody>
 </table>
 
@@ -472,7 +472,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=34.00, standard_deviation=7.58)
+    Statistics(mean=34.33, standard_deviation=7.49)
 
 
 
@@ -504,7 +504,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=5.16, standard_deviation=5.23)
+    Statistics(mean=5.47, standard_deviation=5.59)
 
 
 
@@ -531,6 +531,13 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>2022-07-02</td>
+      <td>18</td>
+      <td>360</td>
+      <td>8</td>
+      <td>352</td>
+    </tr>
     <tr>
       <td>2022-06-25</td>
       <td>17</td>
@@ -608,13 +615,6 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
       <td>14</td>
       <td>292</td>
     </tr>
-    <tr>
-      <td>2022-04-02</td>
-      <td>6</td>
-      <td>358</td>
-      <td>44</td>
-      <td>314</td>
-    </tr>
   </tbody>
 </table>
 
@@ -648,7 +648,7 @@ dataset.total_member_respect
 
 
 
-    5235
+    5595
 
 
 
@@ -680,7 +680,7 @@ dataset.total_team_respect
 
 
 
-    1797
+    2014
 
 
 
@@ -704,16 +704,16 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
   </thead>
   <tbody>
     <tr>
-      <td>1140</td>
+      <td>1258</td>
     </tr>
     <tr>
-      <td>432</td>
+      <td>480</td>
     </tr>
     <tr>
-      <td>146</td>
+      <td>171</td>
     </tr>
     <tr>
-      <td>79</td>
+      <td>105</td>
     </tr>
   </tbody>
 </table>
@@ -748,7 +748,7 @@ dataset.team_representation_stats
 
 
 
-    Statistics(mean=0.33, standard_deviation=0.12)
+    Statistics(mean=0.34, standard_deviation=0.12)
 
 
 
@@ -775,88 +775,93 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
   <tbody>
     <tr>
       <td>1</td>
-      <td>2.346939</td>
-      <td>1.283729</td>
+      <td>2.380000</td>
+      <td>1.291890</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>3.200000</td>
-      <td>1.823819</td>
+      <td>3.625000</td>
+      <td>1.746425</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>1.333333</td>
-      <td>0.500000</td>
+      <td>1.666667</td>
+      <td>1.230915</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>3.625000</td>
-      <td>1.468880</td>
+      <td>3.000000</td>
+      <td>1.555973</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>3.100000</td>
-      <td>1.370320</td>
+      <td>3.600000</td>
+      <td>1.391705</td>
     </tr>
     <tr>
       <td>6</td>
-      <td>3.333333</td>
-      <td>1.734396</td>
+      <td>3.277778</td>
+      <td>1.708303</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>3.095238</td>
-      <td>1.513432</td>
+      <td>2.942857</td>
+      <td>1.714006</td>
     </tr>
     <tr>
       <td>8</td>
-      <td>2.708333</td>
-      <td>1.197068</td>
+      <td>3.687500</td>
+      <td>1.302242</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>3.805556</td>
-      <td>1.369451</td>
+      <td>2.583333</td>
+      <td>1.204159</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>5.200000</td>
-      <td>1.186127</td>
+      <td>4.233333</td>
+      <td>1.104328</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>3.242424</td>
-      <td>1.871335</td>
+      <td>4.454545</td>
+      <td>1.717956</td>
     </tr>
     <tr>
       <td>12</td>
       <td>3.750000</td>
-      <td>1.380993</td>
+      <td>1.983629</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>3.307692</td>
-      <td>1.489504</td>
+      <td>3.569231</td>
+      <td>1.478695</td>
     </tr>
     <tr>
       <td>14</td>
-      <td>4.357143</td>
-      <td>1.725930</td>
+      <td>3.142857</td>
+      <td>1.231456</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>4.200000</td>
-      <td>1.214851</td>
+      <td>4.333333</td>
+      <td>1.667816</td>
     </tr>
     <tr>
       <td>16</td>
-      <td>4.177083</td>
-      <td>1.542348</td>
+      <td>4.187500</td>
+      <td>1.203154</td>
     </tr>
     <tr>
       <td>17</td>
       <td>4.215686</td>
-      <td>1.500849</td>
+      <td>1.558290</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>4.185185</td>
+      <td>1.542775</td>
     </tr>
   </tbody>
 </table>
@@ -883,10 +888,10 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['Attendance
   <tbody>
     <tr>
       <td>1.000000</td>
-      <td>0.667038</td>
+      <td>0.670091</td>
     </tr>
     <tr>
-      <td>0.667038</td>
+      <td>0.670091</td>
       <td>1.000000</td>
     </tr>
   </tbody>
