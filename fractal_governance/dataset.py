@@ -1,10 +1,10 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
-"""Math functions for fractal governance data analysis"""
+"""Dataset for fractal governance data analysis"""
 
 from pathlib import Path
 from typing import List
 
-import attr
+import attrs
 import pandas as pd
 
 import fractal_governance.statistics
@@ -17,28 +17,30 @@ ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME = "AccumulatedRespectReturningM
 ATTENDANCE_COUNT_COLUMN_NAME = "AttendanceCount"
 ATTENDANCE_COUNT_NEW_MEMBER_COLUMN_NAME = "AttendanceCountNewMember"
 ATTENDANCE_COUNT_RETURNING_MEMBER_COLUMN_NAME = "AttendanceCountReturningMember"
+GROUP_COLUMN_NAME = "Group"
+LEVEL_COLUMN_NAME = "Level"
 MEAN_COLUMN_NAME = "Mean"
+MEASUREMENT_UNCERTAINTY_COLUMN_NAME = "MeasurementUncertainty"
 MEETING_DATE_COLUMN_NAME = "MeetingDate"
 MEETING_ID_COLUMN_NAME = "MeetingID"
 MEMBER_ID_COLUMN_NAME = "MemberID"
 MEMBER_NAME_COLUMN_NAME = "Name"
 NEW_MEMBER_COUNT_COLUMN_NAME = "NewMemberCount"
-LEVEL_COLUMN_NAME = "Level"
 RESPECT_COLUMN_NAME = "Respect"
 RETURNING_MEMBER_COUNT_COLUMN_NAME = "ReturningMemberCount"
 STANDARD_DEVIATION_COLUMN_NAME = "StandardDeviation"
 TEAM_NAME_COLUMN_NAME = "TeamName"
 
 
-@attr.frozen(kw_only=True)
+@attrs.frozen(kw_only=True)
 class Statistics:
     """The mean and standard deviation for a measurement"""
 
-    mean: float = attr.field(repr=lambda value: f"{value:.2f}")
-    standard_deviation: float = attr.field(repr=lambda value: f"{value:.2f}")
+    mean: float = attrs.field(repr=lambda value: f"{value:.2f}")
+    standard_deviation: float = attrs.field(repr=lambda value: f"{value:.2f}")
 
 
-@attr.frozen
+@attrs.frozen
 class Dataset:
     """A wrapper around e fractal governance dataset"""
 
@@ -130,8 +132,7 @@ class Dataset:
         return df_current[boolean_filter]
 
     def _get_new_member_filter_for_meeting_id(self, meeting_id: int) -> pd.DataFrame:
-        """Internal helper method for selecting  new members for the given meeting
-        ID."""
+        """Internal helper method for selecting new members for the given meeting ID."""
         meeting_id_min, meeting_id_max = (
             self.df[MEETING_ID_COLUMN_NAME].min(),
             self.df[MEETING_ID_COLUMN_NAME].max(),

@@ -28,7 +28,7 @@ def get_dataset() -> fractal_governance.dataset.Dataset:
 
 # @st.experimental_memo
 def get_plots() -> fractal_governance.plots.Plots:
-    """Return the Genesis Fractal Dataset"""
+    """Return the Genesis Fractal Plots"""
     return fractal_governance.plots.Plots.from_dataset(get_dataset())
 
 

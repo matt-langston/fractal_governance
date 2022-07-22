@@ -1,5 +1,5 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
-"""Math functions for fractal governance data analysis"""
+"""Plots for fractal governance data analysis"""
 
 from pathlib import Path
 

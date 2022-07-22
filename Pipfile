@@ -12,6 +12,7 @@ pandas = "*"
 scipy = "*"
 seaborn = "*"
 streamlit = "*"
+uncertainties = "*"
 
 [dev-packages]
 fractal_governance = {editable = true, path = "."}
