@@ -12,12 +12,12 @@ import numpy as np
 import pandas as pd
 import scipy.stats
 import uncertainties
-from fractal_governance.dataset import (
-    ATTENDANCE_COUNT_COLUMN_NAME,
-    MEAN_COLUMN_NAME,
+from fractal_governance.dataset import ATTENDANCE_COUNT_COLUMN_NAME, MEAN_COLUMN_NAME
+from fractal_governance.measurement_uncertainty.dataset import (
     MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
+    Dataset,
+    UncertaintyType,
 )
-from fractal_governance.measurement_uncertainty.dataset import Dataset, UncertaintyType
 from fractal_governance.plots import DEFAULT_FIGSIZE
 
 
@@ -30,7 +30,7 @@ class CorrelationType(Enum):
 class Plots:
     """A wrapper around e fractal governance measurement uncertainty data"""
 
-    measurement_uncertainty_data: Dataset
+    measurement_uncertainty_dataset: Dataset
     dataset: fractal_governance.dataset.Dataset
 
     @property
@@ -41,9 +41,9 @@ class Plots:
 
         for include_self_measurement in (False, True):
             if include_self_measurement:
-                df = self.measurement_uncertainty_data.df_with_self_measurements
+                df = self.measurement_uncertainty_dataset.df_with_self_measurements
             else:
-                df = self.measurement_uncertainty_data.df_without_self_measurements
+                df = self.measurement_uncertainty_dataset.df_without_self_measurements
             color = next(ax._get_lines.prop_cycler)["color"]
             ax.errorbar(
                 x=np.arange(len(df)),
@@ -78,18 +78,20 @@ class Plots:
 
         for include_self_measurement in (False, True):
             if include_self_measurement:
-                df = self.measurement_uncertainty_data.df_with_self_measurements
+                df = self.measurement_uncertainty_dataset.df_with_self_measurements
             else:
-                df = self.measurement_uncertainty_data.df_without_self_measurements
+                df = self.measurement_uncertainty_dataset.df_without_self_measurements
 
             if uncertainty_type == UncertaintyType.NominalValue:
                 data = uncertainties.unumpy.nominal_values(
                     df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME]
                 )
+                uncertainty_name = "Accuracy"
             elif uncertainty_type == UncertaintyType.StdDev:
                 data = uncertainties.unumpy.std_devs(
                     df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME]
                 )
+                uncertainty_name = "Precision"
             else:
                 raise RuntimeError(f"LOGIC ERROR: Unknown enum {uncertainty_type}")
             color = next(ax._get_lines.prop_cycler)["color"]
@@ -110,7 +112,8 @@ class Plots:
             chi2_per_dof = chi2 / dof
 
             label = f"Include Self Measurement: {include_self_measurement}"
-            label += f", $\\chi^2({dof})$ = {chi2_per_dof:.2f}"
+            label += f", $(\\mu, \\sigma) = ({mean:.2f}, {std:.2f})$"
+            label += f", $\\chi^2({dof}) = {chi2_per_dof:.2f}$"
             patches.set_label(label)
 
             ax.plot(
@@ -124,7 +127,28 @@ class Plots:
         ylim = tuple(left * right for left, right in zip((1, 1.3), ylim))
         ax.set_ylim(ylim)
 
-        xlabel = f"Measurement Uncertainty of Member Level: {uncertainty_type.name}"
+        text = "The two curves are a best fit of\n"
+        text += "the data to a normal distribution\n"
+        text += "with these parameters."
+        bbox = dict(boxstyle="round", facecolor="white", alpha=0.5)
+        ax.text(
+            0.6,
+            0.75,
+            text,
+            transform=ax.transAxes,
+            fontsize=12,
+            verticalalignment="top",
+            bbox=bbox,
+        )
+        ax.annotate(
+            "",
+            xy=(0.73, 0.84),
+            xytext=(0.73, 0.77),
+            xycoords=ax.transAxes,
+            arrowprops=dict(arrowstyle="->"),
+        )
+
+        xlabel = f"Measurement Uncertainty of Member Level: {uncertainty_name}"
         ax.legend(loc="upper right")
         ax.set_title(f"Distribution of {xlabel}")
         ax.set_xlabel(xlabel)
@@ -132,7 +156,7 @@ class Plots:
 
         return fig
 
-    def measurement_uncertainty_vs_mean_level(
+    def measurement_uncertainty_correlation(
         self, uncertainty_type: UncertaintyType, correlation_type: CorrelationType
     ) -> matplotlib.figure.Figure:
         """Return a plot of the measurement uncertainty vs mean_level for the given
@@ -158,11 +182,11 @@ class Plots:
 
         for include_self_measurement in (False, True):
             if include_self_measurement:
-                df = self.measurement_uncertainty_data.df_with_self_measurements
+                df = self.measurement_uncertainty_dataset.df_with_self_measurements
             else:
-                df = self.measurement_uncertainty_data.df_without_self_measurements
+                df = self.measurement_uncertainty_dataset.df_without_self_measurements
 
-            dataset = self.measurement_uncertainty_data.dataset
+            dataset = self.measurement_uncertainty_dataset.dataset
             df = dataset.df_member_summary_stats_by_member_id.join(df)
 
             x = list()
@@ -190,7 +214,7 @@ class Plots:
 
             color = next(ax._get_lines.prop_cycler)["color"]
             corrcoef = np.corrcoef(
-                df[MEAN_COLUMN_NAME],
+                df[column_name],
                 unumpy_func(df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME]),
             )
             correlation_coefficient = corrcoef[0, 1]
@@ -219,9 +243,10 @@ class Plots:
     @classmethod
     def from_dataset(cls, dataset: fractal_governance.dataset.Dataset) -> "Plots":
         """Return a Plots object for the given Dataset"""
-        measurement_uncertainty_data = Dataset.from_dataset(dataset=dataset)
+        measurement_uncertainty_dataset = Dataset.from_dataset(dataset=dataset)
         return cls(
-            measurement_uncertainty_data=measurement_uncertainty_data, dataset=dataset
+            measurement_uncertainty_dataset=measurement_uncertainty_dataset,
+            dataset=dataset,
         )
 
     @classmethod

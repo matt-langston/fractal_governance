@@ -17,11 +17,14 @@ from fractal_governance.dataset import (
     ATTENDANCE_COUNT_COLUMN_NAME,
     GROUP_COLUMN_NAME,
     LEVEL_COLUMN_NAME,
-    MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
     MEETING_ID_COLUMN_NAME,
     MEMBER_ID_COLUMN_NAME,
     MEMBER_NAME_COLUMN_NAME,
 )
+
+ACCURACY_COLUMN_NAME = "Accuracy"
+MEASUREMENT_UNCERTAINTY_COLUMN_NAME = "MeasurementUncertainty"
+PRECISION_COLUMN_NAME = "Precision"
 
 
 class UncertaintyType(Enum):
@@ -36,6 +39,8 @@ class Dataset:
     dataset: fractal_governance.dataset.Dataset
     df_with_self_measurements: pd.DataFrame
     df_without_self_measurements: pd.DataFrame
+    _df_member_leader_board_true: pd.DataFrame = attrs.field(default=None, init=False)
+    _df_member_leader_board_false: pd.DataFrame = attrs.field(default=None, init=False)
 
     def get_member_leader_board(
         self, *, include_self_measurement: bool
@@ -44,19 +49,29 @@ class Dataset:
         quality measurements of the given UncertaintyType"""
 
         if include_self_measurement:
+            if self._df_member_leader_board_true is not None:
+                return self._df_member_leader_board_true
             df = self.df_with_self_measurements
         else:
+            if self._df_member_leader_board_false is not None:
+                return self._df_member_leader_board_false
             df = self.df_without_self_measurements
+
         df = df.join(
             self.dataset.df_member_leader_board.set_index(MEMBER_ID_COLUMN_NAME)
         )
-        df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME] = uncertainties.unumpy.std_devs(
+
+        df[ACCURACY_COLUMN_NAME] = uncertainties.unumpy.nominal_values(
+            df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME]
+        )
+
+        df[PRECISION_COLUMN_NAME] = uncertainties.unumpy.std_devs(
             df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME]
         )
 
         df = df.sort_values(
             by=[
-                MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
+                PRECISION_COLUMN_NAME,
                 ACCUMULATED_LEVEL_COLUMN_NAME,
                 ATTENDANCE_COUNT_COLUMN_NAME,
                 MEMBER_ID_COLUMN_NAME,
@@ -71,12 +86,20 @@ class Dataset:
         column_names = [
             MEMBER_ID_COLUMN_NAME,
             MEMBER_NAME_COLUMN_NAME,
-            MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
+            ACCURACY_COLUMN_NAME,
+            PRECISION_COLUMN_NAME,
             ACCUMULATED_LEVEL_COLUMN_NAME,
             ACCUMULATED_RESPECT_COLUMN_NAME,
             ATTENDANCE_COUNT_COLUMN_NAME,
         ]
-        return df[column_names]
+        df = df[column_names]
+
+        if include_self_measurement:
+            object.__setattr__(self, "_df_member_leader_board_true", df)
+        else:
+            object.__setattr__(self, "_df_member_leader_board_false", df)
+
+        return df
 
     @classmethod
     def from_dataset(cls, dataset: fractal_governance.dataset.Dataset) -> "Dataset":
@@ -120,7 +143,6 @@ class Contributor:
 
     member_id: str
     measurements_by_member_id: Dict[str, Set[Measurement]] = attrs.field(factory=dict)
-    # self_measurements: List[Measurement] = attrs.field(factory=list)
 
     _statistics_by_member_id: Dict[str, uncertainties.ufloat] = attrs.field(
         default=None, init=False
@@ -164,8 +186,6 @@ def _create_contributor_by_member_id(
                     measurements_by_member_id[member_id2] = set()
                 measurements = measurements_by_member_id[member_id2]
                 measurements.add(measurement)
-                # if member_id1 == member_id2:
-                #     contributor.self_measurements.append(measurement)
     return contributor_by_member_id
 
 
@@ -204,16 +224,12 @@ def create_measurement_uncertainty_dataframe(
         df, include_self_measurements=include_self_measurements
     )
     member_ids: List[str] = list()
-    nominal_values: List[float] = list()
-    std_devs: List[float] = list()
     uncertainties: List[float] = list()
     for (
         member_id,
         measurement_uncertainty,
     ) in measurement_uncertainty_by_member_id.items():
         member_ids.append(member_id)
-        nominal_values.append(measurement_uncertainty.nominal_value)
-        std_devs.append(measurement_uncertainty.std_dev)
         uncertainties.append(measurement_uncertainty)
     df = pd.DataFrame(
         {

@@ -41,7 +41,14 @@ ATTENDANCE_CONSISTENCY_STATS = DATASET.attendance_consistency_stats
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")
 st.title(PAGE_TITLE)
-f"Data is current up through the meeting held on {LAST_MEETING_DATE}."
+f"""
+Data is current up through the meeting held on {LAST_MEETING_DATE}.
+
+Also see the
+[Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
+that acts as a surveillance tool to track the *accuracy* and *precision* of the Genesis
+Fractal's consensus algorithm over time.
+"""  # noqa: E501,W605
 
 column1, column2 = st.columns(2)
 
@@ -74,8 +81,13 @@ with column2:
 CMAP = sns.light_palette("#34A853", as_cmap=True)
 
 st.subheader("Member Leaderboard")
-"""The table is sorted first by level (descending), then by attendance (descending) and
-then by member ID (ascending)."""
+"""
+The table is sorted first by level (descending), then by attendance (descending) and
+then by member ID (ascending).
+
+Also see the member leaderboard in the sister dashboard
+[Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py).
+"""  # noqa: E501,W605
 df_member_leader_board = DATASET.df_member_leader_board.head(10)
 if st.checkbox("Show All"):
     df_member_leader_board = DATASET.df_member_leader_board
@@ -221,9 +233,13 @@ st.markdown(
 Resources to learn more about fractal governance:
 
 - [fractally White Paper](https://fractally.com)
+- [Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
+- [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
+- [A Model-Independent Method to Measure Uncertainties in Fractal Governance Consensus Algorithms](https://hive.blog/fractally/@mattlangston/a-model-independent-method-to-measure-uncertainties-in-fractal-governance-consensus-algorithms)
 - [First Results from the Fractal Governance Experiments](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments)
-- [GitHub Repository for this Streamlit Dashboard](https://github.com/matt-langston/fractal_governance)
+- [On Simulating Fractal Governance](https://hive.blog/fractally/@mattlangston/on-simulating-fractal-governance)
+- [GitHub Repository](https://github.com/matt-langston/fractal_governance) with the Genesis Fractal Dataset and this Streamlit app
 - [Modeling and Simulation](https://gofractally.com/groups/7064857/topics/7623063)topic on [gofractally.com](https://gofractally.com)
 """  # noqa: E501
 )
