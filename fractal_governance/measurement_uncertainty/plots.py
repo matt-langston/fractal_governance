@@ -17,13 +17,8 @@ from fractal_governance.dataset import (
     MEAN_COLUMN_NAME,
     MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
 )
-from fractal_governance.measurement_uncertainty.dataset import Dataset
+from fractal_governance.measurement_uncertainty.dataset import Dataset, UncertaintyType
 from fractal_governance.plots import DEFAULT_FIGSIZE
-
-
-class UncertaintyType(Enum):
-    NominalValue = auto()
-    StdDev = auto()
 
 
 class CorrelationType(Enum):

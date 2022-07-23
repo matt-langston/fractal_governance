@@ -10,13 +10,23 @@ import fractal_governance.dataset
 import numpy as np
 import pandas as pd
 import uncertainties
+import uncertainties.unumpy
 from fractal_governance.dataset import (
+    ACCUMULATED_LEVEL_COLUMN_NAME,
+    ACCUMULATED_RESPECT_COLUMN_NAME,
+    ATTENDANCE_COUNT_COLUMN_NAME,
     GROUP_COLUMN_NAME,
     LEVEL_COLUMN_NAME,
     MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
     MEETING_ID_COLUMN_NAME,
     MEMBER_ID_COLUMN_NAME,
+    MEMBER_NAME_COLUMN_NAME,
 )
+
+
+class UncertaintyType(Enum):
+    NominalValue = auto()
+    StdDev = auto()
 
 
 @attrs.frozen
@@ -26,6 +36,47 @@ class Dataset:
     dataset: fractal_governance.dataset.Dataset
     df_with_self_measurements: pd.DataFrame
     df_without_self_measurements: pd.DataFrame
+
+    def get_member_leader_board(
+        self, *, include_self_measurement: bool
+    ) -> pd.DataFrame:
+        """Return the member leaderboard consisting of those who make the highest
+        quality measurements of the given UncertaintyType"""
+
+        if include_self_measurement:
+            df = self.df_with_self_measurements
+        else:
+            df = self.df_without_self_measurements
+        df = df.join(
+            self.dataset.df_member_leader_board.set_index(MEMBER_ID_COLUMN_NAME)
+        )
+        df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME] = uncertainties.unumpy.std_devs(
+            df[MEASUREMENT_UNCERTAINTY_COLUMN_NAME]
+        )
+
+        df = df.sort_values(
+            by=[
+                MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
+                ACCUMULATED_LEVEL_COLUMN_NAME,
+                ATTENDANCE_COUNT_COLUMN_NAME,
+                MEMBER_ID_COLUMN_NAME,
+            ],
+            key=lambda series: abs(series)
+            if np.issubdtype(series.dtype, np.number)
+            else series,
+            ascending=[True, False, False, True],
+        ).reset_index()
+        df.index += 1
+
+        column_names = [
+            MEMBER_ID_COLUMN_NAME,
+            MEMBER_NAME_COLUMN_NAME,
+            MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
+            ACCUMULATED_LEVEL_COLUMN_NAME,
+            ACCUMULATED_RESPECT_COLUMN_NAME,
+            ATTENDANCE_COUNT_COLUMN_NAME,
+        ]
+        return df[column_names]
 
     @classmethod
     def from_dataset(cls, dataset: fractal_governance.dataset.Dataset) -> "Dataset":
@@ -50,16 +101,6 @@ class Dataset:
         the Genesis .csv dataset"""
         dataset = fractal_governance.dataset.Dataset.from_csv(file_path)
         return cls.from_dataset(dataset=dataset)
-
-
-class UncertaintyType(Enum):
-    NominalValue = auto()
-    StdDev = auto()
-
-
-class CorrelationType(Enum):
-    MeanLevel = auto()
-    AttendanceCount = auto()
 
 
 @attrs.frozen(kw_only=True)
