@@ -143,7 +143,7 @@ Read the Genesis fractal's dataset into a `Dataset` object consisting of multipl
 
 
 ```python
-dataset = fractal_governance.dataset.Dataset.from_csv('../data/genesis-weekly_measurements.csv')
+dataset = fractal_governance.dataset.Dataset.from_csv()
 ```
 
 List the attributes of this `Dataset` object to see what properties and methods we have to work with.
@@ -195,7 +195,7 @@ dataset.total_meetings
 
 
 
-    20
+    21
 
 
 
@@ -207,7 +207,7 @@ dataset.total_unique_members
 
 
 
-    116
+    117
 
 
 
@@ -237,72 +237,72 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     <tr>
       <td>dan</td>
       <td>Daniel Larimer</td>
-      <td>108</td>
-      <td>365</td>
-      <td>19</td>
+      <td>114</td>
+      <td>386</td>
+      <td>20</td>
     </tr>
     <tr>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
-      <td>100</td>
-      <td>306</td>
-      <td>19</td>
+      <td>105</td>
+      <td>319</td>
+      <td>20</td>
     </tr>
     <tr>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
-      <td>94</td>
-      <td>268</td>
-      <td>19</td>
+      <td>97</td>
+      <td>273</td>
+      <td>20</td>
     </tr>
     <tr>
       <td>jseymour</td>
       <td>Joshua Seymour</td>
-      <td>87</td>
-      <td>234</td>
-      <td>20</td>
+      <td>91</td>
+      <td>242</td>
+      <td>21</td>
     </tr>
     <tr>
       <td>hachtu</td>
       <td>Mark Scheer</td>
-      <td>82</td>
-      <td>226</td>
-      <td>17</td>
+      <td>87</td>
+      <td>239</td>
+      <td>18</td>
     </tr>
     <tr>
       <td>dphillippi</td>
       <td>Duane Phillippi</td>
-      <td>78</td>
-      <td>195</td>
-      <td>19</td>
+      <td>84</td>
+      <td>216</td>
+      <td>20</td>
     </tr>
     <tr>
       <td>pnc</td>
       <td>Pascal Ngu Cho</td>
-      <td>78</td>
-      <td>178</td>
-      <td>19</td>
+      <td>82</td>
+      <td>186</td>
+      <td>20</td>
     </tr>
     <tr>
       <td>mattlangston</td>
       <td>Matt Langston</td>
-      <td>73</td>
-      <td>188</td>
-      <td>17</td>
+      <td>79</td>
+      <td>209</td>
+      <td>18</td>
     </tr>
     <tr>
       <td>thomashallgren</td>
       <td>Thomas Hallgren</td>
-      <td>70</td>
-      <td>217</td>
-      <td>13</td>
+      <td>75</td>
+      <td>230</td>
+      <td>14</td>
     </tr>
     <tr>
-      <td>lionflash</td>
-      <td>Felix Ruiz</td>
-      <td>68</td>
-      <td>148</td>
-      <td>19</td>
+      <td>novacryptollc</td>
+      <td>Patrick Bernard Schmid</td>
+      <td>74</td>
+      <td>186</td>
+      <td>18</td>
     </tr>
   </tbody>
 </table>
@@ -384,6 +384,12 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
   </thead>
   <tbody>
     <tr>
+      <td>2022-07-23</td>
+      <td>21</td>
+      <td>2</td>
+      <td>41</td>
+    </tr>
+    <tr>
       <td>2022-07-16</td>
       <td>20</td>
       <td>1</td>
@@ -446,14 +452,8 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
     <tr>
       <td>2022-05-07</td>
       <td>10</td>
-      <td>5</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <td>2022-04-30</td>
-      <td>9</td>
-      <td>1</td>
-      <td>28</td>
+      <td>4</td>
+      <td>34</td>
     </tr>
   </tbody>
 </table>
@@ -472,7 +472,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=34.35, standard_deviation=7.10)
+    Statistics(mean=34.76, standard_deviation=7.18)
 
 
 
@@ -504,7 +504,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=5.92, standard_deviation=6.19)
+    Statistics(mean=6.24, standard_deviation=6.59)
 
 
 
@@ -532,32 +532,39 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
   </thead>
   <tbody>
     <tr>
+      <td>2022-07-23</td>
+      <td>21</td>
+      <td>401</td>
+      <td>7</td>
+      <td>394</td>
+    </tr>
+    <tr>
       <td>2022-07-16</td>
       <td>20</td>
-      <td>352</td>
+      <td>346</td>
       <td>3</td>
-      <td>349</td>
+      <td>343</td>
     </tr>
     <tr>
       <td>2022-07-09</td>
       <td>19</td>
-      <td>306</td>
+      <td>301</td>
       <td>11</td>
-      <td>295</td>
+      <td>290</td>
     </tr>
     <tr>
       <td>2022-07-02</td>
       <td>18</td>
-      <td>360</td>
-      <td>8</td>
-      <td>352</td>
+      <td>350</td>
+      <td>0</td>
+      <td>350</td>
     </tr>
     <tr>
       <td>2022-06-25</td>
       <td>17</td>
-      <td>312</td>
-      <td>2</td>
-      <td>310</td>
+      <td>305</td>
+      <td>0</td>
+      <td>305</td>
     </tr>
     <tr>
       <td>2022-06-18</td>
@@ -605,15 +612,8 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
       <td>2022-05-07</td>
       <td>10</td>
       <td>356</td>
-      <td>45</td>
-      <td>311</td>
-    </tr>
-    <tr>
-      <td>2022-04-30</td>
-      <td>9</td>
-      <td>258</td>
-      <td>2</td>
-      <td>256</td>
+      <td>42</td>
+      <td>314</td>
     </tr>
   </tbody>
 </table>
@@ -648,7 +648,7 @@ dataset.total_member_respect
 
 
 
-    6253
+    6626
 
 
 
@@ -680,7 +680,7 @@ dataset.total_team_respect
 
 
 
-    2420
+    2679
 
 
 
@@ -704,16 +704,19 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
   </thead>
   <tbody>
     <tr>
-      <td>1460</td>
+      <td>1575</td>
     </tr>
     <tr>
-      <td>577</td>
+      <td>648</td>
     </tr>
     <tr>
-      <td>252</td>
+      <td>271</td>
     </tr>
     <tr>
-      <td>131</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <td>41</td>
     </tr>
   </tbody>
 </table>
@@ -748,7 +751,7 @@ dataset.team_representation_stats
 
 
 
-    Statistics(mean=0.35, standard_deviation=0.12)
+    Statistics(mean=0.36, standard_deviation=0.12)
 
 
 
@@ -775,13 +778,13 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
   <tbody>
     <tr>
       <td>1</td>
-      <td>2.372549</td>
-      <td>1.280012</td>
+      <td>2.384615</td>
+      <td>1.270384</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>3.722222</td>
-      <td>1.708303</td>
+      <td>3.777778</td>
+      <td>1.628986</td>
     </tr>
     <tr>
       <td>3</td>
@@ -790,88 +793,88 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
     </tr>
     <tr>
       <td>4</td>
-      <td>2.833333</td>
-      <td>1.551063</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>3.200000</td>
-      <td>1.527525</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>3.166667</td>
-      <td>1.527525</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>4.333333</td>
-      <td>1.559915</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>2.750000</td>
-      <td>1.612452</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>2.555556</td>
-      <td>1.181874</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>3.333333</td>
-      <td>1.470007</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>4.227273</td>
-      <td>1.476382</td>
-    </tr>
-    <tr>
-      <td>12</td>
       <td>3.416667</td>
       <td>1.378954</td>
     </tr>
     <tr>
+      <td>5</td>
+      <td>2.857143</td>
+      <td>1.555689</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>3.000000</td>
+      <td>1.533930</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>4.208333</td>
+      <td>1.503016</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>2.592593</td>
+      <td>1.308530</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>2.266667</td>
+      <td>0.944433</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>3.727273</td>
+      <td>1.586520</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>4.250000</td>
+      <td>1.451338</td>
+    </tr>
+    <tr>
       <td>13</td>
-      <td>3.830769</td>
-      <td>1.807703</td>
+      <td>3.346154</td>
+      <td>1.440620</td>
     </tr>
     <tr>
       <td>14</td>
-      <td>3.821429</td>
-      <td>1.596669</td>
+      <td>3.985714</td>
+      <td>1.689635</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>3.200000</td>
-      <td>1.264911</td>
+      <td>3.777778</td>
+      <td>1.730592</td>
     </tr>
     <tr>
       <td>16</td>
-      <td>3.312500</td>
-      <td>1.250000</td>
+      <td>3.187500</td>
+      <td>1.223043</td>
     </tr>
     <tr>
       <td>17</td>
-      <td>4.250000</td>
-      <td>1.449395</td>
+      <td>3.470588</td>
+      <td>1.374666</td>
     </tr>
     <tr>
       <td>18</td>
-      <td>2.777778</td>
-      <td>1.555089</td>
+      <td>4.277778</td>
+      <td>1.465300</td>
     </tr>
     <tr>
       <td>19</td>
-      <td>4.614035</td>
-      <td>1.320423</td>
+      <td>2.736842</td>
+      <td>1.521772</td>
     </tr>
     <tr>
       <td>20</td>
-      <td>3.800000</td>
-      <td>1.604481</td>
+      <td>4.625000</td>
+      <td>1.309708</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>3.761905</td>
+      <td>1.589746</td>
     </tr>
   </tbody>
 </table>
@@ -898,10 +901,10 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['Attendance
   <tbody>
     <tr>
       <td>1.000000</td>
-      <td>0.506425</td>
+      <td>0.490467</td>
     </tr>
     <tr>
-      <td>0.506425</td>
+      <td>0.490467</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1061,11 +1064,14 @@ pipenv run doctoc README.md
 
 Resources to learn more about Fractal Governance:
 
-
 - [fractally White Paper](https://fractally.com)
+- [Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
-- [First Results from the Fractal Governance Experiments](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments)
+- [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
 - [Genesis Fractal Dashboard](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py)
+- [A Model-Independent Method to Measure Uncertainties in Fractal Governance Consensus Algorithms](https://hive.blog/fractally/@mattlangston/a-model-independent-method-to-measure-uncertainties-in-fractal-governance-consensus-algorithms)
+- [On Simulating Fractal Governance](https://hive.blog/fractally/@mattlangston/on-simulating-fractal-governance)
+- [First Results from the Fractal Governance Experiments](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments)
 - [Modeling and Simulation](https://gofractally.com/groups/7064857/topics/7623063) topic on [gofractally.com](https://gofractally.com)
 
 If you contribute new Jupyter notebooks then please place them in the [notebook](notebook) directory.
