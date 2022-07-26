@@ -9,26 +9,27 @@ import pandas as pd
 
 import fractal_governance.statistics
 import fractal_governance.util
-
-ACCUMULATED_LEVEL_COLUMN_NAME = "AccumulatedLevel"
-ACCUMULATED_RESPECT_COLUMN_NAME = "AccumulatedRespect"
-ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME = "AccumulatedRespectNewMember"
-ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME = "AccumulatedRespectReturningMember"
-ATTENDANCE_COUNT_COLUMN_NAME = "AttendanceCount"
-ATTENDANCE_COUNT_NEW_MEMBER_COLUMN_NAME = "AttendanceCountNewMember"
-ATTENDANCE_COUNT_RETURNING_MEMBER_COLUMN_NAME = "AttendanceCountReturningMember"
-GROUP_COLUMN_NAME = "Group"
-LEVEL_COLUMN_NAME = "Level"
-MEAN_COLUMN_NAME = "Mean"
-MEETING_DATE_COLUMN_NAME = "MeetingDate"
-MEETING_ID_COLUMN_NAME = "MeetingID"
-MEMBER_ID_COLUMN_NAME = "MemberID"
-MEMBER_NAME_COLUMN_NAME = "Name"
-NEW_MEMBER_COUNT_COLUMN_NAME = "NewMemberCount"
-RESPECT_COLUMN_NAME = "Respect"
-RETURNING_MEMBER_COUNT_COLUMN_NAME = "ReturningMemberCount"
-STANDARD_DEVIATION_COLUMN_NAME = "StandardDeviation"
-TEAM_NAME_COLUMN_NAME = "TeamName"
+from fractal_governance.util import (
+    ACCUMULATED_LEVEL_COLUMN_NAME,
+    ACCUMULATED_RESPECT_COLUMN_NAME,
+    ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME,
+    ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME,
+    ATTENDANCE_COUNT_COLUMN_NAME,
+    GENESIS_ACCOUNT_STATUS_CSV_PATH,
+    GENESIS_LATE_CONSENSUS_CSV_PATH,
+    GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
+    LEVEL_COLUMN_NAME,
+    MEAN_COLUMN_NAME,
+    MEETING_DATE_COLUMN_NAME,
+    MEETING_ID_COLUMN_NAME,
+    MEMBER_ID_COLUMN_NAME,
+    MEMBER_NAME_COLUMN_NAME,
+    NEW_MEMBER_COUNT_COLUMN_NAME,
+    RESPECT_COLUMN_NAME,
+    RETURNING_MEMBER_COUNT_COLUMN_NAME,
+    STANDARD_DEVIATION_COLUMN_NAME,
+    TEAM_NAME_COLUMN_NAME,
+)
 
 
 @attrs.frozen(kw_only=True)
@@ -148,9 +149,19 @@ class Dataset:
         return df_current, df_previous, boolean_filter
 
     @classmethod
-    def from_csv(cls, file_path: Path) -> "Dataset":
+    def from_csv(
+        cls,
+        *,
+        weekly_measurements_file_path: Path = GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
+        account_status_file_path: Path = GENESIS_ACCOUNT_STATUS_CSV_PATH,
+        late_consensus_file_path: Path = GENESIS_LATE_CONSENSUS_CSV_PATH,
+    ) -> "Dataset":
         """Return a Dataset for the given file path to the Genesis .csv dataset"""
-        df = fractal_governance.util.read_csv(file_path)
+        df = fractal_governance.util.read_csv(
+            weekly_measurements_file_path=weekly_measurements_file_path,
+            account_status_file_path=account_status_file_path,
+            late_consensus_file_path=late_consensus_file_path,
+        )
 
         df_member_summary_stats_by_member_id = df.groupby(MEMBER_ID_COLUMN_NAME).agg(
             AttendanceCount=pd.NamedAgg(column=LEVEL_COLUMN_NAME, aggfunc="count"),

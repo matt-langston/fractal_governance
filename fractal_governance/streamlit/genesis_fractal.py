@@ -10,10 +10,12 @@ import fractal_governance.dataset  # noqa: E402
 import fractal_governance.plots  # noqa: E402
 import pandas as pd  # noqa: E402
 import seaborn as sns  # noqa: E402
-from fractal_governance.dataset import ACCUMULATED_LEVEL_COLUMN_NAME  # noqa: E402
-from fractal_governance.dataset import ACCUMULATED_RESPECT_COLUMN_NAME  # noqa: E402
-from fractal_governance.dataset import ATTENDANCE_COUNT_COLUMN_NAME  # noqa: E402
-from fractal_governance.dataset import MEETING_DATE_COLUMN_NAME  # noqa: E402
+from fractal_governance.util import (  # noqa: E402
+    ACCUMULATED_LEVEL_COLUMN_NAME,
+    ACCUMULATED_RESPECT_COLUMN_NAME,
+    ATTENDANCE_COUNT_COLUMN_NAME,
+    MEETING_DATE_COLUMN_NAME,
+)
 
 import streamlit as st  # noqa: E402
 
@@ -21,9 +23,7 @@ import streamlit as st  # noqa: E402
 # @st.experimental_memo
 def get_dataset() -> fractal_governance.dataset.Dataset:
     """Return the Genesis Fractal Dataset"""
-    return fractal_governance.dataset.Dataset.from_csv(
-        Path("data/genesis-weekly_measurements.csv")
-    )
+    return fractal_governance.dataset.Dataset.from_csv()
 
 
 # @st.experimental_memo

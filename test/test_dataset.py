@@ -2,17 +2,30 @@
 """Unit test for the fractal_governance.dataset module"""
 
 import unittest
-from pathlib import Path
 
 import fractal_governance.dataset
+from fractal_governance.util import (
+    DATA_DIR,
+    GENESIS_ACCOUNT_STATUS_CSV_PATH,
+    GENESIS_LATE_CONSENSUS_CSV_PATH,
+    GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
+)
 
 
 class TestDataset(unittest.TestCase):
     """Test fixture for the fractal_governance.dataset module"""
 
     def test_for_smoke(self) -> None:
+        # Adjust the paths for the bazel sandbox.
+        weekly_measurements_file_path = (
+            GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH.relative_to(DATA_DIR)
+        )
+        account_status_file_path = GENESIS_ACCOUNT_STATUS_CSV_PATH.relative_to(DATA_DIR)
+        late_consensus_file_path = GENESIS_LATE_CONSENSUS_CSV_PATH.relative_to(DATA_DIR)
         dataset = fractal_governance.dataset.Dataset.from_csv(
-            Path("data/genesis-weekly_measurements.csv")
+            weekly_measurements_file_path=weekly_measurements_file_path,
+            account_status_file_path=account_status_file_path,
+            late_consensus_file_path=late_consensus_file_path,
         )
         self.assertIsNotNone(dataset)
         self.assertIsNotNone(dataset.df)

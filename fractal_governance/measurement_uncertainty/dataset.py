@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import uncertainties
 import uncertainties.unumpy
-from fractal_governance.dataset import (
+from fractal_governance.util import (
     ACCUMULATED_LEVEL_COLUMN_NAME,
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
@@ -119,10 +119,12 @@ class Dataset:
         )
 
     @classmethod
-    def from_csv(cls, file_path: Path) -> "Dataset":
+    def from_csv(cls, *, weekly_measurements_file_path: Path) -> "Dataset":
         """Return a measurement uncertainty dataset object for the given file path to
         the Genesis .csv dataset"""
-        dataset = fractal_governance.dataset.Dataset.from_csv(file_path)
+        dataset = fractal_governance.dataset.Dataset.from_csv(
+            weekly_measurements_file_path=weekly_measurements_file_path
+        )
         return cls.from_dataset(dataset=dataset)
 
 

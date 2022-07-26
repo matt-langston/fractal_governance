@@ -31,9 +31,7 @@ import streamlit as st  # noqa: E402
 # @st.experimental_memo
 def _get_dataset() -> fractal_governance.measurement_uncertainty.dataset.Dataset:
     """Return the Genesis Fractal Measurement Uncertainty Dataset"""
-    return fractal_governance.dataset.Dataset.from_csv(
-        Path("data/genesis-weekly_measurements.csv")
-    )
+    return fractal_governance.dataset.Dataset.from_csv()
 
 
 # @st.experimental_memo
@@ -190,8 +188,6 @@ st.header("Resources")
 
 st.markdown(
     """
-## Resources
-
 - [A Model-Independent Method to Measure Uncertainties in Fractal Governance Consensus Algorithms](https://hive.blog/fractally/@mattlangston/a-model-independent-method-to-measure-uncertainties-in-fractal-governance-consensus-algorithms)
 - [fractally White Paper](https://fractally.com)
 - [Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)

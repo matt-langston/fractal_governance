@@ -12,13 +12,13 @@ import numpy as np
 import pandas as pd
 import scipy.stats
 import uncertainties
-from fractal_governance.dataset import ATTENDANCE_COUNT_COLUMN_NAME, MEAN_COLUMN_NAME
 from fractal_governance.measurement_uncertainty.dataset import (
     MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
     Dataset,
     UncertaintyType,
 )
 from fractal_governance.plots import DEFAULT_FIGSIZE
+from fractal_governance.util import ATTENDANCE_COUNT_COLUMN_NAME, MEAN_COLUMN_NAME
 
 
 class CorrelationType(Enum):
@@ -250,7 +250,9 @@ class Plots:
         )
 
     @classmethod
-    def from_csv(cls, file_path: Path) -> "Plots":
+    def from_csv(cls, *, weekly_measurements_file_path: Path) -> "Plots":
         """Return a Plots object for the given file path to the Genesis .csv dataset"""
-        dataset = fractal_governance.dataset.Dataset.from_csv(file_path)
+        dataset = fractal_governance.dataset.Dataset.from_csv(
+            weekly_measurements_file_path=weekly_measurements_file_path
+        )
         return cls.from_dataset(dataset=dataset)
