@@ -148,7 +148,7 @@ class Plots:
             arrowprops=dict(arrowstyle="->"),
         )
 
-        xlabel = f"Measurement Uncertainty of Member Level: {uncertainty_name}"
+        xlabel = f"{uncertainty_name} of Level Measurement"
         ax.legend(loc="upper right")
         ax.set_title(f"Distribution of {xlabel}")
         ax.set_xlabel(xlabel)
@@ -166,8 +166,10 @@ class Plots:
 
         if uncertainty_type == UncertaintyType.NominalValue:
             unumpy_func = uncertainties.unumpy.nominal_values
+            uncertainty_name = "Accuracy"
         elif uncertainty_type == UncertaintyType.StdDev:
             unumpy_func = uncertainties.unumpy.std_devs
+            uncertainty_name = "Precision"
         else:
             raise RuntimeError(f"LOGIC ERROR: Unknown enum {uncertainty_type}")
 
@@ -221,7 +223,6 @@ class Plots:
             )
             correlation_coefficient = corrcoef[0, 1]
             label = f"Correlation Coefficient: {correlation_coefficient:.2f}"
-            label += f", Uncertainty Type: {uncertainty_type.name}"
             label += f", Include Self Measurement: {include_self_measurement}"
             ax.errorbar(
                 x=x,
@@ -235,7 +236,7 @@ class Plots:
             )
 
         ax.legend(loc="upper right")
-        ylabel = "Measurement Uncertainty of Member Level"
+        ylabel = f"{uncertainty_name} of Level Measurement"
         ax.set_title(f"{ylabel} vs {xlabel}")
         ax.set_ylabel(ylabel)
         ax.set_xlabel(xlabel)
