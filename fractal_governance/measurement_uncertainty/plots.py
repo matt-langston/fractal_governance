@@ -205,6 +205,8 @@ class Plots:
                 x_mean = dfx[column_name].mean()
                 x_std_dev = dfx[column_name].std()
                 data = unumpy_func(dfx[MEASUREMENT_UNCERTAINTY_COLUMN_NAME])
+                if data.size == 0:
+                    continue
                 y_mean = np.mean(data)
                 y_std_dev = np.std(data)
                 x.append(x_mean)

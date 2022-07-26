@@ -112,11 +112,14 @@ def read_csv(
     # have up to 1 hour after the meeting conclusion with which to post their HIVE.BLOG
     # consensus ranks.  They entered beyond that window.
     df_late_consensus = pd.read_csv(late_consensus_file_path)
-    df.loc[
-        df[MEMBER_ID_COLUMN_NAME].isin(df_late_consensus[MEMBER_ID_COLUMN_NAME])
-        & df[MEETING_ID_COLUMN_NAME].isin(df_late_consensus[MEETING_ID_COLUMN_NAME]),
-        [RESPECT_COLUMN_NAME],
-    ] = 0
+    for member_id, meeting_id in df_late_consensus[
+        [MEMBER_ID_COLUMN_NAME, MEETING_ID_COLUMN_NAME]
+    ].values:
+        df.loc[
+            (df[MEMBER_ID_COLUMN_NAME] == member_id)
+            & (df[MEETING_ID_COLUMN_NAME] == meeting_id),
+            [RESPECT_COLUMN_NAME],
+        ] = 0
 
     return df
 
