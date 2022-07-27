@@ -27,14 +27,17 @@ from fractal_governance.measurement_uncertainty.plots import (  # noqa: E402
 
 import streamlit as st  # noqa: E402
 
+PAGE_TITLE = "Genesis Uncertainty Observatory"
+st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")
 
-# @st.experimental_memo
+
+@st.experimental_memo
 def _get_dataset() -> fractal_governance.measurement_uncertainty.dataset.Dataset:
     """Return the Genesis Fractal Measurement Uncertainty Dataset"""
     return fractal_governance.dataset.Dataset.from_csv()
 
 
-# @st.experimental_memo
+@st.experimental_memo
 def get_dataset() -> fractal_governance.measurement_uncertainty.dataset.Dataset:
     """Return the Genesis Fractal Measurement Uncertainty Dataset"""
     return fractal_governance.measurement_uncertainty.dataset.Dataset.from_dataset(
@@ -42,7 +45,7 @@ def get_dataset() -> fractal_governance.measurement_uncertainty.dataset.Dataset:
     )
 
 
-# @st.experimental_memo
+@st.experimental_memo
 def get_plots() -> fractal_governance.measurement_uncertainty.plots.Plots:
     """Return the Genesis Fractal Measurement Uncertainty Plots"""
     return fractal_governance.measurement_uncertainty.plots.Plots.from_dataset(
@@ -50,13 +53,11 @@ def get_plots() -> fractal_governance.measurement_uncertainty.plots.Plots:
     )
 
 
-PAGE_TITLE = "Genesis Uncertainty Observatory"
 _DATASET = _get_dataset()
 DATASET = get_dataset()
 PLOTS = get_plots()
 LAST_MEETING_DATE = _DATASET.last_meeting_date.strftime("%b %d, %Y")
 
-st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")
 st.title(PAGE_TITLE)
 f"Data is current up through the meeting held on {LAST_MEETING_DATE}."
 

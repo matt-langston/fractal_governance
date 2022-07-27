@@ -19,27 +19,28 @@ from fractal_governance.util import (  # noqa: E402
 
 import streamlit as st  # noqa: E402
 
+PAGE_TITLE = "Genesis Fractal Dashboard"
+st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")
 
-# @st.experimental_memo
+
+@st.experimental_memo
 def get_dataset() -> fractal_governance.dataset.Dataset:
     """Return the Genesis Fractal Dataset"""
     return fractal_governance.dataset.Dataset.from_csv()
 
 
-# @st.experimental_memo
+@st.experimental_memo
 def get_plots() -> fractal_governance.plots.Plots:
     """Return the Genesis Fractal Plots"""
     return fractal_governance.plots.Plots.from_dataset(get_dataset())
 
 
-PAGE_TITLE = "Genesis Fractal Dashboard"
 DATASET = get_dataset()
 PLOTS = get_plots()
 LAST_MEETING_DATE = DATASET.last_meeting_date.strftime("%b %d, %Y")
 ATTENDANCE_STATS = DATASET.attendance_stats
 ATTENDANCE_CONSISTENCY_STATS = DATASET.attendance_consistency_stats
 
-st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")
 st.title(PAGE_TITLE)
 f"""
 Data is current up through the meeting held on {LAST_MEETING_DATE}.
