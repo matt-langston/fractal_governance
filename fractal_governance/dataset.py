@@ -1,7 +1,6 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
 """Dataset for fractal governance data analysis"""
 
-from pathlib import Path
 from typing import List
 
 import attrs
@@ -15,9 +14,6 @@ from fractal_governance.util import (
     ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME,
     ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
-    GENESIS_ACCOUNT_STATUS_CSV_PATH,
-    GENESIS_LATE_CONSENSUS_CSV_PATH,
-    GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
     LEVEL_COLUMN_NAME,
     MEAN_COLUMN_NAME,
     MEETING_DATE_COLUMN_NAME,
@@ -74,7 +70,7 @@ class Dataset:
     @property
     def total_unique_members(self) -> int:
         """Return the total number of unique members"""
-        return self.df_member_leader_board[MEMBER_NAME_COLUMN_NAME].size  # type: ignore
+        return self.df_member_leader_board[MEMBER_ID_COLUMN_NAME].size  # type: ignore
 
     @property
     def total_meetings(self) -> int:
@@ -151,17 +147,10 @@ class Dataset:
     @classmethod
     def from_csv(
         cls,
-        *,
-        weekly_measurements_file_path: Path = GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
-        account_status_file_path: Path = GENESIS_ACCOUNT_STATUS_CSV_PATH,
-        late_consensus_file_path: Path = GENESIS_LATE_CONSENSUS_CSV_PATH,
+        fractal_dataset_csv_paths: fractal_governance.util.FractalDatasetCSVPaths = fractal_governance.util.FractalDatasetCSVPaths(),  # noqa: E501
     ) -> "Dataset":
-        """Return a Dataset for the given file path to the Genesis .csv dataset"""
-        df = fractal_governance.util.read_csv(
-            weekly_measurements_file_path=weekly_measurements_file_path,
-            account_status_file_path=account_status_file_path,
-            late_consensus_file_path=late_consensus_file_path,
-        )
+        """Return a Dataset for the given Fractal's .csv file paths"""
+        df = fractal_governance.util.read_csv(fractal_dataset_csv_paths)
 
         df_member_summary_stats_by_member_id = df.groupby(MEMBER_ID_COLUMN_NAME).agg(
             AttendanceCount=pd.NamedAgg(column=LEVEL_COLUMN_NAME, aggfunc="count"),

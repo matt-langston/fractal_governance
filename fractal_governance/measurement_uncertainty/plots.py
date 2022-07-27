@@ -2,10 +2,10 @@
 """Plots for fractal governance data measurement uncertainties"""
 
 from enum import Enum, auto
-from pathlib import Path
 
 import attrs
 import fractal_governance.dataset
+import fractal_governance.util
 import matplotlib.figure
 import matplotlib.pyplot as plt
 import numpy as np
@@ -253,9 +253,10 @@ class Plots:
         )
 
     @classmethod
-    def from_csv(cls, *, weekly_measurements_file_path: Path) -> "Plots":
-        """Return a Plots object for the given file path to the Genesis .csv dataset"""
-        dataset = fractal_governance.dataset.Dataset.from_csv(
-            weekly_measurements_file_path=weekly_measurements_file_path
-        )
+    def from_csv(
+        cls,
+        fractal_dataset_csv_paths: fractal_governance.util.FractalDatasetCSVPaths = fractal_governance.util.FractalDatasetCSVPaths(),  # noqa: E501
+    ) -> "Plots":
+        """Return a Plots object for the given Fractal's .csv file paths"""
+        dataset = fractal_governance.dataset.Dataset.from_csv(fractal_dataset_csv_paths)
         return cls.from_dataset(dataset=dataset)

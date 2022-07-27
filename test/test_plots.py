@@ -5,12 +5,7 @@ import unittest
 
 import fractal_governance.dataset
 import fractal_governance.plots
-from fractal_governance.util import (
-    DATA_DIR,
-    GENESIS_ACCOUNT_STATUS_CSV_PATH,
-    GENESIS_LATE_CONSENSUS_CSV_PATH,
-    GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
-)
+import fractal_governance.util
 
 
 class TestPlots(unittest.TestCase):
@@ -18,16 +13,12 @@ class TestPlots(unittest.TestCase):
 
     def test_for_smoke(self) -> None:
         # Adjust the paths for the bazel sandbox.
-        weekly_measurements_file_path = (
-            GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH.relative_to(DATA_DIR)
+        fractal_dataset_csv_paths = (
+            fractal_governance.util.FractalDatasetCSVPaths.relative_to(
+                fractal_governance.util.DATA_DIR
+            )
         )
-        account_status_file_path = GENESIS_ACCOUNT_STATUS_CSV_PATH.relative_to(DATA_DIR)
-        late_consensus_file_path = GENESIS_LATE_CONSENSUS_CSV_PATH.relative_to(DATA_DIR)
-        dataset = fractal_governance.dataset.Dataset.from_csv(
-            weekly_measurements_file_path=weekly_measurements_file_path,
-            account_status_file_path=account_status_file_path,
-            late_consensus_file_path=late_consensus_file_path,
-        )
+        dataset = fractal_governance.dataset.Dataset.from_csv(fractal_dataset_csv_paths)
         self.assertIsNotNone(dataset)
         plots = fractal_governance.plots.Plots.from_dataset(dataset)
         self.assertIsNotNone(plots.dataset)

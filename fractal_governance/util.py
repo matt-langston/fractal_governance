@@ -4,15 +4,16 @@
 import re
 from pathlib import Path
 
+import attrs
 import pandas as pd
 
 import fractal_governance.math
 
 DATA_DIR = Path(fractal_governance.__file__).parent.parent
 GENESIS_ACCOUNT_STATUS_CSV_PATH = DATA_DIR / "data/genesis-account_status.csv"
-GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH = DATA_DIR / "data/genesis-weekly_measurements.csv"
 GENESIS_LATE_CONSENSUS_CSV_PATH = DATA_DIR / "data/genesis-late_consensus.csv"
-
+GENESIS_TEAMS_CSV_PATH = DATA_DIR / "data/genesis-teams.csv"
+GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH = DATA_DIR / "data/genesis-weekly_measurements.csv"
 
 DATE_OF_FIRST_GENESIS_FRACTAL_MEETING = pd.to_datetime("2/26/2022")
 
@@ -38,6 +39,7 @@ RESPECT_COLUMN_NAME = "Respect"
 RETURNING_MEMBER_COUNT_COLUMN_NAME = "ReturningMemberCount"
 SIGNATURE_ON_FILE_COLUMN_NAME = "SignatureOnFile"
 STANDARD_DEVIATION_COLUMN_NAME = "StandardDeviation"
+TEAM_ID_COLUMN_NAME = "TeamID"
 TEAM_NAME_COLUMN_NAME = "TeamName"
 
 
@@ -54,14 +56,43 @@ def meeting_id_to_timestamp(meeting_id: int) -> pd.Timestamp:
     return DATE_OF_FIRST_GENESIS_FRACTAL_MEETING + week_offset * pd.to_timedelta("1 w")
 
 
+@attrs.frozen
+class FractalDatasetCSVPaths:
+    """A wrapper around the paths to a Fractal dataset's .csv files"""
+
+    account_status: Path = attrs.field(default=GENESIS_ACCOUNT_STATUS_CSV_PATH)
+    late_consensus: Path = attrs.field(default=GENESIS_LATE_CONSENSUS_CSV_PATH)
+    teams: Path = attrs.field(default=GENESIS_TEAMS_CSV_PATH)
+    weekly_measurements: Path = attrs.field(
+        default=GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH
+    )
+
+    @classmethod
+    def relative_to(cls, data_dir: Path) -> "FractalDatasetCSVPaths":
+        account_status = GENESIS_ACCOUNT_STATUS_CSV_PATH.relative_to(data_dir)
+        late_consensus = GENESIS_LATE_CONSENSUS_CSV_PATH.relative_to(data_dir)
+        teams = GENESIS_TEAMS_CSV_PATH.relative_to(data_dir)
+        weekly_measurements = GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH.relative_to(data_dir)
+        return cls(
+            account_status=account_status,
+            late_consensus=late_consensus,
+            teams=teams,
+            weekly_measurements=weekly_measurements,
+        )
+
+
 def read_csv(
-    *,
-    weekly_measurements_file_path: Path = GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
-    account_status_file_path: Path = GENESIS_ACCOUNT_STATUS_CSV_PATH,
-    late_consensus_file_path: Path = GENESIS_LATE_CONSENSUS_CSV_PATH,
+    fractal_dataset_csv_paths: FractalDatasetCSVPaths = FractalDatasetCSVPaths(),
 ) -> pd.DataFrame:
     """Return a pandas DataFrame for the given file path to the Genesis .csv dataset"""
+
+    account_status_file_path = fractal_dataset_csv_paths.account_status
+    late_consensus_file_path = fractal_dataset_csv_paths.late_consensus
+    teams_file_path = fractal_dataset_csv_paths.teams
+    weekly_measurements_file_path = fractal_dataset_csv_paths.weekly_measurements
+
     df = pd.read_csv(weekly_measurements_file_path)
+    df = df.set_index(MEMBER_ID_COLUMN_NAME)
 
     # Add a column for each meeting's date.
     df[MEETING_DATE_COLUMN_NAME] = df[MEETING_ID_COLUMN_NAME].apply(
@@ -78,7 +109,7 @@ def read_csv(
         .drop([INDEX_COLUMN_NAME], axis=1)
         .set_index(MEMBER_ID_COLUMN_NAME)
     )
-    df = df.set_index(MEMBER_ID_COLUMN_NAME).join(df_account_status)
+    df = df.join(df_account_status)
     df[[HIVE_ACCOUNT_NAME_COLUMN_NAME, SIGNATURE_ON_FILE_COLUMN_NAME]] = df[
         [HIVE_ACCOUNT_NAME_COLUMN_NAME, SIGNATURE_ON_FILE_COLUMN_NAME]
     ].fillna(False)
@@ -100,6 +131,13 @@ def read_csv(
         ~df[SIGNATURE_ON_FILE_COLUMN_NAME] & (df[MEETING_ID_COLUMN_NAME] >= 17),
         [RESPECT_COLUMN_NAME],
     ] = 0
+
+    df_teams = (
+        pd.read_csv(teams_file_path)
+        .drop([INDEX_COLUMN_NAME], axis=1)
+        .set_index(TEAM_ID_COLUMN_NAME)
+    )
+    df = df.join(df_teams, on=TEAM_ID_COLUMN_NAME)
 
     df = df.reset_index()
 

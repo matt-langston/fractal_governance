@@ -2,11 +2,11 @@
 """Measurement uncertainties for fractal governance data analysis"""
 
 from enum import Enum, auto
-from pathlib import Path
 from typing import Dict, List, Set
 
 import attrs
 import fractal_governance.dataset
+import fractal_governance.util
 import numpy as np
 import pandas as pd
 import uncertainties
@@ -119,12 +119,13 @@ class Dataset:
         )
 
     @classmethod
-    def from_csv(cls, *, weekly_measurements_file_path: Path) -> "Dataset":
+    def from_csv(
+        cls,
+        fractal_dataset_csv_paths: fractal_governance.util.FractalDatasetCSVPaths = fractal_governance.util.FractalDatasetCSVPaths(),  # noqa: E501
+    ) -> "Dataset":
         """Return a measurement uncertainty dataset object for the given file path to
         the Genesis .csv dataset"""
-        dataset = fractal_governance.dataset.Dataset.from_csv(
-            weekly_measurements_file_path=weekly_measurements_file_path
-        )
+        dataset = fractal_governance.dataset.Dataset.from_csv(fractal_dataset_csv_paths)
         return cls.from_dataset(dataset=dataset)
 
 

@@ -1,8 +1,6 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
 """Plots for fractal governance data analysis"""
 
-from pathlib import Path
-
 import attr
 import matplotlib.figure
 import matplotlib.pyplot as plt
@@ -11,14 +9,12 @@ import pandas as pd
 import scipy.stats
 
 import fractal_governance.dataset
+import fractal_governance.util
 from fractal_governance.util import (
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME,
     ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
-    GENESIS_ACCOUNT_STATUS_CSV_PATH,
-    GENESIS_LATE_CONSENSUS_CSV_PATH,
-    GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
     MEAN_COLUMN_NAME,
     MEETING_DATE_COLUMN_NAME,
     NEW_MEMBER_COUNT_COLUMN_NAME,
@@ -244,15 +240,8 @@ class Plots:
     @classmethod
     def from_csv(
         cls,
-        *,
-        weekly_measurements_file_path: Path = GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
-        account_status_file_path: Path = GENESIS_ACCOUNT_STATUS_CSV_PATH,
-        late_consensus_file_path: Path = GENESIS_LATE_CONSENSUS_CSV_PATH,
+        fractal_dataset_csv_paths: fractal_governance.util.FractalDatasetCSVPaths = fractal_governance.util.FractalDatasetCSVPaths(),  # noqa: E501
     ) -> "Plots":
-        """Return a Plots object for the given file path to the Genesis .csv dataset"""
-        dataset = fractal_governance.dataset.Dataset.from_csv(
-            weekly_measurements_file_path=weekly_measurements_file_path,
-            account_status_file_path=account_status_file_path,
-            late_consensus_file_path=late_consensus_file_path,
-        )
+        """Return a Plots object for the given Fractal's .csv file paths"""
+        dataset = fractal_governance.dataset.Dataset.from_csv(fractal_dataset_csv_paths)
         return cls(dataset=dataset)

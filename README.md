@@ -680,7 +680,7 @@ dataset.total_team_respect
 
 
 
-    2679
+    2718
 
 
 
@@ -716,7 +716,7 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
       <td>144</td>
     </tr>
     <tr>
-      <td>41</td>
+      <td>80</td>
     </tr>
   </tbody>
 </table>
@@ -751,7 +751,7 @@ dataset.team_representation_stats
 
 
 
-    Statistics(mean=0.36, standard_deviation=0.12)
+    Statistics(mean=0.37, standard_deviation=0.13)
 
 
 

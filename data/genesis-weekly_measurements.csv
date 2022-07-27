@@ -1,731 +1,731 @@
-Index,MemberID,Name,MeetingID,Group,Level,TeamID,TeamName
-1,00,Chace Eskimo,2,1,4,,
-2,01,Debraj Ghosh,2,2,3,,
-3,02,Nick Shock,2,2,2,,
-4,03,Jimmy Lee,2,3,2,,
-5,04,Abdulsalam Ridwa,2,6,1,,
-6,05,Jake Taylor,2,7,2,,
-7,06,Yucel Erdogan,2,7,1,,
-8,2luminaries1,Sebastian Beyer,3,3,3,,
-9,aguerrido,Jorge Ramos,7,5,3,,
-10,aguerrido,Jorge Ramos,11,1,4,,
-11,aguerrido,Jorge Ramos,13,4,1,,
-12,aguerrido,Jorge Ramos,14,4,4,,
-13,aguerrido,Jorge Ramos,15,5,4,,
-14,aguerrido,Jorge Ramos,16,7,3,,
-15,aguerrido,Jorge Ramos,17,3,4,,
-16,aguerrido,Jorge Ramos,18,3,3,,
-17,aguerrido,Jorge Ramos,19,2,2,,
-18,aguerrido,Jorge Ramos,20,7,5,5,
-19,aguerrido,Jorge Ramos,21,2,5,5,Eden fractal
-20,air-crypto,Hernan Arber,2,4,3,,
-21,air-crypto,Hernan Arber,3,7,4,,
-22,air-crypto,Hernan Arber,4,3,2,,
-23,air-crypto,Hernan Arber,10,2,2,,
-24,aireck1,,14,6,1,,
-25,amethystwizo,Amethyst Wizard,3,3,2,,
-26,amih,Ami Heines,1,2,4,,
-27,amih,Ami Heines,2,6,6,,
-28,amih,Ami Heines,3,2,4,,
-29,amih,Ami Heines,4,6,5,,
-30,amih,Ami Heines,5,5,4,,
-31,amih,Ami Heines,8,5,3,,
-32,amih,Ami Heines,9,3,2,,
-33,amih,Ami Heines,10,2,4,,
-34,amih,Ami Heines,11,4,4,,
-35,amih,Ami Heines,12,3,3,,
-36,amih,Ami Heines,14,4,5,,
-37,amih,Ami Heines,16,3,4,,
-38,amih,Ami Heines,18,1,5,,
-39,amih,Ami Heines,19,5,4,,
-40,anthonyrivers,,14,4,1,,
-41,atma.love,Atma Das,2,1,2,,
-42,atma.love,Atma Das,3,3,5,,
-43,atma.love,Atma Das,5,1,4,,
-44,atma.love,Atma Das,6,1,5,,
-45,atma.love,Atma Das,7,4,3,,
-46,atma.love,Atma Das,12,3,5,,
-47,beanz,Triona Cearbhaill,3,5,5,,
-48,berliangor,Igor Berlenko,2,8,1,,
-49,berliangor,Igor Berlenko,8,1,1,,
-50,berliangor,,10,6,2,,
-51,berliangor,,11,6,6,,
-52,berliangor,,12,3,4,,
-53,berliangor,,13,4,3,,
-54,berliangor,,14,2,6,,
-55,berliangor,,16,4,3,,
-56,berliangor,,18,5,4,,
-57,berliangor,,19,4,1,,
-58,berliangor,,21,5,6,,
-59,bishop3dcrea,Charles Bishop,3,7,5,,
-60,bishop3dcrea,Charles Bishop,5,3,4,,
-61,bishop3dcrea,Charles Bishop,7,2,4,,
-62,bishop3dcrea,Charles Bishop,8,5,4,,
-63,bishop3dcrea,Charles Bishop,9,1,6,,
-64,bishop3dcrea,Charles Bishop,10,2,5,,
-65,bishop3dcrea,Charles Bishop,13,4,4,4,fractally francophonie
-66,bishop3dcrea,Charles Bishop,15,6,4,4,fractally francophonie
-67,bishop3dcrea,Charles Bishop,16,2,4,4,fractally francophonie
-68,bishop3dcrea,Charles Bishop,18,6,3,4,fractally francophonie
-69,bishop3dcrea,Charles Bishop,20,3,3,4,fractally francophonie
-70,bishop3dcrea,Charles Bishop,21,4,3,4,fractally francophonie
-71,brspma,Mauro Cesar,6,5,2,,
-72,bywire.com,Michael O'Sullivan,2,5,6,,
-73,cacxyz,Chris Christian,11,2,2,,
-74,cacxyz,Chris Christian,12,5,1,,
-75,cacxyz,Chris Christian,14,4,2,,
-76,cacxyz,Chris Christian,15,5,2,,
-77,cacxyz,Chris Christian,16,5,2,,
-78,cacxyz,Chris Christian,17,3,2,,
-79,cacxyz,Chris Christian,18,3,1,,
-80,cacxyz,Chris Christian,19,3,2,,
-81,cacxyz,Chris Christian,20,5,3,,
-82,cacxyz,Chris Christian,21,5,3,,
-83,chkmacdonald,Chuck MacDonald,2,2,6,,
-84,chkmacdonald,Chuck MacDonald,3,7,6,,
-85,chrisbarnes,Chris Barnes,2,1,5,,
-86,chrisbarnes,Chris Barnes,3,3,4,,
-87,chrisbarnes,Chris Barnes,4,4,6,,
-88,chrisbarnes,Chris Barnes,5,4,4,,
-89,chriswaxa,,7,2,2,,
-90,cryptofit62,,17,3,1,,
-91,cryptokens,Jordan Ackerman,5,5,4,,
-92,cryptokens,Jordan Ackerman,6,3,1,,
-93,cryptokens,Jordan Ackerman,10,1,4,,
-94,cryptokens,Jordan Ackerman,11,5,2,,
-95,cryptokens,Jordan Ackerman,15,6,1,,
-96,cryptokens,Jordan Ackerman,16,7,2,,
-97,cryptosasuke,,7,1,2,,
-98,cryptotokens,,12,5,3,,
-99,dan,Daniel Larimer,1,1,6,,
-100,dan,Daniel Larimer,2,8,6,,
-101,dan,Daniel Larimer,3,2,6,,
-102,dan,Daniel Larimer,4,1,5,,
-103,dan,Daniel Larimer,5,6,5,1,Team fractally
-104,dan,Daniel Larimer,6,4,6,1,Team fractally
-105,dan,Daniel Larimer,7,3,6,1,Team fractally
-106,dan,Daniel Larimer,8,4,6,1,Team fractally
-107,dan,Daniel Larimer,10,2,6,1,Team fractally
-108,dan,Daniel Larimer,11,3,6,1,Team fractally
-109,dan,Daniel Larimer,12,1,6,1,Team fractally
-110,dan,Daniel Larimer,13,5,6,1,Team fractally
-111,dan,Daniel Larimer,14,3,6,1,Team fractally
-112,dan,Daniel Larimer,15,2,6,1,Team fractally
-113,dan,Daniel Larimer,16,1,2,1,Team fractally
-114,dan,Daniel Larimer,17,1,6,1,Team fractally
-115,dan,Daniel Larimer,18,5,6,1,Team fractally
-116,dan,Daniel Larimer,19,2,6,1,Team fractally
-117,dan,Daniel Larimer,20,3,6,1,Team fractally
-118,dan,Daniel Larimer,21,1,6,1,Team fractally
-119,dan1am,,16,7,1,,
-120,dan1am,,17,5,1,,
-121,dan1am,,18,7,2,,
-122,dan1am,,20,4,3,,
-123,dan1am,,21,6,2,,
-124,dansingjoy,Dan Singjoy,1,1,4,,
-125,dansingjoy,Dan Singjoy,2,7,6,,
-126,dansingjoy,Dan Singjoy,3,5,6,,
-127,dansingjoy,Dan Singjoy,4,3,5,,
-128,dansingjoy,Dan Singjoy,5,4,5,,
-129,dansingjoy,Dan Singjoy,6,6,6,,
-130,dansingjoy,Dan Singjoy,7,4,6,,
-131,dansingjoy,Dan Singjoy,8,5,6,,
-132,dansingjoy,Dan Singjoy,9,2,6,,
-133,dansingjoy,Dan Singjoy,10,7,4,,
-134,dansingjoy,Dan Singjoy,11,3,5,,
-135,dansingjoy,Dan Singjoy,12,1,4,,
-136,dansingjoy,Dan Singjoy,13,5,4,,
-137,dansingjoy,Dan Singjoy,14,2,3,,
-138,dansingjoy,Dan Singjoy,15,2,4,,
-139,dansingjoy,Dan Singjoy,16,5,6,,
-140,dansingjoy,Dan Singjoy,17,5,6,,
-141,dansingjoy,Dan Singjoy,18,4,4,,
-142,dansingjoy,Dan Singjoy,20,1,4,5,
-143,dansingjoy,Dan Singjoy,21,1,3,5,Eden fractal
-144,daodejing,Jason Jenkins,4,6,2,,
-145,daodejing,Jason Jenkins,5,3,5,,
-146,daodejing,Jason Jenkins,6,4,5,,
-147,daodejing,Jason Jenkins,9,1,5,,
-148,daodejing,Jason Jenkins,10,7,6,,
-149,daodejing,Jason Jenkins,11,4,2,,
-150,daodejing,Jason Jenkins,12,4,5,,
-151,daodejing,Jason Jenkins,13,2,3,,
-152,daodejing,Jason Jenkins,14,6,3,,
-153,daodejing,Jason Jenkins,15,5,5,,
-154,daodejing,Jason Jenkins,16,3,5,,
-155,daodejing,Jason Jenkins,17,5,3,,
-156,daodejing,Jason Jenkins,18,2,2,,
-157,daodejing,Jason Jenkins,20,6,3,,
-158,daodejing,Jason Jenkins,21,3,3,,
-159,darioconeden,Dario Cesaro,1,2,6,,
-160,davidelvion3,David Elvion,6,7,1,,
-161,davidelvion3,David Elvion,10,6,1,,
-162,davidelvion3,David Elvion,16,1,1,,
-163,dbee,,6,6,1,,
-164,deniscarrier,Denis Carriere,3,4,5,,
-165,densteem,,6,4,2,,
-166,doingitright,Brandon Fancher,4,1,6,,
-167,doingitright,Brandon Fancher,5,2,6,1,Team fractally
-168,doingitright,Brandon Fancher,7,5,6,1,Team fractally
-169,doingitright,Brandon Fancher,9,5,4,1,Team fractally
-170,doingitright,Brandon Fancher,10,6,6,1,Team fractally
-171,doingitright,Brandon Fancher,12,6,6,1,Team fractally
-172,doingitright,Brandon Fancher,13,6,6,1,Team fractally
-173,doingitright,Brandon Fancher,14,4,6,1,Team fractally
-174,doingitright,Brandon Fancher,15,3,5,1,Team fractally
-175,doingitright,Brandon Fancher,17,3,6,1,Team fractally
-176,doingitright,Brandon Fancher,18,6,4,1,Team fractally
-177,doingitright,Brandon Fancher,21,6,5,1,Team fractally
-178,doublewabbit,Filip Poverud,2,4,1,,
-179,douglasjames,Douglas Butner,2,1,3,,
-180,douglasjames,Douglas Butner,3,1,6,,
-181,douglasjames,Douglas Butner,4,3,3,,
-182,douglasjames,Douglas Butner,5,3,2,,
-183,douglasjames,Douglas Butner,6,1,6,,
-184,douglasjames,Douglas Butner,7,1,4,,
-185,douglasjames,Douglas Butner,8,2,6,,
-186,douglasjames,Douglas Butner,9,2,2,,
-187,douglasjames,Douglas Butner,10,4,6,,
-188,douglasjames,Douglas Butner,11,6,2,,
-189,douglasjames,Douglas Butner,12,1,1,,
-190,douglasjames,Douglas Butner,13,2,2,,
-191,douglasjames,Douglas Butner,14,1,2,,
-192,douglasjames,Douglas Butner,21,3,2,,
-193,dphillippi,Duane Phillippi,2,5,5,,
-194,dphillippi,Duane Phillippi,3,6,3,,
-195,dphillippi,Duane Phillippi,4,1,2,,
-196,dphillippi,Duane Phillippi,5,2,4,,
-197,dphillippi,Duane Phillippi,6,5,4,,
-198,dphillippi,Duane Phillippi,7,1,3,,
-199,dphillippi,Duane Phillippi,8,4,1,,
-200,dphillippi,Duane Phillippi,9,4,5,,
-201,dphillippi,Duane Phillippi,10,5,5,,
-202,dphillippi,Duane Phillippi,11,1,3,,
-203,dphillippi,Duane Phillippi,12,6,5,,
-204,dphillippi,Duane Phillippi,13,4,6,,
-205,dphillippi,Duane Phillippi,14,5,3,,
-206,dphillippi,Duane Phillippi,15,4,3,,
-207,dphillippi,Duane Phillippi,16,6,4,2,EOS Translation Foundation
-208,dphillippi,Duane Phillippi,17,2,6,2,EOS Translation Foundation
-209,dphillippi,Duane Phillippi,18,3,6,2,EOS Translation Foundation
-210,dphillippi,Duane Phillippi,19,4,5,2,EOS Translation Foundation
-211,dphillippi,Duane Phillippi,20,6,5,2,EOS Translation Foundation
-212,dphillippi,Duane Phillippi,21,6,6,2,EOS Translation Foundation
-213,drew-bop,Andrew Ware,2,5,3,,
-214,drew-bop,Andrew Ware,3,6,1,,
-215,drew-bop,Andrew Ware,4,6,3,,
-216,drew-bop,Andrew Ware,5,5,2,,
-217,drew-bop,Andrew Ware,6,5,5,,
-218,drew-bop,Andrew Ware,7,6,6,,
-219,drew-bop,Andrew Ware,12,6,1,,
-220,drew-bop,Andrew Ware,13,4,5,,
-221,drew-bop,Andrew Ware,15,1,2,,
-222,drew-bop,Andrew Ware,16,5,1,,
-223,drew-bop,Andrew Ware,17,6,2,,
-224,drew-bop,Andrew Ware,18,5,2,,
-225,drew-bop,Andrew Ware,19,6,1,,
-226,drew-bop,Andrew Ware,20,1,3,5,
-227,drew-bop,Andrew Ware,21,5,4,5,Eden fractal
-228,drwu,Doug Wu,3,4,1,,
-229,drwu,Doug Wu,6,6,3,,
-230,drwu,Doug Wu,7,6,3,,
-231,drwu,Doug Wu,8,3,3,2,EOS Translation Foundation
-232,drwu,Doug Wu,9,4,4,2,EOS Translation Foundation
-233,drwu,Doug Wu,10,7,2,2,EOS Translation Foundation
-234,drwu,Doug Wu,11,3,3,2,EOS Translation Foundation
-235,drwu,Doug Wu,12,6,2,2,EOS Translation Foundation
-236,drwu,Doug Wu,13,6,5,2,EOS Translation Foundation
-237,drwu,Doug Wu,15,1,1,2,EOS Translation Foundation
-238,drwu,Doug Wu,16,7,6,2,EOS Translation Foundation
-239,drwu,Doug Wu,17,1,5,2,EOS Translation Foundation
-240,drwu,Doug Wu,18,2,3,2,EOS Translation Foundation
-241,eoschadrickm,Chadrick Mahaffey,3,5,2,,
-242,eoscrafati22,,4,5,3,,
-243,EOSMel,Melvin Pearce,1,2,5,,
-244,EOSMel,Melvin Pearce,2,3,5,,
-245,EOSMel,Melvin Pearce,7,1,1,,
-246,EOSMel,Melvin Pearce,8,4,2,,
-247,EOSMel,Melvin Pearce,19,1,1,,
-248,exodius,,6,1,4,,
-249,fokenfa,Fabrice,4,1,1,,
-250,fokenfa,Fabrice,5,4,1,,
-251,fokenfa,Fabrice,8,2,3,,
-252,fokenfa,Fabrice,10,3,2,,
-253,fokenfa,Fabrice,12,2,2,,
-254,fokenfa,Fabrice,16,6,3,,
-255,fokenfa,Fabrice,17,6,1,,
-256,fokenfa,Fabrice,20,2,2,,
-257,fokenfa,Fabrice,21,8,1,,
-258,fractallymike,Mike Manfredi,3,2,2,,
-259,fractallymike,Mike Manfredi,4,2,6,,
-260,fractallymike,Mike Manfredi,5,1,6,1,Team fractally
-261,fractallymike,Mike Manfredi,6,7,6,1,Team fractally
-262,fractallymike,Mike Manfredi,9,2,4,1,Team fractally
-263,fractallymike,Mike Manfredi,13,3,6,1,Team fractally
-264,fractallymike,Mike Manfredi,14,1,4,1,Team fractally
-265,fractallymike,Mike Manfredi,15,3,2,1,Team fractally
-266,fractallymike,Mike Manfredi,16,7,5,1,Team fractally
-267,fractallymike,Mike Manfredi,17,6,6,1,Team fractally
-268,fractallymike,Mike Manfredi,18,2,6,1,Team fractally
-269,fractallymike,Mike Manfredi,19,1,6,1,Team fractally
-270,fractallymike,Mike Manfredi,20,1,6,1,Team fractally
-271,fractallymike,Mike Manfredi,21,8,5,1,Team fractally
-272,gavrielshaw,Gavriel Shaw,4,5,5,,
-273,gavrielshaw,Gavriel Shaw,13,5,2,,
-274,gokulnk,Gokul NK,3,7,1,,
-275,gokulnk,Gokul NK,4,5,2,,
-276,gokulnk,Gokul NK,5,4,3,,
-277,gokulnk,Gokul NK,6,2,2,,
-278,gokulnk,Gokul NK,7,5,2,,
-279,gokulnk,Gokul NK,8,4,3,,
-280,gokulnk,Gokul NK,11,2,4,,
-281,gokulnk,Gokul NK,16,2,2,,
-282,gokulnk,Gokul NK,18,6,1,,
-283,gonflosca,Oscar Gonzalez,9,1,1,2,EOS Translation Foundation
-284,gonflosca,Oscar Gonzalez,10,4,4,2,EOS Translation Foundation
-285,gonflosca,Oscar Gonzalez,11,5,6,2,EOS Translation Foundation
-286,gonflosca,Oscar Gonzalez,12,1,3,2,EOS Translation Foundation
-287,gonflosca,Oscar Gonzalez,13,5,3,2,EOS Translation Foundation
-288,gonflosca,Oscar Gonzalez,14,6,4,2,EOS Translation Foundation
-289,gonflosca,Oscar Gonzalez,15,4,5,2,EOS Translation Foundation
-290,gonflosca,Oscar Gonzalez,16,1,4,2,EOS Translation Foundation
-291,gonflosca,Oscar Gonzalez,17,4,4,2,EOS Translation Foundation
-292,gonflosca,Oscar Gonzalez,18,3,2,2,EOS Translation Foundation
-293,gonflosca,Oscar Gonzalez,19,5,3,2,EOS Translation Foundation
-294,gonflosca,Oscar Gonzalez,20,6,2,2,EOS Translation Foundation
-295,gonflosca,Oscar Gonzalez,21,5,5,2,EOS Translation Foundation
-296,grahappa,Perry Shenas,12,4,1,,
-297,grahappa,Perry Shenas,14,5,4,,
-298,grahappa,Perry Shenas,19,1,3,,
-299,grahappa,Perry Shenas,20,7,6,,
-300,grahappa,Perry Shenas,21,7,4,,
-301,hachtu,Mark Scheer,2,8,4,,
-302,hachtu,Mark Scheer,3,2,5,,
-303,hachtu,Mark Scheer,4,6,6,,
-304,hachtu,Mark Scheer,6,2,6,,
-305,hachtu,Mark Scheer,7,5,5,,
-306,hachtu,Mark Scheer,8,4,4,2,EOS Translation Foundation
-307,hachtu,Mark Scheer,9,5,5,2,EOS Translation Foundation
-308,hachtu,Mark Scheer,10,6,4,2,EOS Translation Foundation
-309,hachtu,Mark Scheer,12,3,6,2,EOS Translation Foundation
-310,hachtu,Mark Scheer,13,6,3,2,EOS Translation Foundation
-311,hachtu,Mark Scheer,14,5,6,2,EOS Translation Foundation
-312,hachtu,Mark Scheer,15,4,6,2,EOS Translation Foundation
-313,hachtu,Mark Scheer,16,1,6,2,EOS Translation Foundation
-314,hachtu,Mark Scheer,17,5,4,2,EOS Translation Foundation
-315,hachtu,Mark Scheer,18,2,4,2,EOS Translation Foundation
-316,hachtu,Mark Scheer,19,4,4,2,EOS Translation Foundation
-317,hachtu,Mark Scheer,20,2,4,2,EOS Translation Foundation
-318,hachtu,Mark Scheer,21,7,5,2,EOS Translation Foundation
-319,harketypes,,10,4,2,,
-320,headwatersfc,Kassy Sullivan,3,4,4,,
-321,headwatersfc,Kassy Sullivan,4,5,4,,
-322,highsteam1900,Tommy Ryan,12,4,2,,
-323,highsteam1900,Tommy Ryan,13,3,1,,
-324,highsteam1900,Tommy Ryan,14,3,2,,
-325,highsteam1900,Tommy Ryan,15,6,2,,
-326,highsteam1900,Tommy Ryan,16,2,3,,
-327,highsteam1900,Tommy Ryan,17,6,3,3,Fractally in Orbit
-328,highsteam1900,Tommy Ryan,18,7,1,3,Fractally in Orbit
-329,highsteam1900,Tommy Ryan,19,4,3,3,Fractally in Orbit
-330,highsteam1900,Tommy Ryan,20,3,4,3,Fractally in Orbit
-331,highsteam1900,Tommy Ryan,21,2,4,3,Fractally in Orbit
-332,iamsubbu,Subbu,5,4,2,,
-333,jamesmart,James Mart,6,3,5,1,Team fractally
-334,jamesmart,James Mart,9,4,6,1,Team fractally
-335,jamesmart,James Mart,10,3,5,1,Team fractally
-336,jamesmart,James Mart,11,6,4,1,Team fractally
-337,jamesmart,James Mart,13,5,5,1,Team fractally
-338,jamesmart,James Mart,14,6,5,1,Team fractally
-339,jamesmart,James Mart,15,3,4,1,Team fractally
-340,jamesmart,James Mart,16,7,4,1,Team fractally
-341,jamesmart,James Mart,17,3,5,1,Team fractally
-342,jamesmart,James Mart,18,4,5,1,Team fractally
-343,jamesmart,James Mart,20,5,6,1,Team fractally
-344,jamesmart,James Mart,21,4,6,1,Team fractally
-345,jasongeringer,,19,5,2,,
-346,jaytaylor-node,Jay Taylor,1,1,2,,
-347,jaytaylor-node,Jay Taylor,2,3,4,,
-348,jaytaylor-node,Jay Taylor,3,6,5,,
-349,jaytaylor-node,Jay Taylor,4,1,3,,
-350,jaytaylor-node,Jay Taylor,5,2,5,,
-351,jaytaylor-node,Jay Taylor,6,7,4,,
-352,jaytaylor-node,Jay Taylor,7,5,4,,
-353,jaytaylor-node,Jay Taylor,8,3,2,,
-354,jaytaylor-node,Jay Taylor,9,4,2,,
-355,jaytaylor-node,Jay Taylor,10,1,2,,
-356,jaytaylor-node,Jay Taylor,11,6,3,3,Fractally in Orbit
-357,jaytaylor-node,Jay Taylor,12,4,4,3,Fractally in Orbit
-358,jaytaylor-node,Jay Taylor,13,3,3,3,Fractally in Orbit
-359,jaytaylor-node,Jay Taylor,14,2,1,3,Fractally in Orbit
-360,jaytaylor-node,Jay Taylor,15,2,1,3,Fractally in Orbit
-361,jaytaylor-node,Jay Taylor,16,4,4,3,Fractally in Orbit
-362,jaytaylor-node,Jay Taylor,17,1,4,3,Fractally in Orbit
-363,jaytaylor-node,Jay Taylor,18,1,1,3,Fractally in Orbit
-364,jaytaylor-node,Jay Taylor,19,6,6,3,Fractally in Orbit
-365,jaytaylor-node,Jay Taylor,20,5,5,3,Fractally in Orbit
-366,jaytaylor-node,Jay Taylor,21,1,2,3,Fractally in Orbit
-367,jessethan,Jesse Jaffe,2,3,6,,
-368,jessethan,Jesse Jaffe,3,4,6,,
-369,jessethan,Jesse Jaffe,4,1,4,,
-370,jessethan,Jesse Jaffe,6,5,6,,
-371,jessethan,Jesse Jaffe,9,3,5,,
-372,jessethan,Jesse Jaffe,11,4,6,,
-373,jessethan,Jesse Jaffe,18,5,3,,
-374,jessethan,Jesse Jaffe,21,4,4,,
-375,johnjwilliamson,John Williamson,10,4,5,,
-376,johnjwilliamson,John Williamson,12,2,6,,
-377,jrichardliston,,11,2,3,,
-378,jrichardliston,,12,4,3,,
-379,jseymour,Joshua Seymour,1,1,3,,
-380,jseymour,Joshua Seymour,2,2,5,,
-381,jseymour,Joshua Seymour,3,1,4,,
-382,jseymour,Joshua Seymour,4,2,5,,
-383,jseymour,Joshua Seymour,5,5,5,,
-384,jseymour,Joshua Seymour,6,6,4,,
-385,jseymour,Joshua Seymour,7,1,6,,
-386,jseymour,Joshua Seymour,8,3,6,,
-387,jseymour,Joshua Seymour,9,2,5,,
-388,jseymour,Joshua Seymour,10,7,1,,
-389,jseymour,Joshua Seymour,11,6,5,,
-390,jseymour,Joshua Seymour,12,5,5,,
-391,jseymour,Joshua Seymour,13,3,5,,
-392,jseymour,Joshua Seymour,14,5,5,,
-393,jseymour,Joshua Seymour,15,1,5,,
-394,jseymour,Joshua Seymour,16,4,6,,
-395,jseymour,Joshua Seymour,17,4,1,,
-396,jseymour,Joshua Seymour,18,6,6,,
-397,jseymour,Joshua Seymour,19,6,3,,
-398,jseymour,Joshua Seymour,20,1,2,,
-399,jseymour,Joshua Seymour,21,1,4,,
-400,kentbull,,6,1,2,,
-401,khoja,,15,4,2,,
-402,khoja,,16,4,1,,
-403,khoja,,17,4,2,,
-404,khoja,,18,2,1,,
-405,khoja,,21,7,2,,
-406,larosenonaka,Yves La Rose,2,8,3,,
-407,linusdao1,,16,6,1,,
-408,lionflash,Felix Ruiz,2,3,3,,
-409,lionflash,Felix Ruiz,3,2,3,,
-410,lionflash,Felix Ruiz,4,1,1,,
-411,lionflash,Felix Ruiz,5,1,3,,
-412,lionflash,Felix Ruiz,6,5,3,,
-413,lionflash,Felix Ruiz,7,4,5,,
-414,lionflash,Felix Ruiz,8,2,2,,
-415,lionflash,Felix Ruiz,9,1,4,,
-416,lionflash,Felix Ruiz,10,5,2,,
-417,lionflash,Felix Ruiz,11,3,4,,
-418,lionflash,Felix Ruiz,12,2,3,,
-419,lionflash,Felix Ruiz,13,1,4,,
-420,lionflash,Felix Ruiz,14,2,4,,
-421,lionflash,Felix Ruiz,15,1,6,,
-422,lionflash,Felix Ruiz,16,5,5,,
-423,lionflash,Felix Ruiz,17,4,5,,
-424,lionflash,Felix Ruiz,18,7,3,,
-425,lionflash,Felix Ruiz,19,2,5,,
-426,lionflash,Felix Ruiz,20,7,3,5,
-427,lionflash,Felix Ruiz,21,1,5,5,Eden fractal
-428,lovejoy,Brandon Lovejoy,2,5,2,,
-429,loyalnine313,Adam Zientarski,2,7,3,,
-430,luckyhahnryu,Hahn Ryu,13,2,1,,
-431,luckyhahnryu,Hahn Ryu,21,5,2,,
-432,machnbirdsparo,Marco Gonzalez,3,5,4,,
-433,machnbirdsparo,Marco Gonzalez,4,2,2,,
-434,machnbirdsparo,Marco Gonzalez,6,2,4,,
-435,machnbirdsparo,Marco Gonzalez,7,1,5,,
-436,machnbirdsparo,Marco Gonzalez,8,2,5,2,EOS Translation Foundation
-437,machnbirdsparo,Marco Gonzalez,9,2,1,2,EOS Translation Foundation
-438,machnbirdsparo,Marco Gonzalez,10,5,3,2,EOS Translation Foundation
-439,machnbirdsparo,Marco Gonzalez,11,4,3,2,EOS Translation Foundation
-440,machnbirdsparo,Marco Gonzalez,12,5,4,2,EOS Translation Foundation
-441,machnbirdsparo,Marco Gonzalez,13,1,2,2,EOS Translation Foundation
-442,machnbirdsparo,Marco Gonzalez,14,2,2,2,EOS Translation Foundation
-443,machnbirdsparo,Marco Gonzalez,15,4,4,2,EOS Translation Foundation
-444,machnbirdsparo,Marco Gonzalez,16,5,3,2,EOS Translation Foundation
-445,machnbirdsparo,Marco Gonzalez,18,4,2,2,EOS Translation Foundation
-446,machnbirdsparo,Marco Gonzalez,19,3,4,2,EOS Translation Foundation
-447,machnbirdsparo,Marco Gonzalez,20,2,5,2,EOS Translation Foundation
-448,machnbirdsparo,Marco Gonzalez,21,8,6,2,EOS Translation Foundation
-449,marconamaste,Markus Hinrichs,19,2,4,,
-450,marconamaste,Markus Hinrichs,20,4,6,,
-451,markstair,Mark Stair,2,8,5,,
-452,markstair,Mark Stair,4,1,1,,
-453,markstair,Mark Stair,5,4,6,,
-454,markstair,Mark Stair,6,2,3,,
-455,markstair,Mark Stair,7,3,1,,
-456,markstair,Mark Stair,10,7,5,,
-457,markstair,Mark Stair,19,6,4,,
-458,markstair,Mark Stair,21,8,3,,
-459,markus,,18,1,4,,
-460,marty-be,Martin Breurer,2,6,3,,
-461,marty-be,Martin Breurer,4,4,4,,
-462,marty-be,Martin Breuer,5,2,3,,
-463,marty-be,Martin Breuer,7,5,1,,
-464,mattlangston,Matt Langston,2,7,5,,
-465,mattlangston,Matt Langston,3,1,3,,
-466,mattlangston,Matt Langston,4,3,4,,
-467,mattlangston,Matt Langston,5,5,3,,
-468,mattlangston,Matt Langston,6,3,2,,
-469,mattlangston,Matt Langston,7,3,4,,
-470,mattlangston,Matt Langston,8,1,3,,
-471,mattlangston,Matt Langston,9,3,3,,
-472,mattlangston,Matt Langston,10,5,4,,
-473,mattlangston,Matt Langston,12,1,5,,
-474,mattlangston,Matt Langston,13,2,6,,
-475,mattlangston,Matt Langston,14,6,6,,
-476,mattlangston,Matt Langston,15,6,6,,
-477,mattlangston,Matt Langston,16,2,5,,
-478,mattlangston,Matt Langston,17,4,3,,
-479,mattlangston,Matt Langston,18,2,5,,
-480,mattlangston,Matt Langston,19,5,6,,
-481,mattlangston,Matt Langston,21,7,6,,
-482,maximcincinnatis,,21,1,1,,
-483,menoski,Uvokeke Dennis,5,2,2,,
-484,merivercap,,20,4,2,,
-485,michaelx,Michael X,14,5,2,3,Fractally in Orbit
-486,mikelennie,Lennie Niit,1,1,5,,
-487,mikelennie,Lennie Niit,2,4,4,,
-488,mikelennie,Lennie Niit,3,3,6,,
-489,mikelennie,Lennie Niit,4,4,5,,
-490,mikelennie,Lennie Niit,5,3,1,,
-491,mikelennie,Lennie Niit,6,6,2,,
-492,mikelennie,Lennie Niit,8,5,2,,
-493,mikelennie,Lennie Niit,9,4,3,,
-494,mikelennie,Lennie Niit,10,6,3,,
-495,mikelennie,Lennie Niit,11,5,5,,
-496,mikelennie,Lennie Niit,12,3,2,,
-497,mikelennie,Lennie Niit,13,3,2,,
-498,mikelennie,Lennie Niit,14,5,1,,
-499,mikelennie,Lennie Niit,15,2,2,,
-500,mikelennie,Lennie Niit,16,3,2,,
-501,mikelennie,Lennie Niit,17,1,1,,
-502,mikelennie,Lennie Niit,18,1,2,,
-503,mikelennie,Lennie Niit,19,6,2,,
-504,mikelennie,Lennie Niit,21,2,2,,
-505,mototbilisi,Mark,21,7,3,,
-506,nathanielherman,Nathaniel Herman,7,3,2,,
-507,nathanielherman,Nathaniel Herman,9,3,1,,
-508,nathanielherman,Nathaniel Herman,10,1,5,,
-509,nathanielherman,Nathaniel Herman,11,5,3,,
-510,nathanielherman,Nathaniel Herman,12,1,2,,
-511,neuron.gm,Jordan Ackerman,3,4,2,,
-512,norsegaud,,6,1,3,,
-513,nouser,,11,5,1,,
-514,novacryptollc,Patrick Bernard Schmid,2,4,6,,
-515,novacryptollc,Patrick Bernard Schmid,3,1,5,,
-516,novacryptollc,Patrick Bernard Schmid,4,2,3,,
-517,novacryptollc,Patrick Bernard Schmid,6,2,5,,
-518,novacryptollc,Patrick Bernard Schmid,7,2,3,,
-519,novacryptollc,Patrick Bernard Schmid,8,5,5,,
-520,novacryptollc,Patrick Bernard Schmid,9,5,3,,
-521,novacryptollc,Patrick Bernard Schmid,10,6,5,,
-522,novacryptollc,Patrick Bernard Schmid,11,4,5,,
-523,novacryptollc,Patrick Bernard Schmid,12,4,6,,
-524,novacryptollc,Patrick Bernard Schmid,13,1,3,,
-525,novacryptollc,Patrick Bernard Schmid,14,3,4,,
-526,novacryptollc,Patrick Bernard Schmid,15,2,3,,
-527,novacryptollc,Patrick Bernard Schmid,16,6,5,,
-528,novacryptollc,Patrick Bernard Schmid,17,1,3,,
-529,novacryptollc,Patrick Bernard Schmid,18,1,3,,
-530,novacryptollc,Patrick Bernard Schmid,20,1,1,,
-531,novacryptollc,Patrick Bernard Schmid,21,2,6,,
-532,nudimar,Nuno Marcelino,1,2,3,,
-533,nudimar,Nuno Marcelino,2,6,2,,
-534,nudimar,Nuno Marcelino,3,6,2,,
-535,nudimar,Nuno Marcelino,6,7,2,,
-536,nudimar,Nuno Marcelino,7,6,4,,
-537,nudimar,Nuno Marcelino,9,4,1,,
-538,nudimar,Nuno Marcelino,10,7,3,,
-539,nudimar,Nuno Marcelino,11,1,2,,
-540,nudimar,Nuno Marcelino,12,5,2,,
-541,nudimar,Nuno Marcelino,15,5,1,,
-542,nudimar,Nuno Marcelino,16,4,2,,
-543,nudimar,Nuno Marcelino,19,1,2,,
-544,nudimar,Nuno Marcelino,20,7,2,,
-545,nudimar,Nuno Marcelino,21,8,2,,
-546,oldtimersoffer,Milan Bjegovic,16,6,2,,
-547,oldtimersoffer,Milan Bjegovic,20,5,2,,
-548,pnc,Pascal Ngu Cho,2,4,5,,
-549,pnc,Pascal Ngu Cho,3,1,2,,
-550,pnc,Pascal Ngu Cho,4,2,4,,
-551,pnc,Pascal Ngu Cho,5,6,3,,
-552,pnc,Pascal Ngu Cho,6,3,3,,
-553,pnc,Pascal Ngu Cho,7,6,5,,
-554,pnc,Pascal Ngu Cho,8,2,4,,
-555,pnc,Pascal Ngu Cho,9,1,3,,
-556,pnc,Pascal Ngu Cho,10,3,4,,
-557,pnc,Pascal Ngu Cho,11,1,5,,
-558,pnc,Pascal Ngu Cho,12,2,4,4,fractally francophonie
-559,pnc,Pascal Ngu Cho,13,1,5,4,fractally francophonie
-560,pnc,Pascal Ngu Cho,14,1,3,4,fractally francophonie
-561,pnc,Pascal Ngu Cho,15,1,4,4,fractally francophonie
-562,pnc,Pascal Ngu Cho,16,1,5,4,fractally francophonie
-563,pnc,Pascal Ngu Cho,17,2,4,4,fractally francophonie
-564,pnc,Pascal Ngu Cho,18,7,6,4,fractally francophonie
-565,pnc,Pascal Ngu Cho,19,1,4,4,fractally francophonie
-566,pnc,Pascal Ngu Cho,20,1,5,4,fractally francophonie
-567,pnc,Pascal Ngu Cho,21,8,4,4,fractally francophonie
-568,recentchats,Eric Binder,2,4,2,,
-569,recentchats,Eric Binder,3,7,3,,
-570,recentchats,Eric Binder,4,4,2,,
-571,recentchats,Eric Binder,9,5,2,,
-572,recentchats,Eric Binder,13,1,1,,
-573,recentchats,Eric Binder,14,3,1,,
-574,recentchats,Eric Binder,15,1,3,,
-575,recentchats,Eric Binder,16,5,4,,
-576,recentchats,Eric Binder,17,5,2,,
-577,recentchats,Eric Binder,19,3,3,,
-578,recentchats,Eric Binder,20,3,2,,
-579,recentchats,Eric Binder,21,6,4,,
-580,rimantas,Rimantas Martinonis,5,6,2,,
-581,rimantas,Rimantas Martinonis,6,2,1,,
-582,rimantas,Rimantas Martinonis,8,3,1,,
-583,robrigo,Rob Konsdorf,2,7,4,,
-584,rocogg,,10,2,3,,
-585,sagarmathanp,Lukas Mantinger,5,3,3,,
-586,sagarmathanp,Lukas Mantinger,6,6,5,,
-587,sagarmathanp,Lukas Mantinger,8,1,5,,
-588,sagarmathanp,Lukas Mantinger,17,2,2,,
-589,sagarmathanp,Lukas Mantinger,18,3,5,,
-590,SamaraShaw,Samara Shaw,6,4,3,,
-591,sethatboid,,13,4,2,,
-592,shakhruz,Shakhruz Ashirov,2,1,1,,
-593,shakhruz,Shakhruz Ashirov,3,6,6,,
-594,shakhruz,Shakhruz Ashirov,4,3,6,,
-595,shakhruz,Shakhruz Ashirov,5,1,5,,
-596,shakhruz,Shakhruz Ashirov,6,3,4,,
-597,shakhruz,Shakhruz Ashirov,7,3,3,,
-598,shakhruz,Shakhruz Ashirov,8,1,4,2,EOS Translation Foundation
-599,shakhruz,Shakhruz Ashirov,10,1,1,2,EOS Translation Foundation
-600,shakhruz,Shakhruz Ashirov,12,6,3,2,EOS Translation Foundation
-601,shakhruz,Shakhruz Ashirov,13,6,1,2,EOS Translation Foundation
-602,shakhruz,Shakhruz Ashirov,14,1,1,2,EOS Translation Foundation
-603,shakhruz,Shakhruz Ashirov,15,5,6,2,EOS Translation Foundation
-604,shakhruz,Shakhruz Ashirov,16,3,6,2,EOS Translation Foundation
-605,shakhruz,Shakhruz Ashirov,17,2,5,2,EOS Translation Foundation
-606,shakhruz,Shakhruz Ashirov,18,3,4,2,EOS Translation Foundation
-607,shakhruz,Shakhruz Ashirov,19,6,5,2,EOS Translation Foundation
-608,shakhruz,Shakhruz Ashirov,20,4,5,2,EOS Translation Foundation
-609,shakhruz,Shakhruz Ashirov,21,4,2,2,EOS Translation Foundation
-610,sim31,Tadas Vaitiekunas,5,5,1,,
-611,sim31,Tadas Vaitiekunas,6,4,4,,
-612,sim31,Tadas Vaitiekunas,7,4,4,,
-613,sim31,Tadas Vaitiekunas,8,3,4,,
-614,sim31,Tadas Vaitiekunas,9,3,4,,
-615,sim31,Tadas Vaitiekunas,10,4,3,,
-616,sim31,Tadas Vaitiekunas,11,5,4,,
-617,sim31,Tadas Vaitiekunas,12,3,1,,
-618,sim31,Tadas Vaitiekunas,13,1,6,,
-619,sim31,Tadas Vaitiekunas,14,3,3,,
-620,sim31,Tadas Vaitiekunas,15,6,3,,
-621,sim31,Tadas Vaitiekunas,16,3,3,,
-622,sim31,Tadas Vaitiekunas,17,1,2,,
-623,sim31,Tadas Vaitiekunas,19,2,3,,
-624,sim31,Tadas Vaitiekunas,20,2,3,,
-625,sim31,Tadas Vaitiekunas,21,2,3,,
-626,spencerhanson,Spencer Hanson,2,6,5,,
-627,spencerhanson,Spencer Hanson,3,6,4,,
-628,spencerhanson,Spencer Hanson,4,6,4,,
-629,spencerhanson,Spencer Hanson,6,7,3,,
-630,spencerhanson,Spencer Hanson,7,6,2,,
-631,stan,Stan Larimer,10,1,6,,
-632,stan,Stan Larimer,11,2,6,3,Fractally in Orbit
-633,stan,Stan Larimer,13,2,4,3,Fractally in Orbit
-634,stan,Stan Larimer,14,6,2,3,Fractally in Orbit
-635,stan,Stan Larimer,15,6,5,3,Fractally in Orbit
-636,stan,Stan Larimer,16,1,3,3,Fractally in Orbit
-637,stan,Stan Larimer,17,3,3,3,Fractally in Orbit
-638,stan,Stan Larimer,18,7,4,3,Fractally in Orbit
-639,stan,Stan Larimer,19,1,5,3,Fractally in Orbit
-640,stan,Stan Larimer,20,2,6,3,Fractally in Orbit
-641,stan,Stan Larimer,21,3,4,3,Fractally in Orbit
-642,thomashallgren,Thomas Hallgren,5,6,6,1,Team fractally
-643,thomashallgren,Thomas Hallgren,7,3,5,1,Team fractally
-644,thomashallgren,Thomas Hallgren,8,1,6,1,Team fractally
-645,thomashallgren,Thomas Hallgren,9,2,3,1,Team fractally
-646,thomashallgren,Thomas Hallgren,10,3,6,1,Team fractally
-647,thomashallgren,Thomas Hallgren,11,2,5,1,Team fractally
-648,thomashallgren,Thomas Hallgren,13,2,5,1,Team fractally
-649,thomashallgren,Thomas Hallgren,14,1,5,1,Team fractally
-650,thomashallgren,Thomas Hallgren,15,2,5,1,Team fractally
-651,thomashallgren,Thomas Hallgren,16,6,6,1,Team fractally
-652,thomashallgren,Thomas Hallgren,18,4,6,1,Team fractally
-653,thomashallgren,Thomas Hallgren,19,4,6,1,Team fractally
-654,thomashallgren,Thomas Hallgren,20,6,6,1,Team fractally
-655,thomashallgren,Thomas Hallgren,21,3,5,1,Team fractally
-656,timless,Tim Taylor,1,1,1,,
-657,timless,Tim Taylor,2,2,4,,
-658,timless,Tim Taylor,3,7,2,,
-659,timless,Tim Taylor,5,1,2,,
-660,timless,Tim Taylor,7,4,2,,
-661,timless,Tim Taylor,9,1,2,,
-662,timless,Tim Taylor,15,5,3,,
-663,timless,Tim Taylor,17,2,1,,
-664,timless,Tim Taylor,18,6,2,,
-665,timless,Tim Taylor,20,5,4,,
-666,tmess,Toby Messier,2,5,4,,
-667,tmess,Toby Messier,8,1,2,,
-668,tmess,Toby Messier,10,1,3,,
-669,tmess,Toby Messier,11,3,2,3,Fractally in Orbit
-670,tmess,Toby Messier,12,6,4,3,Fractally in Orbit
-671,tmess,Toby Messier,13,3,4,3,Fractally in Orbit
-672,tmess,Toby Messier,14,2,5,3,Fractally in Orbit
-673,tmess,Toby Messier,17,5,5,3,Fractally in Orbit
-674,tmess,Toby Messier,18,5,5,3,Fractally in Orbit
-675,topobadger,Jose Basanta,16,2,1,,
-676,val,Valentine Zavgorodnev,5,5,6,1,Team fractally
-677,val,Valentine Zavgorodnev,6,7,5,1,Team fractally
-678,val,Valentine Zavgorodnev,7,2,6,1,Team fractally
-679,val,Valentine Zavgorodnev,8,3,5,1,Team fractally
-680,val,Valentine Zavgorodnev,9,5,6,1,Team fractally
-681,val,Valentine Zavgorodnev,10,3,3,1,Team fractally
-682,val,Valentine Zavgorodnev,12,5,6,1,Team fractally
-683,val,Valentine Zavgorodnev,13,6,2,1,Team fractally
-684,val,Valentine Zavgorodnev,14,1,6,1,Team fractally
-685,val,Valentine Zavgorodnev,15,3,1,1,Team fractally
-686,val,Valentine Zavgorodnev,17,4,6,1,Team fractally
-687,val,Valentine Zavgorodnev,18,6,5,1,Team fractally
-688,val,Valentine Zavgorodnev,19,5,5,1,Team fractally
-689,val,Valentine Zavgorodnev,20,6,4,1,Team fractally
-690,val,Valentine Zavgorodnev,21,3,6,1,Team fractally
-691,vladislav.x,Vladislav Hramtsov,2,8,2,,
-692,wakeupjohnny,JP Camunag,2,3,1,,
-693,westreich,Eric Westreich,14,4,3,,
-694,westreich,Eric Westreich,15,3,6,,
-695,westreich,Eric Westreich,16,4,5,,
-696,westreich,Eric Westreich,17,6,4,,
-697,westreich,Eric Westreich,18,4,3,,
-698,westreich,Eric Westreich,19,3,5,,
-699,westreich,Eric Westreich,20,7,4,,
-700,westreich,Eric Westreich,21,6,3,,
-701,wigglesthe3r,Daniel Felix,2,6,4,,
-702,wigglesthe3r,Daniel Felix,3,5,3,,
-703,wildwex,Gregory Wexler,2,1,6,,
-704,wildwex,Gregory Wexler,3,4,3,,
-705,wildwex,Gregory Wexler,4,5,6,,
-706,wildwex,Gregory Wexler,5,3,6,1,Team fractally
-707,wildwex,Gregory Wexler,6,3,6,1,Team fractally
-708,wildwex,Gregory Wexler,7,2,5,1,Team fractally
-709,wildwex,Gregory Wexler,8,4,5,1,Team fractally
-710,wildwex,Gregory Wexler,9,3,6,1,Team fractally
-711,wildwex,Gregory Wexler,10,5,6,1,Team fractally
-712,wildwex,Gregory Wexler,11,1,6,1,Team fractally
-713,wildwex,Gregory Wexler,12,2,5,1,Team fractally
-714,wildwex,Gregory Wexler,13,6,4,1,Team fractally
-715,wildwex,Gregory Wexler,14,3,5,1,Team fractally
-716,wildwex,Gregory Wexler,15,3,3,1,Team fractally
-717,wildwex,Gregory Wexler,16,2,6,1,Team fractally
-718,wildwex,Gregory Wexler,17,6,5,1,Team fractally
-719,wildwex,Gregory Wexler,18,1,6,1,Team fractally
-720,wildwex,Gregory Wexler,19,3,6,1,Team fractally
-721,wildwex,Gregory Wexler,20,3,5,1,Team fractally
-722,wildwex,Gregory Wexler,21,4,5,1,Team fractally
-723,willspatrick,,11,6,1,,
-724,zeos,Matthias,16,3,1,,
-725,zeos,Matthias,17,2,3,,
-726,zeos,Matthias,18,7,5,,
-727,zeos,Matthias,19,4,2,,
-728,zeos,Matthias,20,4,4,5,
-729,zeos,Matthias,21,4,1,5,Eden fractal
-730,zhenek,Евгений Чирочкин,4,4,3,,
+Index,MemberID,MeetingID,Group,Level,TeamID
+103,dan,5,6,5,1
+167,doingitright,5,2,6,1
+260,fractallymike,5,1,6,1
+642,thomashallgren,5,6,6,1
+676,val,5,5,6,1
+706,wildwex,5,3,6,1
+104,dan,6,4,6,1
+261,fractallymike,6,7,6,1
+333,jamesmart,6,3,5,1
+677,val,6,7,5,1
+707,wildwex,6,3,6,1
+105,dan,7,3,6,1
+168,doingitright,7,5,6,1
+643,thomashallgren,7,3,5,1
+678,val,7,2,6,1
+708,wildwex,7,2,5,1
+106,dan,8,4,6,1
+644,thomashallgren,8,1,6,1
+679,val,8,3,5,1
+709,wildwex,8,4,5,1
+169,doingitright,9,5,4,1
+262,fractallymike,9,2,4,1
+334,jamesmart,9,4,6,1
+645,thomashallgren,9,2,3,1
+680,val,9,5,6,1
+710,wildwex,9,3,6,1
+107,dan,10,2,6,1
+170,doingitright,10,6,6,1
+335,jamesmart,10,3,5,1
+646,thomashallgren,10,3,6,1
+681,val,10,3,3,1
+711,wildwex,10,5,6,1
+108,dan,11,3,6,1
+336,jamesmart,11,6,4,1
+647,thomashallgren,11,2,5,1
+712,wildwex,11,1,6,1
+109,dan,12,1,6,1
+171,doingitright,12,6,6,1
+682,val,12,5,6,1
+713,wildwex,12,2,5,1
+110,dan,13,5,6,1
+172,doingitright,13,6,6,1
+263,fractallymike,13,3,6,1
+337,jamesmart,13,5,5,1
+648,thomashallgren,13,2,5,1
+683,val,13,6,2,1
+714,wildwex,13,6,4,1
+111,dan,14,3,6,1
+173,doingitright,14,4,6,1
+264,fractallymike,14,1,4,1
+338,jamesmart,14,6,5,1
+649,thomashallgren,14,1,5,1
+684,val,14,1,6,1
+715,wildwex,14,3,5,1
+112,dan,15,2,6,1
+174,doingitright,15,3,5,1
+265,fractallymike,15,3,2,1
+339,jamesmart,15,3,4,1
+650,thomashallgren,15,2,5,1
+685,val,15,3,1,1
+716,wildwex,15,3,3,1
+113,dan,16,1,2,1
+266,fractallymike,16,7,5,1
+340,jamesmart,16,7,4,1
+651,thomashallgren,16,6,6,1
+717,wildwex,16,2,6,1
+114,dan,17,1,6,1
+175,doingitright,17,3,6,1
+267,fractallymike,17,6,6,1
+341,jamesmart,17,3,5,1
+686,val,17,4,6,1
+718,wildwex,17,6,5,1
+115,dan,18,5,6,1
+176,doingitright,18,6,4,1
+268,fractallymike,18,2,6,1
+342,jamesmart,18,4,5,1
+652,thomashallgren,18,4,6,1
+687,val,18,6,5,1
+719,wildwex,18,1,6,1
+116,dan,19,2,6,1
+269,fractallymike,19,1,6,1
+653,thomashallgren,19,4,6,1
+688,val,19,5,5,1
+720,wildwex,19,3,6,1
+117,dan,20,3,6,1
+270,fractallymike,20,1,6,1
+343,jamesmart,20,5,6,1
+654,thomashallgren,20,6,6,1
+689,val,20,6,4,1
+721,wildwex,20,3,5,1
+118,dan,21,1,6,1
+177,doingitright,21,6,5,1
+271,fractallymike,21,8,5,1
+344,jamesmart,21,4,6,1
+655,thomashallgren,21,3,5,1
+690,val,21,3,6,1
+722,wildwex,21,4,5,1
+231,drwu,8,3,3,2
+306,hachtu,8,4,4,2
+436,machnbirdsparo,8,2,5,2
+598,shakhruz,8,1,4,2
+232,drwu,9,4,4,2
+283,gonflosca,9,1,1,2
+307,hachtu,9,5,5,2
+437,machnbirdsparo,9,2,1,2
+233,drwu,10,7,2,2
+284,gonflosca,10,4,4,2
+308,hachtu,10,6,4,2
+438,machnbirdsparo,10,5,3,2
+599,shakhruz,10,1,1,2
+234,drwu,11,3,3,2
+285,gonflosca,11,5,6,2
+439,machnbirdsparo,11,4,3,2
+235,drwu,12,6,2,2
+286,gonflosca,12,1,3,2
+309,hachtu,12,3,6,2
+440,machnbirdsparo,12,5,4,2
+600,shakhruz,12,6,3,2
+236,drwu,13,6,5,2
+287,gonflosca,13,5,3,2
+310,hachtu,13,6,3,2
+441,machnbirdsparo,13,1,2,2
+601,shakhruz,13,6,1,2
+288,gonflosca,14,6,4,2
+311,hachtu,14,5,6,2
+442,machnbirdsparo,14,2,2,2
+602,shakhruz,14,1,1,2
+237,drwu,15,1,1,2
+289,gonflosca,15,4,5,2
+312,hachtu,15,4,6,2
+443,machnbirdsparo,15,4,4,2
+603,shakhruz,15,5,6,2
+207,dphillippi,16,6,4,2
+238,drwu,16,7,6,2
+290,gonflosca,16,1,4,2
+313,hachtu,16,1,6,2
+444,machnbirdsparo,16,5,3,2
+604,shakhruz,16,3,6,2
+208,dphillippi,17,2,6,2
+239,drwu,17,1,5,2
+291,gonflosca,17,4,4,2
+314,hachtu,17,5,4,2
+605,shakhruz,17,2,5,2
+209,dphillippi,18,3,6,2
+240,drwu,18,2,3,2
+292,gonflosca,18,3,2,2
+315,hachtu,18,2,4,2
+445,machnbirdsparo,18,4,2,2
+606,shakhruz,18,3,4,2
+210,dphillippi,19,4,5,2
+293,gonflosca,19,5,3,2
+316,hachtu,19,4,4,2
+446,machnbirdsparo,19,3,4,2
+607,shakhruz,19,6,5,2
+211,dphillippi,20,6,5,2
+294,gonflosca,20,6,2,2
+317,hachtu,20,2,4,2
+447,machnbirdsparo,20,2,5,2
+608,shakhruz,20,4,5,2
+212,dphillippi,21,6,6,2
+295,gonflosca,21,5,5,2
+318,hachtu,21,7,5,2
+448,machnbirdsparo,21,8,6,2
+609,shakhruz,21,4,2,2
+356,jaytaylor-node,11,6,3,3
+632,stan,11,2,6,3
+669,tmess,11,3,2,3
+357,jaytaylor-node,12,4,4,3
+670,tmess,12,6,4,3
+358,jaytaylor-node,13,3,3,3
+633,stan,13,2,4,3
+671,tmess,13,3,4,3
+359,jaytaylor-node,14,2,1,3
+485,michaelx,14,5,2,3
+634,stan,14,6,2,3
+672,tmess,14,2,5,3
+360,jaytaylor-node,15,2,1,3
+635,stan,15,6,5,3
+361,jaytaylor-node,16,4,4,3
+636,stan,16,1,3,3
+327,highsteam1900,17,6,3,3
+362,jaytaylor-node,17,1,4,3
+637,stan,17,3,3,3
+673,tmess,17,5,5,3
+328,highsteam1900,18,7,1,3
+363,jaytaylor-node,18,1,1,3
+638,stan,18,7,4,3
+674,tmess,18,5,5,3
+329,highsteam1900,19,4,3,3
+364,jaytaylor-node,19,6,6,3
+639,stan,19,1,5,3
+330,highsteam1900,20,3,4,3
+365,jaytaylor-node,20,5,5,3
+640,stan,20,2,6,3
+331,highsteam1900,21,2,4,3
+366,jaytaylor-node,21,1,2,3
+641,stan,21,3,4,3
+558,pnc,12,2,4,4
+65,bishop3dcrea,13,4,4,4
+559,pnc,13,1,5,4
+560,pnc,14,1,3,4
+66,bishop3dcrea,15,6,4,4
+561,pnc,15,1,4,4
+67,bishop3dcrea,16,2,4,4
+562,pnc,16,1,5,4
+563,pnc,17,2,4,4
+68,bishop3dcrea,18,6,3,4
+564,pnc,18,7,6,4
+565,pnc,19,1,4,4
+69,bishop3dcrea,20,3,3,4
+566,pnc,20,1,5,4
+70,bishop3dcrea,21,4,3,4
+567,pnc,21,8,4,4
+18,aguerrido,20,7,5,5
+142,dansingjoy,20,1,4,5
+226,drew-bop,20,1,3,5
+426,lionflash,20,7,3,5
+728,zeos,20,4,4,5
+19,aguerrido,21,2,5,5
+143,dansingjoy,21,1,3,5
+227,drew-bop,21,5,4,5
+427,lionflash,21,1,5,5
+729,zeos,21,4,1,5
+26,amih,1,2,4,
+99,dan,1,1,6,
+124,dansingjoy,1,1,4,
+159,darioconeden,1,2,6,
+243,EOSMel,1,2,5,
+346,jaytaylor-node,1,1,2,
+379,jseymour,1,1,3,
+486,mikelennie,1,1,5,
+532,nudimar,1,2,3,
+656,timless,1,1,1,
+1,00,2,1,4,
+2,01,2,2,3,
+3,02,2,2,2,
+4,03,2,3,2,
+5,04,2,6,1,
+6,05,2,7,2,
+7,06,2,7,1,
+20,air-crypto,2,4,3,
+27,amih,2,6,6,
+41,atma.love,2,1,2,
+48,berliangor,2,8,1,
+72,bywire.com,2,5,6,
+83,chkmacdonald,2,2,6,
+85,chrisbarnes,2,1,5,
+100,dan,2,8,6,
+125,dansingjoy,2,7,6,
+178,doublewabbit,2,4,1,
+179,douglasjames,2,1,3,
+193,dphillippi,2,5,5,
+213,drew-bop,2,5,3,
+244,EOSMel,2,3,5,
+301,hachtu,2,8,4,
+347,jaytaylor-node,2,3,4,
+367,jessethan,2,3,6,
+380,jseymour,2,2,5,
+406,larosenonaka,2,8,3,
+408,lionflash,2,3,3,
+428,lovejoy,2,5,2,
+429,loyalnine313,2,7,3,
+451,markstair,2,8,5,
+460,marty-be,2,6,3,
+464,mattlangston,2,7,5,
+487,mikelennie,2,4,4,
+514,novacryptollc,2,4,6,
+533,nudimar,2,6,2,
+548,pnc,2,4,5,
+568,recentchats,2,4,2,
+583,robrigo,2,7,4,
+592,shakhruz,2,1,1,
+626,spencerhanson,2,6,5,
+657,timless,2,2,4,
+666,tmess,2,5,4,
+691,vladislav.x,2,8,2,
+692,wakeupjohnny,2,3,1,
+701,wigglesthe3r,2,6,4,
+703,wildwex,2,1,6,
+8,2luminaries1,3,3,3,
+21,air-crypto,3,7,4,
+25,amethystwizo,3,3,2,
+28,amih,3,2,4,
+42,atma.love,3,3,5,
+47,beanz,3,5,5,
+59,bishop3dcrea,3,7,5,
+84,chkmacdonald,3,7,6,
+86,chrisbarnes,3,3,4,
+101,dan,3,2,6,
+126,dansingjoy,3,5,6,
+164,deniscarrier,3,4,5,
+180,douglasjames,3,1,6,
+194,dphillippi,3,6,3,
+214,drew-bop,3,6,1,
+228,drwu,3,4,1,
+241,eoschadrickm,3,5,2,
+258,fractallymike,3,2,2,
+274,gokulnk,3,7,1,
+302,hachtu,3,2,5,
+320,headwatersfc,3,4,4,
+348,jaytaylor-node,3,6,5,
+368,jessethan,3,4,6,
+381,jseymour,3,1,4,
+409,lionflash,3,2,3,
+432,machnbirdsparo,3,5,4,
+465,mattlangston,3,1,3,
+488,mikelennie,3,3,6,
+511,neuron.gm,3,4,2,
+515,novacryptollc,3,1,5,
+534,nudimar,3,6,2,
+549,pnc,3,1,2,
+569,recentchats,3,7,3,
+593,shakhruz,3,6,6,
+627,spencerhanson,3,6,4,
+658,timless,3,7,2,
+702,wigglesthe3r,3,5,3,
+704,wildwex,3,4,3,
+22,air-crypto,4,3,2,
+29,amih,4,6,5,
+87,chrisbarnes,4,4,6,
+102,dan,4,1,5,
+127,dansingjoy,4,3,5,
+144,daodejing,4,6,2,
+166,doingitright,4,1,6,
+181,douglasjames,4,3,3,
+195,dphillippi,4,1,2,
+215,drew-bop,4,6,3,
+242,eoscrafati22,4,5,3,
+249,fokenfa,4,1,1,
+259,fractallymike,4,2,6,
+272,gavrielshaw,4,5,5,
+275,gokulnk,4,5,2,
+303,hachtu,4,6,6,
+321,headwatersfc,4,5,4,
+349,jaytaylor-node,4,1,3,
+369,jessethan,4,1,4,
+382,jseymour,4,2,5,
+410,lionflash,4,1,1,
+433,machnbirdsparo,4,2,2,
+452,markstair,4,1,1,
+461,marty-be,4,4,4,
+466,mattlangston,4,3,4,
+489,mikelennie,4,4,5,
+516,novacryptollc,4,2,3,
+550,pnc,4,2,4,
+570,recentchats,4,4,2,
+594,shakhruz,4,3,6,
+628,spencerhanson,4,6,4,
+705,wildwex,4,5,6,
+730,zhenek,4,4,3,
+30,amih,5,5,4,
+43,atma.love,5,1,4,
+60,bishop3dcrea,5,3,4,
+88,chrisbarnes,5,4,4,
+91,cryptokens,5,5,4,
+128,dansingjoy,5,4,5,
+145,daodejing,5,3,5,
+182,douglasjames,5,3,2,
+196,dphillippi,5,2,4,
+216,drew-bop,5,5,2,
+250,fokenfa,5,4,1,
+276,gokulnk,5,4,3,
+332,iamsubbu,5,4,2,
+350,jaytaylor-node,5,2,5,
+383,jseymour,5,5,5,
+411,lionflash,5,1,3,
+453,markstair,5,4,6,
+462,marty-be,5,2,3,
+467,mattlangston,5,5,3,
+483,menoski,5,2,2,
+490,mikelennie,5,3,1,
+551,pnc,5,6,3,
+580,rimantas,5,6,2,
+585,sagarmathanp,5,3,3,
+595,shakhruz,5,1,5,
+610,sim31,5,5,1,
+659,timless,5,1,2,
+44,atma.love,6,1,5,
+71,brspma,6,5,2,
+92,cryptokens,6,3,1,
+129,dansingjoy,6,6,6,
+146,daodejing,6,4,5,
+160,davidelvion3,6,7,1,
+163,dbee,6,6,1,
+165,densteem,6,4,2,
+183,douglasjames,6,1,6,
+197,dphillippi,6,5,4,
+217,drew-bop,6,5,5,
+229,drwu,6,6,3,
+248,exodius,6,1,4,
+277,gokulnk,6,2,2,
+304,hachtu,6,2,6,
+351,jaytaylor-node,6,7,4,
+370,jessethan,6,5,6,
+384,jseymour,6,6,4,
+400,kentbull,6,1,2,
+412,lionflash,6,5,3,
+434,machnbirdsparo,6,2,4,
+454,markstair,6,2,3,
+468,mattlangston,6,3,2,
+491,mikelennie,6,6,2,
+512,norsegaud,6,1,3,
+517,novacryptollc,6,2,5,
+535,nudimar,6,7,2,
+552,pnc,6,3,3,
+581,rimantas,6,2,1,
+586,sagarmathanp,6,6,5,
+590,SamaraShaw,6,4,3,
+596,shakhruz,6,3,4,
+611,sim31,6,4,4,
+629,spencerhanson,6,7,3,
+9,aguerrido,7,5,3,
+45,atma.love,7,4,3,
+61,bishop3dcrea,7,2,4,
+89,chriswaxa,7,2,2,
+97,cryptosasuke,7,1,2,
+130,dansingjoy,7,4,6,
+184,douglasjames,7,1,4,
+198,dphillippi,7,1,3,
+218,drew-bop,7,6,6,
+230,drwu,7,6,3,
+245,EOSMel,7,1,1,
+278,gokulnk,7,5,2,
+305,hachtu,7,5,5,
+352,jaytaylor-node,7,5,4,
+385,jseymour,7,1,6,
+413,lionflash,7,4,5,
+435,machnbirdsparo,7,1,5,
+455,markstair,7,3,1,
+463,marty-be,7,5,1,
+469,mattlangston,7,3,4,
+506,nathanielherman,7,3,2,
+518,novacryptollc,7,2,3,
+536,nudimar,7,6,4,
+553,pnc,7,6,5,
+597,shakhruz,7,3,3,
+612,sim31,7,4,4,
+630,spencerhanson,7,6,2,
+660,timless,7,4,2,
+31,amih,8,5,3,
+49,berliangor,8,1,1,
+62,bishop3dcrea,8,5,4,
+131,dansingjoy,8,5,6,
+185,douglasjames,8,2,6,
+199,dphillippi,8,4,1,
+246,EOSMel,8,4,2,
+251,fokenfa,8,2,3,
+279,gokulnk,8,4,3,
+353,jaytaylor-node,8,3,2,
+386,jseymour,8,3,6,
+414,lionflash,8,2,2,
+470,mattlangston,8,1,3,
+492,mikelennie,8,5,2,
+519,novacryptollc,8,5,5,
+554,pnc,8,2,4,
+582,rimantas,8,3,1,
+587,sagarmathanp,8,1,5,
+613,sim31,8,3,4,
+667,tmess,8,1,2,
+32,amih,9,3,2,
+63,bishop3dcrea,9,1,6,
+132,dansingjoy,9,2,6,
+147,daodejing,9,1,5,
+186,douglasjames,9,2,2,
+200,dphillippi,9,4,5,
+354,jaytaylor-node,9,4,2,
+371,jessethan,9,3,5,
+387,jseymour,9,2,5,
+415,lionflash,9,1,4,
+471,mattlangston,9,3,3,
+493,mikelennie,9,4,3,
+507,nathanielherman,9,3,1,
+520,novacryptollc,9,5,3,
+537,nudimar,9,4,1,
+555,pnc,9,1,3,
+571,recentchats,9,5,2,
+614,sim31,9,3,4,
+661,timless,9,1,2,
+23,air-crypto,10,2,2,
+33,amih,10,2,4,
+50,berliangor,10,6,2,
+64,bishop3dcrea,10,2,5,
+93,cryptokens,10,1,4,
+133,dansingjoy,10,7,4,
+148,daodejing,10,7,6,
+161,davidelvion3,10,6,1,
+187,douglasjames,10,4,6,
+201,dphillippi,10,5,5,
+252,fokenfa,10,3,2,
+319,harketypes,10,4,2,
+355,jaytaylor-node,10,1,2,
+375,johnjwilliamson,10,4,5,
+388,jseymour,10,7,1,
+416,lionflash,10,5,2,
+456,markstair,10,7,5,
+472,mattlangston,10,5,4,
+494,mikelennie,10,6,3,
+508,nathanielherman,10,1,5,
+521,novacryptollc,10,6,5,
+538,nudimar,10,7,3,
+556,pnc,10,3,4,
+584,rocogg,10,2,3,
+615,sim31,10,4,3,
+631,stan,10,1,6,
+668,tmess,10,1,3,
+10,aguerrido,11,1,4,
+34,amih,11,4,4,
+51,berliangor,11,6,6,
+73,cacxyz,11,2,2,
+94,cryptokens,11,5,2,
+134,dansingjoy,11,3,5,
+149,daodejing,11,4,2,
+188,douglasjames,11,6,2,
+202,dphillippi,11,1,3,
+280,gokulnk,11,2,4,
+372,jessethan,11,4,6,
+377,jrichardliston,11,2,3,
+389,jseymour,11,6,5,
+417,lionflash,11,3,4,
+495,mikelennie,11,5,5,
+509,nathanielherman,11,5,3,
+513,nouser,11,5,1,
+522,novacryptollc,11,4,5,
+539,nudimar,11,1,2,
+557,pnc,11,1,5,
+616,sim31,11,5,4,
+723,willspatrick,11,6,1,
+35,amih,12,3,3,
+46,atma.love,12,3,5,
+52,berliangor,12,3,4,
+74,cacxyz,12,5,1,
+98,cryptotokens,12,5,3,
+135,dansingjoy,12,1,4,
+150,daodejing,12,4,5,
+189,douglasjames,12,1,1,
+203,dphillippi,12,6,5,
+219,drew-bop,12,6,1,
+253,fokenfa,12,2,2,
+296,grahappa,12,4,1,
+322,highsteam1900,12,4,2,
+376,johnjwilliamson,12,2,6,
+378,jrichardliston,12,4,3,
+390,jseymour,12,5,5,
+418,lionflash,12,2,3,
+473,mattlangston,12,1,5,
+496,mikelennie,12,3,2,
+510,nathanielherman,12,1,2,
+523,novacryptollc,12,4,6,
+540,nudimar,12,5,2,
+617,sim31,12,3,1,
+11,aguerrido,13,4,1,
+53,berliangor,13,4,3,
+136,dansingjoy,13,5,4,
+151,daodejing,13,2,3,
+190,douglasjames,13,2,2,
+204,dphillippi,13,4,6,
+220,drew-bop,13,4,5,
+273,gavrielshaw,13,5,2,
+323,highsteam1900,13,3,1,
+391,jseymour,13,3,5,
+419,lionflash,13,1,4,
+430,luckyhahnryu,13,2,1,
+474,mattlangston,13,2,6,
+497,mikelennie,13,3,2,
+524,novacryptollc,13,1,3,
+572,recentchats,13,1,1,
+591,sethatboid,13,4,2,
+618,sim31,13,1,6,
+12,aguerrido,14,4,4,
+24,aireck1,14,6,1,
+36,amih,14,4,5,
+40,anthonyrivers,14,4,1,
+54,berliangor,14,2,6,
+75,cacxyz,14,4,2,
+137,dansingjoy,14,2,3,
+152,daodejing,14,6,3,
+191,douglasjames,14,1,2,
+205,dphillippi,14,5,3,
+297,grahappa,14,5,4,
+324,highsteam1900,14,3,2,
+392,jseymour,14,5,5,
+420,lionflash,14,2,4,
+475,mattlangston,14,6,6,
+498,mikelennie,14,5,1,
+525,novacryptollc,14,3,4,
+573,recentchats,14,3,1,
+619,sim31,14,3,3,
+693,westreich,14,4,3,
+13,aguerrido,15,5,4,
+76,cacxyz,15,5,2,
+95,cryptokens,15,6,1,
+138,dansingjoy,15,2,4,
+153,daodejing,15,5,5,
+206,dphillippi,15,4,3,
+221,drew-bop,15,1,2,
+325,highsteam1900,15,6,2,
+393,jseymour,15,1,5,
+401,khoja,15,4,2,
+421,lionflash,15,1,6,
+476,mattlangston,15,6,6,
+499,mikelennie,15,2,2,
+526,novacryptollc,15,2,3,
+541,nudimar,15,5,1,
+574,recentchats,15,1,3,
+620,sim31,15,6,3,
+662,timless,15,5,3,
+694,westreich,15,3,6,
+14,aguerrido,16,7,3,
+37,amih,16,3,4,
+55,berliangor,16,4,3,
+77,cacxyz,16,5,2,
+96,cryptokens,16,7,2,
+119,dan1am,16,7,1,
+139,dansingjoy,16,5,6,
+154,daodejing,16,3,5,
+162,davidelvion3,16,1,1,
+222,drew-bop,16,5,1,
+254,fokenfa,16,6,3,
+281,gokulnk,16,2,2,
+326,highsteam1900,16,2,3,
+394,jseymour,16,4,6,
+402,khoja,16,4,1,
+407,linusdao1,16,6,1,
+422,lionflash,16,5,5,
+477,mattlangston,16,2,5,
+500,mikelennie,16,3,2,
+527,novacryptollc,16,6,5,
+542,nudimar,16,4,2,
+546,oldtimersoffer,16,6,2,
+575,recentchats,16,5,4,
+621,sim31,16,3,3,
+675,topobadger,16,2,1,
+695,westreich,16,4,5,
+724,zeos,16,3,1,
+15,aguerrido,17,3,4,
+78,cacxyz,17,3,2,
+90,cryptofit62,17,3,1,
+120,dan1am,17,5,1,
+140,dansingjoy,17,5,6,
+155,daodejing,17,5,3,
+223,drew-bop,17,6,2,
+255,fokenfa,17,6,1,
+395,jseymour,17,4,1,
+403,khoja,17,4,2,
+423,lionflash,17,4,5,
+478,mattlangston,17,4,3,
+501,mikelennie,17,1,1,
+528,novacryptollc,17,1,3,
+576,recentchats,17,5,2,
+588,sagarmathanp,17,2,2,
+622,sim31,17,1,2,
+663,timless,17,2,1,
+696,westreich,17,6,4,
+725,zeos,17,2,3,
+16,aguerrido,18,3,3,
+38,amih,18,1,5,
+56,berliangor,18,5,4,
+79,cacxyz,18,3,1,
+121,dan1am,18,7,2,
+141,dansingjoy,18,4,4,
+156,daodejing,18,2,2,
+224,drew-bop,18,5,2,
+282,gokulnk,18,6,1,
+373,jessethan,18,5,3,
+396,jseymour,18,6,6,
+404,khoja,18,2,1,
+424,lionflash,18,7,3,
+459,markus,18,1,4,
+479,mattlangston,18,2,5,
+502,mikelennie,18,1,2,
+529,novacryptollc,18,1,3,
+589,sagarmathanp,18,3,5,
+664,timless,18,6,2,
+697,westreich,18,4,3,
+726,zeos,18,7,5,
+17,aguerrido,19,2,2,
+39,amih,19,5,4,
+57,berliangor,19,4,1,
+80,cacxyz,19,3,2,
+225,drew-bop,19,6,1,
+247,EOSMel,19,1,1,
+298,grahappa,19,1,3,
+345,jasongeringer,19,5,2,
+397,jseymour,19,6,3,
+425,lionflash,19,2,5,
+449,marconamaste,19,2,4,
+457,markstair,19,6,4,
+480,mattlangston,19,5,6,
+503,mikelennie,19,6,2,
+543,nudimar,19,1,2,
+577,recentchats,19,3,3,
+623,sim31,19,2,3,
+698,westreich,19,3,5,
+727,zeos,19,4,2,
+81,cacxyz,20,5,3,
+122,dan1am,20,4,3,
+157,daodejing,20,6,3,
+256,fokenfa,20,2,2,
+299,grahappa,20,7,6,
+398,jseymour,20,1,2,
+450,marconamaste,20,4,6,
+484,merivercap,20,4,2,
+530,novacryptollc,20,1,1,
+544,nudimar,20,7,2,
+547,oldtimersoffer,20,5,2,
+578,recentchats,20,3,2,
+624,sim31,20,2,3,
+665,timless,20,5,4,
+699,westreich,20,7,4,
+58,berliangor,21,5,6,
+82,cacxyz,21,5,3,
+123,dan1am,21,6,2,
+158,daodejing,21,3,3,
+192,douglasjames,21,3,2,
+257,fokenfa,21,8,1,
+300,grahappa,21,7,4,
+374,jessethan,21,4,4,
+399,jseymour,21,1,4,
+405,khoja,21,7,2,
+431,luckyhahnryu,21,5,2,
+458,markstair,21,8,3,
+481,mattlangston,21,7,6,
+482,maximcincinnatis,21,1,1,
+504,mikelennie,21,2,2,
+505,mototbilisi,21,7,3,
+531,novacryptollc,21,2,6,
+545,nudimar,21,8,2,
+579,recentchats,21,6,4,
+625,sim31,21,2,3,
+700,westreich,21,6,3,
