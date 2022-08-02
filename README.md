@@ -207,7 +207,7 @@ dataset.total_unique_members
 
 
 
-    121
+    122
 
 
 
@@ -291,18 +291,18 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
       <td>19</td>
     </tr>
     <tr>
+      <td>thomashallgren</td>
+      <td>Thomas Hallgren</td>
+      <td>81</td>
+      <td>251</td>
+      <td>15</td>
+    </tr>
+    <tr>
       <td>lionflash</td>
       <td>Felix Ruiz</td>
       <td>79</td>
       <td>182</td>
       <td>21</td>
-    </tr>
-    <tr>
-      <td>val</td>
-      <td>Valentine Zavgorodnev</td>
-      <td>78</td>
-      <td>238</td>
-      <td>16</td>
     </tr>
   </tbody>
 </table>
@@ -386,8 +386,8 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
     <tr>
       <td>2022-07-30</td>
       <td>22</td>
-      <td>4</td>
-      <td>33</td>
+      <td>5</td>
+      <td>38</td>
     </tr>
     <tr>
       <td>2022-07-23</td>
@@ -472,7 +472,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=34.86, standard_deviation=7.02)
+    Statistics(mean=35.14, standard_deviation=7.22)
 
 
 
@@ -504,7 +504,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=6.34, standard_deviation=6.85)
+    Statistics(mean=6.34, standard_deviation=6.88)
 
 
 
@@ -534,9 +534,9 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
     <tr>
       <td>2022-07-30</td>
       <td>22</td>
-      <td>333</td>
+      <td>383</td>
       <td>6</td>
-      <td>327</td>
+      <td>377</td>
     </tr>
     <tr>
       <td>2022-07-23</td>
@@ -648,7 +648,7 @@ dataset.total_member_respect
 
 
 
-    6959
+    7009
 
 
 
@@ -680,7 +680,7 @@ dataset.total_team_respect
 
 
 
-    2894
+    2920
 
 
 
@@ -704,7 +704,7 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
   </thead>
   <tbody>
     <tr>
-      <td>1664</td>
+      <td>1685</td>
     </tr>
     <tr>
       <td>700</td>
@@ -713,7 +713,7 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
       <td>292</td>
     </tr>
     <tr>
-      <td>152</td>
+      <td>157</td>
     </tr>
     <tr>
       <td>86</td>
@@ -778,8 +778,8 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
   <tbody>
     <tr>
       <td>1</td>
-      <td>2.433962</td>
-      <td>1.293615</td>
+      <td>2.407407</td>
+      <td>1.296127</td>
     </tr>
     <tr>
       <td>2</td>
@@ -808,43 +808,38 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
     </tr>
     <tr>
       <td>8</td>
-      <td>4.562500</td>
-      <td>1.209339</td>
+      <td>5.000000</td>
+      <td>1.195229</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>2.805556</td>
-      <td>1.450506</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>2.000000</td>
-      <td>0.666667</td>
+      <td>3.088889</td>
+      <td>1.489695</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>2.363636</td>
-      <td>1.002162</td>
+      <td>2.242424</td>
+      <td>0.902438</td>
     </tr>
     <tr>
       <td>12</td>
-      <td>4.050000</td>
-      <td>1.370698</td>
+      <td>4.041667</td>
+      <td>1.472562</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>3.666667</td>
-      <td>1.721892</td>
+      <td>3.750000</td>
+      <td>1.557713</td>
     </tr>
     <tr>
       <td>14</td>
-      <td>3.685714</td>
-      <td>1.592945</td>
+      <td>3.267857</td>
+      <td>1.458406</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>5.066667</td>
-      <td>1.437591</td>
+      <td>5.233333</td>
+      <td>1.165106</td>
     </tr>
     <tr>
       <td>16</td>
@@ -858,13 +853,13 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
     </tr>
     <tr>
       <td>18</td>
-      <td>3.777778</td>
-      <td>1.396140</td>
+      <td>3.444444</td>
+      <td>1.338226</td>
     </tr>
     <tr>
       <td>19</td>
-      <td>4.368421</td>
-      <td>1.471534</td>
+      <td>4.302632</td>
+      <td>1.442403</td>
     </tr>
     <tr>
       <td>20</td>
@@ -906,10 +901,10 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['Attendance
   <tbody>
     <tr>
       <td>1.000000</td>
-      <td>0.485217</td>
+      <td>0.428004</td>
     </tr>
     <tr>
-      <td>0.485217</td>
+      <td>0.428004</td>
       <td>1.000000</td>
     </tr>
   </tbody>
