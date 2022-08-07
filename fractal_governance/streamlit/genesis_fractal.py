@@ -45,6 +45,15 @@ st.title(PAGE_TITLE)
 f"""
 Data is current up through the meeting held on {LAST_MEETING_DATE}.
 
+The algorithm to calculate Respect values has been updated to use the continuous
+Fibonacci function in preparation for the roll-out of
+[Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)
+and
+[Refinement of Token Distribution Math](https://hive.blog/fractally/@dan/refinement-of-token-distribution-math).
+
+No Genesis member has gained or lost Respect tokens, not even fractional values of
+Respect tokens. The only noticeable difference is a decimal point in the Respect values.
+
 Also see the
 [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
 that acts as a surveillance tool to track the *accuracy* and *precision* of the Genesis

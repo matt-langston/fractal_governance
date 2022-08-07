@@ -20,5 +20,6 @@ py_library(
         requirement("pandas"),
         requirement("scipy"),
         requirement("streamlit"),
+        requirement("uncertainties"),
     ],
 )
