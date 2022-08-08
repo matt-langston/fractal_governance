@@ -15,6 +15,7 @@ GENESIS_LATE_CONSENSUS_CSV_PATH = DATA_DIR / "data/genesis-late_consensus.csv"
 GENESIS_TEAMS_CSV_PATH = DATA_DIR / "data/genesis-teams.csv"
 GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH = DATA_DIR / "data/genesis-weekly_measurements.csv"
 
+
 DATE_OF_FIRST_GENESIS_FRACTAL_MEETING = pd.to_datetime("2/26/2022")
 
 
@@ -35,12 +36,15 @@ MEETING_ID_COLUMN_NAME = "MeetingID"
 MEMBER_ID_COLUMN_NAME = "MemberID"
 MEMBER_NAME_COLUMN_NAME = "Name"
 NEW_MEMBER_COUNT_COLUMN_NAME = "NewMemberCount"
+ROUND_COLUMN_NAME = "Round"
 RESPECT_COLUMN_NAME = "Respect"
 RETURNING_MEMBER_COUNT_COLUMN_NAME = "ReturningMemberCount"
 SIGNATURE_ON_FILE_COLUMN_NAME = "SignatureOnFile"
 STANDARD_DEVIATION_COLUMN_NAME = "StandardDeviation"
 TEAM_ID_COLUMN_NAME = "TeamID"
 TEAM_NAME_COLUMN_NAME = "TeamName"
+WEIGHTED_MEAN_LEVEL_COLUMN_NAME = "WeightedMeanLevel"
+WEIGHTED_MEAN_RESPECT_COLUMN_NAME = "WeightedMeanRespect"
 
 
 def meeting_id_to_timestamp(meeting_id: int) -> pd.Timestamp:

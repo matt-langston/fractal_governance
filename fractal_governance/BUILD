@@ -10,6 +10,7 @@ py_library(
         "math.py",
         "plots.py",
         "statistics.py",
+        "token_supply.py",
         "util.py",
     ],
     visibility = ["//visibility:public"],

@@ -28,14 +28,14 @@ Index,MemberID,Name,HiveAccountName,SignatureOnFile
 27,cryptofit62,,TRUE,FALSE
 28,cryptokens,Jordan Ackerman,TRUE,TRUE
 29,cryptosasuke,,TRUE,TRUE
-30,cryptotokens,,TRUE,FALSE
+30,cvrizzos108x,Carlos Rizzo,TRUE,TRUE
 31,dan,Daniel Larimer,TRUE,TRUE
 32,dan1am,,TRUE,TRUE
 33,dansingjoy,Dan Singjoy,TRUE,TRUE
 34,daodejing,Jason Jenkins,TRUE,TRUE
 35,darioconeden,Dario Cesaro,FALSE,FALSE
 36,davidelvion3,David Elvion,TRUE,TRUE
-37,dbee,,TRUE,TRUE
+37,dbee,Daniel,TRUE,TRUE
 38,deniscarrier,Denis Carriere,TRUE,FALSE
 39,densteem,,TRUE,TRUE
 40,doingitright,Brandon Fancher,TRUE,TRUE
@@ -50,7 +50,7 @@ Index,MemberID,Name,HiveAccountName,SignatureOnFile
 49,exodius,,TRUE,TRUE
 50,fokenfa,Fabrice,TRUE,FALSE
 51,fractallymike,Mike Manfredi,TRUE,TRUE
-52,gavrielshaw,Gavriel Shaw,TRUE,FALSE
+52,gavrielshaw,Gavriel Shaw,TRUE,TRUE
 53,gokulnk,Oscar Gonzalez,TRUE,TRUE
 54,gonflosca,Oscar Gonzalez,TRUE,TRUE
 55,grahappa,Perry Shenas,TRUE,TRUE
@@ -68,7 +68,7 @@ Index,MemberID,Name,HiveAccountName,SignatureOnFile
 67,jrichardliston,,TRUE,TRUE
 68,jseymour,Joshua Seymour,TRUE,TRUE
 69,kentbull,,TRUE,TRUE
-70,khoja,,TRUE,FALSE
+70,khoja,,TRUE,TRUE
 71,larosenonaka,Yves La Rose,FALSE,FALSE
 72,linusdao1,,TRUE,FALSE
 73,lionflash,Felix Ruiz,TRUE,TRUE
@@ -92,7 +92,7 @@ Index,MemberID,Name,HiveAccountName,SignatureOnFile
 91,nouser,,TRUE,FALSE
 92,novacryptollc,Patrick Bernard Schmid,TRUE,TRUE
 93,nudimar,Nuno Marcelino,TRUE,TRUE
-94,oldtimersoffer,Milan Bjegovic,TRUE,FALSE
+94,oldtimersoffer,Milan Bjegovic,TRUE,TRUE
 95,pnc,Pascal Ngu Cho,TRUE,TRUE
 96,quantumstasis,,TRUE,FALSE
 97,recentchats,Eric Binder,TRUE,TRUE
@@ -101,22 +101,26 @@ Index,MemberID,Name,HiveAccountName,SignatureOnFile
 100,rocogg,,TRUE,TRUE
 101,sagarmathanp,Lukas Mantinger,TRUE,TRUE
 102,SamaraShaw,Samara Shaw,TRUE,FALSE
-103,sethatboid,,TRUE,FALSE
-104,shakhruz,Shakhruz Ashirov,TRUE,TRUE
-105,sim31,Tadas Vaitiekunas,TRUE,TRUE
-106,spencerhanson,Spencer Hanson,TRUE,TRUE
-107,stan,Stan Larimer,TRUE,TRUE
-108,thomashallgren,Thomas Hallgren,TRUE,TRUE
-109,timless,Tim Taylor,TRUE,TRUE
-110,tmess,Toby Messier,TRUE,TRUE
-111,topobadger,Jose Basanta,TRUE,TRUE
-112,val,Valentine Zavgorodnev,TRUE,TRUE
-113,vladhive,,TRUE,FALSE
-114,vladislav.x,Vladislav Hramtsov,FALSE,FALSE
-115,wakeupjohnny,JP Camunag,FALSE,FALSE
-116,westreich,Eric Westreich,TRUE,TRUE
-117,wigglesthe3r,Daniel Felix,TRUE,FALSE
-118,wildwex,Gregory Wexler,TRUE,TRUE
-119,willspatrick,,TRUE,TRUE
-120,zeos,Matthias,TRUE,TRUE
-121,zhenek,Евгений Чирочкин,TRUE,FALSE
+103,sebata,,TRUE,TRUE
+104,sethatboid,,TRUE,FALSE
+105,shakhruz,Shakhruz Ashirov,TRUE,TRUE
+106,sim31,Tadas Vaitiekunas,TRUE,TRUE
+107,spencerhanson,Spencer Hanson,TRUE,TRUE
+108,stan,Stan Larimer,TRUE,TRUE
+109,thenewlegend,,TRUE,TRUE
+110,thomashallgren,Thomas Hallgren,TRUE,TRUE
+111,timless,Tim Taylor,TRUE,TRUE
+112,tmess,Toby Messier,TRUE,TRUE
+113,tokenfa,,TRUE,FALSE
+114,topobadger,Jose Basanta,TRUE,TRUE
+115,val,Valentine Zavgorodnev,TRUE,TRUE
+116,vladhive,,TRUE,FALSE
+117,vladislav.x,Vladislav Hramtsov,FALSE,FALSE
+118,w3max,,TRUE,TRUE
+119,wakeupjohnny,JP Camunag,FALSE,FALSE
+120,westreich,Eric Westreich,TRUE,TRUE
+121,wigglesthe3r,Daniel Felix,TRUE,FALSE
+122,wildwex,Gregory Wexler,TRUE,TRUE
+123,willspatrick,,TRUE,TRUE
+124,zeos,Matthias,TRUE,TRUE
+125,zhenek,Евгений Чирочкин,TRUE,TRUE

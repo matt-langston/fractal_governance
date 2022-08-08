@@ -15,6 +15,7 @@ from fractal_governance.util import (
     ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME,
     ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
+    LEVEL_COLUMN_NAME,
     MEAN_COLUMN_NAME,
     MEETING_DATE_COLUMN_NAME,
     NEW_MEMBER_COUNT_COLUMN_NAME,
@@ -37,6 +38,10 @@ class Plots:
         """Return a plot of attendance vs time"""
         fig, ax = plt.subplots(figsize=DEFAULT_FIGSIZE)
         df = self.dataset.df
+        # The (MEETING_DATE_COLUMN_NAME, MEMBER_ID_COLUMN_NAME) tuple is generate after
+        # the addition of multiple rounds, which is the reason for the `notna` on
+        # LEVEL_COLUMN_NAME.
+        df = df[df[LEVEL_COLUMN_NAME].notna()]
         group_by = df.groupby(MEETING_DATE_COLUMN_NAME).size()
         group_by.plot.bar(xlabel="Meeting Date", ylabel="Attendees")
         xaxis_labels = [

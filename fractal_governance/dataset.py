@@ -1,11 +1,15 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
 """Dataset for fractal governance data analysis"""
 
-from typing import List
+from enum import Enum, auto
+from typing import Dict, List
 
 import attrs
+import numpy as np
 import pandas as pd
+import uncertainties
 
+import fractal_governance.math
 import fractal_governance.statistics
 import fractal_governance.util
 from fractal_governance.util import (
@@ -25,7 +29,17 @@ from fractal_governance.util import (
     RETURNING_MEMBER_COUNT_COLUMN_NAME,
     STANDARD_DEVIATION_COLUMN_NAME,
     TEAM_NAME_COLUMN_NAME,
+    WEIGHTED_MEAN_LEVEL_COLUMN_NAME,
+    WEIGHTED_MEAN_RESPECT_COLUMN_NAME,
 )
+
+
+class WeightedMeanLevelAlgorithm(Enum):
+    """The various algorithms for calculating a weighted rolling mean `Level`"""
+
+    RollingMean = auto()
+    WeightedRollingMean = auto()
+    WeightedRollingMeanWithHysteresis = auto()
 
 
 @attrs.frozen(kw_only=True)
@@ -38,7 +52,7 @@ class Statistics:
 
 @attrs.frozen
 class Dataset:
-    """A wrapper around e fractal governance dataset"""
+    """A wrapper around the fractal governance dataset"""
 
     df: pd.DataFrame
     df_member_summary_stats_by_member_id: pd.DataFrame
@@ -87,7 +101,11 @@ class Dataset:
     @property
     def attendance_stats(self) -> Statistics:
         """Return the mean and standard deviation for attendance from this dataset"""
-        groupby = self.df.groupby(MEETING_DATE_COLUMN_NAME).size()
+        # The (MEETING_DATE_COLUMN_NAME, MEMBER_ID_COLUMN_NAME) tuple is degenerate
+        # after the addition of multiple rounds, which is the reason for the `notna` on
+        # LEVEL_COLUMN_NAME.
+        df = self.df[self.df[LEVEL_COLUMN_NAME].notna()]
+        groupby = df.groupby(MEETING_DATE_COLUMN_NAME).size()
         return Statistics(mean=groupby.mean(), standard_deviation=groupby.std())
 
     @property
@@ -144,6 +162,187 @@ class Dataset:
         )
         return df_current, df_previous, boolean_filter
 
+    @staticmethod
+    def _get_mean_levels(*, levels: pd.Series, window_size: int) -> pd.Series:
+        """Return a rolling mean of size `window_size` for the given `levels`"""
+        mean_levels = levels.rolling(window_size).mean()
+        mean_levels = mean_levels.dropna()
+
+        standard_deviation_levels = levels.rolling(window_size).std()
+        standard_deviation_levels = standard_deviation_levels.dropna()
+
+        mean_levels = pd.Series(
+            [
+                uncertainties.ufloat(mean, standard_deviation)
+                for mean, standard_deviation in zip(
+                    mean_levels, standard_deviation_levels
+                )
+            ]
+        )
+        mean_levels.index += window_size
+
+        return mean_levels[1:]
+
+    @staticmethod
+    def _get_partial_weighted_mean_levels(
+        *, levels: pd.Series, window_size: int
+    ) -> pd.Series:
+        """Return the *ramp up average* initial values
+
+        These are the initial `window_size` values in Team fractally's spreadsheet."""
+        return levels[:window_size].cumsum() / window_size
+
+    @staticmethod
+    def _get_weighted_mean_levels(*, levels: pd.Series, window_size: int) -> pd.Series:
+        """Return a weighted rolling mean of size `window_size` for the given `levels`
+
+        The is similar to the result returned by `_get_weighted_mean_levels_fractally`
+        but without the hysteresis."""
+        lookback_window_size = window_size - 1
+
+        mean_levels = levels.rolling(window_size).mean()
+        mean_levels = mean_levels.dropna()
+
+        standard_deviation_levels = levels.rolling(window_size).std()
+        standard_deviation_levels = standard_deviation_levels.dropna()
+
+        mean_levels = pd.Series(
+            [
+                uncertainties.ufloat(mean, standard_deviation)
+                for mean, standard_deviation in zip(
+                    mean_levels, standard_deviation_levels
+                )
+            ]
+        )
+        mean_levels.index += window_size
+
+        # Create a temporary copy of `mean_levels` only to align the index with
+        # `levels`.
+        tmp_mean_levels = mean_levels[:-1]
+        tmp_mean_levels.index += 1
+
+        weighted_mean_levels = (
+            lookback_window_size * tmp_mean_levels + levels.iloc[window_size:]
+        ) / window_size
+
+        return weighted_mean_levels
+
+    @staticmethod
+    def _get_weighted_mean_levels_fractally(
+        *, levels: pd.Series, window_size: int
+    ) -> pd.Series:
+        """Return Team fractally's so-called *5xn6* value for the given `levels`
+
+        The formula that Team fractally chose is a *weighted rolling average of `Level`
+        over time* with the design goal of optimizing the storage of this average to a
+        single value through hysteresis. This is accomplished as follows:
+
+        1. Initialize the first *5xn6* value with the mean of the first `window_size`
+        values of `levels`.
+
+        2. Calculate the next value by taking the previous value as calculated in step
+        #1 and multiplying it by `window_size - 1`, adding this result to the current
+        value of `level` and then dividing this result by `window_size`.
+        """
+        lookback_window_size = window_size - 1
+
+        mean_level = levels[:window_size].mean()
+        standard_deviation_level = np.mean(levels[:window_size]).mean()
+
+        weighted_mean_levels = pd.Series(levels, dtype=object)
+        weighted_mean_levels.loc[window_size] = uncertainties.ufloat(
+            mean_level, standard_deviation_level
+        )
+
+        for i in np.arange(window_size, len(weighted_mean_levels)) + 1:
+            previous, current = weighted_mean_levels.loc[i - 1 : i]
+            mean_level = (lookback_window_size * previous + current) / window_size
+            weighted_mean_levels.loc[i] = mean_level
+
+        return weighted_mean_levels[window_size:]
+
+    def get_weighted_mean_levels(  # type: ignore
+        self,
+        *,
+        window_size: int = 6,
+        weighted_mean_level_algorithm: WeightedMeanLevelAlgorithm = WeightedMeanLevelAlgorithm.WeightedRollingMeanWithHysteresis,  # noqa: E501
+        **kwargs,
+    ) -> pd.DataFrame:
+        """Return a DataFrame of various weighted mean levels
+
+        See section "Initial Average" in the article
+        [Refinement of Token Distribution Math]
+        (https://hive.blog/fractally/@dan/refinement-of-token-distribution-math)
+        """
+
+        if weighted_mean_level_algorithm == WeightedMeanLevelAlgorithm.RollingMean:
+            _weighted_mean_level_algorithm = self._get_mean_levels
+        elif (
+            weighted_mean_level_algorithm
+            == WeightedMeanLevelAlgorithm.WeightedRollingMean
+        ):
+            _weighted_mean_level_algorithm = self._get_weighted_mean_levels
+        elif (
+            weighted_mean_level_algorithm
+            == WeightedMeanLevelAlgorithm.WeightedRollingMeanWithHysteresis
+        ):
+            _weighted_mean_level_algorithm = self._get_weighted_mean_levels_fractally
+        else:
+            raise ValueError(
+                f"Unsupported weighted_mean_level_algorithm {weighted_mean_level_algorithm.name}"  # noqa: E501
+            )
+
+        # Create a Series of levels with value 0, one for each meeting.
+        zero_level_list = pd.Series(np.zeros(self.df[MEETING_ID_COLUMN_NAME].max()))
+        zero_level_list.index += 1
+
+        # The (MEETING_DATE_COLUMN_NAME, MEMBER_ID_COLUMN_NAME) tuple is degenerate
+        # after the addition of multiple rounds, which is the reason for the `notna` on
+        # LEVEL_COLUMN_NAME.
+        df = self.df[self.df[LEVEL_COLUMN_NAME].notna()]
+        weighted_mean_levels_by_member_id: Dict[str, pd.Series] = dict()
+        for member_id, dfx in df.groupby(MEMBER_ID_COLUMN_NAME):
+            # Insert a level of 0 for each meeting for which they were not in
+            # attendance.
+            levels = (
+                dfx.groupby(MEETING_ID_COLUMN_NAME)[LEVEL_COLUMN_NAME].sum()
+                + zero_level_list
+            )
+            levels = levels.fillna(0)
+
+            weighted_mean_levels = _weighted_mean_level_algorithm(
+                levels=levels, window_size=window_size
+            )
+
+            weighted_mean_levels_by_member_id[member_id] = weighted_mean_levels
+
+        s_weighted_mean_levels = pd.DataFrame.from_dict(
+            weighted_mean_levels_by_member_id, orient="index"
+        ).unstack()
+        s_weighted_mean_levels.index.names = [
+            MEETING_ID_COLUMN_NAME,
+            MEMBER_ID_COLUMN_NAME,
+        ]
+
+        df_weighted_mean_levels = pd.DataFrame(
+            s_weighted_mean_levels, columns=[WEIGHTED_MEAN_LEVEL_COLUMN_NAME]
+        ).reset_index()
+        df_weighted_mean_levels = df_weighted_mean_levels[
+            [
+                MEMBER_ID_COLUMN_NAME,
+                MEETING_ID_COLUMN_NAME,
+                WEIGHTED_MEAN_LEVEL_COLUMN_NAME,
+            ]
+        ]
+
+        df_weighted_mean_levels[
+            WEIGHTED_MEAN_RESPECT_COLUMN_NAME
+        ] = fractal_governance.math.respect(
+            df_weighted_mean_levels[WEIGHTED_MEAN_LEVEL_COLUMN_NAME], **kwargs
+        )
+
+        return df_weighted_mean_levels
+
     @classmethod
     def from_csv(
         cls,
@@ -196,11 +395,15 @@ class Dataset:
             .reset_index()
         )
 
+        # The (MEETING_DATE_COLUMN_NAME, MEMBER_ID_COLUMN_NAME) tuple is degenerate
+        # after the addition of multiple rounds, which is the reason for the `notna` on
+        # LEVEL_COLUMN_NAME.
+        _df = df[df[LEVEL_COLUMN_NAME].notna()]
         df_team_representation_by_date = (
-            df[df[TEAM_NAME_COLUMN_NAME].notna()]
+            _df[_df[TEAM_NAME_COLUMN_NAME].notna()]
             .groupby(MEETING_DATE_COLUMN_NAME)
             .size()
-            / df.groupby(MEETING_DATE_COLUMN_NAME).size()
+            / _df.groupby(MEETING_DATE_COLUMN_NAME).size()
         )
 
         df_team_leader_board = (
@@ -240,6 +443,10 @@ def _create_df_member_respect_new_and_returning_by_meeting(
     accumulated_respect_total: List[int] = []
     accumulated_respect_new_member: List[int] = []
     accumulated_respect_returning_member: List[int] = []
+    # The (MEETING_DATE_COLUMN_NAME, MEMBER_ID_COLUMN_NAME) tuple is degenerate after
+    # the addition of multiple rounds, which is the reason for the `notna` on
+    # LEVEL_COLUMN_NAME.
+    df = df[df[LEVEL_COLUMN_NAME].notna()]
     for ((meeting_date, meeting_id), dfx) in df.groupby(
         [MEETING_DATE_COLUMN_NAME, MEETING_ID_COLUMN_NAME]
     ):
@@ -263,7 +470,7 @@ def _create_df_member_respect_new_and_returning_by_meeting(
             ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME: accumulated_respect_new_member,
             ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME: accumulated_respect_returning_member,  # noqa: E501
         }
-    )
+    ).sort_index()
 
 
 def _create_df_member_attendance_new_and_returning_by_meeting(
@@ -274,6 +481,10 @@ def _create_df_member_attendance_new_and_returning_by_meeting(
     meeting_ids = []
     new_member_counts = []
     returning_member_counts = []
+    # The (MEETING_DATE_COLUMN_NAME, MEMBER_ID_COLUMN_NAME) tuple is degenerate after
+    # the addition of multiple rounds, which is the reason for the `notna` on
+    # LEVEL_COLUMN_NAME.
+    df = df[df[LEVEL_COLUMN_NAME].notna()]
     for ((meeting_date, meeting_id), dfx) in df.groupby(
         [MEETING_DATE_COLUMN_NAME, MEETING_ID_COLUMN_NAME]
     ):
