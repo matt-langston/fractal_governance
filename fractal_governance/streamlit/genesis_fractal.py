@@ -68,9 +68,9 @@ with column1:
         f"""
     |Description|Measurement|
     |:---|---:|
-    |Total Respect tokens earned from all sources|{DATASET.total_respect:,}|
-    |Total Respect tokens earned by members|{DATASET.total_member_respect:,}|
-    |Respect tokens earned by teams|{DATASET.total_team_respect:,}|
+    |Total Respect tokens earned from all sources|{DATASET.total_respect:,.6f}|
+    |Total Respect tokens earned by members|{DATASET.total_member_respect:,.6f}|
+    |Respect tokens earned by teams|{DATASET.total_team_respect:,.6f}|
     |Total number of weekly consensus meetings|{DATASET.total_meetings:,}|
     |Total number of unique members|{DATASET.total_unique_members:,}|
     |Average number of attendees per meeting|{ATTENDANCE_STATS.mean:.0f} $\pm$ {ATTENDANCE_STATS.standard_deviation:.0f}|
