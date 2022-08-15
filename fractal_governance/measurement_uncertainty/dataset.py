@@ -168,7 +168,7 @@ def _create_contributor_by_member_id(
     df: pd.DataFrame,
 ) -> Dict[str, Contributor]:
     contributor_by_member_id: Dict[str, Contributor] = dict()
-    for ((meeting_id, group), df) in df.groupby(
+    for ((meeting_id, group), df) in df[df[LEVEL_COLUMN_NAME].notna()].groupby(
         [MEETING_ID_COLUMN_NAME, GROUP_COLUMN_NAME]
     ):
         for member_id1 in df[MEMBER_ID_COLUMN_NAME]:
