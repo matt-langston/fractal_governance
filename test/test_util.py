@@ -11,13 +11,7 @@ class TestUtil(unittest.TestCase):
     """Test fixture for the fractal_governance.util module"""
 
     def test_read_csv(self) -> None:
-        # Adjust the paths for the bazel sandbox.
-        fractal_dataset_csv_paths = (
-            fractal_governance.util.FractalDatasetCSVPaths.relative_to(
-                fractal_governance.util.DATA_DIR
-            )
-        )
-        df = fractal_governance.util.read_csv(fractal_dataset_csv_paths)
+        df = fractal_governance.util.read_csv()
         self.assertIsNotNone(df)
         self.assertFalse(df.empty)
 

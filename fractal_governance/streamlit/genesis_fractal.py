@@ -2,57 +2,122 @@
 """Streamlit app for the Genesis Fractal Dashboard"""
 
 import sys
+from enum import Enum, auto
 from pathlib import Path
+from typing import Any
+
+import pandas as pd
+import seaborn as sns
+import uncertainties
+
+import streamlit as st
 
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 import fractal_governance.dataset  # noqa: E402
 import fractal_governance.plots  # noqa: E402
-import pandas as pd  # noqa: E402
-import seaborn as sns  # noqa: E402
-from fractal_governance.util import (  # noqa: E402
+from fractal_governance.addendum_1.constants import Addendum1Constants  # noqa: E402
+from fractal_governance.addendum_1.dataset import Addendum1Dataset  # noqa: E402
+from fractal_governance.addendum_1.weighted_means import (  # noqa: E402
+    WeightedMeanParameters,
+    WeightedMeans,
+)
+from fractal_governance.constants import (  # noqa: E402
     ACCUMULATED_LEVEL_COLUMN_NAME,
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
     MEETING_DATE_COLUMN_NAME,
 )
 
-import streamlit as st  # noqa: E402
+
+class DashboardView(Enum):
+    Classic = auto()
+    Addendum1 = auto()
+    TeamFractallySpreadsheet = auto()
+
 
 PAGE_TITLE = "Genesis Fractal Dashboard"
 st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")
 
 
 @st.experimental_memo
-def get_dataset() -> fractal_governance.dataset.Dataset:
+def get_dataset(
+    dataset_type: int = DashboardView.Classic.value,
+) -> fractal_governance.dataset.Dataset:
     """Return the Genesis Fractal Dataset"""
-    return fractal_governance.dataset.Dataset.from_csv()
+    dataset = fractal_governance.dataset.Dataset.from_csv()
+    addendum_1_dataset = None
+    if dataset_type == DashboardView.Classic.value:
+        pass
+    elif dataset_type == DashboardView.Addendum1.value:
+        addendum_1_dataset = Addendum1Dataset(dataset=dataset)
+    elif dataset_type == DashboardView.TeamFractallySpreadsheet.value:
+        # Team fractally's incorrect value for not clamping *weighted mean Respect* to
+        # zero when a user has not signed the Fractal Contributor Agreement after a
+        # Fractal-defined meeting date.
+        weighted_mean_parameters_fractally = WeightedMeanParameters(
+            clamp_mean_respect_to_zero_when_fractal_contributor_agreement_not_signed=False  # noqa: E501
+        )
+        weighted_means_fractally = WeightedMeans(
+            dataset=dataset, parameters=weighted_mean_parameters_fractally
+        )
+        # Team fractally's incorrect calculation of pro_rata_respect.
+        addendum_1_constants_fractally = Addendum1Constants(
+            dataset=dataset, total_respect_before_addendum_1_individual=7022
+        )
+        addendum_1_dataset = Addendum1Dataset(
+            dataset=dataset,
+            weighted_means=weighted_means_fractally,
+            addendum_1_constants=addendum_1_constants_fractally,
+        )
+    else:
+        raise RuntimeError(f"LOGIC ERROR: Unknown enum {dataset_type}")
+
+    if addendum_1_dataset:
+        dataset = addendum_1_dataset.dataset_with_addendum_1_respect
+
+    return dataset
 
 
 @st.experimental_memo
-def get_plots() -> fractal_governance.plots.Plots:
+def get_plots(
+    dataset_type: int = DashboardView.Classic.value,
+) -> fractal_governance.plots.Plots:
     """Return the Genesis Fractal Plots"""
-    return fractal_governance.plots.Plots.from_dataset(get_dataset())
+    return fractal_governance.plots.Plots.from_dataset(get_dataset(dataset_type))
 
 
-DATASET = get_dataset()
-PLOTS = get_plots()
-LAST_MEETING_DATE = DATASET.last_meeting_date.strftime("%b %d, %Y")
-ATTENDANCE_STATS = DATASET.attendance_stats
-ATTENDANCE_CONSISTENCY_STATS = DATASET.attendance_consistency_stats
+LAST_MEETING_DATE = get_dataset().last_meeting_date.strftime("%b %d, %Y")
+
 
 st.title(PAGE_TITLE)
 f"""
 Data is current up through the meeting held on {LAST_MEETING_DATE}.
 
-The algorithm to calculate Respect values has been updated to use the continuous
-Fibonacci function in preparation for the roll-out of
-[Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)
-and
-[Refinement of Token Distribution Math](https://hive.blog/fractally/@dan/refinement-of-token-distribution-math).
+The following three views are available to toggle back and forth between the original
+*Classic Respect* token calculations and the new *Addendum 1 Respect* token
+calculations that allocates weekly token inflation equally between members and teams.
+"""
 
-No Genesis member has gained or lost Respect tokens, not even fractional values of
-Respect tokens. The only noticeable difference is a decimal point in the Respect values.
+dataset_type = st.radio(
+    "Dashboard View",
+    (
+        DashboardView.Classic.value,
+        DashboardView.Addendum1.value,
+        DashboardView.TeamFractallySpreadsheet.value,
+    ),
+    index=1,
+    format_func=lambda dataset_type: DashboardView(dataset_type).name,
+)
+
+DATASET = get_dataset(dataset_type)
+PLOTS = get_plots(dataset_type)
+ATTENDANCE_STATS = DATASET.attendance_stats
+ATTENDANCE_CONSISTENCY_STATS = DATASET.attendance_consistency_stats
+
+f"""
+The *{DashboardView.TeamFractallySpreadsheet.name}* option is only useful to *Team fractally*
+because it uses experimental spreadsheet calculations with issues known to them.
 
 Also see the
 [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
@@ -66,11 +131,11 @@ with column1:
     st.subheader("Summary Statistics")
     st.markdown(
         f"""
-    |Description|Measurement|
+    |Description|Value|
     |:---|---:|
-    |Total Respect tokens earned from all sources|{DATASET.total_respect:,.6f}|
-    |Total Respect tokens earned by members|{DATASET.total_member_respect:,.6f}|
-    |Respect tokens earned by teams|{DATASET.total_team_respect:,.6f}|
+    |Total Respect tokens earned from all sources|{DATASET.total_respect:,.2f}|
+    |Total Respect tokens earned by members|{DATASET.total_member_respect:,.2f}|
+    |Respect tokens earned by teams|{DATASET.total_team_respect:,.2f}|
     |Total number of weekly consensus meetings|{DATASET.total_meetings:,}|
     |Total number of unique members|{DATASET.total_unique_members:,}|
     |Average number of attendees per meeting|{ATTENDANCE_STATS.mean:.0f} $\pm$ {ATTENDANCE_STATS.standard_deviation:.0f}|
@@ -86,7 +151,7 @@ with column1:
     )
 
 with column2:
-    st.pyplot(PLOTS.accumulated_member_respect_vs_time_stacked)  # type: ignore
+    st.pyplot(PLOTS.accumulated_member_respect_vs_time_stacked)
 
 CMAP = sns.light_palette("#34A853", as_cmap=True)
 
@@ -98,11 +163,24 @@ then by member ID (ascending).
 Also see the member leaderboard in the sister dashboard
 [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py).
 """  # noqa: E501,W605
+
+
 df_member_leader_board = DATASET.df_member_leader_board.head(10)
 if st.checkbox("Show All"):
     df_member_leader_board = DATASET.df_member_leader_board
 
-df_member_leader_board = df_member_leader_board.style.background_gradient(
+
+def formatter(data: Any) -> Any:
+    if isinstance(data, uncertainties.UFloat):
+        return f"{data.nominal_value:,.2f}"
+    if isinstance(data, float):
+        return f"{data:,.2f}"
+    return data
+
+
+df_member_leader_board = df_member_leader_board.style.format(
+    formatter
+).background_gradient(
     cmap=CMAP,
     subset=pd.IndexSlice[
         :,
@@ -113,6 +191,7 @@ df_member_leader_board = df_member_leader_board.style.background_gradient(
         ],
     ],
 )
+
 
 st.table(df_member_leader_board)
 
@@ -136,15 +215,17 @@ with column1:
 
 with column2:
     with st.container():
-        st.pyplot(PLOTS.attendance_vs_time_stacked)  # type: ignore
-        st.pyplot(PLOTS.attendance_consistency_histogram)  # type: ignore
+        st.pyplot(PLOTS.attendance_vs_time_stacked)
+        st.pyplot(PLOTS.attendance_consistency_histogram)
 
 st.header("Team Statistics")
 
 column1, column2 = st.columns(2)
 with column1:
     st.subheader("Team Leaderboard")
-    df_team_leader_board = DATASET.df_team_leader_board.style.background_gradient(
+    df_team_leader_board = DATASET.df_team_leader_board.style.format(
+        formatter
+    ).background_gradient(
         cmap=CMAP,
         subset=pd.IndexSlice[
             :,
@@ -156,7 +237,7 @@ with column1:
     st.dataframe(df_team_leader_board)
 
 with column2:
-    st.pyplot(PLOTS.accumulated_team_respect_vs_time_stacked)  # type: ignore
+    st.pyplot(PLOTS.accumulated_team_respect_vs_time_stacked)
 
 column1, column2 = st.columns(2)
 
@@ -174,7 +255,7 @@ with column1:
     )
 
 with column2:
-    st.pyplot(PLOTS.team_representation_vs_time)  # type: ignore
+    st.pyplot(PLOTS.team_representation_vs_time)
 
 st.header("Description")
 
@@ -244,6 +325,7 @@ Resources to learn more about fractal governance:
 
 - [fractally White Paper](https://fractally.com)
 - [Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)
+- [Refinement of Token Distribution Math](https://hive.blog/fractally/@dan/refinement-of-token-distribution-math)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
 - [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
 - [A Model-Independent Method to Measure Uncertainties in Fractal Governance Consensus Algorithms](https://hive.blog/fractally/@mattlangston/a-model-independent-method-to-measure-uncertainties-in-fractal-governance-consensus-algorithms)

@@ -131,6 +131,7 @@ Start exploring our datasets, models and simulations. What follows is an example
 import matplotlib.pyplot as plt
 
 # 2nd party dependencies
+import fractal_governance.addendum_1.dataset
 import fractal_governance.dataset
 import fractal_governance.plots
 
@@ -146,6 +147,13 @@ Read the Genesis fractal's dataset into a `Dataset` object consisting of multipl
 dataset = fractal_governance.dataset.Dataset.from_csv()
 ```
 
+Uodate the *Respect* values using Addendum 1 algorithm changes. See the *Resources* section below for links that describe these changes.
+
+
+```python
+dataset = fractal_governance.addendum_1.dataset.Addendum1Dataset(dataset=dataset).dataset_with_addendum_1_respect
+```
+
 List the attributes of this `Dataset` object to see what properties and methods we have to work with.
 
 
@@ -156,11 +164,7 @@ List the attributes of this `Dataset` object to see what properties and methods 
 
 
 
-    ['_get_mean_levels',
-     '_get_new_member_filter_for_meeting_id',
-     '_get_partial_weighted_mean_levels',
-     '_get_weighted_mean_levels',
-     '_get_weighted_mean_levels_fractally',
+    ['_get_new_member_filter_for_meeting_id',
      'attendance_consistency_stats',
      'attendance_stats',
      'df',
@@ -175,7 +179,6 @@ List the attributes of this `Dataset` object to see what properties and methods 
      'from_csv',
      'get_new_member_dataframe_for_meeting_id',
      'get_returning_member_dataframe_for_meeting_id',
-     'get_weighted_mean_levels',
      'last_meeting_date',
      'team_representation_stats',
      'total_meetings',
@@ -200,7 +203,7 @@ dataset.total_meetings
 
 
 
-    24
+    26
 
 
 
@@ -212,7 +215,7 @@ dataset.total_unique_members
 
 
 
-    126
+    130
 
 
 
@@ -242,72 +245,72 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     <tr>
       <td>dan</td>
       <td>Daniel Larimer</td>
-      <td>136.0</td>
-      <td>517.0</td>
-      <td>23</td>
+      <td>152.0</td>
+      <td>1.000455e+06</td>
+      <td>25</td>
     </tr>
     <tr>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
-      <td>126.0</td>
-      <td>442.0</td>
-      <td>23</td>
+      <td>140.0</td>
+      <td>8.127266e+05</td>
+      <td>25</td>
     </tr>
     <tr>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
-      <td>115.0</td>
-      <td>354.0</td>
-      <td>23</td>
+      <td>128.0</td>
+      <td>6.520311e+05</td>
+      <td>25</td>
     </tr>
     <tr>
       <td>jseymour</td>
       <td>Joshua Seymour</td>
-      <td>108.0</td>
-      <td>302.0</td>
-      <td>24</td>
+      <td>119.0</td>
+      <td>5.775408e+05</td>
+      <td>26</td>
     </tr>
     <tr>
       <td>hachtu</td>
       <td>Mark Scheer</td>
-      <td>104.0</td>
-      <td>302.0</td>
-      <td>21</td>
+      <td>112.0</td>
+      <td>5.743088e+05</td>
+      <td>23</td>
     </tr>
     <tr>
       <td>dphillippi</td>
       <td>Duane Phillippi</td>
-      <td>102.0</td>
-      <td>284.0</td>
-      <td>23</td>
+      <td>111.0</td>
+      <td>5.703965e+05</td>
+      <td>25</td>
     </tr>
     <tr>
-      <td>mattlangston</td>
-      <td>Matt Langston</td>
-      <td>97.0</td>
-      <td>272.0</td>
-      <td>21</td>
+      <td>fractallymike</td>
+      <td>Mike Manfredi</td>
+      <td>107.0</td>
+      <td>6.157411e+05</td>
+      <td>19</td>
     </tr>
     <tr>
       <td>thomashallgren</td>
       <td>Thomas Hallgren</td>
-      <td>95.0</td>
-      <td>319.0</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <td>pnc</td>
-      <td>Pascal Ngu Cho</td>
-      <td>92.0</td>
-      <td>204.0</td>
-      <td>23</td>
+      <td>107.0</td>
+      <td>6.186240e+05</td>
+      <td>19</td>
     </tr>
     <tr>
       <td>lionflash</td>
       <td>Felix Ruiz</td>
-      <td>91.0</td>
-      <td>224.0</td>
-      <td>23</td>
+      <td>103.0</td>
+      <td>4.530654e+05</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>mattlangston</td>
+      <td>Matt Langston</td>
+      <td>103.0</td>
+      <td>5.213684e+05</td>
+      <td>22</td>
     </tr>
   </tbody>
 </table>
@@ -362,7 +365,7 @@ plt.show()
 
 
     
-![png](README_files/README_25_0.png)
+![png](README_files/README_27_0.png)
     
 
 
@@ -389,6 +392,18 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
   </thead>
   <tbody>
     <tr>
+      <td>2022-08-27</td>
+      <td>26</td>
+      <td>5</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>2022-08-20</td>
+      <td>25</td>
+      <td>0</td>
+      <td>41</td>
+    </tr>
+    <tr>
       <td>2022-08-13</td>
       <td>24</td>
       <td>2</td>
@@ -403,8 +418,8 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
     <tr>
       <td>2022-07-30</td>
       <td>22</td>
-      <td>5</td>
-      <td>38</td>
+      <td>4</td>
+      <td>39</td>
     </tr>
     <tr>
       <td>2022-07-23</td>
@@ -448,18 +463,6 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
       <td>1</td>
       <td>34</td>
     </tr>
-    <tr>
-      <td>2022-06-04</td>
-      <td>14</td>
-      <td>4</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <td>2022-05-28</td>
-      <td>13</td>
-      <td>2</td>
-      <td>33</td>
-    </tr>
   </tbody>
 </table>
 
@@ -477,7 +480,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=35.88, standard_deviation=7.34)
+    Statistics(mean=36.35, standard_deviation=7.24)
 
 
 
@@ -493,7 +496,7 @@ plt.show()
 
 
     
-![png](README_files/README_34_0.png)
+![png](README_files/README_36_0.png)
     
 
 
@@ -509,7 +512,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=6.83, standard_deviation=7.52)
+    Statistics(mean=7.27, standard_deviation=8.08)
 
 
 
@@ -537,88 +540,88 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
   </thead>
   <tbody>
     <tr>
+      <td>2022-08-27</td>
+      <td>26</td>
+      <td>595056.844121</td>
+      <td>11045.193910</td>
+      <td>584011.650211</td>
+    </tr>
+    <tr>
+      <td>2022-08-20</td>
+      <td>25</td>
+      <td>613432.790161</td>
+      <td>0.000000</td>
+      <td>613432.790161</td>
+    </tr>
+    <tr>
       <td>2022-08-13</td>
       <td>24</td>
-      <td>616.0</td>
-      <td>10.0</td>
-      <td>606.0</td>
+      <td>629772.930173</td>
+      <td>6340.180396</td>
+      <td>623432.749777</td>
     </tr>
     <tr>
       <td>2022-08-06</td>
       <td>23</td>
-      <td>611.0</td>
-      <td>8.0</td>
-      <td>603.0</td>
+      <td>650490.028051</td>
+      <td>6639.161733</td>
+      <td>643850.866318</td>
     </tr>
     <tr>
       <td>2022-07-30</td>
       <td>22</td>
-      <td>383.0</td>
-      <td>6.0</td>
-      <td>377.0</td>
+      <td>761712.840716</td>
+      <td>36363.175813</td>
+      <td>725349.664903</td>
     </tr>
     <tr>
       <td>2022-07-23</td>
       <td>21</td>
-      <td>404.0</td>
-      <td>7.0</td>
-      <td>397.0</td>
+      <td>773195.948868</td>
+      <td>13396.959510</td>
+      <td>759798.989358</td>
     </tr>
     <tr>
       <td>2022-07-16</td>
       <td>20</td>
-      <td>349.0</td>
-      <td>3.0</td>
-      <td>346.0</td>
+      <td>667934.124146</td>
+      <td>5741.554076</td>
+      <td>662192.570070</td>
     </tr>
     <tr>
       <td>2022-07-09</td>
       <td>19</td>
-      <td>301.0</td>
-      <td>11.0</td>
-      <td>290.0</td>
+      <td>576069.258934</td>
+      <td>21052.364944</td>
+      <td>555016.893989</td>
     </tr>
     <tr>
       <td>2022-07-02</td>
       <td>18</td>
-      <td>352.0</td>
-      <td>0.0</td>
-      <td>352.0</td>
+      <td>673675.678222</td>
+      <td>0.000000</td>
+      <td>673675.678222</td>
     </tr>
     <tr>
       <td>2022-06-25</td>
       <td>17</td>
-      <td>308.0</td>
-      <td>0.0</td>
-      <td>308.0</td>
+      <td>589466.218444</td>
+      <td>0.000000</td>
+      <td>589466.218444</td>
     </tr>
     <tr>
       <td>2022-06-18</td>
       <td>16</td>
-      <td>364.0</td>
-      <td>11.0</td>
-      <td>353.0</td>
+      <td>696641.894525</td>
+      <td>21052.364944</td>
+      <td>675589.529580</td>
     </tr>
     <tr>
       <td>2022-06-11</td>
       <td>15</td>
-      <td>310.0</td>
-      <td>3.0</td>
-      <td>307.0</td>
-    </tr>
-    <tr>
-      <td>2022-06-04</td>
-      <td>14</td>
-      <td>312.0</td>
-      <td>12.0</td>
-      <td>300.0</td>
-    </tr>
-    <tr>
-      <td>2022-05-28</td>
-      <td>13</td>
-      <td>310.0</td>
-      <td>5.0</td>
-      <td>305.0</td>
+      <td>593293.921161</td>
+      <td>5741.554076</td>
+      <td>587552.367085</td>
     </tr>
   </tbody>
 </table>
@@ -637,7 +640,7 @@ plt.show()
 
 
     
-![png](README_files/README_43_0.png)
+![png](README_files/README_45_0.png)
     
 
 
@@ -653,7 +656,7 @@ dataset.total_member_respect
 
 
 
-    8247.000000000004
+    15952696.90014352
 
 
 
@@ -669,7 +672,7 @@ plt.show()
 
 
     
-![png](README_files/README_49_0.png)
+![png](README_files/README_51_0.png)
     
 
 
@@ -685,7 +688,7 @@ dataset.total_team_respect
 
 
 
-    3842.000000000001
+    7449406.68827073
 
 
 
@@ -709,19 +712,19 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
   </thead>
   <tbody>
     <tr>
-      <td>2190.0</td>
+      <td>4.129768e+06</td>
     </tr>
     <tr>
-      <td>880.0</td>
+      <td>1.704524e+06</td>
     </tr>
     <tr>
-      <td>364.0</td>
+      <td>7.020440e+05</td>
     </tr>
     <tr>
-      <td>238.0</td>
+      <td>5.373901e+05</td>
     </tr>
     <tr>
-      <td>170.0</td>
+      <td>3.756804e+05</td>
     </tr>
   </tbody>
 </table>
@@ -740,7 +743,7 @@ plt.show()
 
 
     
-![png](README_files/README_58_0.png)
+![png](README_files/README_60_0.png)
     
 
 
@@ -756,7 +759,7 @@ dataset.team_representation_stats
 
 
 
-    Statistics(mean=0.38, standard_deviation=0.12)
+    Statistics(mean=0.39, standard_deviation=0.12)
 
 
 
@@ -783,113 +786,123 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
   <tbody>
     <tr>
       <td>1</td>
-      <td>2.418182</td>
-      <td>1.286553</td>
+      <td>2.428571</td>
+      <td>1.262856</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>3.277778</td>
-      <td>1.673515</td>
+      <td>3.714286</td>
+      <td>1.589803</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>1.944444</td>
-      <td>1.109967</td>
+      <td>2.083333</td>
+      <td>1.501207</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>3.375000</td>
-      <td>1.454877</td>
+      <td>2.900000</td>
+      <td>1.518309</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>3.600000</td>
-      <td>1.549193</td>
+      <td>2.933333</td>
+      <td>1.387015</td>
     </tr>
     <tr>
       <td>6</td>
-      <td>3.000000</td>
-      <td>1.474420</td>
+      <td>3.291667</td>
+      <td>1.458980</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>2.928571</td>
-      <td>1.730464</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>2.750000</td>
-      <td>1.388730</td>
+      <td>3.000000</td>
+      <td>1.617215</td>
     </tr>
     <tr>
       <td>9</td>
       <td>2.888889</td>
-      <td>1.686548</td>
+      <td>1.654501</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>3.400000</td>
-      <td>1.646545</td>
+      <td>2.800000</td>
+      <td>1.229273</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>3.303030</td>
-      <td>1.334280</td>
+      <td>2.939394</td>
+      <td>1.344884</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>3.083333</td>
+      <td>1.676486</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>3.211538</td>
-      <td>1.512517</td>
+      <td>3.653846</td>
+      <td>1.354764</td>
     </tr>
     <tr>
       <td>14</td>
-      <td>3.714286</td>
-      <td>1.501577</td>
+      <td>3.761905</td>
+      <td>1.358075</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>4.100000</td>
-      <td>1.918153</td>
+      <td>3.355556</td>
+      <td>1.747148</td>
     </tr>
     <tr>
       <td>16</td>
-      <td>2.750000</td>
-      <td>1.244342</td>
+      <td>3.925000</td>
+      <td>1.833410</td>
     </tr>
     <tr>
       <td>17</td>
-      <td>5.470588</td>
-      <td>1.284766</td>
+      <td>2.294118</td>
+      <td>0.771744</td>
     </tr>
     <tr>
       <td>18</td>
-      <td>3.759259</td>
-      <td>1.692772</td>
+      <td>3.222222</td>
+      <td>1.352799</td>
     </tr>
     <tr>
       <td>19</td>
-      <td>3.210526</td>
-      <td>1.134262</td>
+      <td>5.631579</td>
+      <td>1.364037</td>
     </tr>
     <tr>
       <td>20</td>
-      <td>3.650000</td>
-      <td>1.424151</td>
+      <td>3.766667</td>
+      <td>1.711048</td>
     </tr>
     <tr>
       <td>21</td>
-      <td>4.130952</td>
-      <td>1.691793</td>
+      <td>3.595238</td>
+      <td>1.269905</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>3.806818</td>
+      <td>1.754193</td>
     </tr>
     <tr>
       <td>23</td>
-      <td>4.571429</td>
-      <td>1.531806</td>
+      <td>4.043478</td>
+      <td>1.534152</td>
     </tr>
     <tr>
-      <td>24</td>
-      <td>4.500000</td>
-      <td>1.532262</td>
+      <td>25</td>
+      <td>4.886667</td>
+      <td>1.508529</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>4.576923</td>
+      <td>1.653435</td>
     </tr>
   </tbody>
 </table>
@@ -916,10 +929,10 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['Attendance
   <tbody>
     <tr>
       <td>1.000000</td>
-      <td>0.675224</td>
+      <td>0.665752</td>
     </tr>
     <tr>
-      <td>0.675224</td>
+      <td>0.665752</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -939,7 +952,7 @@ plt.show()
 
 
     
-![png](README_files/README_69_0.png)
+![png](README_files/README_71_0.png)
     
 
 
@@ -1081,6 +1094,7 @@ Resources to learn more about Fractal Governance:
 
 - [fractally White Paper](https://fractally.com)
 - [Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)
+- [Refinement of Token Distribution Math](https://hive.blog/fractally/@dan/refinement-of-token-distribution-math)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
 - [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
 - [Genesis Fractal Dashboard](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py)

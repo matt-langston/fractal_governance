@@ -1,7 +1,7 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
 """Plots for fractal governance data analysis"""
 
-import attr
+import attrs
 import matplotlib.figure
 import matplotlib.pyplot as plt
 import matplotlib.ticker
@@ -10,7 +10,8 @@ import scipy.stats
 
 import fractal_governance.dataset
 import fractal_governance.util
-from fractal_governance.util import (
+
+from .constants import (
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME,
     ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME,
@@ -27,7 +28,7 @@ from fractal_governance.util import (
 DEFAULT_FIGSIZE = (10, 6)
 
 
-@attr.frozen
+@attrs.frozen
 class Plots:
     """A wrapper around fractal governance plots"""
 

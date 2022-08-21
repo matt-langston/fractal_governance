@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import uncertainties
 import uncertainties.unumpy
-from fractal_governance.util import (
+from fractal_governance.constants import (
     ACCUMULATED_LEVEL_COLUMN_NAME,
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,

@@ -1,5 +1,12 @@
 # Copyright (C) 2022 Matt Langston. All Rights Reserved.
-"""Token Supply functionality for Fractal Governance data analysis"""
+"""Token Supply functionality for Fractally White Paper Addendum 1
+
+See
+[Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1)  # noqa: E501
+and
+[Refinement of Token Distribution Math](https://hive.blog/fractally/@dan/refinement-of-token-distribution-math).  # noqa: E501
+
+"""
 
 import math
 
@@ -53,8 +60,6 @@ class TokenSupply:
         return integral_start  # type: ignore
 
     def _integral_end(self, *, time: float) -> float:
-        if time < 1:
-            raise RuntimeError(f"LOGIC ERROR: unexpected time={time}")
         return self._integral_start(time=(time + 1))
 
     def __attrs_post_init__(self) -> None:
@@ -90,10 +95,11 @@ class TokenSupply:
 
         T1_DELTA = T1 - TRANSITION_TO_CONSTANT_INFLATION
 
-        print(f"MDL: {self.time} T0:       {T0}")
-        print(f"MDL: {self.time} T1:       {T1}")
-        print(f"MDL: {self.time} T0_DELTA: {T0_DELTA}")
-        print(f"MDL: {self.time} T1_DELTA: {T1_DELTA}")
+        # TODO(mlangston) Keep the following four print statements for debugging.
+        # print(f"MDL: {self.time} T0:       {T0}")
+        # print(f"MDL: {self.time} T1:       {T1}")
+        # print(f"MDL: {self.time} T0_DELTA: {T0_DELTA}")
+        # print(f"MDL: {self.time} T1_DELTA: {T1_DELTA}")
 
         TIME_AT_TRANSITION_TO_CONSTANT_INFLATION = (
             TRANSITION_TO_CONSTANT_INFLATION * self.half_life

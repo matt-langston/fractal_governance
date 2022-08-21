@@ -9,42 +9,23 @@ import pandas as pd
 
 import fractal_governance.math
 
-DATA_DIR = Path(fractal_governance.__file__).parent.parent
-GENESIS_ACCOUNT_STATUS_CSV_PATH = DATA_DIR / "data/genesis-account_status.csv"
-GENESIS_LATE_CONSENSUS_CSV_PATH = DATA_DIR / "data/genesis-late_consensus.csv"
-GENESIS_TEAMS_CSV_PATH = DATA_DIR / "data/genesis-teams.csv"
-GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH = DATA_DIR / "data/genesis-weekly_measurements.csv"
-
-
-DATE_OF_FIRST_GENESIS_FRACTAL_MEETING = pd.to_datetime("2/26/2022")
-
-
-ACCUMULATED_LEVEL_COLUMN_NAME = "AccumulatedLevel"
-ACCUMULATED_RESPECT_COLUMN_NAME = "AccumulatedRespect"
-ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME = "AccumulatedRespectNewMember"
-ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME = "AccumulatedRespectReturningMember"
-ATTENDANCE_COUNT_COLUMN_NAME = "AttendanceCount"
-ATTENDANCE_COUNT_NEW_MEMBER_COLUMN_NAME = "AttendanceCountNewMember"
-ATTENDANCE_COUNT_RETURNING_MEMBER_COLUMN_NAME = "AttendanceCountReturningMember"
-GROUP_COLUMN_NAME = "Group"
-HIVE_ACCOUNT_NAME_COLUMN_NAME = "HiveAccountName"
-INDEX_COLUMN_NAME = "Index"
-LEVEL_COLUMN_NAME = "Level"
-MEAN_COLUMN_NAME = "Mean"
-MEETING_DATE_COLUMN_NAME = "MeetingDate"
-MEETING_ID_COLUMN_NAME = "MeetingID"
-MEMBER_ID_COLUMN_NAME = "MemberID"
-MEMBER_NAME_COLUMN_NAME = "Name"
-NEW_MEMBER_COUNT_COLUMN_NAME = "NewMemberCount"
-ROUND_COLUMN_NAME = "Round"
-RESPECT_COLUMN_NAME = "Respect"
-RETURNING_MEMBER_COUNT_COLUMN_NAME = "ReturningMemberCount"
-SIGNATURE_ON_FILE_COLUMN_NAME = "SignatureOnFile"
-STANDARD_DEVIATION_COLUMN_NAME = "StandardDeviation"
-TEAM_ID_COLUMN_NAME = "TeamID"
-TEAM_NAME_COLUMN_NAME = "TeamName"
-WEIGHTED_MEAN_LEVEL_COLUMN_NAME = "WeightedMeanLevel"
-WEIGHTED_MEAN_RESPECT_COLUMN_NAME = "WeightedMeanRespect"
+from .constants import (
+    DATE_OF_FIRST_GENESIS_FRACTAL_MEETING,
+    GENESIS_ACCOUNT_STATUS_CSV_PATH,
+    GENESIS_LATE_CONSENSUS_CSV_PATH,
+    GENESIS_TEAMS_CSV_PATH,
+    GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH,
+    HIVE_ACCOUNT_NAME_COLUMN_NAME,
+    INDEX_COLUMN_NAME,
+    LEVEL_COLUMN_NAME,
+    MEETING_DATE_COLUMN_NAME,
+    MEETING_ID_COLUMN_NAME,
+    MEETING_ID_WHEN_HIVE_SIGNATURE_REQUIRED,
+    MEMBER_ID_COLUMN_NAME,
+    RESPECT_COLUMN_NAME,
+    SIGNATURE_ON_FILE_COLUMN_NAME,
+    TEAM_ID_COLUMN_NAME,
+)
 
 
 def meeting_id_to_timestamp(meeting_id: int) -> pd.Timestamp:
@@ -72,11 +53,13 @@ class FractalDatasetCSVPaths:
     )
 
     @classmethod
-    def relative_to(cls, data_dir: Path) -> "FractalDatasetCSVPaths":
-        account_status = GENESIS_ACCOUNT_STATUS_CSV_PATH.relative_to(data_dir)
-        late_consensus = GENESIS_LATE_CONSENSUS_CSV_PATH.relative_to(data_dir)
-        teams = GENESIS_TEAMS_CSV_PATH.relative_to(data_dir)
-        weekly_measurements = GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH.relative_to(data_dir)
+    def relative_to(cls, PROJECT_DIR: Path) -> "FractalDatasetCSVPaths":
+        account_status = GENESIS_ACCOUNT_STATUS_CSV_PATH.relative_to(PROJECT_DIR)
+        late_consensus = GENESIS_LATE_CONSENSUS_CSV_PATH.relative_to(PROJECT_DIR)
+        teams = GENESIS_TEAMS_CSV_PATH.relative_to(PROJECT_DIR)
+        weekly_measurements = GENESIS_WEEKLY_MEASUREMENTS_CSV_PATH.relative_to(
+            PROJECT_DIR
+        )
         return cls(
             account_status=account_status,
             late_consensus=late_consensus,
@@ -117,22 +100,26 @@ def read_csv(
     df[[HIVE_ACCOUNT_NAME_COLUMN_NAME, SIGNATURE_ON_FILE_COLUMN_NAME]] = df[
         [HIVE_ACCOUNT_NAME_COLUMN_NAME, SIGNATURE_ON_FILE_COLUMN_NAME]
     ].fillna(False)
+
     # Per email from Gregory Wexler on July 6, 2022 with the subject
     # "Re: Differences between spreadsheet and dashboard":
     #
     # We should have zero'ed out the (NS) No-signature people early on.
     #
-    # Since we published numbers, I didn't think it was right to 'pull it back'.
-    # That said, given our statements in the meeting that you need to sign to
-    # participate and earn respect, I started zeroing out (NS) members from that
-    # point forward.
+    # Since we published numbers, I didn't think it was right to 'pull it back'. That
+    # said, given our statements in the meeting that you need to sign to participate
+    # and earn respect, I started zeroing out (NS) members from that point forward.
     #
     # So the rules are:
     # 1. as of last meeting date, (NS) means you're going to get ZERO respect going
     #    forward.
     # 2. prior to that meeting, we're going to keep that respect in place.
+    #
+    # NOTE: The "last meeting date" that Gregory was referring to was 6/25/2022, which
+    # was meeting_id 17.
     df.loc[
-        ~df[SIGNATURE_ON_FILE_COLUMN_NAME] & (df[MEETING_ID_COLUMN_NAME] >= 17),
+        ~df[SIGNATURE_ON_FILE_COLUMN_NAME]
+        & (df[MEETING_ID_COLUMN_NAME] >= MEETING_ID_WHEN_HIVE_SIGNATURE_REQUIRED),
         [RESPECT_COLUMN_NAME],
     ] = 0
 

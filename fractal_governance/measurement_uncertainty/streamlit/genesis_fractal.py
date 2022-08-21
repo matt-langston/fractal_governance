@@ -4,14 +4,17 @@
 import sys
 from pathlib import Path
 
+import numpy as np
+import pandas as pd
+import seaborn as sns
+
+import streamlit as st
+
 sys.path.append(str(Path(__file__).resolve().parents[3]))
 import fractal_governance.dataset  # noqa: E402
 import fractal_governance.measurement_uncertainty.dataset  # noqa: E402
 import fractal_governance.measurement_uncertainty.plots  # noqa: E402
-import numpy as np  # noqa: E402
-import pandas as pd  # noqa: E402
-import seaborn as sns  # noqa: E402
-from fractal_governance.dataset import (  # noqa: E402
+from fractal_governance.constants import (  # noqa: E402
     ACCUMULATED_LEVEL_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
     MEMBER_ID_COLUMN_NAME,
@@ -24,8 +27,6 @@ from fractal_governance.measurement_uncertainty.plots import (  # noqa: E402
     CorrelationType,
     UncertaintyType,
 )
-
-import streamlit as st  # noqa: E402
 
 PAGE_TITLE = "Genesis Uncertainty Observatory"
 st.set_page_config(page_title=PAGE_TITLE, page_icon="✅", layout="wide")

@@ -11,13 +11,7 @@ class TestDataset(unittest.TestCase):
     """Test fixture for the fractal_governance.dataset module"""
 
     def test_for_smoke(self) -> None:
-        # Adjust the paths for the bazel sandbox.
-        fractal_dataset_csv_paths = (
-            fractal_governance.util.FractalDatasetCSVPaths.relative_to(
-                fractal_governance.util.DATA_DIR
-            )
-        )
-        dataset = fractal_governance.dataset.Dataset.from_csv(fractal_dataset_csv_paths)
+        dataset = fractal_governance.dataset.Dataset.from_csv()
         self.assertIsNotNone(dataset)
         self.assertIsNotNone(dataset.df)
         self.assertIsNotNone(dataset.df_member_summary_stats_by_member_id)

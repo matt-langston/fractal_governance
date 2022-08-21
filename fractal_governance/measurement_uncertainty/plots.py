@@ -12,13 +12,13 @@ import numpy as np
 import pandas as pd
 import scipy.stats
 import uncertainties
+from fractal_governance.constants import ATTENDANCE_COUNT_COLUMN_NAME, MEAN_COLUMN_NAME
 from fractal_governance.measurement_uncertainty.dataset import (
     MEASUREMENT_UNCERTAINTY_COLUMN_NAME,
     Dataset,
     UncertaintyType,
 )
 from fractal_governance.plots import DEFAULT_FIGSIZE
-from fractal_governance.util import ATTENDANCE_COUNT_COLUMN_NAME, MEAN_COLUMN_NAME
 
 
 class CorrelationType(Enum):
