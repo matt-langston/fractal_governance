@@ -36,11 +36,23 @@ class UncertaintyType(Enum):
 class Dataset:
     """A wrapper around fractal governance measurement uncertainty data"""
 
-    dataset: fractal_governance.dataset.Dataset
-    df_with_self_measurements: pd.DataFrame
-    df_without_self_measurements: pd.DataFrame
-    _df_member_leader_board_true: pd.DataFrame = attrs.field(default=None, init=False)
-    _df_member_leader_board_false: pd.DataFrame = attrs.field(default=None, init=False)
+    dataset: fractal_governance.dataset.Dataset = attrs.field(repr=False)
+
+    df_with_self_measurements: pd.DataFrame = attrs.field(
+        repr=False, default=None, init=False
+    )
+
+    df_without_self_measurements: pd.DataFrame = attrs.field(
+        repr=False, default=None, init=False
+    )
+
+    _df_member_leader_board_true: pd.DataFrame = attrs.field(
+        repr=False, default=None, init=False
+    )
+
+    _df_member_leader_board_false: pd.DataFrame = attrs.field(
+        repr=False, default=None, init=False
+    )
 
     def get_member_leader_board(
         self, *, include_self_measurement: bool
@@ -102,31 +114,31 @@ class Dataset:
         return df
 
     @classmethod
-    def from_dataset(cls, dataset: fractal_governance.dataset.Dataset) -> "Dataset":
-        """Return a measurement uncertainty dataset object for the given fractal
-        governance dataset"""
-        df = dataset.df
-        df_with_self_measurements = create_measurement_uncertainty_dataframe(
-            df=df, include_self_measurements=True
-        )
-        df_without_self_measurements = create_measurement_uncertainty_dataframe(
-            df=df, include_self_measurements=False
-        )
-        return cls(
-            dataset=dataset,
-            df_with_self_measurements=df_with_self_measurements,
-            df_without_self_measurements=df_without_self_measurements,
-        )
-
-    @classmethod
     def from_csv(
         cls,
         fractal_dataset_csv_paths: fractal_governance.util.FractalDatasetCSVPaths = fractal_governance.util.FractalDatasetCSVPaths(),  # noqa: E501
     ) -> "Dataset":
         """Return a measurement uncertainty dataset object for the given file path to
         the Genesis .csv dataset"""
-        dataset = fractal_governance.dataset.Dataset.from_csv(fractal_dataset_csv_paths)
-        return cls.from_dataset(dataset=dataset)
+        return cls(
+            dataset=fractal_governance.dataset.Dataset.from_csv(
+                fractal_dataset_csv_paths
+            )
+        )
+
+    def __attrs_post_init__(self) -> None:
+        df = self.dataset.df
+        df_with_self_measurements = create_measurement_uncertainty_dataframe(
+            df=df, include_self_measurements=True
+        )
+        df_without_self_measurements = create_measurement_uncertainty_dataframe(
+            df=df, include_self_measurements=False
+        )
+
+        object.__setattr__(self, "df_with_self_measurements", df_with_self_measurements)
+        object.__setattr__(
+            self, "df_without_self_measurements", df_without_self_measurements
+        )
 
 
 @attrs.frozen(kw_only=True)

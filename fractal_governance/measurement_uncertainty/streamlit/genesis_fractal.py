@@ -41,16 +41,16 @@ def _get_dataset() -> fractal_governance.measurement_uncertainty.dataset.Dataset
 @st.experimental_memo
 def get_dataset() -> fractal_governance.measurement_uncertainty.dataset.Dataset:
     """Return the Genesis Fractal Measurement Uncertainty Dataset"""
-    return fractal_governance.measurement_uncertainty.dataset.Dataset.from_dataset(
-        _get_dataset()
+    return fractal_governance.measurement_uncertainty.dataset.Dataset(
+        dataset=_get_dataset()
     )
 
 
 @st.experimental_memo
 def get_plots() -> fractal_governance.measurement_uncertainty.plots.Plots:
     """Return the Genesis Fractal Measurement Uncertainty Plots"""
-    return fractal_governance.measurement_uncertainty.plots.Plots.from_dataset(
-        _get_dataset()
+    return fractal_governance.measurement_uncertainty.plots.Plots(
+        dataset=_get_dataset()
     )
 
 

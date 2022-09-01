@@ -30,8 +30,11 @@ class CorrelationType(Enum):
 class Plots:
     """A wrapper around e fractal governance measurement uncertainty data"""
 
-    measurement_uncertainty_dataset: Dataset
-    dataset: fractal_governance.dataset.Dataset
+    dataset: fractal_governance.dataset.Dataset = attrs.field(repr=False)
+
+    measurement_uncertainty_dataset: Dataset = attrs.field(
+        repr=False, default=None, init=False
+    )
 
     @property
     def measurement_uncertainty(self) -> matplotlib.figure.Figure:
@@ -198,10 +201,11 @@ class Plots:
             cut_start = 0.5
             cut_stop = df[column_name].max() + 1
             cut_step = 1
+            cut_range = np.arange(start=cut_start, stop=cut_stop, step=cut_step)
             for interval, dfx in df.groupby(
                 pd.cut(
                     df[column_name],
-                    np.arange(start=cut_start, stop=cut_stop, step=cut_step),
+                    cut_range,
                 )
             ):
                 x_mean = dfx[column_name].mean()
@@ -244,19 +248,20 @@ class Plots:
         return fig
 
     @classmethod
-    def from_dataset(cls, dataset: fractal_governance.dataset.Dataset) -> "Plots":
-        """Return a Plots object for the given Dataset"""
-        measurement_uncertainty_dataset = Dataset.from_dataset(dataset=dataset)
-        return cls(
-            measurement_uncertainty_dataset=measurement_uncertainty_dataset,
-            dataset=dataset,
-        )
-
-    @classmethod
     def from_csv(
         cls,
         fractal_dataset_csv_paths: fractal_governance.util.FractalDatasetCSVPaths = fractal_governance.util.FractalDatasetCSVPaths(),  # noqa: E501
     ) -> "Plots":
         """Return a Plots object for the given Fractal's .csv file paths"""
-        dataset = fractal_governance.dataset.Dataset.from_csv(fractal_dataset_csv_paths)
-        return cls.from_dataset(dataset=dataset)
+        return cls(
+            dataset=fractal_governance.dataset.Dataset.from_csv(
+                fractal_dataset_csv_paths
+            )
+        )
+
+    def __attrs_post_init__(self) -> None:
+        pass
+        measurement_uncertainty_dataset = Dataset(dataset=self.dataset)
+        object.__setattr__(
+            self, "measurement_uncertainty_dataset", measurement_uncertainty_dataset
+        )

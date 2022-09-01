@@ -192,6 +192,24 @@ class WeightedMeans:
             .reset_index(MEETING_ID_COLUMN_NAME)[WEIGHTED_MEAN_RESPECT_COLUMN_NAME]
         )
 
+        def propagate_team_membership(df: pd.DataFrame) -> pd.DataFrame:
+            team_rows = df[df[TEAM_ID_COLUMN_NAME].notna()]
+            if team_rows[TEAM_ID_COLUMN_NAME].any():
+                row_of_joining_team = team_rows.iloc[0]
+                df.loc[
+                    df[MEETING_ID_COLUMN_NAME]
+                    >= row_of_joining_team[MEETING_ID_COLUMN_NAME],
+                    TEAM_ID_COLUMN_NAME,
+                ] = row_of_joining_team[TEAM_ID_COLUMN_NAME]
+                df.loc[
+                    df[MEETING_ID_COLUMN_NAME]
+                    >= row_of_joining_team[MEETING_ID_COLUMN_NAME],
+                    TEAM_NAME_COLUMN_NAME,
+                ] = row_of_joining_team[TEAM_NAME_COLUMN_NAME]
+            return df
+
+        df = df.groupby(MEMBER_ID_COLUMN_NAME).apply(propagate_team_membership)
+
         def team_respect_per_meeting(df: pd.DataFrame) -> pd.DataFrame:
             df = df[df[TEAM_ID_COLUMN_NAME].notna()]
             return df[WEIGHTED_MEAN_RESPECT_COLUMN_NAME].sum()
