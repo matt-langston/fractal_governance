@@ -16,12 +16,7 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 import fractal_governance.dataset  # noqa: E402
 import fractal_governance.plots  # noqa: E402
-from fractal_governance.addendum_1.constants import Addendum1Constants  # noqa: E402
 from fractal_governance.addendum_1.dataset import Addendum1Dataset  # noqa: E402
-from fractal_governance.addendum_1.weighted_means import (  # noqa: E402
-    WeightedMeanParameters,
-    WeightedMeans,
-)
 from fractal_governance.constants import (  # noqa: E402
     ACCUMULATED_LEVEL_COLUMN_NAME,
     ACCUMULATED_RESPECT_COLUMN_NAME,
@@ -52,24 +47,10 @@ def get_dataset(
     elif dataset_type == DashboardView.Addendum1.value:
         addendum_1_dataset = Addendum1Dataset(dataset=dataset)
     elif dataset_type == DashboardView.TeamFractallySpreadsheet.value:
-        # Team fractally's incorrect value for not clamping *weighted mean Respect* to
-        # zero when a user has not signed the Fractal Contributor Agreement after a
-        # Fractal-defined meeting date.
-        weighted_mean_parameters_fractally = WeightedMeanParameters(
-            clamp_mean_respect_to_zero_when_fractal_contributor_agreement_not_signed=False  # noqa: E501
-        )
-        weighted_means_fractally = WeightedMeans(
-            dataset=dataset, parameters=weighted_mean_parameters_fractally
-        )
-        # Team fractally's incorrect calculation of pro_rata_respect.
-        addendum_1_constants_fractally = Addendum1Constants(
-            dataset=dataset, total_respect_before_addendum_1_individual=7022
-        )
-        addendum_1_dataset = Addendum1Dataset(
-            dataset=dataset,
-            weighted_means=weighted_means_fractally,
-            addendum_1_constants=addendum_1_constants_fractally,
-        )
+        # Team fractally's spreadsheet came into alignment with this dashboard on
+        # 2022.09.02 so that now there are no differences. However, I am keeping this
+        # logic here to help highlight any future divergences.
+        addendum_1_dataset = Addendum1Dataset(dataset=dataset)
     else:
         raise RuntimeError(f"LOGIC ERROR: Unknown enum {dataset_type}")
 
@@ -100,7 +81,7 @@ calculations that allocates weekly token inflation equally between members and t
 """
 
 dataset_type = st.radio(
-    "Dashboard View",
+    "Dashboard View:",
     (
         DashboardView.Classic.value,
         DashboardView.Addendum1.value,
@@ -116,14 +97,18 @@ ATTENDANCE_STATS = DATASET.attendance_stats
 ATTENDANCE_CONSISTENCY_STATS = DATASET.attendance_consistency_stats
 
 f"""
-The *{DashboardView.TeamFractallySpreadsheet.name}* option is only useful to *Team fractally*
-because it uses experimental spreadsheet calculations with issues known to them.
+There are currently no differences between the
+*{DashboardView.Addendum1.name}* and the
+*{DashboardView.TeamFractallySpreadsheet.name}* options. The only purpose of the
+*{DashboardView.TeamFractallySpreadsheet.name}* option is to help *Team
+fractally* highlight possible issues with any future experimental spreadsheet
+calculations.
 
 Also see the
 [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
 that acts as a surveillance tool to track the *accuracy* and *precision* of the Genesis
 Fractal's consensus algorithm over time.
-"""  # noqa: E501,W605
+"""  # noqa: E501
 
 column1, column2 = st.columns(2)
 
