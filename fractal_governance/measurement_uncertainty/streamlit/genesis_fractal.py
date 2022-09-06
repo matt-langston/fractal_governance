@@ -15,7 +15,7 @@ import fractal_governance.dataset  # noqa: E402
 import fractal_governance.measurement_uncertainty.dataset  # noqa: E402
 import fractal_governance.measurement_uncertainty.plots  # noqa: E402
 from fractal_governance.constants import (  # noqa: E402
-    ACCUMULATED_LEVEL_COLUMN_NAME,
+    ACCUMULATED_RESPECT_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
     MEMBER_ID_COLUMN_NAME,
 )
@@ -83,7 +83,7 @@ This member leaderboard highlights Genesis members who contribute the highest qu
 measurements to the Genesis Fractal's consensus algorithm.
 
 The table is sorted first by Accuracy and Precision in ascending order (smaller values
-are better and the order is selected in the sidebar), then by Level (descending), then
+are better and the order is selected in the sidebar), then by Respect (descending), then
 by Attendance (descending) and finally by member ID (ascending)."""
 
 with st.sidebar:
@@ -113,7 +113,7 @@ if sort_column == UncertaintyType.StdDev:
     sort_columns.reverse()
 
 sort_columns += [
-    ACCUMULATED_LEVEL_COLUMN_NAME,
+    ACCUMULATED_RESPECT_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
     MEMBER_ID_COLUMN_NAME,
 ]

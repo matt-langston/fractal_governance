@@ -12,7 +12,6 @@ import pandas as pd
 import uncertainties
 import uncertainties.unumpy
 from fractal_governance.constants import (
-    ACCUMULATED_LEVEL_COLUMN_NAME,
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
     GROUP_COLUMN_NAME,
@@ -84,7 +83,7 @@ class Dataset:
         df = df.sort_values(
             by=[
                 PRECISION_COLUMN_NAME,
-                ACCUMULATED_LEVEL_COLUMN_NAME,
+                ACCUMULATED_RESPECT_COLUMN_NAME,
                 ATTENDANCE_COUNT_COLUMN_NAME,
                 MEMBER_ID_COLUMN_NAME,
             ],
@@ -100,7 +99,6 @@ class Dataset:
             MEMBER_NAME_COLUMN_NAME,
             ACCURACY_COLUMN_NAME,
             PRECISION_COLUMN_NAME,
-            ACCUMULATED_LEVEL_COLUMN_NAME,
             ACCUMULATED_RESPECT_COLUMN_NAME,
             ATTENDANCE_COUNT_COLUMN_NAME,
         ]

@@ -9,6 +9,7 @@ import fractal_governance.dataset
 import pandas as pd
 import uncertainties
 from fractal_governance.constants import (
+    GROUP_COLUMN_NAME,
     INTEGRAL_COLUMN_NAME,
     INTEGRAL_END_COLUMN_NAME,
     INTEGRAL_START_COLUMN_NAME,
@@ -217,9 +218,6 @@ class Addendum1Dataset:
         # Replace the *Respect* values before the date when Addendum 1 went into effect
         # with the pro-rata *Respect* values.
         #
-        # df_addendum_1.loc[
-        #     df_addendum_1[RESPECT_COLUMN_NAME].isna(), RESPECT_PRO_RATA_COLUMN_NAME
-        # ] = np.nan
         df_addendum_1[RESPECT_COLUMN_NAME] = df_addendum_1[RESPECT_PRO_RATA_COLUMN_NAME]
         df_addendum_1 = df_addendum_1.drop(RESPECT_PRO_RATA_COLUMN_NAME, axis=1)
 
@@ -248,14 +246,15 @@ class Addendum1Dataset:
             .join(
                 df_weighted_means.set_index(
                     [MEETING_ID_COLUMN_NAME, MEMBER_ID_COLUMN_NAME]
-                )
+                ),
+                how="outer",
             )
             .reset_index()
         )
         rows = (
             df_addendum_1[LEVEL_COLUMN_NAME].notna()
-            & df_addendum_1[TOKENS_INDIVIDUAL].notna()
-        )
+            | df_addendum_1[GROUP_COLUMN_NAME].isna()
+        ) & df_addendum_1[TOKENS_INDIVIDUAL].notna()
         df_addendum_1.loc[rows, RESPECT_COLUMN_NAME] = df_addendum_1.loc[
             rows, TOKENS_INDIVIDUAL
         ]
@@ -270,6 +269,7 @@ class Addendum1Dataset:
         #
         # Create a DataFrame for the aggregate weekly token distributions for both
         # individuals and teams.
+        #
         df_token_distribution_per_meeting = df_weighted_means.groupby(
             MEETING_ID_COLUMN_NAME
         ).sum()

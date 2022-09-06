@@ -236,7 +236,6 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     <tr style="text-align: right;">
       <th>MemberID</th>
       <th>Name</th>
-      <th>AccumulatedLevel</th>
       <th>AccumulatedRespect</th>
       <th>AttendanceCount</th>
     </tr>
@@ -245,72 +244,62 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     <tr>
       <td>dan</td>
       <td>Daniel Larimer</td>
-      <td>160.0</td>
       <td>947187.759659</td>
       <td>26</td>
     </tr>
     <tr>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
-      <td>147.0</td>
       <td>767809.221806</td>
       <td>26</td>
     </tr>
     <tr>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
-      <td>132.0</td>
       <td>623646.959764</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>jseymour</td>
-      <td>Joshua Seymour</td>
-      <td>125.0</td>
-      <td>556064.730987</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <td>hachtu</td>
-      <td>Mark Scheer</td>
-      <td>119.0</td>
-      <td>547129.087006</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <td>dphillippi</td>
-      <td>Duane Phillippi</td>
-      <td>116.0</td>
-      <td>537422.699802</td>
       <td>26</td>
     </tr>
     <tr>
       <td>thomashallgren</td>
       <td>Thomas Hallgren</td>
-      <td>115.0</td>
       <td>584739.002540</td>
       <td>20</td>
     </tr>
     <tr>
       <td>fractallymike</td>
       <td>Mike Manfredi</td>
-      <td>114.0</td>
       <td>577272.365970</td>
       <td>20</td>
     </tr>
     <tr>
-      <td>mattlangston</td>
-      <td>Matt Langston</td>
-      <td>111.0</td>
-      <td>501622.545835</td>
-      <td>23</td>
+      <td>jseymour</td>
+      <td>Joshua Seymour</td>
+      <td>556064.730987</td>
+      <td>27</td>
     </tr>
     <tr>
-      <td>lionflash</td>
-      <td>Felix Ruiz</td>
-      <td>106.0</td>
-      <td>423447.766664</td>
+      <td>hachtu</td>
+      <td>Mark Scheer</td>
+      <td>547129.087006</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>dphillippi</td>
+      <td>Duane Phillippi</td>
+      <td>537422.699802</td>
       <td>26</td>
+    </tr>
+    <tr>
+      <td>val</td>
+      <td>Valentine Zavgorodnev</td>
+      <td>523524.293381</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>mattlangston</td>
+      <td>Matt Langston</td>
+      <td>511750.661213</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
@@ -656,7 +645,7 @@ dataset.total_member_respect
 
 
 
-    15298638.35113974
+    15609066.976524612
 
 
 

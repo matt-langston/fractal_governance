@@ -11,7 +11,6 @@ import fractal_governance.statistics
 import fractal_governance.util
 
 from .constants import (
-    ACCUMULATED_LEVEL_COLUMN_NAME,
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ACCUMULATED_RESPECT_NEW_MEMBER_COLUMN_NAME,
     ACCUMULATED_RESPECT_RETURNING_MEMBER_COLUMN_NAME,
@@ -192,7 +191,7 @@ class Dataset:
             df.groupby(MEMBER_ID_COLUMN_NAME).first()[[MEMBER_NAME_COLUMN_NAME]]
         ).sort_values(
             by=[
-                ACCUMULATED_LEVEL_COLUMN_NAME,
+                ACCUMULATED_RESPECT_COLUMN_NAME,
                 ATTENDANCE_COUNT_COLUMN_NAME,
                 MEMBER_ID_COLUMN_NAME,
             ],
@@ -200,7 +199,6 @@ class Dataset:
         )
         column_names = [
             MEMBER_NAME_COLUMN_NAME,
-            ACCUMULATED_LEVEL_COLUMN_NAME,
             ACCUMULATED_RESPECT_COLUMN_NAME,
             ATTENDANCE_COUNT_COLUMN_NAME,
         ]
