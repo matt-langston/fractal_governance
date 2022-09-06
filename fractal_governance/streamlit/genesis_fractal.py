@@ -18,7 +18,6 @@ import fractal_governance.dataset  # noqa: E402
 import fractal_governance.plots  # noqa: E402
 from fractal_governance.addendum_1.dataset import Addendum1Dataset  # noqa: E402
 from fractal_governance.constants import (  # noqa: E402
-    ACCUMULATED_LEVEL_COLUMN_NAME,
     ACCUMULATED_RESPECT_COLUMN_NAME,
     ATTENDANCE_COUNT_COLUMN_NAME,
     MEETING_DATE_COLUMN_NAME,
@@ -142,8 +141,7 @@ CMAP = sns.light_palette("#34A853", as_cmap=True)
 
 st.subheader("Member Leaderboard")
 """
-The table is sorted first by level (descending), then by attendance (descending) and
-then by member ID (ascending).
+The table is sorted first by Respect (descending) and then by attendance (descending).
 
 Also see the member leaderboard in the sister dashboard
 [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py).
@@ -170,7 +168,6 @@ df_member_leader_board = df_member_leader_board.style.format(
     subset=pd.IndexSlice[
         :,
         [
-            ACCUMULATED_LEVEL_COLUMN_NAME,
             ACCUMULATED_RESPECT_COLUMN_NAME,
             ATTENDANCE_COUNT_COLUMN_NAME,
         ],

@@ -28,10 +28,6 @@ from fractal_governance.constants import (
     TEAM_NAME_COLUMN_NAME,
     WEIGHTED_MEAN_LEVEL_COLUMN_NAME,
     WEIGHTED_MEAN_RESPECT_COLUMN_NAME,
-    WEIGHTED_MEAN_RESPECT_INDIVIDUAL_FRACTION_PER_MEETING_COLUMN_NAME,
-    WEIGHTED_MEAN_RESPECT_INDIVIDUAL_PER_MEETING_COLUMN_NAME,
-    WEIGHTED_MEAN_RESPECT_TEAM_FRACTION_PER_MEETING_COLUMN_NAME,
-    WEIGHTED_MEAN_RESPECT_TEAM_PER_MEETING_COLUMN_NAME,
 )
 
 
@@ -93,8 +89,6 @@ class WeightedMeans:
     parameters: WeightedMeanParameters = WeightedMeanParameters()
 
     df: pd.DataFrame = attrs.field(default=None, init=False)
-
-    df_per_meeting: pd.DataFrame = attrs.field(default=None, init=False)
 
     def get_pivot_table(
         self,
@@ -172,26 +166,6 @@ class WeightedMeans:
         def individual_respect_per_meeting(df: pd.DataFrame) -> pd.DataFrame:
             return df[WEIGHTED_MEAN_RESPECT_COLUMN_NAME].sum()
 
-        df_weighted_mean_respect_individual_per_meeting = pd.DataFrame(
-            {
-                WEIGHTED_MEAN_RESPECT_INDIVIDUAL_PER_MEETING_COLUMN_NAME: df.groupby(
-                    MEETING_ID_COLUMN_NAME
-                ).apply(individual_respect_per_meeting)
-            }
-        )
-
-        def individual_respect_fraction_per_meeting(df: pd.DataFrame) -> pd.DataFrame:
-            return (
-                df[WEIGHTED_MEAN_RESPECT_COLUMN_NAME]
-                / df[WEIGHTED_MEAN_RESPECT_COLUMN_NAME].sum()
-            )
-
-        df[WEIGHTED_MEAN_RESPECT_INDIVIDUAL_FRACTION_PER_MEETING_COLUMN_NAME] = (
-            df.groupby(MEETING_ID_COLUMN_NAME)
-            .apply(individual_respect_fraction_per_meeting)
-            .reset_index(MEETING_ID_COLUMN_NAME)[WEIGHTED_MEAN_RESPECT_COLUMN_NAME]
-        )
-
         def propagate_team_membership(df: pd.DataFrame) -> pd.DataFrame:
             team_rows = df[df[TEAM_ID_COLUMN_NAME].notna()]
             if team_rows[TEAM_ID_COLUMN_NAME].any():
@@ -210,73 +184,7 @@ class WeightedMeans:
 
         df = df.groupby(MEMBER_ID_COLUMN_NAME).apply(propagate_team_membership)
 
-        def team_respect_per_meeting(df: pd.DataFrame) -> pd.DataFrame:
-            df = df[df[TEAM_ID_COLUMN_NAME].notna()]
-            return df[WEIGHTED_MEAN_RESPECT_COLUMN_NAME].sum()
-
-        df_weighted_mean_respect_team_per_meeting = pd.DataFrame(
-            {
-                WEIGHTED_MEAN_RESPECT_TEAM_PER_MEETING_COLUMN_NAME: df.groupby(
-                    MEETING_ID_COLUMN_NAME
-                ).apply(team_respect_per_meeting)
-            }
-        )
-
-        def team_respect_fraction_per_meeting(df: pd.DataFrame) -> pd.DataFrame:
-            df = df[df[TEAM_ID_COLUMN_NAME].notna()]
-            return (
-                df[WEIGHTED_MEAN_RESPECT_COLUMN_NAME]
-                / df[WEIGHTED_MEAN_RESPECT_COLUMN_NAME].sum()
-            )
-
-        df[WEIGHTED_MEAN_RESPECT_TEAM_FRACTION_PER_MEETING_COLUMN_NAME] = (
-            df.groupby(MEETING_ID_COLUMN_NAME)
-            .apply(team_respect_fraction_per_meeting)
-            .reset_index(MEETING_ID_COLUMN_NAME)[WEIGHTED_MEAN_RESPECT_COLUMN_NAME]
-        )
-
-        df_weighted_mean_respect_individual_fraction_per_meeting = (
-            df_weighted_mean_respect_individual_per_meeting
-            / (
-                df_weighted_mean_respect_individual_per_meeting.values
-                + df_weighted_mean_respect_team_per_meeting.values
-            )
-        )
-        df_weighted_mean_respect_individual_fraction_per_meeting.rename(
-            columns={
-                WEIGHTED_MEAN_RESPECT_INDIVIDUAL_PER_MEETING_COLUMN_NAME: WEIGHTED_MEAN_RESPECT_INDIVIDUAL_FRACTION_PER_MEETING_COLUMN_NAME  # noqa: E501
-            },
-            inplace=True,
-        )
-
-        df_weighted_mean_respect_team_fraction_per_meeting = (
-            df_weighted_mean_respect_team_per_meeting
-            / (
-                df_weighted_mean_respect_individual_per_meeting.values
-                + df_weighted_mean_respect_team_per_meeting.values
-            )
-        )
-        df_weighted_mean_respect_team_fraction_per_meeting.rename(
-            columns={
-                WEIGHTED_MEAN_RESPECT_TEAM_PER_MEETING_COLUMN_NAME: WEIGHTED_MEAN_RESPECT_TEAM_FRACTION_PER_MEETING_COLUMN_NAME  # noqa: E501
-            },
-            inplace=True,
-        )
-
-        df_per_meeting = (
-            df_weighted_mean_respect_individual_per_meeting.join(
-                df_weighted_mean_respect_team_per_meeting
-            )
-            .join(df_weighted_mean_respect_individual_fraction_per_meeting)
-            .join(df_weighted_mean_respect_team_fraction_per_meeting)
-        )
-
         object.__setattr__(self, "df", df)
-        object.__setattr__(
-            self,
-            "df_per_meeting",
-            df_per_meeting,
-        )
 
 
 def _get_mean_levels(*, levels: pd.Series, window_size: int) -> pd.Series:
