@@ -310,6 +310,7 @@ Resources to learn more about fractal governance:
 - [Refinement of Token Distribution Math](https://hive.blog/fractally/@dan/refinement-of-token-distribution-math)
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
 - [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
+- [An Analysis of the Genesis Fractal's Group Structures and Random Processes](https://hive.blog/fractally/@mattlangston/an-analysis-of-the-genesis-fractal-s-group-structures-and-random-processes)
 - [A Model-Independent Method to Measure Uncertainties in Fractal Governance Consensus Algorithms](https://hive.blog/fractally/@mattlangston/a-model-independent-method-to-measure-uncertainties-in-fractal-governance-consensus-algorithms)
 - [First Results from the Fractal Governance Experiments](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments)
 - [On Simulating Fractal Governance](https://hive.blog/fractally/@mattlangston/on-simulating-fractal-governance)

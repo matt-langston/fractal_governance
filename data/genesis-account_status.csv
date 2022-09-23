@@ -64,74 +64,76 @@ Index,MemberID,Name,HiveAccountName,SignatureOnFile
 63,hahn.ryu,Hahn Ryu,TRUE,TRUE
 64,harketypes,,TRUE,FALSE
 65,headwatersfc,Kassy Sullivan,FALSE,FALSE
-66,highsteam1900,Tommy Ryan,TRUE,TRUE
-67,iamsubbu,Subbu,TRUE,TRUE
-68,jamesmart,James Mart,TRUE,TRUE
-69,jasongeringer,jasongeringer,TRUE,TRUE
-70,jaytaylor-node,Jay Taylor,TRUE,TRUE
-71,jessethan,Jesse Jaffe,TRUE,TRUE
-72,johnjwilliamson,John Williamson,TRUE,TRUE
-73,jrichardliston,,TRUE,TRUE
-74,jseymour,Joshua Seymour,TRUE,TRUE
-75,kentbull,,TRUE,TRUE
-76,khoja,,TRUE,TRUE
-77,larosenonaka,Yves La Rose,FALSE,FALSE
-78,linusdao1,,TRUE,FALSE
-79,lionflash,Felix Ruiz,TRUE,TRUE
-80,lovejoy,Brandon Lovejoy,TRUE,TRUE
-81,loyalnine313,Adam Zientarski,FALSE,FALSE
-82,machnbirdsparo,Marco Gonzalez,TRUE,TRUE
-83,marconamaste,Markus Hinrichs,TRUE,TRUE
-84,markstair,Mark Stair,TRUE,TRUE
-85,markus,,TRUE,FALSE
-86,marty-be,Martin Breurer,TRUE,TRUE
-87,mattlangston,Matt Langston,TRUE,TRUE
-88,maximcincinnatis,,TRUE,TRUE
-89,menoski,Uvokeke Dennis,TRUE,TRUE
-90,merivercap,,TRUE,TRUE
-91,michaelx,Michael X,TRUE,TRUE
-92,mikelennie,Lennie Niit,TRUE,TRUE
-93,mototbilisi,Mark,TRUE,TRUE
-94,nathanielherman,Nathaniel Herman,TRUE,TRUE
-95,neuron.gm,,FALSE,FALSE
-96,nicolasdoff,,TRUE,TRUE
-97,norsegaud,,TRUE,TRUE
-98,nouser,,TRUE,FALSE
-99,novacryptollc,Patrick Bernard Schmid,TRUE,TRUE
-100,nudimar,Nuno Marcelino,TRUE,TRUE
-101,oldtimer,Milan Bjegovic,TRUE,TRUE
-102,pnc,Pascal Ngu Cho,TRUE,TRUE
-103,polackpleb,Stephen Jakubowski,TRUE,TRUE
-104,pulsex,,TRUE,TRUE
-105,quantumstasis,,TRUE,FALSE
-106,quinn-cunningham,,TRUE,TRUE
-107,recentchats,Eric Binder,TRUE,TRUE
-108,rimantas,Rimantas Martinonis,TRUE,TRUE
-109,robrigo,Rob Konsdorf,FALSE,FALSE
-110,rocogg,,TRUE,TRUE
-111,sagarmathanp,Lukas Mantinger,TRUE,TRUE
-112,SamaraShaw,Samara Shaw,TRUE,FALSE
-113,sebata,,TRUE,TRUE
-114,sethatboid,,TRUE,FALSE
-115,shakhruz,Shakhruz Ashirov,TRUE,TRUE
-116,sim31,Tadas Vaitiekunas,TRUE,TRUE
-117,spencerhanson,Spencer Hanson,TRUE,TRUE
-118,stan,Stan Larimer,TRUE,TRUE
-119,thenewlegend,,TRUE,TRUE
-120,thomashallgren,Thomas Hallgren,TRUE,TRUE
-121,thoml,,TRUE,FALSE
-122,timless,Tim Taylor,TRUE,TRUE
-123,tmess,Toby Messier,TRUE,TRUE
-124,topobadger,Jose Basanta,TRUE,TRUE
-125,tseyt,,TRUE,TRUE
-126,val,Valentine Zavgorodnev,TRUE,TRUE
-127,vladhive,,TRUE,TRUE
-128,vladislav.x,Vladislav Hramtsov,FALSE,FALSE
-129,w3max,,TRUE,TRUE
-130,wakeupjohnny,JP Camunag,FALSE,FALSE
-131,westreich,Eric Westreich,TRUE,TRUE
-132,wigglesthe3r,Daniel Felix,TRUE,FALSE
-133,wildwex,Gregory Wexler,TRUE,TRUE
-134,willspatrick,,TRUE,TRUE
-135,zeos,Matthias,TRUE,TRUE
-136,zhenek,Евгений Чирочкин,TRUE,TRUE
+66,higherdimension,,TRUE,TRUE
+67,highsteam1900,Tommy Ryan,TRUE,TRUE
+68,iamsubbu,Subbu,TRUE,TRUE
+69,jamesmart,James Mart,TRUE,TRUE
+70,jasongeringer,jasongeringer,TRUE,TRUE
+71,jaytaylor-node,Jay Taylor,TRUE,TRUE
+72,jessethan,Jesse Jaffe,TRUE,TRUE
+73,johnjwilliamson,John Williamson,TRUE,TRUE
+74,jrichardliston,,TRUE,TRUE
+75,jseymour,Joshua Seymour,TRUE,TRUE
+76,kentbull,,TRUE,TRUE
+77,khoja,,TRUE,TRUE
+78,larosenonaka,Yves La Rose,FALSE,FALSE
+79,linusdao1,,TRUE,FALSE
+80,lionflash,Felix Ruiz,TRUE,TRUE
+81,lovejoy,Brandon Lovejoy,TRUE,TRUE
+82,loyalnine313,Adam Zientarski,FALSE,FALSE
+83,machnbirdsparo,Marco Gonzalez,TRUE,TRUE
+84,marconamaste,Markus Hinrichs,TRUE,TRUE
+85,markstair,Mark Stair,TRUE,TRUE
+86,markus,,TRUE,FALSE
+87,marty-be,Martin Breurer,TRUE,TRUE
+88,mattlangston,Matt Langston,TRUE,TRUE
+89,maximcincinnatis,,TRUE,TRUE
+90,menoski,Uvokeke Dennis,TRUE,TRUE
+91,merivercap,,TRUE,TRUE
+92,michaelx,Michael X,TRUE,TRUE
+93,mikelennie,Lennie Niit,TRUE,TRUE
+94,mototbilisi,Mark,TRUE,TRUE
+95,nathanielherman,Nathaniel Herman,TRUE,TRUE
+96,neuron.gm,,FALSE,FALSE
+97,nicolasdoff,,TRUE,TRUE
+98,norsegaud,,TRUE,TRUE
+99,nouser,,TRUE,FALSE
+100,novacryptollc,Patrick Bernard Schmid,TRUE,TRUE
+101,nudimar,Nuno Marcelino,TRUE,TRUE
+102,oldtimer,Milan Bjegovic,TRUE,TRUE
+103,pnc,Pascal Ngu Cho,TRUE,TRUE
+104,polackpleb,Stephen Jakubowski,TRUE,TRUE
+105,pulsex,,TRUE,TRUE
+106,quantumstasis,,TRUE,FALSE
+107,quinn-cunningham,,TRUE,TRUE
+108,recentchats,Eric Binder,TRUE,TRUE
+109,rimantas,Rimantas Martinonis,TRUE,TRUE
+110,robrigo,Rob Konsdorf,FALSE,FALSE
+111,rocogg,,TRUE,TRUE
+112,sagarmathanp,Lukas Mantinger,TRUE,TRUE
+113,SamaraShaw,Samara Shaw,TRUE,FALSE
+114,sebata,,TRUE,TRUE
+115,sethatboid,,TRUE,FALSE
+116,shakhruz,Shakhruz Ashirov,TRUE,TRUE
+117,sim31,Tadas Vaitiekunas,TRUE,TRUE
+118,soberalgo,,TRUE,TRUE
+119,spencerhanson,Spencer Hanson,TRUE,TRUE
+120,stan,Stan Larimer,TRUE,TRUE
+121,thenewlegend,,TRUE,TRUE
+122,thomashallgren,Thomas Hallgren,TRUE,TRUE
+123,thoml,,TRUE,FALSE
+124,timless,Tim Taylor,TRUE,TRUE
+125,tmess,Toby Messier,TRUE,TRUE
+126,topobadger,Jose Basanta,TRUE,TRUE
+127,tseyt,,TRUE,TRUE
+128,val,Valentine Zavgorodnev,TRUE,TRUE
+129,vladhive,,TRUE,TRUE
+130,vladislav.x,Vladislav Hramtsov,FALSE,FALSE
+131,w3max,,TRUE,TRUE
+132,wakeupjohnny,JP Camunag,FALSE,FALSE
+133,westreich,Eric Westreich,TRUE,TRUE
+134,wigglesthe3r,Daniel Felix,TRUE,FALSE
+135,wildwex,Gregory Wexler,TRUE,TRUE
+136,willspatrick,,TRUE,TRUE
+137,zeos,Matthias,TRUE,TRUE
+138,zhenek,Евгений Чирочкин,TRUE,TRUE

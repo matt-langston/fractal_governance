@@ -182,7 +182,7 @@ class Plots:
         ax.set_title("Accumulated Team Respect vs Time")
         xaxis_labels = [meeting_date.strftime("%b %d %Y") for meeting_date in df.index]
         ax.xaxis.set_major_formatter(matplotlib.ticker.FixedFormatter(xaxis_labels))
-        ax.legend(self.dataset.df_team_leader_board.index)
+        ax.legend(self.dataset.df_team_leader_board.index, loc="upper left")
         ylim = ax.get_ylim()
         ylim = tuple(left * right for left, right in zip((1, 1.3), ylim))
         ax.set_ylim(ylim)

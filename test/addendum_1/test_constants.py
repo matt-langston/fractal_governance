@@ -16,7 +16,7 @@ class TestAddendum1Constants(unittest.TestCase):
 
         self.assertAlmostEqual(
             addendum_1_constants.total_respect_before_addendum_1_individual,
-            7035,
+            7042,
         )
         self.assertAlmostEqual(
             addendum_1_constants.total_respect_before_addendum_1_team,
@@ -24,17 +24,17 @@ class TestAddendum1Constants(unittest.TestCase):
         )
         self.assertAlmostEqual(
             addendum_1_constants.total_respect_before_addendum_1,
-            9963,
+            9970,
         )
 
         self.assertAlmostEqual(
             addendum_1_constants.token_supply_before_addendum_1_individual,
-            13463944.307637664,
+            13467878.740681347,
         )
 
         self.assertAlmostEqual(
             addendum_1_constants.token_supply_before_addendum_1_team,
-            5603756.777933629,
+            5599822.3448899435,
         )
 
         self.assertAlmostEqual(
@@ -44,7 +44,7 @@ class TestAddendum1Constants(unittest.TestCase):
 
         self.assertAlmostEqual(
             addendum_1_constants.pro_rata_respect,
-            1913.851358583889,
+            1912.5076314514831,
         )
 
     def test_with_team_fractally_spreadsheet_values(self) -> None:

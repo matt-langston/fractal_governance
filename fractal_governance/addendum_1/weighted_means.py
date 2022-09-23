@@ -182,7 +182,9 @@ class WeightedMeans:
                 ] = row_of_joining_team[TEAM_NAME_COLUMN_NAME]
             return df
 
-        df = df.groupby(MEMBER_ID_COLUMN_NAME).apply(propagate_team_membership)
+        df = df.groupby(MEMBER_ID_COLUMN_NAME, group_keys=False).apply(
+            propagate_team_membership
+        )
 
         object.__setattr__(self, "df", df)
 
@@ -260,8 +262,8 @@ def _get_weighted_mean_levels_fractally(
     """
     lookback_window_size = window_size - 1
 
-    mean_level = levels[:window_size].mean()
-    standard_deviation_level = np.mean(levels[:window_size]).mean()
+    mean_level = levels.iloc[:window_size].mean()
+    standard_deviation_level = np.mean(levels.iloc[:window_size]).mean()
 
     weighted_mean_levels = pd.Series(levels, dtype=object)
     weighted_mean_levels.loc[window_size] = uncertainties.ufloat(
@@ -278,7 +280,7 @@ def _get_weighted_mean_levels_fractally(
             # the previous required number of meetings, thus making them new members.
             weighted_mean_levels.loc[meeting_id] = uncertainties.ufloat(0, 0)
 
-    return weighted_mean_levels[window_size:]
+    return weighted_mean_levels.iloc[window_size:]
 
 
 def get_weighted_mean_levels(
@@ -339,7 +341,7 @@ def get_weighted_mean_levels(
         # Team fractally uses a progressive mean for the first `window_size` levels so
         # that there is a *weighted_mean_level* value for for every meeting_id.
         _levels = pd.Series(
-            [uncertainties.ufloat(level, 0) for level in levels[:window_size]]
+            [uncertainties.ufloat(level, 0) for level in levels.iloc[:window_size]]
         )
         _levels.index = levels.index[:window_size]
         _levels = _levels.cumsum() / window_size

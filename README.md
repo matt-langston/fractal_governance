@@ -203,7 +203,7 @@ dataset.total_meetings
 
 
 
-    28
+    29
 
 
 
@@ -215,7 +215,7 @@ dataset.total_unique_members
 
 
 
-    136
+    138
 
 
 
@@ -244,62 +244,62 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     <tr>
       <td>dan</td>
       <td>Daniel Larimer</td>
-      <td>984783.848669</td>
+      <td>1.005816e+06</td>
       <td>27</td>
     </tr>
     <tr>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
-      <td>794631.002385</td>
-      <td>27</td>
+      <td>8.225387e+05</td>
+      <td>28</td>
     </tr>
     <tr>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
-      <td>635687.752838</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <td>thomashallgren</td>
-      <td>Thomas Hallgren</td>
-      <td>607544.610526</td>
-      <td>21</td>
+      <td>6.502271e+05</td>
+      <td>28</td>
     </tr>
     <tr>
       <td>fractallymike</td>
       <td>Mike Manfredi</td>
-      <td>606909.474106</td>
-      <td>21</td>
+      <td>6.395514e+05</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>thomashallgren</td>
+      <td>Thomas Hallgren</td>
+      <td>6.338987e+05</td>
+      <td>22</td>
     </tr>
     <tr>
       <td>jseymour</td>
       <td>Joshua Seymour</td>
-      <td>573716.817344</td>
+      <td>5.950481e+05</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>dphillippi</td>
+      <td>Duane Phillippi</td>
+      <td>5.651822e+05</td>
       <td>28</td>
     </tr>
     <tr>
       <td>hachtu</td>
       <td>Mark Scheer</td>
-      <td>555661.944079</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <td>dphillippi</td>
-      <td>Duane Phillippi</td>
-      <td>550704.201048</td>
-      <td>27</td>
+      <td>5.643394e+05</td>
+      <td>25</td>
     </tr>
     <tr>
       <td>val</td>
       <td>Valentine Zavgorodnev</td>
-      <td>538247.654919</td>
-      <td>22</td>
+      <td>5.539249e+05</td>
+      <td>23</td>
     </tr>
     <tr>
       <td>mattlangston</td>
       <td>Matt Langston</td>
-      <td>523957.806240</td>
-      <td>24</td>
+      <td>5.397991e+05</td>
+      <td>25</td>
     </tr>
   </tbody>
 </table>
@@ -381,6 +381,12 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
   </thead>
   <tbody>
     <tr>
+      <td>2022-09-17</td>
+      <td>29</td>
+      <td>2</td>
+      <td>37</td>
+    </tr>
+    <tr>
       <td>2022-09-10</td>
       <td>28</td>
       <td>2</td>
@@ -446,12 +452,6 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
       <td>1</td>
       <td>39</td>
     </tr>
-    <tr>
-      <td>2022-06-25</td>
-      <td>17</td>
-      <td>1</td>
-      <td>35</td>
-    </tr>
   </tbody>
 </table>
 
@@ -469,7 +469,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=36.79, standard_deviation=7.21)
+    Statistics(mean=36.86, standard_deviation=7.09)
 
 
 
@@ -501,7 +501,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=7.57, standard_deviation=8.64)
+    Statistics(mean=7.75, standard_deviation=8.96)
 
 
 
@@ -528,6 +528,13 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>2022-09-17</td>
+      <td>29</td>
+      <td>324663.435863</td>
+      <td>2846.200265</td>
+      <td>321817.235598</td>
+    </tr>
     <tr>
       <td>2022-09-10</td>
       <td>28</td>
@@ -605,13 +612,6 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
       <td>0.000000</td>
       <td>673202.686271</td>
     </tr>
-    <tr>
-      <td>2022-06-25</td>
-      <td>17</td>
-      <td>592877.365750</td>
-      <td>0.000000</td>
-      <td>592877.365750</td>
-    </tr>
   </tbody>
 </table>
 
@@ -645,7 +645,7 @@ dataset.total_member_respect
 
 
 
-    16031912.943715755
+    16443437.073812442
 
 
 
@@ -677,7 +677,7 @@ dataset.total_team_respect
 
 
 
-    7192295.102534071
+    7428885.04933138
 
 
 
@@ -701,19 +701,19 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
   </thead>
   <tbody>
     <tr>
-      <td>4.045049e+06</td>
+      <td>4.156107e+06</td>
     </tr>
     <tr>
-      <td>1.639993e+06</td>
+      <td>1.685009e+06</td>
     </tr>
     <tr>
-      <td>6.633697e+05</td>
+      <td>6.790794e+05</td>
     </tr>
     <tr>
-      <td>4.798799e+05</td>
+      <td>5.331957e+05</td>
     </tr>
     <tr>
-      <td>3.640037e+05</td>
+      <td>3.754943e+05</td>
     </tr>
   </tbody>
 </table>
@@ -748,7 +748,7 @@ dataset.team_representation_stats
 
 
 
-    Statistics(mean=0.39, standard_deviation=0.12)
+    Statistics(mean=0.40, standard_deviation=0.12)
 
 
 
@@ -775,18 +775,18 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
   <tbody>
     <tr>
       <td>1</td>
-      <td>2.366667</td>
-      <td>1.248276</td>
+      <td>2.370968</td>
+      <td>1.231205</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>3.625000</td>
-      <td>1.500000</td>
+      <td>3.714286</td>
+      <td>1.589803</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>2.041667</td>
-      <td>1.488482</td>
+      <td>2.074074</td>
+      <td>1.439175</td>
     </tr>
     <tr>
       <td>4</td>
@@ -800,103 +800,108 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
     </tr>
     <tr>
       <td>6</td>
-      <td>3.250000</td>
-      <td>1.847442</td>
+      <td>3.333333</td>
+      <td>1.814970</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>2.285714</td>
-      <td>0.487950</td>
+      <td>3.000000</td>
+      <td>1.914854</td>
     </tr>
     <tr>
       <td>8</td>
-      <td>3.187500</td>
-      <td>1.327592</td>
+      <td>2.833333</td>
+      <td>1.239448</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>3.472222</td>
-      <td>1.715244</td>
+      <td>3.370370</td>
+      <td>1.821837</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>2.100000</td>
-      <td>0.994429</td>
+      <td>2.850000</td>
+      <td>1.424411</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>2.600000</td>
-      <td>1.241266</td>
+      <td>2.727273</td>
+      <td>1.305582</td>
     </tr>
     <tr>
       <td>12</td>
-      <td>3.250000</td>
-      <td>1.544786</td>
+      <td>2.458333</td>
+      <td>1.141287</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>3.153846</td>
-      <td>1.519109</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>3.666667</td>
-      <td>1.281513</td>
+      <td>3.115385</td>
+      <td>1.531716</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>3.700000</td>
-      <td>1.512021</td>
+      <td>3.533333</td>
+      <td>1.407807</td>
     </tr>
     <tr>
       <td>16</td>
-      <td>5.437500</td>
-      <td>1.209339</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>3.635294</td>
-      <td>1.895151</td>
+      <td>4.750000</td>
+      <td>1.295152</td>
     </tr>
     <tr>
       <td>18</td>
-      <td>3.472222</td>
-      <td>1.715244</td>
+      <td>3.655556</td>
+      <td>1.908945</td>
     </tr>
     <tr>
       <td>19</td>
-      <td>2.710526</td>
-      <td>1.183396</td>
+      <td>3.605263</td>
+      <td>1.778847</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>2.700000</td>
+      <td>1.159133</td>
     </tr>
     <tr>
       <td>21</td>
-      <td>4.630952</td>
-      <td>1.761569</td>
+      <td>3.714286</td>
+      <td>1.270545</td>
     </tr>
     <tr>
       <td>22</td>
-      <td>3.795455</td>
-      <td>1.935946</td>
+      <td>5.015152</td>
+      <td>1.843846</td>
     </tr>
     <tr>
       <td>23</td>
-      <td>3.565217</td>
-      <td>1.424425</td>
+      <td>3.608696</td>
+      <td>1.808618</td>
     </tr>
     <tr>
       <td>24</td>
-      <td>4.100000</td>
-      <td>1.716945</td>
+      <td>3.916667</td>
+      <td>1.282547</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>4.112000</td>
+      <td>1.733056</td>
     </tr>
     <tr>
       <td>27</td>
-      <td>4.907407</td>
-      <td>1.567550</td>
+      <td>6.222222</td>
+      <td>1.250641</td>
     </tr>
     <tr>
       <td>28</td>
-      <td>4.750000</td>
-      <td>1.734722</td>
+      <td>4.707143</td>
+      <td>1.510140</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>4.862069</td>
+      <td>1.807211</td>
     </tr>
   </tbody>
 </table>
@@ -923,10 +928,10 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['Attendance
   <tbody>
     <tr>
       <td>1.000000</td>
-      <td>0.668931</td>
+      <td>0.719885</td>
     </tr>
     <tr>
-      <td>0.668931</td>
+      <td>0.719885</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1092,6 +1097,7 @@ Resources to learn more about Fractal Governance:
 - [More Equal Animals](https://moreequalanimals.com) by Daniel Larimer
 - [Genesis Uncertainty Observatory](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/measurement_uncertainty/streamlit/genesis_fractal.py)
 - [Genesis Fractal Dashboard](https://share.streamlit.io/matt-langston/fractal_governance/main/fractal_governance/streamlit/genesis_fractal.py)
+- [An Analysis of the Genesis Fractal's Group Structures and Random Processes](https://hive.blog/fractally/@mattlangston/an-analysis-of-the-genesis-fractal-s-group-structures-and-random-processes)
 - [A Model-Independent Method to Measure Uncertainties in Fractal Governance Consensus Algorithms](https://hive.blog/fractally/@mattlangston/a-model-independent-method-to-measure-uncertainties-in-fractal-governance-consensus-algorithms)
 - [On Simulating Fractal Governance](https://hive.blog/fractally/@mattlangston/on-simulating-fractal-governance)
 - [First Results from the Fractal Governance Experiments](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments)

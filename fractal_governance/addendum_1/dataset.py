@@ -272,7 +272,7 @@ class Addendum1Dataset:
         #
         df_token_distribution_per_meeting = df_weighted_means.groupby(
             MEETING_ID_COLUMN_NAME
-        ).sum()
+        ).sum(numeric_only=True)
         object.__setattr__(
             self, "df_token_distribution_per_meeting", df_token_distribution_per_meeting
         )
