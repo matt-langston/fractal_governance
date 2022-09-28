@@ -203,7 +203,7 @@ dataset.total_meetings
 
 
 
-    29
+    30
 
 
 
@@ -244,62 +244,62 @@ GitHubMarkdownDataFrame(dataset.df_member_leader_board.head(10))
     <tr>
       <td>dan</td>
       <td>Daniel Larimer</td>
-      <td>1.005816e+06</td>
+      <td>1.018741e+06</td>
       <td>27</td>
     </tr>
     <tr>
       <td>wildwex</td>
       <td>Gregory Wexler</td>
-      <td>8.225387e+05</td>
-      <td>28</td>
+      <td>8.512205e+05</td>
+      <td>29</td>
     </tr>
     <tr>
       <td>dansingjoy</td>
       <td>Dan Singjoy</td>
-      <td>6.502271e+05</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <td>fractallymike</td>
-      <td>Mike Manfredi</td>
-      <td>6.395514e+05</td>
-      <td>22</td>
+      <td>6.668852e+05</td>
+      <td>29</td>
     </tr>
     <tr>
       <td>thomashallgren</td>
       <td>Thomas Hallgren</td>
-      <td>6.338987e+05</td>
+      <td>6.635270e+05</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>fractallymike</td>
+      <td>Mike Manfredi</td>
+      <td>6.581936e+05</td>
       <td>22</td>
     </tr>
     <tr>
       <td>jseymour</td>
       <td>Joshua Seymour</td>
-      <td>5.950481e+05</td>
-      <td>29</td>
+      <td>6.198898e+05</td>
+      <td>30</td>
     </tr>
     <tr>
       <td>dphillippi</td>
       <td>Duane Phillippi</td>
-      <td>5.651822e+05</td>
-      <td>28</td>
+      <td>5.817817e+05</td>
+      <td>29</td>
     </tr>
     <tr>
       <td>hachtu</td>
       <td>Mark Scheer</td>
-      <td>5.643394e+05</td>
-      <td>25</td>
+      <td>5.722010e+05</td>
+      <td>26</td>
     </tr>
     <tr>
       <td>val</td>
       <td>Valentine Zavgorodnev</td>
-      <td>5.539249e+05</td>
-      <td>23</td>
+      <td>5.690338e+05</td>
+      <td>24</td>
     </tr>
     <tr>
       <td>mattlangston</td>
       <td>Matt Langston</td>
-      <td>5.397991e+05</td>
-      <td>25</td>
+      <td>5.563122e+05</td>
+      <td>26</td>
     </tr>
   </tbody>
 </table>
@@ -381,6 +381,12 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
   </thead>
   <tbody>
     <tr>
+      <td>2022-09-24</td>
+      <td>30</td>
+      <td>0</td>
+      <td>37</td>
+    </tr>
+    <tr>
       <td>2022-09-17</td>
       <td>29</td>
       <td>2</td>
@@ -446,12 +452,6 @@ GitHubMarkdownDataFrame(dataset.df_member_attendance_new_and_returning_by_meetin
       <td>2</td>
       <td>31</td>
     </tr>
-    <tr>
-      <td>2022-07-02</td>
-      <td>18</td>
-      <td>1</td>
-      <td>39</td>
-    </tr>
   </tbody>
 </table>
 
@@ -469,7 +469,7 @@ dataset.attendance_stats
 
 
 
-    Statistics(mean=36.86, standard_deviation=7.09)
+    Statistics(mean=36.87, standard_deviation=6.97)
 
 
 
@@ -501,7 +501,7 @@ dataset.attendance_consistency_stats
 
 
 
-    Statistics(mean=7.75, standard_deviation=8.96)
+    Statistics(mean=8.01, standard_deviation=9.29)
 
 
 
@@ -528,6 +528,13 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>2022-09-24</td>
+      <td>30</td>
+      <td>317541.258677</td>
+      <td>0.000000</td>
+      <td>317541.258677</td>
+    </tr>
     <tr>
       <td>2022-09-17</td>
       <td>29</td>
@@ -605,13 +612,6 @@ GitHubMarkdownDataFrame(dataset.df_member_respect_new_and_returning_by_meeting.i
       <td>21037.583946</td>
       <td>554627.213121</td>
     </tr>
-    <tr>
-      <td>2022-07-02</td>
-      <td>18</td>
-      <td>673202.686271</td>
-      <td>0.000000</td>
-      <td>673202.686271</td>
-    </tr>
   </tbody>
 </table>
 
@@ -645,7 +645,7 @@ dataset.total_member_respect
 
 
 
-    16443437.073812442
+    16852102.67532836
 
 
 
@@ -677,7 +677,7 @@ dataset.total_team_respect
 
 
 
-    7428885.04933138
+    7649473.7907576235
 
 
 
@@ -701,19 +701,19 @@ GitHubMarkdownDataFrame(dataset.df_team_leader_board)
   </thead>
   <tbody>
     <tr>
-      <td>4.156107e+06</td>
+      <td>4.248734e+06</td>
     </tr>
     <tr>
-      <td>1.685009e+06</td>
+      <td>1.729041e+06</td>
     </tr>
     <tr>
-      <td>6.790794e+05</td>
+      <td>6.992899e+05</td>
     </tr>
     <tr>
-      <td>5.331957e+05</td>
+      <td>5.862890e+05</td>
     </tr>
     <tr>
-      <td>3.754943e+05</td>
+      <td>3.861199e+05</td>
     </tr>
   </tbody>
 </table>
@@ -775,23 +775,23 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
   <tbody>
     <tr>
       <td>1</td>
-      <td>2.370968</td>
-      <td>1.231205</td>
+      <td>2.360656</td>
+      <td>1.238720</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>3.714286</td>
-      <td>1.589803</td>
+      <td>3.562500</td>
+      <td>1.547848</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>2.074074</td>
-      <td>1.439175</td>
+      <td>2.083333</td>
+      <td>1.501207</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>3.000000</td>
-      <td>1.460593</td>
+      <td>2.850000</td>
+      <td>1.386969</td>
     </tr>
     <tr>
       <td>5</td>
@@ -800,93 +800,103 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
     </tr>
     <tr>
       <td>6</td>
-      <td>3.333333</td>
-      <td>1.814970</td>
+      <td>3.250000</td>
+      <td>1.484771</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>3.000000</td>
-      <td>1.914854</td>
+      <td>3.142857</td>
+      <td>2.478479</td>
     </tr>
     <tr>
       <td>8</td>
-      <td>2.833333</td>
-      <td>1.239448</td>
+      <td>3.125000</td>
+      <td>1.454005</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>3.370370</td>
-      <td>1.821837</td>
+      <td>2.833333</td>
+      <td>1.504894</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>2.850000</td>
-      <td>1.424411</td>
+      <td>2.833333</td>
+      <td>1.683251</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>2.727273</td>
-      <td>1.305582</td>
+      <td>3.090909</td>
+      <td>1.331438</td>
     </tr>
     <tr>
       <td>12</td>
-      <td>2.458333</td>
-      <td>1.141287</td>
+      <td>2.291667</td>
+      <td>1.160179</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>3.115385</td>
-      <td>1.531716</td>
+      <td>3.000000</td>
+      <td>1.414214</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>3.533333</td>
-      <td>1.407807</td>
+      <td>3.900000</td>
+      <td>0.994814</td>
     </tr>
     <tr>
       <td>16</td>
-      <td>4.750000</td>
-      <td>1.295152</td>
+      <td>3.125000</td>
+      <td>1.621429</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>4.794118</td>
+      <td>1.409479</td>
     </tr>
     <tr>
       <td>18</td>
-      <td>3.655556</td>
-      <td>1.908945</td>
+      <td>2.777778</td>
+      <td>1.832888</td>
     </tr>
     <tr>
       <td>19</td>
-      <td>3.605263</td>
-      <td>1.778847</td>
+      <td>3.973684</td>
+      <td>1.945756</td>
     </tr>
     <tr>
       <td>20</td>
-      <td>2.700000</td>
-      <td>1.159133</td>
+      <td>3.433333</td>
+      <td>1.681068</td>
     </tr>
     <tr>
       <td>21</td>
-      <td>3.714286</td>
-      <td>1.270545</td>
+      <td>2.428571</td>
+      <td>0.810643</td>
     </tr>
     <tr>
       <td>22</td>
-      <td>5.015152</td>
-      <td>1.843846</td>
+      <td>4.818182</td>
+      <td>1.858641</td>
     </tr>
     <tr>
       <td>23</td>
-      <td>3.608696</td>
-      <td>1.808618</td>
+      <td>3.717391</td>
+      <td>1.877139</td>
     </tr>
     <tr>
       <td>24</td>
-      <td>3.916667</td>
-      <td>1.282547</td>
+      <td>5.083333</td>
+      <td>1.442120</td>
     </tr>
     <tr>
       <td>25</td>
-      <td>4.112000</td>
-      <td>1.733056</td>
+      <td>3.880000</td>
+      <td>1.268858</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>4.130769</td>
+      <td>1.713550</td>
     </tr>
     <tr>
       <td>27</td>
@@ -894,14 +904,14 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count)
       <td>1.250641</td>
     </tr>
     <tr>
-      <td>28</td>
-      <td>4.707143</td>
-      <td>1.510140</td>
+      <td>29</td>
+      <td>4.765517</td>
+      <td>1.523035</td>
     </tr>
     <tr>
-      <td>29</td>
-      <td>4.862069</td>
-      <td>1.807211</td>
+      <td>30</td>
+      <td>4.966667</td>
+      <td>1.865907</td>
     </tr>
   </tbody>
 </table>
@@ -928,10 +938,10 @@ GitHubMarkdownDataFrame(dataset.df_member_level_by_attendance_count[['Attendance
   <tbody>
     <tr>
       <td>1.000000</td>
-      <td>0.719885</td>
+      <td>0.707759</td>
     </tr>
     <tr>
-      <td>0.719885</td>
+      <td>0.707759</td>
       <td>1.000000</td>
     </tr>
   </tbody>

@@ -38,12 +38,12 @@ class TestWeightedMeans(unittest.TestCase):
             for member_id, weighted_mean_respect_fractally_spreadsheet in df[
                 [MEMBER_ID_COLUMN_NAME, str(meeting_id)]
             ].values:
+                weighted_mean_respect = pivot_table.loc[member_id, meeting_id]
                 # Uncomment the following print statement for debugging if this test
                 # ever fails.
                 # print(
-                #     f"meeting_id={meeting_id} member_id={member_id} weighted_mean_respect={weighted_mean_respect}"  # noqa: E501
+                #     f"meeting_id={meeting_id} member_id={member_id} weighted_mean_respect={weighted_mean_respect} weighted_mean_respect_fractally_spreadsheet={weighted_mean_respect_fractally_spreadsheet}"  # noqa: E501
                 # )
-                weighted_mean_respect = pivot_table.loc[member_id, meeting_id]
                 if weighted_mean_respect_fractally_spreadsheet == 0:
                     # A value of zero should be universal between Team fractally's
                     # spreadsheet and the calculated value from the dataset.
@@ -88,12 +88,12 @@ class TestWeightedMeans(unittest.TestCase):
             for member_id, weighted_mean_respect_fractally_spreadsheet in df[
                 [MEMBER_ID_COLUMN_NAME, str(meeting_id)]
             ].values:
+                weighted_mean_respect = pivot_table.loc[member_id, meeting_id]
                 # Uncomment the following print statement for debugging if this test
                 # ever fails.
-                # print(
-                #     f"meeting_id={meeting_id} member_id={member_id} weighted_mean_respect={weighted_mean_respect}"  # noqa: E501
-                # )
-                weighted_mean_respect = pivot_table.loc[member_id, meeting_id]
+                print(
+                    f"meeting_id={meeting_id} member_id={member_id} weighted_mean_respect={weighted_mean_respect} weighted_mean_respect_fractally_spreadsheet={weighted_mean_respect_fractally_spreadsheet}"  # noqa: E501
+                )
                 self.assertAlmostEqual(
                     weighted_mean_respect,
                     weighted_mean_respect_fractally_spreadsheet,
